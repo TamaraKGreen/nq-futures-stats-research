@@ -99,7 +99,8 @@ def levels_table(b):
         px = W(a, z, 0.2)["c"].reindex(days)
         for k in range(1, 5):
             L[f"P{tag}{k}"] = px + rng.uniform(-0.15, 0.15, len(days)) * L["atr"].to_numpy()
-    ref = np.nanmedian(L.loc[L.index >= pd.Timestamp("2025-03-17"), "atr"])
+    # ADAPTED: reference frozen to the original holdout window (17 Mar 2025 - 29 Apr 2026)
+    ref = np.nanmedian(L.loc[(L.index >= pd.Timestamp("2025-03-17")) & (L.index <= pd.Timestamp("2026-04-29")), "atr"])
     L["scale"] = L["atr"] / ref                     # raw pts = today pts * scale
     return L, ref
 

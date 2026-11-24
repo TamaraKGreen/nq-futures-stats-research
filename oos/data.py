@@ -14,6 +14,7 @@ import numpy as np
 import pandas as pd
 
 ROOT = Path(__file__).resolve().parent.parent
+DATA = ROOT / "research" / "data"          # only so `from .data import DATA` keeps working
 CACHE = Path(__file__).resolve().parent / "cache"
 NY = "America/New_York"
 DISCOVERY_END = pd.Timestamp("2025-03-14")
@@ -34,7 +35,8 @@ def load_nq(refresh=False) -> pd.DataFrame:
     out = pd.DataFrame({"Datetime": d["ts"], "Open": d["open"].astype("float64"), "High": d["high"].astype("float64"),
                         "Low": d["low"].astype("float64"), "Close": d["close"].astype("float64"),
                         "Volume": d["volume"].astype("float64"),
-                        "BuyVol": d["buy_vol"].astype("float64"), "SellVol": d["sell_vol"].astype("float64")})
+                        "BuyVol": d["buy_vol"].astype("float64"), "SellVol": d["sell_vol"].astype("float64"),
+                        "Delta": d["delta"].astype("float64"), "Trades": d["trades"].astype("float64")})
     out = out.sort_values("Datetime").reset_index(drop=True)
     out.to_parquet(f)
     return out
