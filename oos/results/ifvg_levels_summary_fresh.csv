@@ -1,0 +1,85 @@
+near_level,ctx,entry,stop,period,n,per_month,win_cons_%,win_opt_%,rand_win_%,edge_R,t_cons,t_opt,est_net_pts
+near key level,"inside, aligned",A inversion close,15m zone,1 2020-Mar25,321.0,5.3,52.3,53.3,51.1,-0.009,-0.24,0.03,-1.51
+near key level,"inside, aligned",A inversion close,15m zone,2 Mar25-Apr26,80.0,5.7,57.5,57.5,43.8,0.201,1.37,0.98,3.11
+near key level,"inside, aligned",A inversion close,15m zone,3 FRESH May-Nov26,39.0,5.6,48.7,48.7,46.2,0.078,0.34,0.34,0.33
+near key level,"inside, aligned",A inversion close,1m zone,1 2020-Mar25,459.0,7.3,45.3,46.0,42.0,0.028,0.33,0.3,-0.92
+near key level,"inside, aligned",A inversion close,1m zone,2 Mar25-Apr26,97.0,6.9,39.2,39.2,41.2,-0.105,-0.61,-0.61,-3.07
+near key level,"inside, aligned",A inversion close,1m zone,3 FRESH May-Nov26,56.0,8.0,39.3,39.3,39.3,-0.028,-0.13,-0.13,-1.79
+near key level,"inside, aligned",A inversion close,fixed 15,1 2020-Mar25,532.0,8.4,44.5,46.8,42.7,0.046,0.64,0.7,-0.31
+near key level,"inside, aligned",A inversion close,fixed 15,2 Mar25-Apr26,120.0,8.6,42.5,44.2,44.2,-0.026,-0.19,-0.19,-1.39
+near key level,"inside, aligned",A inversion close,fixed 15,3 FRESH May-Nov26,63.0,9.0,41.3,44.4,39.7,0.056,0.18,0.38,-0.17
+near key level,"inside, aligned",B retest,15m zone,1 2020-Mar25,316.0,5.0,49.4,52.2,44.3,0.107,1.43,0.92,0.7
+near key level,"inside, aligned",B retest,15m zone,2 Mar25-Apr26,72.0,5.1,52.8,59.7,50.0,0.185,0.31,1.37,1.94
+near key level,"inside, aligned",B retest,15m zone,3 FRESH May-Nov26,35.0,5.0,45.7,57.1,31.4,0.553,1.57,1.94,9.27
+near key level,"inside, aligned",B retest,1m zone,1 2020-Mar25,350.0,5.6,40.0,46.6,31.7,0.225,1.86,2.18,1.69
+near key level,"inside, aligned",B retest,1m zone,2 Mar25-Apr26,75.0,5.4,36.0,46.7,36.0,0.093,0.01,0.83,-0.04
+near key level,"inside, aligned",B retest,1m zone,3 FRESH May-Nov26,40.0,5.7,32.5,47.5,30.0,0.067,-0.22,0.56,-0.54
+near key level,"inside, aligned",B retest,fixed 15,1 2020-Mar25,478.0,7.6,42.7,47.1,39.5,0.076,0.97,1.06,0.15
+near key level,"inside, aligned",B retest,fixed 15,2 Mar25-Apr26,110.0,7.9,48.2,52.7,37.3,0.282,1.62,1.95,3.22
+near key level,"inside, aligned",B retest,fixed 15,3 FRESH May-Nov26,55.0,7.9,47.3,54.5,30.9,0.382,1.76,1.79,4.73
+near key level,"inside, opposite",A inversion close,1m zone,1 2020-Mar25,670.0,10.8,42.8,45.8,42.2,-0.002,-0.17,0.11,-1.4
+near key level,"inside, opposite",A inversion close,1m zone,2 Mar25-Apr26,137.0,9.8,43.1,44.5,45.3,0.052,0.33,0.23,-0.58
+near key level,"inside, opposite",A inversion close,1m zone,3 FRESH May-Nov26,59.0,8.4,35.6,35.6,40.7,-0.175,-0.56,-1.23,-4.38
+near key level,"inside, opposite",A inversion close,fixed 15,1 2020-Mar25,793.0,12.6,44.9,46.8,44.3,0.019,0.27,0.37,-0.72
+near key level,"inside, opposite",A inversion close,fixed 15,2 Mar25-Apr26,156.0,11.1,37.8,39.1,49.4,-0.269,-2.15,-2.15,-5.04
+near key level,"inside, opposite",A inversion close,fixed 15,3 FRESH May-Nov26,69.0,9.9,34.8,36.2,46.4,-0.304,-1.47,-1.86,-5.57
+near key level,"inside, opposite",B retest,1m zone,1 2020-Mar25,425.0,6.9,32.2,40.0,35.3,-0.142,-1.3,-1.32,-3.05
+near key level,"inside, opposite",B retest,1m zone,2 Mar25-Apr26,92.0,6.6,37.0,45.7,39.1,-0.076,-0.52,-0.17,-2.51
+near key level,"inside, opposite",B retest,1m zone,3 FRESH May-Nov26,42.0,6.0,33.3,42.9,38.1,-0.304,-0.7,-1.18,-5.34
+near key level,"inside, opposite",B retest,fixed 15,1 2020-Mar25,678.0,10.9,39.1,41.6,43.4,-0.134,-1.58,-2.65,-3.01
+near key level,"inside, opposite",B retest,fixed 15,2 Mar25-Apr26,141.0,10.1,41.1,45.4,42.6,-0.048,-0.11,-0.58,-1.71
+near key level,"inside, opposite",B retest,fixed 15,3 FRESH May-Nov26,62.0,8.9,41.9,45.2,45.2,-0.094,-0.39,-0.6,-2.41
+near key level,not inside,A inversion close,1m zone,1 2020-Mar25,2462.0,39.1,41.1,42.9,40.6,0.003,0.07,0.08,-1.32
+near key level,not inside,A inversion close,1m zone,2 Mar25-Apr26,451.0,32.2,37.5,39.0,36.6,0.033,0.67,0.14,-0.88
+near key level,not inside,A inversion close,1m zone,3 FRESH May-Nov26,266.0,33.2,43.6,46.2,42.5,0.026,0.24,0.27,-0.9
+near key level,not inside,A inversion close,fixed 15,1 2020-Mar25,2836.0,45.0,44.3,45.7,42.3,0.05,1.52,1.75,-0.25
+near key level,not inside,A inversion close,fixed 15,2 Mar25-Apr26,525.0,37.5,41.5,42.7,41.3,0.005,0.11,0.05,-0.92
+near key level,not inside,A inversion close,fixed 15,3 FRESH May-Nov26,311.0,38.9,44.1,46.6,43.1,0.038,0.26,0.6,-0.44
+near key level,not inside,B retest,1m zone,1 2020-Mar25,1447.0,23.0,33.8,40.4,31.7,0.007,1.58,-1.19,-1.25
+near key level,not inside,B retest,1m zone,2 Mar25-Apr26,288.0,20.6,31.6,36.8,28.1,0.046,1.13,-0.35,-0.83
+near key level,not inside,B retest,1m zone,3 FRESH May-Nov26,165.0,20.6,35.2,44.8,27.9,0.229,1.73,1.39,1.5
+near key level,not inside,B retest,fixed 15,1 2020-Mar25,2493.0,39.6,43.1,46.5,40.2,0.057,2.16,1.4,-0.14
+near key level,not inside,B retest,fixed 15,2 Mar25-Apr26,455.0,32.5,39.3,43.5,40.9,-0.058,-0.51,-1.04,-1.86
+near key level,not inside,B retest,fixed 15,3 FRESH May-Nov26,270.0,33.8,43.0,47.0,40.4,0.06,0.63,0.6,-0.09
+not near,"inside, aligned",A inversion close,15m zone,1 2020-Mar25,681.0,11.0,46.1,47.0,47.6,-0.036,-0.56,-0.66,-2.1
+not near,"inside, aligned",A inversion close,15m zone,2 Mar25-Apr26,135.0,9.6,47.4,48.9,38.5,0.225,1.52,1.59,3.15
+not near,"inside, aligned",A inversion close,15m zone,3 FRESH May-Nov26,63.0,7.9,54.0,54.0,46.0,0.048,0.23,0.23,-0.06
+not near,"inside, aligned",A inversion close,1m zone,1 2020-Mar25,1015.0,16.1,37.4,39.2,39.7,-0.02,-0.2,-0.46,-1.63
+not near,"inside, aligned",A inversion close,1m zone,2 Mar25-Apr26,240.0,17.1,32.9,35.8,36.2,-0.082,-0.68,-0.63,-2.57
+not near,"inside, aligned",A inversion close,1m zone,3 FRESH May-Nov26,104.0,13.0,32.7,36.5,35.6,-0.028,-0.26,-0.07,-1.9
+not near,"inside, aligned",A inversion close,fixed 15,1 2020-Mar25,1152.0,18.3,40.5,42.4,39.3,0.037,0.62,0.97,-0.45
+not near,"inside, aligned",A inversion close,fixed 15,2 Mar25-Apr26,277.0,19.8,39.4,41.5,43.7,-0.11,-1.14,-1.35,-2.64
+not near,"inside, aligned",A inversion close,fixed 15,3 FRESH May-Nov26,117.0,14.6,41.0,41.9,41.9,-0.02,-0.13,-0.13,-1.3
+not near,"inside, aligned",B retest,15m zone,1 2020-Mar25,607.0,10.0,40.4,43.5,41.4,-0.055,-0.06,-1.38,-2.45
+not near,"inside, aligned",B retest,15m zone,2 Mar25-Apr26,119.0,8.5,42.0,46.2,38.7,0.035,0.13,0.24,-0.83
+not near,"inside, aligned",B retest,15m zone,3 FRESH May-Nov26,65.0,8.1,46.2,50.8,58.5,-0.306,-1.74,-1.74,-8.24
+not near,"inside, aligned",B retest,1m zone,1 2020-Mar25,633.0,10.0,27.8,35.1,27.8,-0.087,-0.23,-1.64,-2.3
+not near,"inside, aligned",B retest,1m zone,2 Mar25-Apr26,145.0,10.4,24.1,33.8,28.3,-0.103,-0.74,-0.33,-2.46
+not near,"inside, aligned",B retest,1m zone,3 FRESH May-Nov26,69.0,8.6,21.7,31.9,24.6,-0.063,-0.06,-0.42,-2.18
+not near,"inside, aligned",B retest,fixed 15,1 2020-Mar25,1027.0,16.3,38.3,42.4,39.1,-0.037,-0.44,-1.08,-1.56
+not near,"inside, aligned",B retest,fixed 15,2 Mar25-Apr26,245.0,17.5,34.3,39.6,36.7,-0.042,-0.58,-0.22,-1.62
+not near,"inside, aligned",B retest,fixed 15,3 FRESH May-Nov26,109.0,13.6,31.2,37.6,43.1,-0.3,-2.01,-2.23,-5.5
+not near,"inside, opposite",A inversion close,1m zone,1 2020-Mar25,1462.0,23.2,38.4,40.8,39.1,-0.018,-0.4,-0.32,-1.62
+not near,"inside, opposite",A inversion close,1m zone,2 Mar25-Apr26,330.0,23.6,34.2,36.1,35.8,-0.011,-0.02,-0.21,-1.55
+not near,"inside, opposite",A inversion close,1m zone,3 FRESH May-Nov26,157.0,22.4,39.5,40.8,40.8,-0.007,-0.02,-0.07,-1.5
+not near,"inside, opposite",A inversion close,fixed 15,1 2020-Mar25,1688.0,26.8,40.8,42.7,45.0,-0.099,-2.51,-2.59,-2.49
+not near,"inside, opposite",A inversion close,fixed 15,2 Mar25-Apr26,396.0,28.3,40.4,42.9,51.5,-0.244,-3.14,-2.77,-4.66
+not near,"inside, opposite",A inversion close,fixed 15,3 FRESH May-Nov26,180.0,22.5,41.7,43.9,42.8,-0.045,-0.22,-0.55,-1.68
+not near,"inside, opposite",B retest,1m zone,1 2020-Mar25,783.0,12.4,30.4,40.5,30.5,0.018,0.36,0.07,-1.13
+not near,"inside, opposite",B retest,1m zone,2 Mar25-Apr26,164.0,11.7,27.4,40.2,25.6,0.007,0.28,-0.17,-1.28
+not near,"inside, opposite",B retest,1m zone,3 FRESH May-Nov26,84.0,10.5,26.2,36.9,22.6,0.096,0.6,0.23,-0.31
+not near,"inside, opposite",B retest,fixed 15,1 2020-Mar25,1473.0,23.4,40.5,44.7,40.3,-0.001,0.16,-0.22,-1.02
+not near,"inside, opposite",B retest,fixed 15,2 Mar25-Apr26,352.0,25.1,38.6,44.3,42.9,-0.119,-1.18,-1.65,-2.79
+not near,"inside, opposite",B retest,fixed 15,3 FRESH May-Nov26,163.0,20.4,41.7,44.2,41.7,-0.064,0.0,-1.05,-1.97
+not near,not inside,A inversion close,1m zone,1 2020-Mar25,6582.0,104.5,37.0,39.3,36.8,0.017,0.56,0.82,-1.12
+not near,not inside,A inversion close,1m zone,2 Mar25-Apr26,1323.0,94.5,37.9,40.2,37.9,-0.027,-0.47,-0.51,-1.72
+not near,not inside,A inversion close,1m zone,3 FRESH May-Nov26,833.0,104.1,35.7,39.5,36.7,-0.043,-0.95,-0.42,-1.99
+not near,not inside,A inversion close,fixed 15,1 2020-Mar25,7635.0,121.2,42.0,43.5,43.1,-0.023,-1.47,-0.99,-1.34
+not near,not inside,A inversion close,fixed 15,2 Mar25-Apr26,1568.0,112.0,41.6,44.2,41.6,0.012,-0.06,0.64,-0.82
+not near,not inside,A inversion close,fixed 15,3 FRESH May-Nov26,956.0,119.5,40.3,43.2,45.3,-0.1,-2.29,-1.62,-2.51
+not near,not inside,B retest,1m zone,1 2020-Mar25,3201.0,50.8,28.5,38.5,27.3,-0.004,0.77,-0.83,-1.31
+not near,not inside,B retest,1m zone,2 Mar25-Apr26,661.0,47.2,30.7,40.4,28.6,-0.032,0.66,-1.23,-1.65
+not near,not inside,B retest,1m zone,3 FRESH May-Nov26,445.0,55.6,27.2,38.2,28.1,-0.124,-0.75,-1.51,-2.61
+not near,not inside,B retest,fixed 15,1 2020-Mar25,6676.0,106.0,40.8,44.4,40.1,0.005,0.86,-0.32,-0.92
+not near,not inside,B retest,fixed 15,2 Mar25-Apr26,1378.0,98.4,42.0,45.9,43.9,-0.067,-0.98,-2.14,-2.0
+not near,not inside,B retest,fixed 15,3 FRESH May-Nov26,849.0,106.1,40.0,45.7,37.8,0.043,0.97,0.6,-0.35

@@ -1,0 +1,119 @@
+=== TRADABILITY: variant chosen on discovery, all three periods ===
+                               setup                 variant    period  trades  win_%  avg_net_pts  avg_R  profit_factor years_positive
+    IB fade to mid - narrow IB (3.1)    stop 0.25x IB beyond discovery     255   36.1         0.59  0.026           1.04            4/6
+    IB fade to mid - narrow IB (3.1)    stop 0.25x IB beyond   holdout      61   37.7         2.62  0.064           1.12            1/2
+    IB fade to mid - narrow IB (3.1)    stop 0.25x IB beyond     fresh      15   20.0       -20.09 -0.424           0.45            0/1
+ IB fade to mid - all days (control)    stop 0.25x IB beyond discovery    1260   32.8        -2.87 -0.080           0.87            1/6
+ IB fade to mid - all days (control)    stop 0.25x IB beyond   holdout     269   34.2         0.21 -0.048           1.01            1/2
+ IB fade to mid - all days (control)    stop 0.25x IB beyond     fresh     133   37.6         1.84  0.006           1.04            1/1
+8am third -> overnight extreme (3.2)     stop 1x target dist discovery     874   49.5        -1.87 -0.090           0.85            0/6
+8am third -> overnight extreme (3.2)     stop 1x target dist   holdout     185   50.8         0.79 -0.043           1.04            1/2
+8am third -> overnight extreme (3.2)     stop 1x target dist     fresh     108   50.9         8.81 -0.018           1.33            1/1
+         9:00 hour -> 8:00 mid (3.5)     stop 5x target dist discovery    1179   77.2         0.59 -0.024           1.05            2/6
+         9:00 hour -> 8:00 mid (3.5)     stop 5x target dist   holdout     254   84.6         3.24  0.023           1.22            2/2
+         9:00 hour -> 8:00 mid (3.5)     stop 5x target dist     fresh     143   80.4         1.13  0.008           1.05            1/1
+       9:00 sweep continuation (3.5) stop 1.0x prev-hr range discovery    1252   42.0        -2.06  0.006           0.91            1/6
+       9:00 sweep continuation (3.5) stop 1.0x prev-hr range   holdout     272   37.9        -2.98  0.027           0.92            0/2
+       9:00 sweep continuation (3.5) stop 1.0x prev-hr range     fresh     139   43.9        13.93  0.141           1.29            1/1
+      11-13 sweep of low, fade (3.5) stop 1.0x prev-hr range discovery    1456   53.2        -0.39 -0.000           0.98            3/6
+      11-13 sweep of low, fade (3.5) stop 1.0x prev-hr range   holdout     298   51.7        -0.44 -0.004           0.98            1/2
+      11-13 sweep of low, fade (3.5) stop 1.0x prev-hr range     fresh     161   51.6        -1.86 -0.020           0.94            0/1
+
+=== ENTRIES: variant chosen on discovery, all three periods ===
+                  method   context                       variant    period  trades  win_%  net_R  net_R_se  net_pts
+A 1h candle continuation      none  target +0.5x C2, stop C2 far discovery    4777   50.9  0.006     0.011     0.75
+A 1h candle continuation      none  target +0.5x C2, stop C2 far   holdout     977   50.2  0.004     0.025    -1.60
+A 1h candle continuation      none  target +0.5x C2, stop C2 far     fresh     497   49.3 -0.023     0.035    -0.66
+A 1h candle continuation narrow IB  target +0.5x C2, stop C2 far discovery     571   50.8  0.001     0.030    -1.01
+A 1h candle continuation narrow IB  target +0.5x C2, stop C2 far   holdout     130   50.8  0.010     0.059    -1.21
+A 1h candle continuation narrow IB  target +0.5x C2, stop C2 far     fresh      27   59.3  0.145     0.113    15.38
+A 1h candle continuation   wide IB  target +0.5x C2, stop C2 far discovery     641   52.4  0.032     0.027     2.83
+A 1h candle continuation   wide IB  target +0.5x C2, stop C2 far   holdout     156   41.7 -0.096     0.060   -17.98
+A 1h candle continuation   wide IB  target +0.5x C2, stop C2 far     fresh     111   59.5  0.079     0.073    17.68
+           B IB breakout       all           stop mid, target 1x discovery    1238   43.9  0.064     0.035     4.17
+           B IB breakout       all           stop mid, target 1x   holdout     265   40.4 -0.054     0.070    -6.82
+           B IB breakout       all           stop mid, target 1x     fresh     131   39.7  0.056     0.107     8.38
+          C ORB breakout       all        stop mid, target close discovery    1294   25.0  0.161     0.067     5.17
+          C ORB breakout       all        stop mid, target close   holdout     278   28.8  0.136     0.129     5.35
+          C ORB breakout       all        stop mid, target close     fresh     144   20.1 -0.286     0.145   -16.70
+        D IB second side       all limit at mid, stop at extreme discovery     632   54.9 -0.018     0.028     0.10
+        D IB second side       all limit at mid, stop at extreme   holdout     129   49.6 -0.093     0.066   -13.49
+        D IB second side       all limit at mid, stop at extreme     fresh      58   51.7 -0.037     0.088    -2.41
+          C ORB breakout    narrow        stop mid, target close discovery     257   19.8  0.290     0.186     6.74
+          C ORB breakout    narrow        stop mid, target close   holdout      56   26.8  0.457     0.403    23.41
+          C ORB breakout    narrow        stop mid, target close     fresh      10   10.0 -0.665     0.313   -24.11
+           B IB breakout    narrow           stop opp, target 1x discovery     255   50.2 -0.052     0.055    -3.09
+           B IB breakout    narrow           stop opp, target 1x   holdout      61   42.6 -0.171     0.106   -21.00
+           B IB breakout    narrow           stop opp, target 1x     fresh      15   46.7  0.015     0.221    26.33
+        D IB second side    narrow limit at mid, stop at extreme discovery     176   63.1  0.039     0.056     3.08
+        D IB second side    narrow limit at mid, stop at extreme   holdout      37   56.8  0.045     0.129     8.99
+        D IB second side    narrow limit at mid, stop at extreme     fresh       8   62.5  0.063     0.246     9.91
+           B IB breakout      wide        stop mid, target close discovery     232   47.0  0.053     0.073     3.65
+           B IB breakout      wide        stop mid, target close   holdout      54   42.6 -0.137     0.126   -29.40
+           B IB breakout      wide        stop mid, target close     fresh      38   36.8  0.096     0.234    23.56
+          C ORB breakout      wide        stop mid, target close discovery     257   33.5  0.229     0.125     7.75
+          C ORB breakout      wide        stop mid, target close   holdout      65   30.8 -0.069     0.189     0.40
+          C ORB breakout      wide        stop mid, target close     fresh      49   26.5  0.186     0.353    22.94
+        D IB second side      wide limit at mid, stop at extreme discovery      88   59.1  0.095     0.067    16.81
+        D IB second side      wide limit at mid, stop at extreme   holdout      20   40.0 -0.140     0.145   -37.16
+        D IB second side      wide limit at mid, stop at extreme     fresh      16   56.2  0.130     0.140    29.78
+
+=== SCALPS vs placebo: 3 cells pass the discovery bar ===
+level  mode  T  S    period     n  edge_R_cons  edge_R_opt  t_cons  t_opt  est_net_R  est_net_pts
+  ORH break 10 15 discovery 792.0        0.087       0.070    2.97   2.22      0.012         0.18
+  ORH break 10 20 discovery 792.0        0.098       0.069    3.39   2.51      0.033         0.67
+  ORH break 20 15 discovery 792.0        0.098       0.093    2.59   2.06      0.029         0.43
+  ORH break 10 15   holdout 176.0        0.039      -0.034    0.65  -0.50     -0.064        -0.96
+  ORH break 10 20   holdout 176.0        0.113      -0.018    1.84  -0.30     -0.003        -0.05
+  ORH break 20 15   holdout 176.0        0.109      -0.027    1.40  -0.28     -0.026        -0.38
+  ORH break 10 15     fresh  94.0       -0.009       0.062   -0.13   0.68     -0.040        -0.60
+  ORH break 10 20     fresh  94.0       -0.001       0.034   -0.01   0.42     -0.034        -0.67
+  ORH break 20 15     fresh  94.0       -0.009      -0.003   -0.10  -0.02     -0.073        -1.09
+
+best 15 discovery cells by est_net_R, with later periods:
+level  mode  T  S    period     n  t_cons  t_opt  est_net_R  est_net_pts
+  H8L break 20 20 discovery 747.0    1.28   1.39      0.000         0.00
+  H8M  fade 20 15 discovery 934.0    2.05   1.66      0.011         0.16
+  H8M  fade 20 20 discovery 934.0    1.77   1.78      0.014         0.28
+  H9H break 20 20 discovery 624.0    1.63   0.72     -0.002        -0.03
+  ONH break 10 20 discovery 610.0    2.51   0.88      0.002         0.04
+  ORH break 10 15 discovery 792.0    2.97   2.22      0.012         0.18
+  ORH break 10 20 discovery 792.0    3.39   2.51      0.033         0.67
+  ORH break 20 15 discovery 792.0    2.59   2.06      0.029         0.43
+  ORH break 20 20 discovery 792.0    2.61   1.99      0.037         0.73
+  PDH break 10 15 discovery 407.0    2.74   0.79     -0.001        -0.02
+  PDH break 10 20 discovery 407.0    3.19   1.65      0.039         0.79
+  PDH break 20 15 discovery 407.0    2.53   0.55      0.009         0.14
+  PDH break 20 20 discovery 407.0    2.39   1.45      0.044         0.88
+  PDL break 20 15 discovery 332.0    0.97   1.76      0.015         0.23
+  PDL break 20 20 discovery 332.0   -0.41   2.25      0.004         0.07
+  H8L break 20 20   holdout 173.0   -0.23   1.37     -0.002        -0.03
+  H8M  fade 20 15   holdout 211.0   -0.91  -0.43     -0.125        -1.87
+  H8M  fade 20 20   holdout 211.0   -1.36  -0.73     -0.130        -2.59
+  H9H break 20 20   holdout 142.0    2.07   0.66      0.068         1.36
+  ONH break 10 20   holdout 131.0    2.73   0.77      0.068         1.37
+  ORH break 10 15   holdout 176.0    0.65  -0.50     -0.064        -0.96
+  ORH break 10 20   holdout 176.0    1.84  -0.30     -0.003        -0.05
+  ORH break 20 15   holdout 176.0    1.40  -0.28     -0.026        -0.38
+  ORH break 20 20   holdout 176.0    1.41  -0.07      0.002         0.04
+  PDH break 10 15   holdout  96.0   -1.13  -0.30     -0.114        -1.70
+  PDH break 10 20   holdout  96.0    1.59   0.01      0.011         0.23
+  PDH break 20 15   holdout  96.0   -0.24   0.45     -0.049        -0.73
+  PDH break 20 20   holdout  96.0    1.91   0.66      0.081         1.62
+  PDL break 20 15   holdout  62.0   -0.49   1.03     -0.011        -0.17
+  PDL break 20 20   holdout  62.0   -0.98   0.91     -0.040        -0.81
+  H8L break 20 20     fresh  94.0   -0.89  -0.71     -0.128        -2.55
+  H8M  fade 20 15     fresh 106.0    1.71   1.25      0.115         1.73
+  H8M  fade 20 20     fresh 106.0    2.37   1.69      0.165         3.31
+  H9H break 20 20     fresh  66.0   -0.74  -1.34     -0.180        -3.60
+  ONH break 10 20     fresh  55.0    2.20  -0.93      0.015         0.31
+  ORH break 10 15     fresh  94.0   -0.13   0.68     -0.040        -0.60
+  ORH break 10 20     fresh  94.0   -0.01   0.42     -0.034        -0.67
+  ORH break 20 15     fresh  94.0   -0.10  -0.02     -0.073        -1.09
+  ORH break 20 20     fresh  94.0    0.03   0.32     -0.030        -0.61
+  PDH break 10 15     fresh  51.0    0.01  -1.33     -0.147        -2.20
+  PDH break 10 20     fresh  51.0    0.67  -0.76     -0.057        -1.14
+  PDH break 20 15     fresh  51.0    0.41   0.21     -0.024        -0.35
+  PDH break 20 20     fresh  51.0    0.90   0.39      0.036         0.73
+  PDL break 20 15     fresh  35.0    0.43  -0.09     -0.045        -0.68
+  PDL break 20 20     fresh  35.0   -0.38  -0.29     -0.101        -2.02

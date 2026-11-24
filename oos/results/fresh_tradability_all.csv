@@ -1,0 +1,67 @@
+setup,variant,period,trades,win_%,target_%,avg_net_pts,median_net,avg_R,profit_factor,total_pts,max_dd_pts,avg_risk_pts,years_positive
+IB fade to mid - narrow IB (3.1),stop 0.25x IB beyond,discovery,255,36.1,36.1,0.59,-14.81,0.026,1.04,150.0,387.0,20.3,4/6
+IB fade to mid - narrow IB (3.1),stop 0.25x IB beyond,holdout,61,37.7,34.4,2.62,-20.12,0.064,1.12,160.0,299.0,33.1,1/2
+IB fade to mid - narrow IB (3.1),stop 0.25x IB beyond,fresh,15,20.0,20.0,-20.09,-43.62,-0.424,0.45,-301.0,281.0,43.6,0/1
+IB fade to mid - all days (control),stop 0.25x IB beyond,discovery,1260,32.8,29.9,-2.87,-22.94,-0.08,0.87,-3617.0,4443.0,33.1,1/6
+IB fade to mid - all days (control),stop 0.25x IB beyond,holdout,269,34.2,28.3,0.21,-30.25,-0.048,1.01,57.0,1760.0,46.9,1/2
+IB fade to mid - all days (control),stop 0.25x IB beyond,fresh,133,37.6,28.6,1.84,-44.88,0.006,1.04,245.0,1097.0,68.8,1/1
+IB fade to mid - narrow IB (3.1),stop 0.5x IB beyond,discovery,255,47.8,47.8,-2.75,-17.0,-0.056,0.87,-701.0,784.0,40.7,1/6
+IB fade to mid - narrow IB (3.1),stop 0.5x IB beyond,holdout,61,54.1,50.8,0.97,36.0,0.048,1.03,59.0,575.0,66.3,1/2
+IB fade to mid - narrow IB (3.1),stop 0.5x IB beyond,fresh,15,40.0,40.0,-28.79,-86.25,-0.212,0.5,-432.0,575.0,87.2,0/1
+IB fade to mid - all days (control),stop 0.5x IB beyond,discovery,1260,45.2,40.2,-6.27,-23.88,-0.098,0.81,-7904.0,8123.0,66.1,0/6
+IB fade to mid - all days (control),stop 0.5x IB beyond,holdout,269,49.8,40.1,-0.31,-1.25,-0.013,0.99,-85.0,2352.0,93.7,1/2
+IB fade to mid - all days (control),stop 0.5x IB beyond,fresh,133,51.1,37.6,0.45,3.25,-0.023,1.01,60.0,1678.0,137.6,1/1
+IB fade to mid - narrow IB (3.1),stop 0.75x IB beyond,discovery,255,60.0,60.0,-0.56,25.88,0.023,0.98,-142.0,693.0,61.0,3/6
+IB fade to mid - narrow IB (3.1),stop 0.75x IB beyond,holdout,61,57.4,54.1,-1.5,37.5,0.013,0.96,-91.0,760.0,99.4,1/2
+IB fade to mid - narrow IB (3.1),stop 0.75x IB beyond,fresh,15,53.3,46.7,-25.71,9.75,-0.089,0.58,-386.0,557.0,130.8,0/1
+IB fade to mid - all days (control),stop 0.75x IB beyond,discovery,1260,52.7,46.3,-6.5,15.94,-0.063,0.82,-8185.0,8268.0,99.2,0/6
+IB fade to mid - all days (control),stop 0.75x IB beyond,holdout,269,55.0,44.6,1.73,33.0,0.005,1.04,465.0,2092.0,140.6,1/2
+IB fade to mid - all days (control),stop 0.75x IB beyond,fresh,133,59.4,42.1,0.38,44.25,-0.002,1.01,51.0,1860.0,206.3,1/1
+IB fade to mid - narrow IB (3.1),stop 1.0x IB beyond,discovery,255,63.1,63.1,-0.07,26.62,0.012,1.0,-18.0,700.0,81.3,4/6
+IB fade to mid - narrow IB (3.1),stop 1.0x IB beyond,holdout,61,63.9,59.0,9.18,39.62,0.06,1.32,560.0,270.0,132.6,2/2
+IB fade to mid - narrow IB (3.1),stop 1.0x IB beyond,fresh,15,60.0,53.3,-23.1,51.5,-0.05,0.65,-346.0,463.0,174.4,0/1
+IB fade to mid - all days (control),stop 1.0x IB beyond,discovery,1260,55.1,48.0,-6.26,23.44,-0.052,0.83,-7890.0,7995.0,132.2,0/6
+IB fade to mid - all days (control),stop 1.0x IB beyond,holdout,269,58.4,47.6,4.73,39.0,0.014,1.11,1271.0,1410.0,187.5,2/2
+IB fade to mid - all days (control),stop 1.0x IB beyond,fresh,133,60.9,43.6,-9.9,54.38,-0.034,0.87,-1317.0,2634.0,275.1,0/1
+8am third -> overnight extreme (3.2),stop 1x target dist,discovery,874,49.5,49.5,-1.87,-3.75,-0.09,0.85,-1632.0,2038.0,23.8,0/6
+8am third -> overnight extreme (3.2),stop 1x target dist,holdout,185,50.8,50.8,0.79,1.5,-0.043,1.04,147.0,900.0,41.8,1/2
+8am third -> overnight extreme (3.2),stop 1x target dist,fresh,108,50.9,50.9,8.81,3.5,-0.018,1.33,952.0,637.0,62.3,1/1
+9:00 hour -> 8:00 mid (3.5),stop 1x target dist,discovery,1179,47.4,46.6,-0.97,-3.88,-0.163,0.9,-1142.0,1543.0,20.1,2/6
+9:00 hour -> 8:00 mid (3.5),stop 1x target dist,holdout,254,52.4,51.2,1.83,3.31,-0.046,1.17,464.0,605.0,24.5,1/2
+9:00 hour -> 8:00 mid (3.5),stop 1x target dist,fresh,143,51.7,51.7,-0.07,2.38,-0.019,1.0,-10.0,505.0,37.0,0/1
+8am third -> overnight extreme (3.2),stop 2x target dist,discovery,874,64.0,64.0,-4.16,8.0,-0.079,0.77,-3634.0,3833.0,47.6,1/6
+8am third -> overnight extreme (3.2),stop 2x target dist,holdout,185,74.6,74.6,11.21,22.75,0.089,1.56,2074.0,458.0,83.6,2/2
+8am third -> overnight extreme (3.2),stop 2x target dist,fresh,108,69.4,68.5,10.05,35.25,0.019,1.3,1086.0,840.0,124.7,1/1
+9:00 hour -> 8:00 mid (3.5),stop 2x target dist,discovery,1179,64.0,62.9,-0.21,5.12,-0.076,0.98,-246.0,1214.0,40.1,3/6
+9:00 hour -> 8:00 mid (3.5),stop 2x target dist,holdout,254,68.9,67.3,4.19,11.0,-0.008,1.34,1064.0,324.0,49.0,2/2
+9:00 hour -> 8:00 mid (3.5),stop 2x target dist,fresh,143,63.6,63.6,1.01,11.75,-0.051,1.05,145.0,372.0,73.9,1/1
+8am third -> overnight extreme (3.2),stop 3x target dist,discovery,874,71.2,71.1,-4.36,10.5,-0.071,0.78,-3813.0,4009.0,71.5,2/6
+8am third -> overnight extreme (3.2),stop 3x target dist,holdout,185,81.1,80.0,11.61,24.0,0.069,1.55,2148.0,662.0,125.4,2/2
+8am third -> overnight extreme (3.2),stop 3x target dist,fresh,108,75.9,75.0,7.18,38.38,0.003,1.18,776.0,1378.0,187.0,1/1
+9:00 hour -> 8:00 mid (3.5),stop 3x target dist,discovery,1179,71.3,69.9,0.19,6.62,-0.046,1.02,227.0,850.0,60.2,2/6
+9:00 hour -> 8:00 mid (3.5),stop 3x target dist,holdout,254,75.6,73.6,2.01,11.38,-0.013,1.13,510.0,504.0,73.6,2/2
+9:00 hour -> 8:00 mid (3.5),stop 3x target dist,fresh,143,74.1,74.1,3.97,16.12,0.007,1.2,568.0,472.0,110.9,1/1
+8am third -> overnight extreme (3.2),stop 5x target dist,discovery,874,78.9,78.8,-5.28,12.5,-0.045,0.76,-4614.0,5022.0,119.1,1/6
+8am third -> overnight extreme (3.2),stop 5x target dist,holdout,185,85.9,84.9,9.55,25.0,0.039,1.39,1768.0,1104.0,208.9,2/2
+8am third -> overnight extreme (3.2),stop 5x target dist,fresh,108,79.6,78.7,0.75,38.75,-0.02,1.02,81.0,2149.0,311.7,1/1
+9:00 hour -> 8:00 mid (3.5),stop 5x target dist,discovery,1179,77.2,75.7,0.59,7.38,-0.024,1.05,701.0,1029.0,100.3,2/6
+9:00 hour -> 8:00 mid (3.5),stop 5x target dist,holdout,254,84.6,81.1,3.24,12.12,0.023,1.22,822.0,640.0,122.6,2/2
+9:00 hour -> 8:00 mid (3.5),stop 5x target dist,fresh,143,80.4,80.4,1.13,16.88,0.008,1.05,161.0,732.0,184.8,1/1
+9:00 sweep continuation (3.5),stop 0.25x prev-hr range,discovery,1252,13.6,0.0,-4.46,-11.44,-0.28,0.66,-5588.0,5590.0,15.3,0/6
+9:00 sweep continuation (3.5),stop 0.25x prev-hr range,holdout,272,9.2,0.0,-9.29,-16.31,-0.349,0.52,-2528.0,2497.0,20.7,0/2
+9:00 sweep continuation (3.5),stop 0.25x prev-hr range,fresh,139,10.1,0.0,-8.62,-25.75,-0.135,0.7,-1198.0,2030.0,31.7,0/1
+"11-13 sweep of low, fade (3.5)",stop 0.25x prev-hr range,discovery,1456,34.1,0.0,-1.28,-12.62,-0.035,0.91,-1861.0,2144.0,23.0,2/6
+"11-13 sweep of low, fade (3.5)",stop 0.25x prev-hr range,holdout,298,30.9,0.0,-4.07,-17.41,-0.134,0.79,-1213.0,1637.0,32.8,0/2
+"11-13 sweep of low, fade (3.5)",stop 0.25x prev-hr range,fresh,161,31.1,0.0,-9.5,-26.88,-0.259,0.67,-1530.0,1816.0,46.3,0/1
+9:00 sweep continuation (3.5),stop 0.5x prev-hr range,discovery,1252,28.0,0.0,-2.97,-16.75,-0.049,0.85,-3719.0,4290.0,30.6,1/6
+9:00 sweep continuation (3.5),stop 0.5x prev-hr range,holdout,272,23.5,0.0,-4.65,-24.81,-0.038,0.84,-1264.0,1808.0,41.4,0/2
+9:00 sweep continuation (3.5),stop 0.5x prev-hr range,fresh,139,26.6,0.0,3.19,-41.5,0.045,1.08,444.0,1842.0,63.4,1/1
+"11-13 sweep of low, fade (3.5)",stop 0.5x prev-hr range,discovery,1456,48.1,0.0,-0.78,-2.12,-0.004,0.95,-1143.0,1563.0,46.0,2/6
+"11-13 sweep of low, fade (3.5)",stop 0.5x prev-hr range,holdout,298,45.6,0.0,-1.18,-5.88,-0.024,0.95,-351.0,1203.0,65.7,1/2
+"11-13 sweep of low, fade (3.5)",stop 0.5x prev-hr range,fresh,161,43.5,0.0,-9.19,-11.0,-0.133,0.74,-1480.0,1562.0,92.6,0/1
+9:00 sweep continuation (3.5),stop 1.0x prev-hr range,discovery,1252,42.0,0.0,-2.06,-13.38,0.006,0.91,-2584.0,2752.0,61.1,1/6
+9:00 sweep continuation (3.5),stop 1.0x prev-hr range,holdout,272,37.9,0.0,-2.98,-28.0,0.027,0.92,-811.0,1513.0,82.8,0/2
+9:00 sweep continuation (3.5),stop 1.0x prev-hr range,fresh,139,43.9,0.0,13.93,-32.25,0.141,1.29,1936.0,1166.0,126.7,1/1
+"11-13 sweep of low, fade (3.5)",stop 1.0x prev-hr range,discovery,1456,53.2,0.0,-0.39,3.25,-0.0,0.98,-564.0,1409.0,91.9,3/6
+"11-13 sweep of low, fade (3.5)",stop 1.0x prev-hr range,holdout,298,51.7,0.0,-0.44,1.25,-0.004,0.98,-130.0,1016.0,131.4,1/2
+"11-13 sweep of low, fade (3.5)",stop 1.0x prev-hr range,fresh,161,51.6,0.0,-1.86,1.25,-0.02,0.94,-300.0,800.0,185.2,0/1
