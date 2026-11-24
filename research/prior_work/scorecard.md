@@ -1,0 +1,2681 @@
+# NQ statistics: out-of-sample scorecard
+
+- Discovery: start of data to 2025-03-14 (everything your notebooks used)
+- Holdout: 2025-03-17 to 2026-04-29, unseen; shortlist frozen 2026-11-19 15:01:40 (sha256 `f26a1a9a2904`)
+- 87 tests, 7,097 cells scored, 2549 survived discovery
+
+## Verdicts
+
+| verdict | cells |
+|---|---|
+| HOLDS | 1073 |
+| CONSISTENT (not sig) | 519 |
+| FADED | 347 |
+| FLIPPED | 364 |
+| TOO FEW | 246 |
+
+### HOLDS (1073)
+
+| statistic | condition | benchmark | disc n | disc rate | disc bench | holdout n | holdout rate | holdout bench | retained |
+|---|---|---|---:|---:|---:|---:|---:|---:|---:|
+| C3 takes C2 high before C2 low (candle_4h) | lower (took C1 L) | C1 bear / C2 bull | beats random walk | 1070 | 81.0% | 77.2% | 96 | 87.5% | 78.4% | 2.36 |
+| C3 takes C2 high before C2 low (candle_1h) | outside | C2 closed below C1 L | beats random walk | 2079 | 11.4% | 14.8% | 183 | 5.5% | 12.8% | 2.11 |
+| C3 takes C2 high before C2 low (candle_1h) | outside | C1 bull / C2 bear | beats random walk | 2509 | 20.6% | 23.7% | 217 | 18.4% | 23.6% | 1.63 |
+| C3 takes C2 high before C2 low (candle_4h) | lower (took C1 L) | C2 closed inside C1 | beats random walk | 2327 | 68.2% | 65.2% | 204 | 73.5% | 67.5% | 1.97 |
+| C3 takes C2 high before C2 low (candle_1h) | higher (took C1 H) | C1 bear / C2 bull | beats random walk | 5810 | 75.3% | 72.5% | 453 | 79.7% | 74.1% | 1.99 |
+| C3 takes C2 high before C2 low (candle_1h) | lower (took C1 L) | C2 closed below C1 L | beats random walk | 11978 | 21.4% | 23.7% | 935 | 19.3% | 23.7% | 1.87 |
+| C3 takes C2 high before C2 low (candle_1h) | higher (took C1 H) | C2 closed above C1 H | beats random walk | 15047 | 80.6% | 78.4% | 1254 | 83.9% | 79.2% | 2.11 |
+| C3 takes C2 high before C2 low (candle_1h) | outside | C2 closed above C1 H | beats random walk | 2235 | 88.9% | 86.7% | 204 | 93.1% | 87.7% | 2.44 |
+| C3 takes C2 high before C2 low (candle_1h) | 11:00 | higher (took C1 H) | MECHANICAL (= random walk) | 1277 | 66.2% | 64.0% | 110 | 74.5% | 65.6% | 4.19 |
+| C3 takes C2 high before C2 low (candle_1h) | 04:00 | lower (took C1 L) | MECHANICAL (= random walk) | 1036 | 40.4% | 42.3% | 82 | 37.8% | 45.2% | 3.91 |
+| C3 takes C2 high before C2 low (candle_1h) | 06:00 | higher (took C1 H) | MECHANICAL (= random walk) | 1150 | 61.7% | 60.3% | 95 | 65.3% | 57.5% | 5.47 |
+| C3 takes C2 high before C2 low (candle_1h) | higher (took C1 H) | C1 bull / C2 bull | MECHANICAL (= random walk) | 15008 | 72.3% | 71.0% | 1263 | 74.7% | 71.7% | 2.26 |
+| C3 takes C2 high before C2 low (candle_1h) | lower (took C1 L) | C2 closed inside C1 | MECHANICAL (= random walk) | 10852 | 65.7% | 64.4% | 874 | 67.8% | 65.4% | 1.90 |
+| C3 takes C2 high before C2 low (candle_4h) | higher (took C1 H) | C2 closed above C1 H | MECHANICAL (= random walk) | 4257 | 80.5% | 79.4% | 363 | 83.2% | 79.3% | 3.41 |
+| C3 takes C2 high before C2 low (candle_4h) | lower (took C1 L) | C2 closed below C1 L | MECHANICAL (= random walk) | 2877 | 23.4% | 24.4% | 228 | 21.1% | 26.1% | 4.70 |
+| C3 takes C2 high before C2 low (candle_4h) | higher (took C1 H) | C1 bull / C2 bull | MECHANICAL (= random walk) | 3994 | 74.3% | 73.6% | 326 | 78.5% | 74.6% | 5.20 |
+| C3 takes C2 high before C2 low (candle_1h) | lower (took C1 L) | C1 bear / C2 bear | MECHANICAL (= random walk) | 11321 | 30.8% | 31.4% | 891 | 28.5% | 31.5% | 5.20 |
+| C3 takes C2 high before C2 low (candle_1h) | 00:00 | higher (took C1 H) | MECHANICAL (= random walk) | 1053 | 60.0% | 59.6% | 90 | 70.0% | 63.2% | 15.01 |
+| C3 takes C2 high before C2 low (candle_1h) | 19:00 | higher (took C1 H) | MECHANICAL (= random walk) | 853 | 58.1% | 57.8% | 91 | 71.4% | 64.6% | 19.58 |
+| C3 takes C2 high before C2 low (candle_1D) | lower (took C1 L) | C2 closed below C1 L | MECHANICAL (= random walk) | 455 | 23.3% | 23.0% | 30 | 40.0% | 25.9% | 44.86 |
+| C3 takes C2 high (candle_1h) | outside | C2 closed below C1 L | vs base rate | 2626 | 15.3% | 48.4% | 228 | 11.0% | 51.4% | 1.22 |
+| C3 takes C2 high (candle_1D) | lower (took C1 L) | C2 closed below C1 L | vs base rate | 600 | 23.2% | 56.2% | 44 | 38.6% | 56.0% | 0.53 |
+| C3 takes C2 high (candle_4h) | outside | C2 closed above C1 H | vs base rate | 1009 | 80.4% | 51.2% | 74 | 82.4% | 52.3% | 1.03 |
+| C3 takes C2 high (candle_4h) | outside | C2 closed below C1 L | vs base rate | 980 | 23.1% | 51.2% | 66 | 15.2% | 52.3% | 1.32 |
+| C3 takes C2 high (candle_1h) | outside | C2 closed above C1 H | vs base rate | 2696 | 74.8% | 48.4% | 238 | 80.7% | 51.4% | 1.11 |
+| C3 takes C2 high (candle_1h) | lower (took C1 L) | C2 closed below C1 L | vs base rate | 15545 | 22.8% | 48.4% | 1185 | 21.9% | 51.4% | 1.15 |
+| C3 takes C2 high (candle_1D) | higher (took C1 H) | C2 closed above C1 H | vs base rate | 1024 | 80.1% | 56.2% | 72 | 73.6% | 56.0% | 0.74 |
+| C3 takes C2 high (candle_4h) | lower (took C1 L) | C2 closed below C1 L | vs base rate | 3767 | 27.6% | 51.2% | 300 | 21.0% | 52.3% | 1.33 |
+| C3 takes C2 high (candle_4h) | higher (took C1 H) | C2 closed above C1 H | vs base rate | 5203 | 68.7% | 51.2% | 436 | 71.8% | 52.3% | 1.11 |
+| C3 takes C2 high (candle_1h) | higher (took C1 H) | C2 closed above C1 H | vs base rate | 19045 | 65.7% | 48.4% | 1498 | 72.6% | 51.4% | 1.23 |
+| C3 takes C2 high (candle_1h) | lower (took C1 L) | C2 closed inside C1 | vs base rate | 12965 | 59.6% | 48.4% | 1010 | 63.7% | 51.4% | 1.10 |
+| C3 takes C2 high (candle_4h) | higher (took C1 H) | C2 closed inside C1 | vs base rate | 3031 | 40.6% | 51.2% | 239 | 41.0% | 52.3% | 1.07 |
+| C3 takes C2 high (candle_4h) | lower (took C1 L) | C2 closed inside C1 | vs base rate | 2924 | 59.5% | 51.2% | 240 | 67.5% | 52.3% | 1.82 |
+| C3 takes C2 high (candle_1h) | higher (took C1 H) | C2 closed inside C1 | vs base rate | 13609 | 40.4% | 48.4% | 1123 | 44.0% | 51.4% | 0.92 |
+| C3 takes C2 high (candle_1h) | inside | C2 closed inside C1 | vs base rate | 14962 | 52.6% | 48.4% | 965 | 55.9% | 51.4% | 1.07 |
+| C3 takes C2 high (candle_1h) | outside | C2 closed inside C1 | vs base rate | 3713 | 45.0% | 48.4% | 311 | 42.1% | 51.4% | 2.68 |
+| C3 takes C2 low (candle_4h) | outside | C2 closed below C1 L | vs base rate | 967 | 74.8% | 44.1% | 65 | 81.5% | 44.0% | 1.22 |
+| C3 takes C2 low (candle_1h) | outside | C2 closed above C1 H | vs base rate | 2720 | 14.7% | 43.5% | 240 | 12.1% | 44.7% | 1.13 |
+| C3 takes C2 low (candle_1h) | outside | C2 closed below C1 L | vs base rate | 2586 | 71.9% | 43.5% | 224 | 77.2% | 44.7% | 1.15 |
+| C3 takes C2 low (candle_1D) | higher (took C1 H) | C2 closed above C1 H | vs base rate | 1060 | 19.7% | 42.6% | 77 | 23.4% | 40.3% | 0.74 |
+| C3 takes C2 low (candle_4h) | outside | C2 closed above C1 H | vs base rate | 1014 | 21.5% | 44.1% | 75 | 18.7% | 44.0% | 1.12 |
+| C3 takes C2 low (candle_1h) | higher (took C1 H) | C2 closed above C1 H | vs base rate | 19255 | 21.8% | 43.5% | 1510 | 20.3% | 44.7% | 1.12 |
+| C3 takes C2 low (candle_1D) | lower (took C1 L) | C2 closed below C1 L | vs base rate | 575 | 63.5% | 42.6% | 38 | 52.6% | 40.3% | 0.59 |
+| C3 takes C2 low (candle_1h) | lower (took C1 L) | C2 closed below C1 L | vs base rate | 15394 | 62.9% | 43.5% | 1176 | 66.0% | 44.7% | 1.10 |
+| C3 takes C2 low (candle_4h) | higher (took C1 H) | C2 closed above C1 H | vs base rate | 5271 | 25.6% | 44.1% | 447 | 26.8% | 44.0% | 0.93 |
+| C3 takes C2 low (candle_4h) | lower (took C1 L) | C2 closed below C1 L | vs base rate | 3724 | 62.4% | 44.1% | 292 | 64.0% | 44.0% | 1.09 |
+| C3 takes C2 low (candle_1D) | higher (took C1 H) | C2 closed inside C1 | vs base rate | 592 | 60.1% | 42.6% | 49 | 55.1% | 40.3% | 0.85 |
+| C3 takes C2 low (candle_1D) | inside | C2 closed inside C1 | vs base rate | 446 | 55.4% | 42.6% | 30 | 60.0% | 40.3% | 1.54 |
+| C3 takes C2 low (candle_4h) | higher (took C1 H) | C2 closed inside C1 | vs base rate | 3009 | 56.6% | 44.1% | 237 | 61.2% | 44.0% | 1.37 |
+| C3 takes C2 low (candle_1h) | higher (took C1 H) | C2 closed inside C1 | vs base rate | 13528 | 56.0% | 43.5% | 1124 | 58.0% | 44.7% | 1.07 |
+| C3 takes C2 low (candle_1h) | lower (took C1 L) | C2 closed inside C1 | vs base rate | 13078 | 35.8% | 43.5% | 1017 | 37.1% | 44.7% | 0.99 |
+| C3 takes C2 low (candle_1h) | inside | C2 closed inside C1 | vs base rate | 15040 | 48.0% | 43.5% | 962 | 50.8% | 44.7% | 1.35 |
+| Broken range travels >=1 width past edge (rangelab) (ranges) | 15 | 09:15 | 0.4-0.5 | vs base rate | 292 | 80.5% | 40.3% | 26 | 73.1% | 36.2% | 0.92 |
+| Broken range travels >=1 width past edge (rangelab) (ranges) | 15 | 09:15 | 0.8-0.9 | vs base rate | 459 | 78.2% | 40.3% | 29 | 69.0% | 36.2% | 0.86 |
+| Broken range travels >=1 width past edge (rangelab) (ranges) | 15 | 09:15 | 0.6-0.7 | vs base rate | 384 | 76.8% | 40.3% | 32 | 78.1% | 36.2% | 1.15 |
+| Broken range travels >=1 width past edge (rangelab) (ranges) | 30 | 09:00 | 0.8-0.9 | vs base rate | 441 | 76.0% | 40.3% | 27 | 63.0% | 36.2% | 0.75 |
+| Broken range travels >=1 width past edge (rangelab) (ranges) | 15 | 09:15 | 0.7-0.8 | vs base rate | 369 | 74.8% | 40.3% | 30 | 73.3% | 36.2% | 1.07 |
+| Broken range travels >=1 width past edge (rangelab) (ranges) | 60 | 07:00 | 0.8-0.9 | vs base rate | 442 | 74.4% | 40.3% | 41 | 65.9% | 36.2% | 0.87 |
+| Broken range travels >=1 width past edge (rangelab) (ranges) | 15 | 09:15 | 0.5-0.6 | vs base rate | 379 | 74.4% | 40.3% | 31 | 77.4% | 36.2% | 1.21 |
+| Broken range travels >=1 width past edge (rangelab) (ranges) | 15 | 09:15 | 0.3-0.4 | vs base rate | 348 | 74.1% | 40.3% | 35 | 71.4% | 36.2% | 1.04 |
+| Broken range travels >=1 width past edge (rangelab) (ranges) | 15 | 09:00 | 0.9-1.0 | vs base rate | 296 | 73.6% | 40.3% | 37 | 73.0% | 36.2% | 1.10 |
+| Broken range travels >=1 width past edge (rangelab) (ranges) | 15 | 09:00 | 0.4-0.5 | vs base rate | 330 | 73.0% | 40.3% | 25 | 72.0% | 36.2% | 1.09 |
+| Broken range travels >=1 width past edge (rangelab) (ranges) | 15 | 09:00 | 0.3-0.4 | vs base rate | 329 | 72.9% | 40.3% | 37 | 78.4% | 36.2% | 1.29 |
+| Broken range travels >=1 width past edge (rangelab) (ranges) | 15 | 09:00 | 0.8-0.9 | vs base rate | 424 | 72.6% | 40.3% | 29 | 65.5% | 36.2% | 0.90 |
+| Broken range travels >=1 width past edge (rangelab) (ranges) | 30 | 09:00 | 0.4-0.5 | vs base rate | 327 | 72.5% | 40.3% | 21 | 76.2% | 36.2% | 1.24 |
+| Broken range travels >=1 width past edge (rangelab) (ranges) | 15 | 09:00 | 0.7-0.8 | vs base rate | 394 | 72.3% | 40.3% | 30 | 80.0% | 36.2% | 1.36 |
+| Broken range travels >=1 width past edge (rangelab) (ranges) | 15 | 09:15 | 0.9-1.0 | vs base rate | 336 | 72.3% | 40.3% | 23 | 73.9% | 36.2% | 1.18 |
+| Broken range travels >=1 width past edge (rangelab) (ranges) | 60 | 07:00 | 0.4-0.5 | vs base rate | 346 | 72.3% | 40.3% | 42 | 57.1% | 36.2% | 0.65 |
+| Broken range travels >=1 width past edge (rangelab) (ranges) | 15 | 09:15 | 0.1-0.2 | vs base rate | 337 | 71.8% | 40.3% | 30 | 73.3% | 36.2% | 1.18 |
+| Broken range travels >=1 width past edge (rangelab) (ranges) | 15 | 09:15 | 0.0-0.1 | vs base rate | 364 | 71.7% | 40.3% | 22 | 68.2% | 36.2% | 1.02 |
+| Broken range travels >=1 width past edge (rangelab) (ranges) | 30 | 08:00 | 0.8-0.9 | vs base rate | 427 | 71.7% | 40.3% | 30 | 66.7% | 36.2% | 0.97 |
+| Broken range travels >=1 width past edge (rangelab) (ranges) | 60 | 07:00 | 0.7-0.8 | vs base rate | 418 | 71.5% | 40.3% | 31 | 64.5% | 36.2% | 0.90 |
+| Broken range travels >=1 width past edge (rangelab) (ranges) | 30 | 08:00 | 0.4-0.5 | vs base rate | 323 | 71.5% | 40.3% | 23 | 73.9% | 36.2% | 1.21 |
+| Broken range travels >=1 width past edge (rangelab) (ranges) | 30 | 09:00 | 0.0-0.1 | vs base rate | 347 | 71.5% | 40.3% | 29 | 79.3% | 36.2% | 1.38 |
+| Broken range travels >=1 width past edge (rangelab) (ranges) | 15 | 09:00 | 0.5-0.6 | vs base rate | 361 | 71.5% | 40.3% | 24 | 58.3% | 36.2% | 0.71 |
+| Broken range travels >=1 width past edge (rangelab) (ranges) | 60 | 07:00 | 0.6-0.7 | vs base rate | 394 | 71.3% | 40.3% | 23 | 65.2% | 36.2% | 0.93 |
+| Broken range travels >=1 width past edge (rangelab) (ranges) | 30 | 09:00 | 0.2-0.3 | vs base rate | 390 | 71.3% | 40.3% | 30 | 70.0% | 36.2% | 1.09 |
+| Broken range travels >=1 width past edge (rangelab) (ranges) | 60 | 07:00 | 0.5-0.6 | vs base rate | 382 | 71.2% | 40.3% | 29 | 58.6% | 36.2% | 0.72 |
+| Broken range travels >=1 width past edge (rangelab) (ranges) | 15 | 09:15 | 0.2-0.3 | vs base rate | 391 | 70.8% | 40.3% | 27 | 92.6% | 36.2% | 1.84 |
+| Broken range travels >=1 width past edge (rangelab) (ranges) | 30 | 09:00 | 0.6-0.7 | vs base rate | 360 | 70.8% | 40.3% | 32 | 75.0% | 36.2% | 1.27 |
+| Broken range travels >=1 width past edge (rangelab) (ranges) | 60 | 07:00 | 0.9-1.0 | vs base rate | 338 | 70.7% | 40.3% | 27 | 77.8% | 36.2% | 1.36 |
+| Broken range travels >=1 width past edge (rangelab) (ranges) | 15 | 08:45 | 0.7-0.8 | vs base rate | 368 | 70.7% | 40.3% | 26 | 76.9% | 36.2% | 1.34 |
+| Broken range travels >=1 width past edge (rangelab) (ranges) | 30 | 09:00 | 0.9-1.0 | vs base rate | 322 | 70.5% | 40.3% | 36 | 66.7% | 36.2% | 1.01 |
+| Broken range travels >=1 width past edge (rangelab) (ranges) | 15 | 09:00 | 0.2-0.3 | vs base rate | 381 | 70.1% | 40.3% | 35 | 65.7% | 36.2% | 0.99 |
+| Broken range travels >=1 width past edge (rangelab) (ranges) | 30 | 09:00 | 0.1-0.2 | vs base rate | 397 | 70.0% | 40.3% | 31 | 67.7% | 36.2% | 1.06 |
+| Broken range travels >=1 width past edge (rangelab) (ranges) | 15 | 09:00 | 0.0-0.1 | vs base rate | 362 | 69.9% | 40.3% | 22 | 72.7% | 36.2% | 1.23 |
+| Broken range travels >=1 width past edge (rangelab) (ranges) | 30 | 08:00 | 0.6-0.7 | vs base rate | 350 | 69.7% | 40.3% | 31 | 61.3% | 36.2% | 0.85 |
+| Broken range travels >=1 width past edge (rangelab) (ranges) | 15 | 09:00 | 0.1-0.2 | vs base rate | 392 | 69.6% | 40.3% | 32 | 65.6% | 36.2% | 1.00 |
+| Broken range travels >=1 width past edge (rangelab) (ranges) | 30 | 09:00 | 0.5-0.6 | vs base rate | 372 | 69.6% | 40.3% | 30 | 56.7% | 36.2% | 0.70 |
+| Broken range travels >=1 width past edge (rangelab) (ranges) | 30 | 08:00 | 0.5-0.6 | vs base rate | 351 | 69.2% | 40.3% | 28 | 67.9% | 36.2% | 1.09 |
+| Broken range travels >=1 width past edge (rangelab) (ranges) | 60 | 07:00 | 0.0-0.1 | vs base rate | 273 | 68.5% | 40.3% | 23 | 65.2% | 36.2% | 1.03 |
+| Broken range travels >=1 width past edge (rangelab) (ranges) | 30 | 09:00 | 0.7-0.8 | vs base rate | 415 | 68.4% | 40.3% | 33 | 63.6% | 36.2% | 0.97 |
+| Broken range travels >=1 width past edge (rangelab) (ranges) | 15 | 08:45 | 0.8-0.9 | vs base rate | 425 | 68.2% | 40.3% | 38 | 60.5% | 36.2% | 0.87 |
+| Broken range travels >=1 width past edge (rangelab) (ranges) | 15 | 08:45 | 0.2-0.3 | vs base rate | 384 | 68.2% | 40.3% | 25 | 72.0% | 36.2% | 1.28 |
+| Broken range travels >=1 width past edge (rangelab) (ranges) | 15 | 08:45 | 0.4-0.5 | vs base rate | 328 | 67.7% | 40.3% | 24 | 79.2% | 36.2% | 1.57 |
+| Broken range travels >=1 width past edge (rangelab) (ranges) | 60 | 07:00 | 0.1-0.2 | vs base rate | 384 | 67.4% | 40.3% | 24 | 70.8% | 36.2% | 1.27 |
+| Broken range travels >=1 width past edge (rangelab) (ranges) | 30 | 08:00 | 0.1-0.2 | vs base rate | 442 | 67.4% | 40.3% | 30 | 63.3% | 36.2% | 1.00 |
+| Broken range travels >=1 width past edge (rangelab) (ranges) | 15 | 16:00 | 0.9-1.0 | vs base rate | 99 | 13.1% | 40.3% | 25 | 8.0% | 36.2% | 1.04 |
+| Broken range travels >=1 width past edge (rangelab) (ranges) | 60 | 06:00 | 0.3-0.4 | vs base rate | 357 | 67.2% | 40.3% | 33 | 75.8% | 36.2% | 1.47 |
+| Broken range travels >=1 width past edge (rangelab) (ranges) | 30 | 08:00 | 0.9-1.0 | vs base rate | 320 | 67.2% | 40.3% | 33 | 66.7% | 36.2% | 1.13 |
+| Broken range travels >=1 width past edge (rangelab) (ranges) | 60 | 06:00 | 0.9-1.0 | vs base rate | 350 | 67.1% | 40.3% | 27 | 81.5% | 36.2% | 1.68 |
+| Broken range travels >=1 width past edge (rangelab) (ranges) | 15 | 02:45 | 0.9-1.0 | vs base rate | 231 | 67.1% | 40.3% | 26 | 50.0% | 36.2% | 0.51 |
+| Broken range travels >=1 width past edge (rangelab) (ranges) | 30 | 08:00 | 0.2-0.3 | vs base rate | 415 | 66.7% | 40.3% | 26 | 61.5% | 36.2% | 0.96 |
+| Broken range travels >=1 width past edge (rangelab) (ranges) | 60 | 06:00 | 0.0-0.1 | vs base rate | 306 | 66.7% | 40.3% | 22 | 54.5% | 36.2% | 0.69 |
+| Broken range travels >=1 width past edge (rangelab) (ranges) | 60 | 00:00 | 0.3-0.4 | vs base rate | 265 | 66.4% | 40.3% | 36 | 52.8% | 36.2% | 0.63 |
+| Broken range travels >=1 width past edge (rangelab) (ranges) | 60 | 06:00 | 0.5-0.6 | vs base rate | 335 | 66.3% | 40.3% | 22 | 72.7% | 36.2% | 1.40 |
+| Broken range travels >=1 width past edge (rangelab) (ranges) | 60 | 06:00 | 0.1-0.2 | vs base rate | 386 | 66.1% | 40.3% | 27 | 55.6% | 36.2% | 0.75 |
+| Broken range travels >=1 width past edge (rangelab) (ranges) | 15 | 08:45 | 0.6-0.7 | vs base rate | 360 | 65.8% | 40.3% | 23 | 56.5% | 36.2% | 0.79 |
+| Broken range travels >=1 width past edge (rangelab) (ranges) | 60 | 07:00 | 0.3-0.4 | vs base rate | 350 | 65.7% | 40.3% | 30 | 53.3% | 36.2% | 0.67 |
+| Broken range travels >=1 width past edge (rangelab) (ranges) | 30 | 08:00 | 0.3-0.4 | vs base rate | 338 | 65.7% | 40.3% | 30 | 66.7% | 36.2% | 1.20 |
+| Broken range travels >=1 width past edge (rangelab) (ranges) | 30 | 08:30 | 0.9-1.0 | vs base rate | 293 | 65.5% | 40.3% | 31 | 58.1% | 36.2% | 0.86 |
+| Broken range travels >=1 width past edge (rangelab) (ranges) | 60 | 06:00 | 0.8-0.9 | vs base rate | 461 | 65.5% | 40.3% | 35 | 54.3% | 36.2% | 0.71 |
+| Broken range travels >=1 width past edge (rangelab) (ranges) | 15 | 02:45 | 0.6-0.7 | vs base rate | 353 | 65.2% | 40.3% | 33 | 66.7% | 36.2% | 1.22 |
+| Broken range travels >=1 width past edge (rangelab) (ranges) | 15 | 15:45 | 0.9-1.0 | vs base rate | 78 | 15.4% | 40.3% | 24 | 12.5% | 36.2% | 0.95 |
+| Broken range travels >=1 width past edge (rangelab) (ranges) | 60 | 06:00 | 0.2-0.3 | vs base rate | 361 | 65.1% | 40.3% | 33 | 63.6% | 36.2% | 1.10 |
+| Broken range travels >=1 width past edge (rangelab) (ranges) | 60 | 06:00 | 0.6-0.7 | vs base rate | 389 | 65.0% | 40.3% | 31 | 61.3% | 36.2% | 1.01 |
+| Broken range travels >=1 width past edge (rangelab) (ranges) | 60 | 08:00 | 0.9-1.0 | vs base rate | 360 | 65.0% | 40.3% | 36 | 52.8% | 36.2% | 0.67 |
+| Broken range travels >=1 width past edge (rangelab) (ranges) | 30 | 08:00 | 0.7-0.8 | vs base rate | 381 | 64.8% | 40.3% | 33 | 66.7% | 36.2% | 1.24 |
+| Broken range travels >=1 width past edge (rangelab) (ranges) | 30 | 09:30 | 0.9-1.0 | vs base rate | 332 | 16.6% | 40.3% | 43 | 23.3% | 36.2% | 0.55 |
+| Broken range travels >=1 width past edge (rangelab) (ranges) | 15 | 08:45 | 0.3-0.4 | vs base rate | 390 | 63.8% | 40.3% | 27 | 70.4% | 36.2% | 1.45 |
+| Broken range travels >=1 width past edge (rangelab) (ranges) | 30 | 09:30 | 0.6-0.7 | vs base rate | 338 | 16.9% | 40.3% | 25 | 8.0% | 36.2% | 1.21 |
+| Broken range travels >=1 width past edge (rangelab) (ranges) | 60 | 01:00 | 0.4-0.5 | vs base rate | 310 | 63.5% | 40.3% | 28 | 53.6% | 36.2% | 0.74 |
+| Broken range travels >=1 width past edge (rangelab) (ranges) | 15 | 09:30 | 0.1-0.2 | vs base rate | 404 | 17.1% | 40.3% | 47 | 17.0% | 36.2% | 0.83 |
+| Broken range travels >=1 width past edge (rangelab) (ranges) | 60 | 06:00 | 0.7-0.8 | vs base rate | 415 | 63.4% | 40.3% | 26 | 69.2% | 36.2% | 1.43 |
+| Broken range travels >=1 width past edge (rangelab) (ranges) | 15 | 08:45 | 0.5-0.6 | vs base rate | 371 | 63.3% | 40.3% | 23 | 60.9% | 36.2% | 1.07 |
+| Broken range travels >=1 width past edge (rangelab) (ranges) | 30 | 08:30 | 0.2-0.3 | vs base rate | 390 | 63.3% | 40.3% | 30 | 63.3% | 36.2% | 1.17 |
+| Broken range travels >=1 width past edge (rangelab) (ranges) | 60 | 00:00 | 0.5-0.6 | vs base rate | 308 | 63.3% | 40.3% | 28 | 57.1% | 36.2% | 0.91 |
+| Broken range travels >=1 width past edge (rangelab) (ranges) | 30 | 01:30 | 0.0-0.1 | vs base rate | 293 | 63.1% | 40.3% | 26 | 61.5% | 36.2% | 1.11 |
+| Broken range travels >=1 width past edge (rangelab) (ranges) | 30 | 09:30 | 0.2-0.3 | vs base rate | 383 | 17.5% | 40.3% | 25 | 16.0% | 36.2% | 0.89 |
+| Broken range travels >=1 width past edge (rangelab) (ranges) | 15 | 08:45 | 0.0-0.1 | vs base rate | 319 | 63.0% | 40.3% | 30 | 63.3% | 36.2% | 1.19 |
+| Broken range travels >=1 width past edge (rangelab) (ranges) | 15 | 08:45 | 0.9-1.0 | vs base rate | 343 | 63.0% | 40.3% | 33 | 75.8% | 36.2% | 1.74 |
+| Broken range travels >=1 width past edge (rangelab) (ranges) | 60 | 10:00 | 0.1-0.2 | vs base rate | 386 | 17.6% | 40.3% | 24 | 16.7% | 36.2% | 0.86 |
+| Broken range travels >=1 width past edge (rangelab) (ranges) | 60 | 10:00 | 0.0-0.1 | vs base rate | 289 | 17.6% | 40.3% | 35 | 22.9% | 36.2% | 0.59 |
+| Broken range travels >=1 width past edge (rangelab) (ranges) | 15 | 08:45 | 0.1-0.2 | vs base rate | 381 | 62.7% | 40.3% | 38 | 52.6% | 36.2% | 0.73 |
+| Broken range travels >=1 width past edge (rangelab) (ranges) | 60 | 06:00 | 0.4-0.5 | vs base rate | 305 | 62.6% | 40.3% | 24 | 62.5% | 36.2% | 1.17 |
+| Broken range travels >=1 width past edge (rangelab) (ranges) | 60 | 08:00 | 0.8-0.9 | vs base rate | 439 | 62.4% | 40.3% | 35 | 65.7% | 36.2% | 1.33 |
+| Broken range travels >=1 width past edge (rangelab) (ranges) | 60 | 08:00 | 0.6-0.7 | vs base rate | 333 | 62.2% | 40.3% | 32 | 62.5% | 36.2% | 1.20 |
+| Broken range travels >=1 width past edge (rangelab) (ranges) | 30 | 09:30 | 0.7-0.8 | vs base rate | 354 | 18.4% | 40.3% | 27 | 7.4% | 36.2% | 1.32 |
+| Broken range travels >=1 width past edge (rangelab) (ranges) | 60 | 00:00 | 0.6-0.7 | vs base rate | 319 | 62.1% | 40.3% | 31 | 64.5% | 36.2% | 1.30 |
+| Broken range travels >=1 width past edge (rangelab) (ranges) | 30 | 08:30 | 0.3-0.4 | vs base rate | 379 | 62.0% | 40.3% | 22 | 63.6% | 36.2% | 1.26 |
+| Broken range travels >=1 width past edge (rangelab) (ranges) | 30 | 08:30 | 0.8-0.9 | vs base rate | 401 | 61.8% | 40.3% | 36 | 50.0% | 36.2% | 0.64 |
+| Broken range travels >=1 width past edge (rangelab) (ranges) | 60 | 01:00 | 0.3-0.4 | vs base rate | 313 | 61.7% | 40.3% | 34 | 47.1% | 36.2% | 0.51 |
+| Broken range travels >=1 width past edge (rangelab) (ranges) | 60 | 08:00 | 0.7-0.8 | vs base rate | 398 | 61.6% | 40.3% | 26 | 57.7% | 36.2% | 1.01 |
+| Broken range travels >=1 width past edge (rangelab) (ranges) | 60 | 10:00 | 0.8-0.9 | vs base rate | 474 | 19.0% | 40.3% | 30 | 13.3% | 36.2% | 1.08 |
+| Broken range travels >=1 width past edge (rangelab) (ranges) | 60 | 08:00 | 0.5-0.6 | vs base rate | 361 | 61.5% | 40.3% | 24 | 50.0% | 36.2% | 0.65 |
+| Broken range travels >=1 width past edge (rangelab) (ranges) | 15 | 02:45 | 0.7-0.8 | vs base rate | 335 | 61.5% | 40.3% | 34 | 55.9% | 36.2% | 0.93 |
+| Broken range travels >=1 width past edge (rangelab) (ranges) | 60 | 10:00 | 0.9-1.0 | vs base rate | 466 | 19.3% | 40.3% | 45 | 17.8% | 36.2% | 0.88 |
+| Broken range travels >=1 width past edge (rangelab) (ranges) | 60 | 21:00 | 0.1-0.2 | vs base rate | 234 | 19.7% | 40.3% | 26 | 19.2% | 36.2% | 0.83 |
+| Broken range travels >=1 width past edge (rangelab) (ranges) | 30 | 01:30 | 0.4-0.5 | vs base rate | 274 | 60.6% | 40.3% | 29 | 48.3% | 36.2% | 0.59 |
+| Broken range travels >=1 width past edge (rangelab) (ranges) | 60 | 10:00 | 0.7-0.8 | vs base rate | 334 | 20.1% | 40.3% | 30 | 13.3% | 36.2% | 1.13 |
+| Broken range travels >=1 width past edge (rangelab) (ranges) | 60 | 08:00 | 0.3-0.4 | vs base rate | 356 | 60.4% | 40.3% | 26 | 57.7% | 36.2% | 1.07 |
+| Broken range travels >=1 width past edge (rangelab) (ranges) | 15 | 09:30 | 0.7-0.8 | vs base rate | 364 | 20.6% | 40.3% | 21 | 9.5% | 36.2% | 1.36 |
+| Broken range travels >=1 width past edge (rangelab) (ranges) | 30 | 09:30 | 0.1-0.2 | vs base rate | 359 | 20.6% | 40.3% | 44 | 9.1% | 36.2% | 1.38 |
+| Broken range travels >=1 width past edge (rangelab) (ranges) | 15 | 02:45 | 0.3-0.4 | vs base rate | 319 | 59.9% | 40.3% | 26 | 61.5% | 36.2% | 1.29 |
+| Broken range travels >=1 width past edge (rangelab) (ranges) | 60 | 10:00 | 0.4-0.5 | vs base rate | 256 | 20.7% | 40.3% | 20 | 20.0% | 36.2% | 0.83 |
+| Broken range travels >=1 width past edge (rangelab) (ranges) | 30 | 08:30 | 0.1-0.2 | vs base rate | 349 | 59.6% | 40.3% | 32 | 62.5% | 36.2% | 1.36 |
+| Broken range travels >=1 width past edge (rangelab) (ranges) | 15 | 09:30 | 0.9-1.0 | vs base rate | 319 | 21.0% | 40.3% | 40 | 20.0% | 36.2% | 0.84 |
+| Broken range travels >=1 width past edge (rangelab) (ranges) | 30 | 08:30 | 0.4-0.5 | vs base rate | 340 | 59.4% | 40.3% | 33 | 60.6% | 36.2% | 1.27 |
+| Broken range travels >=1 width past edge (rangelab) (ranges) | 15 | 09:30 | 0.4-0.5 | vs base rate | 314 | 21.3% | 40.3% | 21 | 14.3% | 36.2% | 1.16 |
+| Broken range travels >=1 width past edge (rangelab) (ranges) | 60 | Q1 narrow | vs base rate | 9283 | 59.2% | 40.3% | 864 | 52.9% | 36.2% | 0.88 |
+| Broken range travels >=1 width past edge (rangelab) (ranges) | 15 | 09:30 | 0.8-0.9 | vs base rate | 424 | 21.5% | 40.3% | 35 | 17.1% | 36.2% | 1.02 |
+| Broken range travels >=1 width past edge (rangelab) (ranges) | 60 | 00:00 | 0.1-0.2 | vs base rate | 282 | 58.9% | 40.3% | 34 | 58.8% | 36.2% | 1.21 |
+| Broken range travels >=1 width past edge (rangelab) (ranges) | 15 | 02:30 | 0.3-0.4 | vs base rate | 275 | 58.5% | 40.3% | 28 | 50.0% | 36.2% | 0.75 |
+| Broken range travels >=1 width past edge (rangelab) (ranges) | 30 | 09:30 | 0.3-0.4 | vs base rate | 380 | 22.1% | 40.3% | 27 | 3.7% | 36.2% | 1.79 |
+| Broken range travels >=1 width past edge (rangelab) (ranges) | 30 | 11:00 | 0.2-0.3 | vs base rate | 383 | 22.2% | 40.3% | 29 | 24.1% | 36.2% | 0.67 |
+| Broken range travels >=1 width past edge (rangelab) (ranges) | 30 | 08:30 | 0.5-0.6 | vs base rate | 400 | 58.2% | 40.3% | 31 | 67.7% | 36.2% | 1.75 |
+| Broken range travels >=1 width past edge (rangelab) (ranges) | 30 | 09:30 | 0.8-0.9 | vs base rate | 411 | 22.4% | 40.3% | 27 | 14.8% | 36.2% | 1.20 |
+| Broken range travels >=1 width past edge (rangelab) (ranges) | 60 | Q5 wide | vs base rate | 13412 | 22.4% | 40.3% | 939 | 17.4% | 36.2% | 1.06 |
+| Broken range travels >=1 width past edge (rangelab) (ranges) | 60 | 08:00 | 0.2-0.3 | vs base rate | 363 | 57.9% | 40.3% | 31 | 48.4% | 36.2% | 0.69 |
+| Broken range travels >=1 width past edge (rangelab) (ranges) | 30 | 01:30 | 0.2-0.3 | vs base rate | 355 | 57.7% | 40.3% | 34 | 50.0% | 36.2% | 0.79 |
+| Broken range travels >=1 width past edge (rangelab) (ranges) | 30 | 08:30 | 0.6-0.7 | vs base rate | 407 | 57.7% | 40.3% | 29 | 55.2% | 36.2% | 1.08 |
+| Broken range travels >=1 width past edge (rangelab) (ranges) | 60 | 21:00 | 0.2-0.3 | vs base rate | 210 | 22.9% | 40.3% | 28 | 17.9% | 36.2% | 1.06 |
+| Broken range travels >=1 width past edge (rangelab) (ranges) | 60 | 01:00 | 0.7-0.8 | vs base rate | 347 | 57.6% | 40.3% | 29 | 51.7% | 36.2% | 0.89 |
+| Broken range travels >=1 width past edge (rangelab) (ranges) | 15 | 02:45 | 0.0-0.1 | vs base rate | 394 | 57.6% | 40.3% | 22 | 50.0% | 36.2% | 0.79 |
+| Broken range travels >=1 width past edge (rangelab) (ranges) | 30 | 10:00 | 0.1-0.2 | vs base rate | 387 | 23.0% | 40.3% | 24 | 16.7% | 36.2% | 1.13 |
+| Broken range travels >=1 width past edge (rangelab) (ranges) | 15 | 09:30 | 0.6-0.7 | vs base rate | 334 | 23.1% | 40.3% | 24 | 8.3% | 36.2% | 1.62 |
+| Broken range travels >=1 width past edge (rangelab) (ranges) | 30 | 00:30 | 0.6-0.7 | vs base rate | 258 | 57.4% | 40.3% | 30 | 53.3% | 36.2% | 1.00 |
+| Broken range travels >=1 width past edge (rangelab) (ranges) | 30 | 10:30 | 0.0-0.1 | vs base rate | 348 | 23.3% | 40.3% | 24 | 16.7% | 36.2% | 1.15 |
+| Broken range travels >=1 width past edge (rangelab) (ranges) | 15 | 09:30 | 0.3-0.4 | vs base rate | 304 | 23.4% | 40.3% | 26 | 15.4% | 36.2% | 1.23 |
+| Broken range travels >=1 width past edge (rangelab) (ranges) | 15 | Q5 wide | vs base rate | 59950 | 23.4% | 40.3% | 4517 | 20.2% | 36.2% | 0.95 |
+| Broken range travels >=1 width past edge (rangelab) (ranges) | 15 | Q1 narrow | vs base rate | 38222 | 57.0% | 40.3% | 3759 | 52.4% | 36.2% | 0.96 |
+| Broken range travels >=1 width past edge (rangelab) (ranges) | 30 | Q5 wide | vs base rate | 28910 | 23.7% | 40.3% | 2129 | 19.7% | 36.2% | 1.00 |
+| Broken range travels >=1 width past edge (rangelab) (ranges) | 60 | 01:00 | 0.1-0.2 | vs base rate | 324 | 56.8% | 40.3% | 28 | 75.0% | 36.2% | 2.34 |
+| Broken range travels >=1 width past edge (rangelab) (ranges) | 60 | 11:00 | 0.0-0.1 | vs base rate | 344 | 23.8% | 40.3% | 32 | 18.8% | 36.2% | 1.06 |
+| Broken range travels >=1 width past edge (rangelab) (ranges) | 30 | 01:30 | 0.8-0.9 | vs base rate | 389 | 56.6% | 40.3% | 36 | 50.0% | 36.2% | 0.84 |
+| Broken range travels >=1 width past edge (rangelab) (ranges) | 15 | 09:30 | 0.2-0.3 | vs base rate | 428 | 24.1% | 40.3% | 24 | 16.7% | 36.2% | 1.21 |
+| Broken range travels >=1 width past edge (rangelab) (ranges) | 15 | 10:00 | 0.1-0.2 | vs base rate | 356 | 24.2% | 40.3% | 24 | 20.8% | 36.2% | 0.96 |
+| Broken range travels >=1 width past edge (rangelab) (ranges) | 60 | 20:00 | 0.4-0.5 | vs base rate | 198 | 24.2% | 40.3% | 28 | 17.9% | 36.2% | 1.15 |
+| Broken range travels >=1 width past edge (rangelab) (ranges) | 30 | 02:30 | 0.9-1.0 | vs base rate | 327 | 56.3% | 40.3% | 43 | 48.8% | 36.2% | 0.79 |
+| Broken range travels >=1 width past edge (rangelab) (ranges) | 15 | 02:45 | 0.8-0.9 | vs base rate | 402 | 56.2% | 40.3% | 35 | 57.1% | 36.2% | 1.31 |
+| Broken range travels >=1 width past edge (rangelab) (ranges) | 30 | 11:30 | 0.4-0.5 | vs base rate | 300 | 24.3% | 40.3% | 22 | 22.7% | 36.2% | 0.85 |
+| Broken range travels >=1 width past edge (rangelab) (ranges) | 60 | 00:00 | 0.9-1.0 | vs base rate | 214 | 56.1% | 40.3% | 27 | 51.9% | 36.2% | 0.99 |
+| Broken range travels >=1 width past edge (rangelab) (ranges) | 60 | 09:00 | 0.0-0.1 | vs base rate | 327 | 24.5% | 40.3% | 26 | 19.2% | 36.2% | 1.08 |
+| Broken range travels >=1 width past edge (rangelab) (ranges) | 30 | 02:30 | 0.5-0.6 | vs base rate | 359 | 56.0% | 40.3% | 22 | 68.2% | 36.2% | 2.03 |
+| Broken range travels >=1 width past edge (rangelab) (ranges) | 30 | Q1 narrow | vs base rate | 18487 | 56.0% | 40.3% | 1815 | 51.4% | 36.2% | 0.96 |
+| Broken range travels >=1 width past edge (rangelab) (ranges) | 60 | 03:00 | 0.5-0.6 | vs base rate | 369 | 24.7% | 40.3% | 27 | 14.8% | 36.2% | 1.37 |
+| Broken range travels >=1 width past edge (rangelab) (ranges) | 30 | 10:00 | 0.6-0.7 | vs base rate | 296 | 24.7% | 40.3% | 25 | 16.0% | 36.2% | 1.30 |
+| Broken range travels >=1 width past edge (rangelab) (ranges) | 30 | 03:00 | 0.8-0.9 | vs base rate | 395 | 24.8% | 40.3% | 22 | 22.7% | 36.2% | 0.87 |
+| Broken range travels >=1 width past edge (rangelab) (ranges) | 30 | 10:00 | 0.0-0.1 | vs base rate | 298 | 24.8% | 40.3% | 36 | 19.4% | 36.2% | 1.09 |
+| Broken range travels >=1 width past edge (rangelab) (ranges) | 30 | 10:00 | 0.9-1.0 | vs base rate | 487 | 24.8% | 40.3% | 48 | 25.0% | 36.2% | 0.73 |
+| Broken range travels >=1 width past edge (rangelab) (ranges) | 15 | 19:45 | 0.3-0.4 | vs base rate | 230 | 55.7% | 40.3% | 30 | 53.3% | 36.2% | 1.11 |
+| Broken range travels >=1 width past edge (rangelab) (ranges) | 30 | 10:30 | 0.5-0.6 | vs base rate | 293 | 24.9% | 40.3% | 26 | 23.1% | 36.2% | 0.86 |
+| Broken range travels >=1 width past edge (rangelab) (ranges) | 60 | 03:00 | 0.0-0.1 | vs base rate | 309 | 24.9% | 40.3% | 23 | 21.7% | 36.2% | 0.95 |
+| Broken range travels >=1 width past edge (rangelab) (ranges) | 15 | 10:00 | 0.9-1.0 | vs base rate | 443 | 25.1% | 40.3% | 46 | 21.7% | 36.2% | 0.95 |
+| Broken range travels >=1 width past edge (rangelab) (ranges) | 30 | 03:00 | 0.0-0.1 | vs base rate | 322 | 25.2% | 40.3% | 27 | 22.2% | 36.2% | 0.93 |
+| Broken range travels >=1 width past edge (rangelab) (ranges) | 60 | 11:00 | 0.5-0.6 | vs base rate | 286 | 25.2% | 40.3% | 29 | 17.2% | 36.2% | 1.26 |
+| Broken range travels >=1 width past edge (rangelab) (ranges) | 15 | 01:45 | 0.8-0.9 | vs base rate | 340 | 55.3% | 40.3% | 35 | 54.3% | 36.2% | 1.20 |
+| Broken range travels >=1 width past edge (rangelab) (ranges) | 15 | 10:00 | 0.0-0.1 | vs base rate | 317 | 25.2% | 40.3% | 37 | 24.3% | 36.2% | 0.79 |
+| Broken range travels >=1 width past edge (rangelab) (ranges) | 30 | 22:00 | 0.9-1.0 | vs base rate | 210 | 25.2% | 40.3% | 36 | 8.3% | 36.2% | 1.86 |
+| Broken range travels >=1 width past edge (rangelab) (ranges) | 30 | 11:00 | 0.7-0.8 | vs base rate | 369 | 25.5% | 40.3% | 26 | 11.5% | 36.2% | 1.67 |
+| Broken range travels >=1 width past edge (rangelab) (ranges) | 15 | 14:00 | 0.4-0.5 | vs base rate | 259 | 25.5% | 40.3% | 22 | 18.2% | 36.2% | 1.22 |
+| Broken range travels >=1 width past edge (rangelab) (ranges) | 60 | 11:00 | 0.3-0.4 | vs base rate | 325 | 25.5% | 40.3% | 23 | 17.4% | 36.2% | 1.28 |
+| Broken range travels >=1 width past edge (rangelab) (ranges) | 15 | 19:15 | 0.4-0.5 | vs base rate | 208 | 54.8% | 40.3% | 27 | 55.6% | 36.2% | 1.33 |
+| Broken range travels >=1 width past edge (rangelab) (ranges) | 15 | 04:00 | 0.9-1.0 | vs base rate | 241 | 25.7% | 40.3% | 22 | 18.2% | 36.2% | 1.24 |
+| Broken range travels >=1 width past edge (rangelab) (ranges) | 30 | 22:00 | 0.1-0.2 | vs base rate | 241 | 25.7% | 40.3% | 33 | 24.2% | 36.2% | 0.83 |
+| Broken range travels >=1 width past edge (rangelab) (ranges) | 60 | 01:00 | 0.5-0.6 | vs base rate | 336 | 54.8% | 40.3% | 20 | 75.0% | 36.2% | 2.67 |
+| Broken range travels >=1 width past edge (rangelab) (ranges) | 30 | 00:30 | 0.8-0.9 | vs base rate | 274 | 54.7% | 40.3% | 34 | 55.9% | 36.2% | 1.36 |
+| Broken range travels >=1 width past edge (rangelab) (ranges) | 30 | 21:30 | 0.9-1.0 | vs base rate | 194 | 25.8% | 40.3% | 32 | 18.8% | 36.2% | 1.21 |
+| Broken range travels >=1 width past edge (rangelab) (ranges) | 30 | 21:30 | 0.7-0.8 | vs base rate | 247 | 25.9% | 40.3% | 25 | 20.0% | 36.2% | 1.13 |
+| Broken range travels >=1 width past edge (rangelab) (ranges) | 30 | 02:30 | 0.7-0.8 | vs base rate | 365 | 54.5% | 40.3% | 42 | 59.5% | 36.2% | 1.63 |
+| Broken range travels >=1 width past edge (rangelab) (ranges) | 60 | 00:00 | 0.4-0.5 | vs base rate | 268 | 54.5% | 40.3% | 28 | 53.6% | 36.2% | 1.22 |
+| Broken range travels >=1 width past edge (rangelab) (ranges) | 60 | 03:00 | 0.7-0.8 | vs base rate | 364 | 26.1% | 40.3% | 36 | 22.2% | 36.2% | 0.99 |
+| Broken range travels >=1 width past edge (rangelab) (ranges) | 60 | 20:00 | 0.0-0.1 | vs base rate | 160 | 26.2% | 40.3% | 20 | 15.0% | 36.2% | 1.52 |
+| Broken range travels >=1 width past edge (rangelab) (ranges) | 15 | 09:45 | 0.2-0.3 | vs base rate | 396 | 26.3% | 40.3% | 29 | 24.1% | 36.2% | 0.86 |
+| Broken range travels >=1 width past edge (rangelab) (ranges) | 60 | 09:00 | 0.5-0.6 | vs base rate | 322 | 26.4% | 40.3% | 28 | 21.4% | 36.2% | 1.07 |
+| Broken range travels >=1 width past edge (rangelab) (ranges) | 30 | 10:30 | 0.8-0.9 | vs base rate | 476 | 26.5% | 40.3% | 30 | 13.3% | 36.2% | 1.66 |
+| Broken range travels >=1 width past edge (rangelab) (ranges) | 15 | 02:30 | 0.8-0.9 | vs base rate | 410 | 53.9% | 40.3% | 46 | 45.7% | 36.2% | 0.69 |
+| Broken range travels >=1 width past edge (rangelab) (ranges) | 60 | 11:00 | 0.4-0.5 | vs base rate | 274 | 26.6% | 40.3% | 21 | 14.3% | 36.2% | 1.61 |
+| Broken range travels >=1 width past edge (rangelab) (ranges) | 15 | 22:00 | 0.4-0.5 | vs base rate | 210 | 26.7% | 40.3% | 30 | 20.0% | 36.2% | 1.19 |
+| Broken range travels >=1 width past edge (rangelab) (ranges) | 15 | 07:45 | 0.4-0.5 | vs base rate | 283 | 53.7% | 40.3% | 28 | 50.0% | 36.2% | 1.02 |
+| Broken range travels >=1 width past edge (rangelab) (ranges) | 60 | 08:00 | 0.4-0.5 | vs base rate | 339 | 53.7% | 40.3% | 33 | 66.7% | 36.2% | 2.27 |
+| Broken range travels >=1 width past edge (rangelab) (ranges) | 30 | 11:30 | 0.2-0.3 | vs base rate | 314 | 27.1% | 40.3% | 24 | 20.8% | 36.2% | 1.17 |
+| Broken range travels >=1 width past edge (rangelab) (ranges) | 30 | 02:30 | 0.6-0.7 | vs base rate | 360 | 53.3% | 40.3% | 28 | 60.7% | 36.2% | 1.87 |
+| Broken range travels >=1 width past edge (rangelab) (ranges) | 30 | 10:30 | 0.3-0.4 | vs base rate | 320 | 27.2% | 40.3% | 23 | 21.7% | 36.2% | 1.11 |
+| Broken range travels >=1 width past edge (rangelab) (ranges) | 60 | 09:00 | 0.1-0.2 | vs base rate | 385 | 27.3% | 40.3% | 31 | 19.4% | 36.2% | 1.30 |
+| Broken range travels >=1 width past edge (rangelab) (ranges) | 15 | 07:45 | 0.8-0.9 | vs base rate | 406 | 53.2% | 40.3% | 30 | 56.7% | 36.2% | 1.58 |
+| Broken range travels >=1 width past edge (rangelab) (ranges) | 30 | 21:30 | 0.0-0.1 | vs base rate | 183 | 27.3% | 40.3% | 21 | 19.0% | 36.2% | 1.33 |
+| Broken range travels >=1 width past edge (rangelab) (ranges) | 30 | 19:30 | 0.5-0.6 | vs base rate | 249 | 53.0% | 40.3% | 33 | 48.5% | 36.2% | 0.96 |
+| Broken range travels >=1 width past edge (rangelab) (ranges) | 30 | 00:30 | 0.9-1.0 | vs base rate | 183 | 53.0% | 40.3% | 29 | 55.2% | 36.2% | 1.49 |
+| Broken range travels >=1 width past edge (rangelab) (ranges) | 15 | 08:15 | 0.6-0.7 | vs base rate | 334 | 53.0% | 40.3% | 23 | 52.2% | 36.2% | 1.25 |
+| Broken range travels >=1 width past edge (rangelab) (ranges) | 15 | 01:45 | 0.6-0.7 | vs base rate | 308 | 52.9% | 40.3% | 27 | 51.9% | 36.2% | 1.23 |
+| Broken range travels >=1 width past edge (rangelab) (ranges) | 30 | 10:30 | 0.2-0.3 | vs base rate | 344 | 27.6% | 40.3% | 23 | 21.7% | 36.2% | 1.15 |
+| Broken range travels >=1 width past edge (rangelab) (ranges) | 60 | 09:00 | 0.3-0.4 | vs base rate | 362 | 27.6% | 40.3% | 23 | 17.4% | 36.2% | 1.49 |
+| Broken range travels >=1 width past edge (rangelab) (ranges) | 15 | 07:45 | 0.7-0.8 | vs base rate | 390 | 52.8% | 40.3% | 22 | 63.6% | 36.2% | 2.18 |
+| Broken range travels >=1 width past edge (rangelab) (ranges) | 60 | 20:00 | 0.7-0.8 | vs base rate | 263 | 27.8% | 40.3% | 29 | 17.2% | 36.2% | 1.52 |
+| Broken range travels >=1 width past edge (rangelab) (ranges) | 30 | 11:00 | 0.1-0.2 | vs base rate | 367 | 27.8% | 40.3% | 34 | 20.6% | 36.2% | 1.26 |
+| Broken range travels >=1 width past edge (rangelab) (ranges) | 15 | 09:45 | 0.4-0.5 | vs base rate | 259 | 27.8% | 40.3% | 28 | 17.9% | 36.2% | 1.48 |
+| Broken range travels >=1 width past edge (rangelab) (ranges) | 30 | 01:30 | 0.9-1.0 | vs base rate | 226 | 52.7% | 40.3% | 27 | 55.6% | 36.2% | 1.56 |
+| Broken range travels >=1 width past edge (rangelab) (ranges) | 15 | 19:30 | 0.4-0.5 | vs base rate | 211 | 52.6% | 40.3% | 31 | 67.7% | 36.2% | 2.55 |
+| Broken range travels >=1 width past edge (rangelab) (ranges) | 15 | 02:30 | 0.4-0.5 | vs base rate | 282 | 52.5% | 40.3% | 22 | 54.5% | 36.2% | 1.50 |
+| Broken range travels >=1 width past edge (rangelab) (ranges) | 60 | Q2 | vs base rate | 12060 | 52.4% | 40.3% | 1304 | 44.7% | 36.2% | 0.70 |
+| Broken range travels >=1 width past edge (rangelab) (ranges) | 30 | 19:30 | 0.8-0.9 | vs base rate | 334 | 52.4% | 40.3% | 36 | 58.3% | 36.2% | 1.82 |
+| Broken range travels >=1 width past edge (rangelab) (ranges) | 30 | 07:30 | 0.7-0.8 | vs base rate | 403 | 52.4% | 40.3% | 31 | 64.5% | 36.2% | 2.34 |
+| Broken range travels >=1 width past edge (rangelab) (ranges) | 15 | 10:30 | 0.0-0.1 | vs base rate | 349 | 28.4% | 40.3% | 24 | 16.7% | 36.2% | 1.65 |
+| Broken range travels >=1 width past edge (rangelab) (ranges) | 15 | 00:15 | 0.3-0.4 | vs base rate | 234 | 52.1% | 40.3% | 25 | 52.0% | 36.2% | 1.33 |
+| Broken range travels >=1 width past edge (rangelab) (ranges) | 30 | 11:30 | 0.8-0.9 | vs base rate | 468 | 28.4% | 40.3% | 36 | 22.2% | 36.2% | 1.18 |
+| Broken range travels >=1 width past edge (rangelab) (ranges) | 30 | 11:30 | 0.7-0.8 | vs base rate | 390 | 28.5% | 40.3% | 31 | 22.6% | 36.2% | 1.16 |
+| Broken range travels >=1 width past edge (rangelab) (ranges) | 30 | 10:30 | 0.1-0.2 | vs base rate | 323 | 28.5% | 40.3% | 29 | 13.8% | 36.2% | 1.91 |
+| Broken range travels >=1 width past edge (rangelab) (ranges) | 15 | 10:30 | 0.5-0.6 | vs base rate | 312 | 28.5% | 40.3% | 22 | 22.7% | 36.2% | 1.15 |
+| Broken range travels >=1 width past edge (rangelab) (ranges) | 15 | 10:45 | 0.2-0.3 | vs base rate | 354 | 28.5% | 40.3% | 23 | 17.4% | 36.2% | 1.61 |
+| Broken range travels >=1 width past edge (rangelab) (ranges) | 15 | 19:45 | 0.5-0.6 | vs base rate | 256 | 52.0% | 40.3% | 30 | 56.7% | 36.2% | 1.75 |
+| Broken range travels >=1 width past edge (rangelab) (ranges) | 30 | 11:00 | 0.3-0.4 | vs base rate | 308 | 28.6% | 40.3% | 29 | 17.2% | 36.2% | 1.63 |
+| Broken range travels >=1 width past edge (rangelab) (ranges) | 30 | 10:00 | 0.8-0.9 | vs base rate | 489 | 28.6% | 40.3% | 33 | 15.2% | 36.2% | 1.81 |
+| Broken range travels >=1 width past edge (rangelab) (ranges) | 60 | 19:00 | 0.6-0.7 | vs base rate | 295 | 51.9% | 40.3% | 21 | 57.1% | 36.2% | 1.80 |
+| Broken range travels >=1 width past edge (rangelab) (ranges) | 15 | 03:00 | 0.3-0.4 | vs base rate | 303 | 28.7% | 40.3% | 25 | 12.0% | 36.2% | 2.10 |
+| Broken range travels >=1 width past edge (rangelab) (ranges) | 30 | 22:00 | 0.3-0.4 | vs base rate | 195 | 28.7% | 40.3% | 23 | 17.4% | 36.2% | 1.63 |
+| Broken range travels >=1 width past edge (rangelab) (ranges) | 15 | 19:45 | 0.9-1.0 | vs base rate | 195 | 51.8% | 40.3% | 26 | 53.8% | 36.2% | 1.53 |
+| Broken range travels >=1 width past edge (rangelab) (ranges) | 30 | 12:00 | 0.8-0.9 | vs base rate | 421 | 28.7% | 40.3% | 55 | 27.3% | 36.2% | 0.78 |
+| Broken range travels >=1 width past edge (rangelab) (ranges) | 15 | 11:45 | 0.0-0.1 | vs base rate | 378 | 28.8% | 40.3% | 27 | 22.2% | 36.2% | 1.23 |
+| Broken range travels >=1 width past edge (rangelab) (ranges) | 15 | 02:00 | 0.9-1.0 | vs base rate | 228 | 28.9% | 40.3% | 30 | 20.0% | 36.2% | 1.44 |
+| Broken range travels >=1 width past edge (rangelab) (ranges) | 60 | 09:00 | 0.2-0.3 | vs base rate | 383 | 29.0% | 40.3% | 27 | 18.5% | 36.2% | 1.57 |
+| Broken range travels >=1 width past edge (rangelab) (ranges) | 60 | 00:00 | 0.2-0.3 | vs base rate | 276 | 51.4% | 40.3% | 30 | 56.7% | 36.2% | 1.83 |
+| Broken range travels >=1 width past edge (rangelab) (ranges) | 15 | 03:00 | 0.0-0.1 | vs base rate | 357 | 29.1% | 40.3% | 31 | 16.1% | 36.2% | 1.81 |
+| Broken range travels >=1 width past edge (rangelab) (ranges) | 30 | 04:00 | 0.9-1.0 | vs base rate | 280 | 29.3% | 40.3% | 20 | 15.0% | 36.2% | 1.94 |
+| Broken range travels >=1 width past edge (rangelab) (ranges) | 15 | 10:15 | 0.2-0.3 | vs base rate | 355 | 29.3% | 40.3% | 23 | 17.4% | 36.2% | 1.72 |
+| Broken range travels >=1 width past edge (rangelab) (ranges) | 15 | 11:00 | 0.7-0.8 | vs base rate | 334 | 29.3% | 40.3% | 31 | 12.9% | 36.2% | 2.14 |
+| Broken range travels >=1 width past edge (rangelab) (ranges) | 15 | 20:00 | 0.0-0.1 | vs base rate | 214 | 29.4% | 40.3% | 24 | 16.7% | 36.2% | 1.81 |
+| Broken range travels >=1 width past edge (rangelab) (ranges) | 15 | 08:00 | 0.2-0.3 | vs base rate | 384 | 51.0% | 40.3% | 42 | 52.4% | 36.2% | 1.50 |
+| Broken range travels >=1 width past edge (rangelab) (ranges) | 15 | 01:30 | 0.5-0.6 | vs base rate | 290 | 51.0% | 40.3% | 24 | 54.2% | 36.2% | 1.66 |
+| Broken range travels >=1 width past edge (rangelab) (ranges) | 15 | 19:45 | 0.1-0.2 | vs base rate | 296 | 51.0% | 40.3% | 23 | 56.5% | 36.2% | 1.89 |
+| Broken range travels >=1 width past edge (rangelab) (ranges) | 15 | 02:15 | 0.2-0.3 | vs base rate | 326 | 50.9% | 40.3% | 29 | 51.7% | 36.2% | 1.45 |
+| Broken range travels >=1 width past edge (rangelab) (ranges) | 15 | 10:45 | 0.3-0.4 | vs base rate | 351 | 29.6% | 40.3% | 27 | 11.1% | 36.2% | 2.36 |
+| Broken range travels >=1 width past edge (rangelab) (ranges) | 15 | 12:00 | 0.9-1.0 | vs base rate | 452 | 29.6% | 40.3% | 20 | 20.0% | 36.2% | 1.53 |
+| Broken range travels >=1 width past edge (rangelab) (ranges) | 60 | 20:00 | 0.1-0.2 | vs base rate | 219 | 29.7% | 40.3% | 24 | 12.5% | 36.2% | 2.24 |
+| Broken range travels >=1 width past edge (rangelab) (ranges) | 15 | 07:45 | 0.6-0.7 | vs base rate | 360 | 50.8% | 40.3% | 30 | 50.0% | 36.2% | 1.30 |
+| Broken range travels >=1 width past edge (rangelab) (ranges) | 60 | 11:00 | 0.9-1.0 | vs base rate | 475 | 29.7% | 40.3% | 43 | 23.3% | 36.2% | 1.23 |
+| Broken range travels >=1 width past edge (rangelab) (ranges) | 60 | 11:00 | 0.8-0.9 | vs base rate | 458 | 29.7% | 40.3% | 38 | 23.7% | 36.2% | 1.19 |
+| Broken range travels >=1 width past edge (rangelab) (ranges) | 15 | 19:15 | 0.5-0.6 | vs base rate | 246 | 50.8% | 40.3% | 34 | 50.0% | 36.2% | 1.30 |
+| Broken range travels >=1 width past edge (rangelab) (ranges) | 15 | 10:30 | 0.1-0.2 | vs base rate | 353 | 29.7% | 40.3% | 35 | 22.9% | 36.2% | 1.27 |
+| Broken range travels >=1 width past edge (rangelab) (ranges) | 15 | 09:45 | 0.3-0.4 | vs base rate | 279 | 29.7% | 40.3% | 22 | 22.7% | 36.2% | 1.29 |
+| Broken range travels >=1 width past edge (rangelab) (ranges) | 15 | 00:45 | 0.0-0.1 | vs base rate | 203 | 50.7% | 40.3% | 24 | 58.3% | 36.2% | 2.11 |
+| Broken range travels >=1 width past edge (rangelab) (ranges) | 15 | 03:00 | 0.7-0.8 | vs base rate | 329 | 29.8% | 40.3% | 26 | 19.2% | 36.2% | 1.62 |
+| Broken range travels >=1 width past edge (rangelab) (ranges) | 15 | 11:30 | 0.0-0.1 | vs base rate | 349 | 29.8% | 40.3% | 37 | 21.6% | 36.2% | 1.40 |
+| Broken range travels >=1 width past edge (rangelab) (ranges) | 15 | 07:45 | 0.0-0.1 | vs base rate | 369 | 50.7% | 40.3% | 26 | 50.0% | 36.2% | 1.32 |
+| Broken range travels >=1 width past edge (rangelab) (ranges) | 30 | 11:30 | 0.1-0.2 | vs base rate | 345 | 29.9% | 40.3% | 29 | 24.1% | 36.2% | 1.16 |
+| Broken range travels >=1 width past edge (rangelab) (ranges) | 30 | 11:30 | 0.6-0.7 | vs base rate | 308 | 29.9% | 40.3% | 25 | 16.0% | 36.2% | 1.95 |
+| Broken range travels >=1 width past edge (rangelab) (ranges) | 15 | 10:00 | 0.8-0.9 | vs base rate | 482 | 29.9% | 40.3% | 39 | 25.6% | 36.2% | 1.02 |
+| Broken range travels >=1 width past edge (rangelab) (ranges) | 30 | 04:00 | 0.1-0.2 | vs base rate | 368 | 29.9% | 40.3% | 24 | 20.8% | 36.2% | 1.49 |
+| Broken range travels >=1 width past edge (rangelab) (ranges) | 30 | 00:30 | 0.3-0.4 | vs base rate | 241 | 50.6% | 40.3% | 28 | 64.3% | 36.2% | 2.71 |
+| Broken range travels >=1 width past edge (rangelab) (ranges) | 15 | 02:30 | 0.9-1.0 | vs base rate | 243 | 50.6% | 40.3% | 39 | 59.0% | 36.2% | 2.20 |
+| Broken range travels >=1 width past edge (rangelab) (ranges) | 15 | 21:30 | 0.1-0.2 | vs base rate | 224 | 29.9% | 40.3% | 30 | 16.7% | 36.2% | 1.89 |
+| Broken range travels >=1 width past edge (rangelab) (ranges) | 15 | 08:30 | 0.2-0.3 | vs base rate | 350 | 30.0% | 40.3% | 28 | 14.3% | 36.2% | 2.14 |
+| Broken range travels >=1 width past edge (rangelab) (ranges) | 15 | 03:00 | 0.2-0.3 | vs base rate | 397 | 30.2% | 40.3% | 39 | 25.6% | 36.2% | 1.06 |
+| Broken range travels >=1 width past edge (rangelab) (ranges) | 15 | 08:30 | 0.5-0.6 | vs base rate | 366 | 30.3% | 40.3% | 32 | 25.0% | 36.2% | 1.13 |
+| Broken range travels >=1 width past edge (rangelab) (ranges) | 15 | 14:00 | 0.1-0.2 | vs base rate | 372 | 30.4% | 40.3% | 32 | 25.0% | 36.2% | 1.14 |
+| Broken range travels >=1 width past edge (rangelab) (ranges) | 30 | 21:00 | 0.3-0.4 | vs base rate | 227 | 30.4% | 40.3% | 21 | 14.3% | 36.2% | 2.23 |
+| Broken range travels >=1 width past edge (rangelab) (ranges) | 30 | 04:00 | 0.8-0.9 | vs base rate | 424 | 30.4% | 40.3% | 38 | 23.7% | 36.2% | 1.28 |
+| Broken range travels >=1 width past edge (rangelab) (ranges) | 30 | 11:30 | 0.5-0.6 | vs base rate | 322 | 30.4% | 40.3% | 23 | 17.4% | 36.2% | 1.92 |
+| Broken range travels >=1 width past edge (rangelab) (ranges) | 30 | 23:00 | 0.9-1.0 | vs base rate | 174 | 30.5% | 40.3% | 27 | 22.2% | 36.2% | 1.43 |
+| Broken range travels >=1 width past edge (rangelab) (ranges) | 30 | 04:00 | 0.6-0.7 | vs base rate | 377 | 30.5% | 40.3% | 25 | 4.0% | 36.2% | 3.30 |
+| Broken range travels >=1 width past edge (rangelab) (ranges) | 60 | 02:00 | 0.0-0.1 | vs base rate | 286 | 50.0% | 40.3% | 28 | 53.6% | 36.2% | 1.78 |
+| Broken range travels >=1 width past edge (rangelab) (ranges) | 15 | 19:15 | 0.9-1.0 | vs base rate | 170 | 50.0% | 40.3% | 25 | 56.0% | 36.2% | 2.03 |
+| Broken range travels >=1 width past edge (rangelab) (ranges) | 15 | 04:00 | 0.3-0.4 | vs base rate | 327 | 30.6% | 40.3% | 29 | 20.7% | 36.2% | 1.61 |
+| Broken range travels >=1 width past edge (rangelab) (ranges) | 30 | 12:00 | 0.4-0.5 | vs base rate | 291 | 30.6% | 40.3% | 29 | 20.7% | 36.2% | 1.61 |
+| Broken range travels >=1 width past edge (rangelab) (ranges) | 15 | 06:00 | 0.7-0.8 | vs base rate | 376 | 30.6% | 40.3% | 27 | 18.5% | 36.2% | 1.83 |
+| Broken range travels >=1 width past edge (rangelab) (ranges) | 15 | 10:45 | 0.9-1.0 | vs base rate | 457 | 30.6% | 40.3% | 46 | 21.7% | 36.2% | 1.51 |
+| Broken range travels >=1 width past edge (rangelab) (ranges) | 30 | 04:00 | 0.2-0.3 | vs base rate | 359 | 30.6% | 40.3% | 33 | 12.1% | 36.2% | 2.51 |
+| Broken range travels >=1 width past edge (rangelab) (ranges) | 30 | 07:30 | 0.6-0.7 | vs base rate | 363 | 49.9% | 40.3% | 22 | 54.5% | 36.2% | 1.91 |
+| Broken range travels >=1 width past edge (rangelab) (ranges) | 15 | 11:00 | 0.3-0.4 | vs base rate | 332 | 30.7% | 40.3% | 24 | 20.8% | 36.2% | 1.62 |
+| Broken range travels >=1 width past edge (rangelab) (ranges) | 15 | 09:45 | 0.1-0.2 | vs base rate | 422 | 30.8% | 40.3% | 31 | 12.9% | 36.2% | 2.47 |
+| Broken range travels >=1 width past edge (rangelab) (ranges) | 30 | 07:30 | 0.5-0.6 | vs base rate | 340 | 49.7% | 40.3% | 27 | 55.6% | 36.2% | 2.04 |
+| Broken range travels >=1 width past edge (rangelab) (ranges) | 15 | 08:15 | 0.9-1.0 | vs base rate | 312 | 49.7% | 40.3% | 33 | 57.6% | 36.2% | 2.27 |
+| Broken range travels >=1 width past edge (rangelab) (ranges) | 15 | 02:15 | 0.3-0.4 | vs base rate | 290 | 49.7% | 40.3% | 33 | 48.5% | 36.2% | 1.30 |
+| Broken range travels >=1 width past edge (rangelab) (ranges) | 60 | 21:00 | 0.8-0.9 | vs base rate | 281 | 31.0% | 40.3% | 46 | 13.0% | 36.2% | 2.49 |
+| Broken range travels >=1 width past edge (rangelab) (ranges) | 15 | 06:00 | 0.6-0.7 | vs base rate | 357 | 31.1% | 40.3% | 20 | 20.0% | 36.2% | 1.77 |
+| Broken range travels >=1 width past edge (rangelab) (ranges) | 15 | 22:30 | 0.5-0.6 | vs base rate | 225 | 31.1% | 40.3% | 31 | 22.6% | 36.2% | 1.49 |
+| Broken range travels >=1 width past edge (rangelab) (ranges) | 15 | 10:30 | 0.8-0.9 | vs base rate | 466 | 31.1% | 40.3% | 38 | 18.4% | 36.2% | 1.95 |
+| Broken range travels >=1 width past edge (rangelab) (ranges) | 15 | 05:00 | 0.1-0.2 | vs base rate | 356 | 31.2% | 40.3% | 34 | 17.6% | 36.2% | 2.05 |
+| Broken range travels >=1 width past edge (rangelab) (ranges) | 15 | 08:15 | 0.5-0.6 | vs base rate | 367 | 49.3% | 40.3% | 35 | 48.6% | 36.2% | 1.36 |
+| Broken range travels >=1 width past edge (rangelab) (ranges) | 30 | 04:00 | 0.0-0.1 | vs base rate | 323 | 31.3% | 40.3% | 26 | 23.1% | 36.2% | 1.46 |
+| Broken range travels >=1 width past edge (rangelab) (ranges) | 30 | 20:00 | 0.4-0.5 | vs base rate | 246 | 31.3% | 40.3% | 26 | 11.5% | 36.2% | 2.76 |
+| Broken range travels >=1 width past edge (rangelab) (ranges) | 30 | 12:00 | 0.9-1.0 | vs base rate | 485 | 31.3% | 40.3% | 22 | 22.7% | 36.2% | 1.51 |
+| Broken range travels >=1 width past edge (rangelab) (ranges) | 30 | 00:00 | 0.3-0.4 | vs base rate | 228 | 49.1% | 40.3% | 42 | 57.1% | 36.2% | 2.36 |
+| Broken range travels >=1 width past edge (rangelab) (ranges) | 60 | 04:00 | 0.1-0.2 | vs base rate | 353 | 31.4% | 40.3% | 31 | 9.7% | 36.2% | 3.01 |
+| Broken range travels >=1 width past edge (rangelab) (ranges) | 30 | Q2 | vs base rate | 25583 | 49.1% | 40.3% | 2785 | 42.3% | 36.2% | 0.69 |
+| Broken range travels >=1 width past edge (rangelab) (ranges) | 15 | 03:00 | 0.6-0.7 | vs base rate | 330 | 31.5% | 40.3% | 23 | 17.4% | 36.2% | 2.16 |
+| Broken range travels >=1 width past edge (rangelab) (ranges) | 15 | 23:00 | 0.7-0.8 | vs base rate | 250 | 31.6% | 40.3% | 29 | 20.7% | 36.2% | 1.80 |
+| Broken range travels >=1 width past edge (rangelab) (ranges) | 15 | Q2 | vs base rate | 55656 | 48.9% | 40.3% | 5849 | 42.0% | 36.2% | 0.66 |
+| Broken range travels >=1 width past edge (rangelab) (ranges) | 30 | 01:00 | 0.7-0.8 | vs base rate | 315 | 48.9% | 40.3% | 34 | 50.0% | 36.2% | 1.59 |
+| Broken range travels >=1 width past edge (rangelab) (ranges) | 30 | 11:00 | 0.8-0.9 | vs base rate | 452 | 31.9% | 40.3% | 48 | 18.8% | 36.2% | 2.08 |
+| Broken range travels >=1 width past edge (rangelab) (ranges) | 30 | 20:00 | 0.1-0.2 | vs base rate | 251 | 31.9% | 40.3% | 25 | 12.0% | 36.2% | 2.89 |
+| Broken range travels >=1 width past edge (rangelab) (ranges) | 15 | 04:15 | 0.5-0.6 | vs base rate | 323 | 31.9% | 40.3% | 25 | 16.0% | 36.2% | 2.42 |
+| Broken range travels >=1 width past edge (rangelab) (ranges) | 15 | 07:45 | 0.5-0.6 | vs base rate | 350 | 48.6% | 40.3% | 23 | 52.2% | 36.2% | 1.92 |
+| Broken range travels >=1 width past edge (rangelab) (ranges) | 15 | 00:15 | 0.2-0.3 | vs base rate | 268 | 48.5% | 40.3% | 25 | 52.0% | 36.2% | 1.91 |
+| Broken range travels >=1 width past edge (rangelab) (ranges) | 30 | 04:30 | 0.9-1.0 | vs base rate | 343 | 32.1% | 40.3% | 35 | 22.9% | 36.2% | 1.63 |
+| Broken range travels >=1 width past edge (rangelab) (ranges) | 15 | 12:00 | 0.2-0.3 | vs base rate | 324 | 32.1% | 40.3% | 31 | 19.4% | 36.2% | 2.07 |
+| Broken range travels >=1 width past edge (rangelab) (ranges) | 15 | 04:00 | 0.5-0.6 | vs base rate | 320 | 32.2% | 40.3% | 26 | 19.2% | 36.2% | 2.11 |
+| Broken range travels >=1 width past edge (rangelab) (ranges) | 15 | 01:15 | 0.6-0.7 | vs base rate | 234 | 48.3% | 40.3% | 25 | 52.0% | 36.2% | 1.96 |
+| Broken range travels >=1 width past edge (rangelab) (ranges) | 15 | 10:45 | 0.1-0.2 | vs base rate | 344 | 32.3% | 40.3% | 32 | 12.5% | 36.2% | 2.97 |
+| Broken range travels >=1 width past edge (rangelab) (ranges) | 15 | 09:45 | 0.7-0.8 | vs base rate | 371 | 32.3% | 40.3% | 21 | 14.3% | 36.2% | 2.77 |
+| Broken range travels >=1 width past edge (rangelab) (ranges) | 15 | 11:30 | 0.9-1.0 | vs base rate | 411 | 32.4% | 40.3% | 32 | 21.9% | 36.2% | 1.82 |
+| Broken range travels >=1 width past edge (rangelab) (ranges) | 15 | 06:45 | 0.5-0.6 | vs base rate | 362 | 48.1% | 40.3% | 34 | 61.8% | 36.2% | 3.27 |
+| Broken range travels >=1 width past edge (rangelab) (ranges) | 60 | 04:00 | 0.5-0.6 | vs base rate | 357 | 32.5% | 40.3% | 24 | 16.7% | 36.2% | 2.52 |
+| Broken range travels >=1 width past edge (rangelab) (ranges) | 15 | 00:45 | 0.8-0.9 | vs base rate | 269 | 48.0% | 40.3% | 39 | 48.7% | 36.2% | 1.62 |
+| Broken range travels >=1 width past edge (rangelab) (ranges) | 30 | 07:30 | 0.8-0.9 | vs base rate | 461 | 47.9% | 40.3% | 33 | 54.5% | 36.2% | 2.38 |
+| Broken range travels >=1 width past edge (rangelab) (ranges) | 30 | 12:00 | 0.1-0.2 | vs base rate | 356 | 32.6% | 40.3% | 31 | 22.6% | 36.2% | 1.78 |
+| Broken range travels >=1 width past edge (rangelab) (ranges) | 15 | 07:00 | 0.1-0.2 | vs base rate | 322 | 32.6% | 40.3% | 33 | 18.2% | 36.2% | 2.36 |
+| Broken range travels >=1 width past edge (rangelab) (ranges) | 15 | 12:00 | 0.1-0.2 | vs base rate | 383 | 32.6% | 40.3% | 33 | 21.2% | 36.2% | 1.97 |
+| Broken range travels >=1 width past edge (rangelab) (ranges) | 60 | 02:00 | 0.3-0.4 | vs base rate | 347 | 47.8% | 40.3% | 23 | 65.2% | 36.2% | 3.82 |
+| Broken range travels >=1 width past edge (rangelab) (ranges) | 15 | 11:30 | 0.4-0.5 | vs base rate | 306 | 32.7% | 40.3% | 23 | 21.7% | 36.2% | 1.91 |
+| Broken range travels >=1 width past edge (rangelab) (ranges) | 30 | 02:00 | 0.8-0.9 | vs base rate | 364 | 47.8% | 40.3% | 37 | 48.6% | 36.2% | 1.65 |
+| Broken range travels >=1 width past edge (rangelab) (ranges) | 15 | 05:00 | 0.3-0.4 | vs base rate | 284 | 32.7% | 40.3% | 30 | 20.0% | 36.2% | 2.16 |
+| Broken range travels >=1 width past edge (rangelab) (ranges) | 15 | 12:15 | 0.8-0.9 | vs base rate | 424 | 32.8% | 40.3% | 45 | 24.4% | 36.2% | 1.58 |
+| Broken range travels >=1 width past edge (rangelab) (ranges) | 60 | Q3 | vs base rate | 13095 | 47.7% | 40.3% | 1137 | 41.5% | 36.2% | 0.71 |
+| Broken range travels >=1 width past edge (rangelab) (ranges) | 15 | 04:00 | 0.7-0.8 | vs base rate | 380 | 32.9% | 40.3% | 35 | 22.9% | 36.2% | 1.82 |
+| Broken range travels >=1 width past edge (rangelab) (ranges) | 15 | 09:45 | 0.9-1.0 | vs base rate | 462 | 32.9% | 40.3% | 34 | 23.5% | 36.2% | 1.73 |
+| Broken range travels >=1 width past edge (rangelab) (ranges) | 15 | 11:45 | 0.1-0.2 | vs base rate | 355 | 33.0% | 40.3% | 34 | 17.6% | 36.2% | 2.55 |
+| Broken range travels >=1 width past edge (rangelab) (ranges) | 30 | 04:30 | 0.4-0.5 | vs base rate | 288 | 33.0% | 40.3% | 28 | 21.4% | 36.2% | 2.04 |
+| Broken range travels >=1 width past edge (rangelab) (ranges) | 15 | 08:15 | 0.1-0.2 | vs base rate | 402 | 47.5% | 40.3% | 21 | 61.9% | 36.2% | 3.54 |
+| Broken range travels >=1 width past edge (rangelab) (ranges) | 15 | 12:15 | 0.3-0.4 | vs base rate | 324 | 33.0% | 40.3% | 33 | 15.2% | 36.2% | 2.91 |
+| Broken range travels >=1 width past edge (rangelab) (ranges) | 60 | 04:00 | 0.7-0.8 | vs base rate | 384 | 33.1% | 40.3% | 30 | 13.3% | 36.2% | 3.19 |
+| Broken range travels >=1 width past edge (rangelab) (ranges) | 15 | 10:15 | 0.8-0.9 | vs base rate | 438 | 33.1% | 40.3% | 37 | 21.6% | 36.2% | 2.04 |
+| Broken range travels >=1 width past edge (rangelab) (ranges) | 15 | 10:45 | 0.0-0.1 | vs base rate | 356 | 33.1% | 40.3% | 32 | 15.6% | 36.2% | 2.90 |
+| Broken range travels >=1 width past edge (rangelab) (ranges) | 30 | 18:30 | 0.7-0.8 | vs base rate | 285 | 47.4% | 40.3% | 38 | 50.0% | 36.2% | 1.94 |
+| Broken range travels >=1 width past edge (rangelab) (ranges) | 15 | 13:00 | 0.2-0.3 | vs base rate | 362 | 33.1% | 40.3% | 33 | 18.2% | 36.2% | 2.54 |
+| Broken range travels >=1 width past edge (rangelab) (ranges) | 30 | 12:00 | 0.2-0.3 | vs base rate | 310 | 33.2% | 40.3% | 20 | 10.0% | 36.2% | 3.73 |
+| Broken range travels >=1 width past edge (rangelab) (ranges) | 15 | 11:15 | 0.6-0.7 | vs base rate | 328 | 33.2% | 40.3% | 24 | 16.7% | 36.2% | 2.79 |
+| Broken range travels >=1 width past edge (rangelab) (ranges) | 60 | 05:00 | 0.7-0.8 | vs base rate | 385 | 47.3% | 40.3% | 28 | 60.7% | 36.2% | 3.49 |
+| Broken range travels >=1 width past edge (rangelab) (ranges) | 30 | 01:00 | 0.5-0.6 | vs base rate | 275 | 47.3% | 40.3% | 37 | 51.4% | 36.2% | 2.15 |
+| Broken range travels >=1 width past edge (rangelab) (ranges) | 15 | 14:00 | 0.5-0.6 | vs base rate | 363 | 33.3% | 40.3% | 34 | 17.6% | 36.2% | 2.68 |
+| Broken range travels >=1 width past edge (rangelab) (ranges) | 30 | 11:30 | 0.9-1.0 | vs base rate | 455 | 33.4% | 40.3% | 30 | 20.0% | 36.2% | 2.37 |
+| Broken range travels >=1 width past edge (rangelab) (ranges) | 15 | 08:00 | 0.5-0.6 | vs base rate | 361 | 47.1% | 40.3% | 26 | 50.0% | 36.2% | 2.01 |
+| Broken range travels >=1 width past edge (rangelab) (ranges) | 15 | 13:00 | 0.0-0.1 | vs base rate | 311 | 33.8% | 40.3% | 28 | 14.3% | 36.2% | 3.38 |
+| Broken range travels >=1 width past edge (rangelab) (ranges) | 15 | 11:15 | 0.9-1.0 | vs base rate | 459 | 33.8% | 40.3% | 49 | 22.4% | 36.2% | 2.12 |
+| Broken range travels >=1 width past edge (rangelab) (ranges) | 15 | 06:45 | 0.6-0.7 | vs base rate | 375 | 46.7% | 40.3% | 25 | 60.0% | 36.2% | 3.71 |
+| Broken range travels >=1 width past edge (rangelab) (ranges) | 30 | 06:30 | 0.1-0.2 | vs base rate | 378 | 46.6% | 40.3% | 31 | 48.4% | 36.2% | 1.93 |
+| Broken range travels >=1 width past edge (rangelab) (ranges) | 15 | 11:15 | 0.1-0.2 | vs base rate | 335 | 34.0% | 40.3% | 22 | 18.2% | 36.2% | 2.90 |
+| Broken range travels >=1 width past edge (rangelab) (ranges) | 15 | Q4 | vs base rate | 60878 | 34.1% | 40.3% | 5120 | 30.4% | 36.2% | 0.95 |
+| Broken range travels >=1 width past edge (rangelab) (ranges) | 30 | 07:30 | 0.9-1.0 | vs base rate | 373 | 46.4% | 40.3% | 30 | 50.0% | 36.2% | 2.25 |
+| Broken range travels >=1 width past edge (rangelab) (ranges) | 15 | 03:15 | 0.7-0.8 | vs base rate | 362 | 34.3% | 40.3% | 26 | 19.2% | 36.2% | 2.83 |
+| Broken range travels >=1 width past edge (rangelab) (ranges) | 60 | 13:00 | 0.2-0.3 | vs base rate | 283 | 34.3% | 40.3% | 27 | 14.8% | 36.2% | 3.58 |
+| Broken range travels >=1 width past edge (rangelab) (ranges) | 15 | 12:00 | 0.3-0.4 | vs base rate | 328 | 34.5% | 40.3% | 28 | 21.4% | 36.2% | 2.55 |
+| Broken range travels >=1 width past edge (rangelab) (ranges) | 15 | 14:30 | 0.9-1.0 | vs base rate | 382 | 34.6% | 40.3% | 26 | 19.2% | 36.2% | 2.98 |
+| Broken range travels >=1 width past edge (rangelab) (ranges) | 15 | 15:15 | 0.2-0.3 | vs base rate | 357 | 45.9% | 40.3% | 32 | 59.4% | 36.2% | 4.07 |
+| Broken range travels >=1 width past edge (rangelab) (ranges) | 15 | 12:30 | 0.1-0.2 | vs base rate | 344 | 34.6% | 40.3% | 30 | 23.3% | 36.2% | 2.28 |
+| Broken range travels >=1 width past edge (rangelab) (ranges) | 15 | 04:30 | 0.8-0.9 | vs base rate | 396 | 34.6% | 40.3% | 35 | 22.9% | 36.2% | 2.36 |
+| Broken range travels >=1 width past edge (rangelab) (ranges) | 15 | 14:15 | 0.0-0.1 | vs base rate | 364 | 34.6% | 40.3% | 28 | 10.7% | 36.2% | 4.52 |
+| Broken range travels >=1 width past edge (rangelab) (ranges) | 15 | 11:45 | 0.9-1.0 | vs base rate | 406 | 34.7% | 40.3% | 35 | 25.7% | 36.2% | 1.90 |
+| Broken range travels >=1 width past edge (rangelab) (ranges) | 15 | 03:30 | 0.1-0.2 | vs base rate | 360 | 35.0% | 40.3% | 34 | 23.5% | 36.2% | 2.42 |
+| Broken range travels >=1 width past edge (rangelab) (ranges) | 30 | Q4 | vs base rate | 28995 | 36.0% | 40.3% | 2341 | 31.1% | 36.2% | 1.21 |
+| Broken range travels >=1 width past edge (rangelab) (ranges) | 60 | Q4 | vs base rate | 12875 | 36.6% | 40.3% | 1071 | 33.9% | 36.2% | 0.64 |
+| RTH gap (>=0.15 ATR) fills to prior RTH close (session) | gap up >0.5atr | above PDH | vs base rate | 369 | 27.4% | 51.1% | 37 | 27.0% | 45.3% | 0.77 |
+| RTH gap (>=0.15 ATR) fills to prior RTH close (session) | gap up >0.5atr | ON bull | vs base rate | 490 | 29.2% | 51.2% | 49 | 32.7% | 45.3% | 0.57 |
+| RTH gap (>=0.15 ATR) fills to prior RTH close (session) | gap up >0.5atr | vs base rate | 509 | 29.5% | 51.1% | 50 | 32.0% | 45.3% | 0.61 |
+| RTH gap (>=0.15 ATR) fills to prior RTH close (session) | gap dn | vs base rate | 656 | 66.2% | 51.1% | 52 | 55.8% | 45.3% | 0.70 |
+| Hour trades through previous hour's mid (hourly) | 09:00 | open upper half | vs base rate | 1898 | 84.5% | 67.8% | 145 | 86.9% | 67.1% | 1.19 |
+| Hour trades through previous hour's mid (hourly) | 09:00 | open lower half | vs base rate | 1844 | 84.4% | 67.8% | 143 | 86.0% | 67.1% | 1.14 |
+| Hour trades through previous hour's mid (hourly) | 11:00 | open upper half | vs base rate | 2013 | 52.5% | 67.8% | 164 | 53.0% | 67.1% | 0.92 |
+| Hour trades through previous hour's mid (hourly) | 12:00 | open upper half | vs base rate | 2103 | 59.0% | 67.8% | 168 | 55.4% | 67.1% | 1.33 |
+| Hour trades through previous hour's mid (hourly) | 15:00 | open lower half | vs base rate | 1582 | 74.1% | 67.8% | 125 | 72.8% | 67.1% | 0.90 |
+| Hour trades through previous hour's mid (hourly) | 10:00 | open upper half | vs base rate | 2033 | 64.5% | 67.8% | 157 | 58.6% | 67.1% | 2.56 |
+| After first IB break, price returns to IB mid (session) | Q1 narrow | vs base rate | 727 | 64.0% | 49.8% | 56 | 60.7% | 48.0% | 0.90 |
+| After first IB break, price returns to IB mid (session) | Q5 wide | vs base rate | 668 | 36.1% | 49.8% | 55 | 34.5% | 48.0% | 0.98 |
+| After first IB break, price returns to IB mid (session) | Q4 | vs base rate | 686 | 43.7% | 49.8% | 51 | 37.3% | 48.0% | 1.78 |
+| Both IB extremes taken 10:30-16:00 (session) | Q1 narrow | IB bear | vs base rate | 322 | 42.2% | 23.1% | 24 | 50.0% | 20.5% | 1.54 |
+| Both IB extremes taken 10:30-16:00 (session) | Q1 narrow | vs base rate | 732 | 38.8% | 23.1% | 57 | 45.6% | 20.5% | 1.60 |
+| Both IB extremes taken 10:30-16:00 (session) | Q1 narrow | IB bull | vs base rate | 410 | 36.1% | 23.1% | 33 | 42.4% | 20.5% | 1.68 |
+| Both IB extremes taken 10:30-16:00 (session) | Q5 wide | IB bear | vs base rate | 416 | 11.1% | 23.1% | 32 | 9.4% | 20.5% | 0.93 |
+| Both IB extremes taken 10:30-16:00 (session) | Q5 wide | vs base rate | 732 | 11.2% | 23.1% | 62 | 6.5% | 20.5% | 1.18 |
+| Both IB extremes taken 10:30-16:00 (session) | Q5 wide | IB bull | vs base rate | 316 | 11.4% | 23.1% | 30 | 3.3% | 20.5% | 1.47 |
+| Both IB extremes taken 10:30-16:00 (session) | Q4 | IB bear | vs base rate | 357 | 16.2% | 23.1% | 22 | 9.1% | 20.5% | 1.67 |
+| IB broken (either side) 10:30-16:00 (session) | Q5 wide | vs base rate | 732 | 91.3% | 95.9% | 62 | 88.7% | 96.8% | 1.74 |
+| IB broken (either side) 10:30-16:00 (session) | Q2 | vs base rate | 732 | 98.2% | 95.9% | 57 | 100.0% | 96.8% | 1.38 |
+| First IB break extends >=0.5x IB width (session) | Q5 wide | vs base rate | 668 | 42.7% | 54.5% | 55 | 38.2% | 50.2% | 1.01 |
+| First IB break is UP (given a break) (session) | closed low third | MECHANICAL (= random walk) | 1092 | 15.1% | 16.4% | 85 | 7.1% | 16.5% | 7.62 |
+| First IB break is UP (given a break) (session) | IB bear | MECHANICAL (= random walk) | 1682 | 29.1% | 29.8% | 119 | 21.0% | 26.9% | 8.37 |
+| Both ORB extremes taken 09:45-16:00 (session) | Q1 narrow | vs base rate | 732 | 64.9% | 53.2% | 56 | 64.3% | 49.6% | 1.26 |
+| Both ORB extremes taken 09:45-16:00 (session) | Q5 wide | vs base rate | 732 | 41.8% | 53.2% | 65 | 36.9% | 49.6% | 1.11 |
+| First ORB break extends >=0.5x ORB width (session) | Q5 wide | vs base rate | 729 | 66.5% | 76.2% | 65 | 67.7% | 77.3% | 1.00 |
+| First ORB break extends >=0.5x ORB width (session) | Q2 | vs base rate | 732 | 80.3% | 76.2% | 55 | 87.3% | 77.3% | 2.41 |
+| High set 18:00-08:00 survives to 16:00 (session) | 8am low third | pre8 bear | vs base rate | 924 | 53.9% | 29.0% | 59 | 57.6% | 30.9% | 1.07 |
+| High set 18:00-08:00 survives to 16:00 (session) | 8am low third | vs base rate | 984 | 53.2% | 29.0% | 62 | 56.5% | 30.9% | 1.06 |
+| High set 18:00-08:00 survives to 16:00 (session) | 8am high third | pre8 bull | vs base rate | 1500 | 12.5% | 29.0% | 115 | 8.7% | 30.9% | 1.35 |
+| High set 18:00-08:00 survives to 16:00 (session) | 8am high third | vs base rate | 1594 | 13.0% | 29.0% | 129 | 9.3% | 30.9% | 1.35 |
+| High set 18:00-08:00 survives to 16:00 (session) | took Asia L | vs base rate | 1175 | 41.2% | 29.1% | 91 | 39.6% | 30.9% | 0.71 |
+| High set 18:00-08:00 survives to 16:00 (session) | took Asia H | vs base rate | 1542 | 21.7% | 29.1% | 131 | 23.7% | 30.9% | 0.98 |
+| Low set 18:00-08:00 survives to 16:00 (session) | 8am low third | pre8 bear | vs base rate | 924 | 12.3% | 36.2% | 59 | 15.3% | 41.4% | 1.09 |
+| Low set 18:00-08:00 survives to 16:00 (session) | 8am low third | vs base rate | 984 | 13.0% | 36.2% | 62 | 14.5% | 41.4% | 1.16 |
+| Low set 18:00-08:00 survives to 16:00 (session) | 8am high third | pre8 bull | vs base rate | 1500 | 54.3% | 36.2% | 115 | 60.9% | 41.4% | 1.08 |
+| Low set 18:00-08:00 survives to 16:00 (session) | 8am high third | vs base rate | 1594 | 53.3% | 36.2% | 129 | 62.0% | 41.4% | 1.21 |
+| Low set 18:00-08:00 survives to 16:00 (session) | took Asia L | vs base rate | 1175 | 26.3% | 36.3% | 91 | 30.8% | 41.4% | 1.06 |
+| Low set 18:00-08:00 survives to 16:00 (session) | 8am mid third | vs base rate | 1078 | 32.2% | 36.2% | 87 | 29.9% | 41.4% | 2.83 |
+| Broken range returns to far edge (rangelab) (ranges) | 15 | 09:00 | 0.7-0.8 | vs base rate | 394 | 74.1% | 35.1% | 30 | 66.7% | 35.3% | 0.80 |
+| Broken range returns to far edge (rangelab) (ranges) | 15 | 09:00 | 0.5-0.6 | vs base rate | 361 | 71.7% | 35.1% | 24 | 70.8% | 35.3% | 0.97 |
+| Broken range returns to far edge (rangelab) (ranges) | 15 | 09:15 | 0.1-0.2 | vs base rate | 337 | 71.5% | 35.1% | 30 | 60.0% | 35.3% | 0.68 |
+| Broken range returns to far edge (rangelab) (ranges) | 15 | 09:15 | 0.5-0.6 | vs base rate | 379 | 71.2% | 35.1% | 31 | 67.7% | 35.3% | 0.90 |
+| Broken range returns to far edge (rangelab) (ranges) | 15 | 09:00 | 0.1-0.2 | vs base rate | 392 | 70.9% | 35.1% | 32 | 78.1% | 35.3% | 1.20 |
+| Broken range returns to far edge (rangelab) (ranges) | 30 | 09:00 | 0.5-0.6 | vs base rate | 372 | 70.7% | 35.1% | 30 | 66.7% | 35.3% | 0.88 |
+| Broken range returns to far edge (rangelab) (ranges) | 15 | 09:00 | 0.3-0.4 | vs base rate | 329 | 70.5% | 35.1% | 37 | 73.0% | 35.3% | 1.06 |
+| Broken range returns to far edge (rangelab) (ranges) | 15 | 09:15 | 0.9-1.0 | vs base rate | 336 | 69.9% | 35.1% | 23 | 65.2% | 35.3% | 0.86 |
+| Broken range returns to far edge (rangelab) (ranges) | 15 | 09:00 | 0.4-0.5 | vs base rate | 330 | 69.4% | 35.1% | 25 | 84.0% | 35.3% | 1.42 |
+| Broken range returns to far edge (rangelab) (ranges) | 30 | 09:00 | 0.7-0.8 | vs base rate | 415 | 68.9% | 35.1% | 33 | 63.6% | 35.3% | 0.84 |
+| Broken range returns to far edge (rangelab) (ranges) | 15 | 09:00 | 0.8-0.9 | vs base rate | 424 | 68.9% | 35.1% | 29 | 62.1% | 35.3% | 0.79 |
+| Broken range returns to far edge (rangelab) (ranges) | 30 | 09:00 | 0.6-0.7 | vs base rate | 360 | 68.3% | 35.1% | 32 | 65.6% | 35.3% | 0.91 |
+| Broken range returns to far edge (rangelab) (ranges) | 30 | 09:00 | 0.1-0.2 | vs base rate | 397 | 68.3% | 35.1% | 31 | 77.4% | 35.3% | 1.27 |
+| Broken range returns to far edge (rangelab) (ranges) | 30 | 09:00 | 0.2-0.3 | vs base rate | 390 | 68.2% | 35.1% | 30 | 66.7% | 35.3% | 0.95 |
+| Broken range returns to far edge (rangelab) (ranges) | 60 | 07:00 | 0.8-0.9 | vs base rate | 442 | 68.1% | 35.1% | 41 | 63.4% | 35.3% | 0.85 |
+| Broken range returns to far edge (rangelab) (ranges) | 15 | 09:15 | 0.7-0.8 | vs base rate | 369 | 67.8% | 35.1% | 30 | 63.3% | 35.3% | 0.86 |
+| Broken range returns to far edge (rangelab) (ranges) | 15 | 09:15 | 0.6-0.7 | vs base rate | 384 | 67.7% | 35.1% | 32 | 65.6% | 35.3% | 0.93 |
+| Broken range returns to far edge (rangelab) (ranges) | 60 | 07:00 | 0.4-0.5 | vs base rate | 346 | 67.6% | 35.1% | 42 | 69.0% | 35.3% | 1.04 |
+| Broken range returns to far edge (rangelab) (ranges) | 15 | 09:15 | 0.0-0.1 | vs base rate | 364 | 67.6% | 35.1% | 22 | 81.8% | 35.3% | 1.43 |
+| Broken range returns to far edge (rangelab) (ranges) | 15 | 09:00 | 0.9-1.0 | vs base rate | 296 | 67.6% | 35.1% | 37 | 62.2% | 35.3% | 0.83 |
+| Broken range returns to far edge (rangelab) (ranges) | 15 | 09:15 | 0.3-0.4 | vs base rate | 348 | 67.5% | 35.1% | 35 | 57.1% | 35.3% | 0.67 |
+| Broken range returns to far edge (rangelab) (ranges) | 15 | 09:00 | 0.2-0.3 | vs base rate | 381 | 67.5% | 35.1% | 35 | 74.3% | 35.3% | 1.20 |
+| Broken range returns to far edge (rangelab) (ranges) | 15 | 08:45 | 0.5-0.6 | vs base rate | 371 | 67.4% | 35.1% | 23 | 82.6% | 35.3% | 1.47 |
+| Broken range returns to far edge (rangelab) (ranges) | 15 | 09:00 | 0.0-0.1 | vs base rate | 362 | 67.1% | 35.1% | 22 | 54.5% | 35.3% | 0.60 |
+| Broken range returns to far edge (rangelab) (ranges) | 15 | 09:15 | 0.4-0.5 | vs base rate | 292 | 67.1% | 35.1% | 26 | 73.1% | 35.3% | 1.18 |
+| Broken range returns to far edge (rangelab) (ranges) | 15 | 09:15 | 0.2-0.3 | vs base rate | 391 | 67.0% | 35.1% | 27 | 59.3% | 35.3% | 0.75 |
+| Broken range returns to far edge (rangelab) (ranges) | 60 | 07:00 | 0.3-0.4 | vs base rate | 350 | 66.9% | 35.1% | 30 | 76.7% | 35.3% | 1.30 |
+| Broken range returns to far edge (rangelab) (ranges) | 60 | 07:00 | 0.9-1.0 | vs base rate | 338 | 66.6% | 35.1% | 27 | 51.9% | 35.3% | 0.53 |
+| Broken range returns to far edge (rangelab) (ranges) | 15 | 09:15 | 0.8-0.9 | vs base rate | 459 | 66.4% | 35.1% | 29 | 75.9% | 35.3% | 1.29 |
+| Broken range returns to far edge (rangelab) (ranges) | 60 | 07:00 | 0.1-0.2 | vs base rate | 384 | 66.4% | 35.1% | 24 | 75.0% | 35.3% | 1.27 |
+| Broken range returns to far edge (rangelab) (ranges) | 60 | 07:00 | 0.5-0.6 | vs base rate | 382 | 66.2% | 35.1% | 29 | 65.5% | 35.3% | 0.97 |
+| Broken range returns to far edge (rangelab) (ranges) | 30 | 08:00 | 0.5-0.6 | vs base rate | 351 | 66.1% | 35.1% | 28 | 78.6% | 35.3% | 1.40 |
+| Broken range returns to far edge (rangelab) (ranges) | 30 | 08:00 | 0.6-0.7 | vs base rate | 350 | 66.0% | 35.1% | 31 | 58.1% | 35.3% | 0.74 |
+| Broken range returns to far edge (rangelab) (ranges) | 60 | 07:00 | 0.0-0.1 | vs base rate | 273 | 65.9% | 35.1% | 23 | 65.2% | 35.3% | 0.97 |
+| Broken range returns to far edge (rangelab) (ranges) | 60 | 06:00 | 0.4-0.5 | vs base rate | 305 | 65.9% | 35.1% | 24 | 70.8% | 35.3% | 1.15 |
+| Broken range returns to far edge (rangelab) (ranges) | 15 | 08:45 | 0.9-1.0 | vs base rate | 343 | 65.9% | 35.1% | 33 | 63.6% | 35.3% | 0.92 |
+| Broken range returns to far edge (rangelab) (ranges) | 15 | 16:00 | 0.0-0.1 | vs base rate | 64 | 4.7% | 35.1% | 25 | 20.0% | 35.3% | 0.50 |
+| Broken range returns to far edge (rangelab) (ranges) | 30 | 09:00 | 0.8-0.9 | vs base rate | 441 | 65.5% | 35.1% | 27 | 63.0% | 35.3% | 0.91 |
+| Broken range returns to far edge (rangelab) (ranges) | 60 | 06:00 | 0.7-0.8 | vs base rate | 415 | 65.1% | 35.1% | 26 | 73.1% | 35.3% | 1.26 |
+| Broken range returns to far edge (rangelab) (ranges) | 30 | 09:00 | 0.9-1.0 | vs base rate | 322 | 64.9% | 35.1% | 36 | 55.6% | 35.3% | 0.68 |
+| Broken range returns to far edge (rangelab) (ranges) | 60 | 06:00 | 0.9-1.0 | vs base rate | 350 | 64.9% | 35.1% | 27 | 63.0% | 35.3% | 0.93 |
+| Broken range returns to far edge (rangelab) (ranges) | 30 | 08:30 | 0.1-0.2 | vs base rate | 349 | 64.8% | 35.1% | 32 | 62.5% | 35.3% | 0.92 |
+| Broken range returns to far edge (rangelab) (ranges) | 15 | 08:45 | 0.6-0.7 | vs base rate | 360 | 64.7% | 35.1% | 23 | 78.3% | 35.3% | 1.45 |
+| Broken range returns to far edge (rangelab) (ranges) | 30 | 08:30 | 0.5-0.6 | vs base rate | 400 | 64.5% | 35.1% | 31 | 58.1% | 35.3% | 0.77 |
+| Broken range returns to far edge (rangelab) (ranges) | 60 | 07:00 | 0.6-0.7 | vs base rate | 394 | 64.5% | 35.1% | 23 | 69.6% | 35.3% | 1.17 |
+| Broken range returns to far edge (rangelab) (ranges) | 15 | 08:45 | 0.3-0.4 | vs base rate | 390 | 64.4% | 35.1% | 27 | 70.4% | 35.3% | 1.20 |
+| Broken range returns to far edge (rangelab) (ranges) | 30 | 08:00 | 0.9-1.0 | vs base rate | 320 | 64.1% | 35.1% | 33 | 63.6% | 35.3% | 0.98 |
+| Broken range returns to far edge (rangelab) (ranges) | 60 | 08:00 | 0.4-0.5 | vs base rate | 339 | 63.7% | 35.1% | 33 | 60.6% | 35.3% | 0.88 |
+| Broken range returns to far edge (rangelab) (ranges) | 30 | 08:30 | 0.6-0.7 | vs base rate | 407 | 63.6% | 35.1% | 29 | 75.9% | 35.3% | 1.42 |
+| Broken range returns to far edge (rangelab) (ranges) | 30 | 09:00 | 0.4-0.5 | vs base rate | 327 | 63.6% | 35.1% | 21 | 71.4% | 35.3% | 1.27 |
+| Broken range returns to far edge (rangelab) (ranges) | 30 | 08:00 | 0.7-0.8 | vs base rate | 381 | 63.5% | 35.1% | 33 | 72.7% | 35.3% | 1.32 |
+| Broken range returns to far edge (rangelab) (ranges) | 30 | 08:00 | 0.8-0.9 | vs base rate | 427 | 63.5% | 35.1% | 30 | 83.3% | 35.3% | 1.69 |
+| Broken range returns to far edge (rangelab) (ranges) | 15 | 08:45 | 0.8-0.9 | vs base rate | 425 | 63.3% | 35.1% | 38 | 60.5% | 35.3% | 0.89 |
+| Broken range returns to far edge (rangelab) (ranges) | 30 | 08:00 | 0.1-0.2 | vs base rate | 442 | 63.1% | 35.1% | 30 | 60.0% | 35.3% | 0.88 |
+| Broken range returns to far edge (rangelab) (ranges) | 30 | 08:30 | 0.8-0.9 | vs base rate | 401 | 62.8% | 35.1% | 36 | 69.4% | 35.3% | 1.23 |
+| Broken range returns to far edge (rangelab) (ranges) | 15 | 08:45 | 0.7-0.8 | vs base rate | 368 | 62.8% | 35.1% | 26 | 80.8% | 35.3% | 1.64 |
+| Broken range returns to far edge (rangelab) (ranges) | 30 | 08:00 | 0.2-0.3 | vs base rate | 415 | 62.7% | 35.1% | 26 | 65.4% | 35.3% | 1.09 |
+| Broken range returns to far edge (rangelab) (ranges) | 15 | 08:45 | 0.1-0.2 | vs base rate | 381 | 62.2% | 35.1% | 38 | 63.2% | 35.3% | 1.03 |
+| Broken range returns to far edge (rangelab) (ranges) | 15 | 08:45 | 0.4-0.5 | vs base rate | 328 | 62.2% | 35.1% | 24 | 83.3% | 35.3% | 1.77 |
+| Broken range returns to far edge (rangelab) (ranges) | 60 | 08:00 | 0.2-0.3 | vs base rate | 363 | 62.0% | 35.1% | 31 | 61.3% | 35.3% | 0.97 |
+| Broken range returns to far edge (rangelab) (ranges) | 60 | 06:00 | 0.8-0.9 | vs base rate | 461 | 61.8% | 35.1% | 35 | 68.6% | 35.3% | 1.25 |
+| Broken range returns to far edge (rangelab) (ranges) | 15 | 08:45 | 0.0-0.1 | vs base rate | 319 | 61.8% | 35.1% | 30 | 53.3% | 35.3% | 0.68 |
+| Broken range returns to far edge (rangelab) (ranges) | 60 | 08:00 | 0.8-0.9 | vs base rate | 439 | 61.7% | 35.1% | 35 | 60.0% | 35.3% | 0.93 |
+| Broken range returns to far edge (rangelab) (ranges) | 15 | 08:45 | 0.2-0.3 | vs base rate | 384 | 61.7% | 35.1% | 25 | 56.0% | 35.3% | 0.78 |
+| Broken range returns to far edge (rangelab) (ranges) | 60 | 06:00 | 0.5-0.6 | vs base rate | 335 | 61.5% | 35.1% | 22 | 63.6% | 35.3% | 1.07 |
+| Broken range returns to far edge (rangelab) (ranges) | 60 | 08:00 | 0.7-0.8 | vs base rate | 398 | 61.3% | 35.1% | 26 | 65.4% | 35.3% | 1.15 |
+| Broken range returns to far edge (rangelab) (ranges) | 60 | 06:00 | 0.6-0.7 | vs base rate | 389 | 61.2% | 35.1% | 31 | 51.6% | 35.3% | 0.62 |
+| Broken range returns to far edge (rangelab) (ranges) | 60 | 08:00 | 0.3-0.4 | vs base rate | 356 | 61.0% | 35.1% | 26 | 57.7% | 35.3% | 0.87 |
+| Broken range returns to far edge (rangelab) (ranges) | 60 | 08:00 | 0.1-0.2 | vs base rate | 417 | 60.9% | 35.1% | 22 | 63.6% | 35.3% | 1.10 |
+| Broken range returns to far edge (rangelab) (ranges) | 15 | 16:00 | 0.1-0.2 | vs base rate | 61 | 9.8% | 35.1% | 23 | 8.7% | 35.3% | 1.05 |
+| Broken range returns to far edge (rangelab) (ranges) | 30 | 08:00 | 0.3-0.4 | vs base rate | 338 | 60.4% | 35.1% | 30 | 76.7% | 35.3% | 1.64 |
+| Broken range returns to far edge (rangelab) (ranges) | 30 | 08:30 | 0.4-0.5 | vs base rate | 340 | 60.3% | 35.1% | 33 | 54.5% | 35.3% | 0.76 |
+| Broken range returns to far edge (rangelab) (ranges) | 60 | 08:00 | 0.5-0.6 | vs base rate | 361 | 60.1% | 35.1% | 24 | 70.8% | 35.3% | 1.42 |
+| Broken range returns to far edge (rangelab) (ranges) | 60 | 06:00 | 0.3-0.4 | vs base rate | 357 | 59.9% | 35.1% | 33 | 63.6% | 35.3% | 1.14 |
+| Broken range returns to far edge (rangelab) (ranges) | 60 | 06:00 | 0.2-0.3 | vs base rate | 361 | 59.8% | 35.1% | 33 | 63.6% | 35.3% | 1.15 |
+| Broken range returns to far edge (rangelab) (ranges) | 60 | 00:00 | 0.4-0.5 | vs base rate | 268 | 59.7% | 35.1% | 28 | 50.0% | 35.3% | 0.60 |
+| Broken range returns to far edge (rangelab) (ranges) | 30 | 08:30 | 0.2-0.3 | vs base rate | 390 | 59.5% | 35.1% | 30 | 53.3% | 35.3% | 0.74 |
+| Broken range returns to far edge (rangelab) (ranges) | 60 | 00:00 | 0.8-0.9 | vs base rate | 390 | 59.5% | 35.1% | 35 | 68.6% | 35.3% | 1.36 |
+| Broken range returns to far edge (rangelab) (ranges) | 30 | 08:00 | 0.4-0.5 | vs base rate | 323 | 59.4% | 35.1% | 23 | 52.2% | 35.3% | 0.69 |
+| Broken range returns to far edge (rangelab) (ranges) | 30 | 08:30 | 0.3-0.4 | vs base rate | 379 | 59.4% | 35.1% | 22 | 63.6% | 35.3% | 1.17 |
+| Broken range returns to far edge (rangelab) (ranges) | 15 | 02:45 | 0.8-0.9 | vs base rate | 402 | 59.2% | 35.1% | 35 | 57.1% | 35.3% | 0.91 |
+| Broken range returns to far edge (rangelab) (ranges) | 60 | 08:00 | 0.9-1.0 | vs base rate | 360 | 59.2% | 35.1% | 36 | 75.0% | 35.3% | 1.65 |
+| Broken range returns to far edge (rangelab) (ranges) | 60 | 06:00 | 0.1-0.2 | vs base rate | 386 | 58.5% | 35.1% | 27 | 63.0% | 35.3% | 1.18 |
+| Broken range returns to far edge (rangelab) (ranges) | 60 | 00:00 | 0.9-1.0 | vs base rate | 214 | 58.4% | 35.1% | 27 | 51.9% | 35.3% | 0.71 |
+| Broken range returns to far edge (rangelab) (ranges) | 60 | 10:00 | 0.4-0.5 | vs base rate | 256 | 12.1% | 35.1% | 20 | 15.0% | 35.3% | 0.88 |
+| Broken range returns to far edge (rangelab) (ranges) | 60 | 00:00 | 0.2-0.3 | vs base rate | 276 | 58.0% | 35.1% | 30 | 56.7% | 35.3% | 0.93 |
+| Broken range returns to far edge (rangelab) (ranges) | 15 | 02:30 | 0.2-0.3 | vs base rate | 366 | 57.9% | 35.1% | 23 | 56.5% | 35.3% | 0.93 |
+| Broken range returns to far edge (rangelab) (ranges) | 60 | 00:00 | 0.3-0.4 | vs base rate | 265 | 57.7% | 35.1% | 36 | 50.0% | 35.3% | 0.65 |
+| Broken range returns to far edge (rangelab) (ranges) | 60 | 00:00 | 0.6-0.7 | vs base rate | 319 | 57.7% | 35.1% | 31 | 61.3% | 35.3% | 1.15 |
+| Broken range returns to far edge (rangelab) (ranges) | 15 | 02:45 | 0.5-0.6 | vs base rate | 370 | 57.6% | 35.1% | 22 | 59.1% | 35.3% | 1.06 |
+| Broken range returns to far edge (rangelab) (ranges) | 60 | 06:00 | 0.0-0.1 | vs base rate | 306 | 57.5% | 35.1% | 22 | 54.5% | 35.3% | 0.86 |
+| Broken range returns to far edge (rangelab) (ranges) | 60 | 08:00 | 0.6-0.7 | vs base rate | 333 | 56.8% | 35.1% | 32 | 59.4% | 35.3% | 1.11 |
+| Broken range returns to far edge (rangelab) (ranges) | 60 | 10:00 | 0.8-0.9 | vs base rate | 474 | 13.7% | 35.1% | 30 | 16.7% | 35.3% | 0.87 |
+| Broken range returns to far edge (rangelab) (ranges) | 30 | 02:30 | 0.2-0.3 | vs base rate | 380 | 56.3% | 35.1% | 27 | 48.1% | 35.3% | 0.60 |
+| Broken range returns to far edge (rangelab) (ranges) | 30 | 08:30 | 0.7-0.8 | vs base rate | 437 | 56.1% | 35.1% | 28 | 82.1% | 35.3% | 2.24 |
+| Broken range returns to far edge (rangelab) (ranges) | 30 | 09:30 | 0.3-0.4 | vs base rate | 380 | 14.2% | 35.1% | 27 | 11.1% | 35.3% | 1.16 |
+| Broken range returns to far edge (rangelab) (ranges) | 15 | 02:30 | 0.6-0.7 | vs base rate | 345 | 55.9% | 35.1% | 25 | 64.0% | 35.3% | 1.38 |
+| Broken range returns to far edge (rangelab) (ranges) | 30 | 09:30 | 0.6-0.7 | vs base rate | 338 | 14.5% | 35.1% | 25 | 4.0% | 35.3% | 1.52 |
+| Broken range returns to far edge (rangelab) (ranges) | 15 | 02:45 | 0.1-0.2 | vs base rate | 325 | 55.7% | 35.1% | 29 | 55.2% | 35.3% | 0.96 |
+| Broken range returns to far edge (rangelab) (ranges) | 30 | 00:30 | 0.7-0.8 | vs base rate | 247 | 55.5% | 35.1% | 31 | 51.6% | 35.3% | 0.80 |
+| Broken range returns to far edge (rangelab) (ranges) | 60 | 10:00 | 0.0-0.1 | vs base rate | 289 | 15.2% | 35.1% | 35 | 22.9% | 35.3% | 0.63 |
+| Broken range returns to far edge (rangelab) (ranges) | 60 | 00:00 | 0.1-0.2 | vs base rate | 282 | 55.0% | 35.1% | 34 | 52.9% | 35.3% | 0.89 |
+| Broken range returns to far edge (rangelab) (ranges) | 60 | 01:00 | 0.2-0.3 | vs base rate | 344 | 54.7% | 35.1% | 35 | 54.3% | 35.3% | 0.97 |
+| Broken range returns to far edge (rangelab) (ranges) | 30 | 10:30 | 0.5-0.6 | vs base rate | 293 | 15.7% | 35.1% | 26 | 19.2% | 35.3% | 0.83 |
+| Broken range returns to far edge (rangelab) (ranges) | 60 | 20:00 | 0.5-0.6 | vs base rate | 214 | 15.9% | 35.1% | 32 | 18.8% | 35.3% | 0.86 |
+| Broken range returns to far edge (rangelab) (ranges) | 30 | 02:30 | 0.8-0.9 | vs base rate | 447 | 54.1% | 35.1% | 35 | 48.6% | 35.3% | 0.70 |
+| Broken range returns to far edge (rangelab) (ranges) | 30 | 09:30 | 0.0-0.1 | vs base rate | 333 | 16.2% | 35.1% | 30 | 10.0% | 35.3% | 1.34 |
+| Broken range returns to far edge (rangelab) (ranges) | 30 | 10:00 | 0.6-0.7 | vs base rate | 296 | 16.2% | 35.1% | 25 | 4.0% | 35.3% | 1.66 |
+| Broken range returns to far edge (rangelab) (ranges) | 30 | 21:30 | 0.4-0.5 | vs base rate | 209 | 16.3% | 35.1% | 33 | 24.2% | 35.3% | 0.59 |
+| Broken range returns to far edge (rangelab) (ranges) | 30 | 10:00 | 0.4-0.5 | vs base rate | 295 | 16.3% | 35.1% | 21 | 9.5% | 35.3% | 1.37 |
+| Broken range returns to far edge (rangelab) (ranges) | 30 | 02:30 | 0.3-0.4 | vs base rate | 326 | 54.0% | 35.1% | 22 | 59.1% | 35.3% | 1.26 |
+| Broken range returns to far edge (rangelab) (ranges) | 30 | 02:30 | 0.4-0.5 | vs base rate | 289 | 54.0% | 35.1% | 21 | 66.7% | 35.3% | 1.66 |
+| Broken range returns to far edge (rangelab) (ranges) | 60 | Q1 narrow | vs base rate | 9283 | 53.4% | 35.1% | 864 | 55.1% | 35.3% | 1.08 |
+| Broken range returns to far edge (rangelab) (ranges) | 60 | 01:00 | 0.4-0.5 | vs base rate | 310 | 53.2% | 35.1% | 28 | 50.0% | 35.3% | 0.81 |
+| Broken range returns to far edge (rangelab) (ranges) | 60 | 01:00 | 0.7-0.8 | vs base rate | 347 | 53.0% | 35.1% | 29 | 58.6% | 35.3% | 1.30 |
+| Broken range returns to far edge (rangelab) (ranges) | 15 | 02:30 | 0.1-0.2 | vs base rate | 323 | 52.9% | 35.1% | 24 | 54.2% | 35.3% | 1.06 |
+| Broken range returns to far edge (rangelab) (ranges) | 60 | 10:00 | 0.1-0.2 | vs base rate | 386 | 17.4% | 35.1% | 24 | 4.2% | 35.3% | 1.75 |
+| Broken range returns to far edge (rangelab) (ranges) | 30 | 09:30 | 0.2-0.3 | vs base rate | 383 | 17.5% | 35.1% | 25 | 8.0% | 35.3% | 1.55 |
+| Broken range returns to far edge (rangelab) (ranges) | 15 | 09:30 | 0.0-0.1 | vs base rate | 353 | 17.6% | 35.1% | 27 | 18.5% | 35.3% | 0.96 |
+| Broken range returns to far edge (rangelab) (ranges) | 30 | 10:00 | 0.1-0.2 | vs base rate | 387 | 17.6% | 35.1% | 24 | 16.7% | 35.3% | 1.06 |
+| Broken range returns to far edge (rangelab) (ranges) | 60 | 21:00 | 0.2-0.3 | vs base rate | 210 | 17.6% | 35.1% | 28 | 14.3% | 35.3% | 1.20 |
+| Broken range returns to far edge (rangelab) (ranges) | 60 | 01:00 | 0.9-1.0 | vs base rate | 272 | 52.6% | 35.1% | 32 | 53.1% | 35.3% | 1.02 |
+| Broken range returns to far edge (rangelab) (ranges) | 30 | 02:30 | 0.1-0.2 | vs base rate | 383 | 52.5% | 35.1% | 23 | 60.9% | 35.3% | 1.47 |
+| Broken range returns to far edge (rangelab) (ranges) | 30 | 09:30 | 0.7-0.8 | vs base rate | 354 | 17.8% | 35.1% | 27 | 14.8% | 35.3% | 1.18 |
+| Broken range returns to far edge (rangelab) (ranges) | 30 | 00:30 | 0.2-0.3 | vs base rate | 256 | 52.3% | 35.1% | 22 | 63.6% | 35.3% | 1.64 |
+| Broken range returns to far edge (rangelab) (ranges) | 15 | 02:45 | 0.2-0.3 | vs base rate | 350 | 52.3% | 35.1% | 31 | 58.1% | 35.3% | 1.32 |
+| Broken range returns to far edge (rangelab) (ranges) | 30 | 01:30 | 0.1-0.2 | vs base rate | 308 | 52.3% | 35.1% | 39 | 56.4% | 35.3% | 1.23 |
+| Broken range returns to far edge (rangelab) (ranges) | 15 | 09:30 | 0.6-0.7 | vs base rate | 334 | 18.3% | 35.1% | 24 | 20.8% | 35.3% | 0.86 |
+| Broken range returns to far edge (rangelab) (ranges) | 30 | 01:30 | 0.8-0.9 | vs base rate | 389 | 51.9% | 35.1% | 36 | 55.6% | 35.3% | 1.20 |
+| Broken range returns to far edge (rangelab) (ranges) | 60 | 21:00 | 0.7-0.8 | vs base rate | 245 | 18.4% | 35.1% | 31 | 22.6% | 35.3% | 0.76 |
+| Broken range returns to far edge (rangelab) (ranges) | 60 | 10:00 | 0.9-1.0 | vs base rate | 466 | 18.5% | 35.1% | 45 | 15.6% | 35.3% | 1.19 |
+| Broken range returns to far edge (rangelab) (ranges) | 30 | 09:30 | 0.1-0.2 | vs base rate | 359 | 18.7% | 35.1% | 44 | 20.5% | 35.3% | 0.90 |
+| Broken range returns to far edge (rangelab) (ranges) | 60 | 03:00 | 0.7-0.8 | vs base rate | 364 | 18.7% | 35.1% | 36 | 16.7% | 35.3% | 1.14 |
+| Broken range returns to far edge (rangelab) (ranges) | 60 | 03:00 | 0.5-0.6 | vs base rate | 369 | 19.0% | 35.1% | 27 | 22.2% | 35.3% | 0.81 |
+| Broken range returns to far edge (rangelab) (ranges) | 60 | 01:00 | 0.6-0.7 | vs base rate | 339 | 51.0% | 35.1% | 25 | 56.0% | 35.3% | 1.30 |
+| Broken range returns to far edge (rangelab) (ranges) | 15 | 04:00 | 0.6-0.7 | vs base rate | 347 | 19.3% | 35.1% | 23 | 4.3% | 35.3% | 1.96 |
+| Broken range returns to far edge (rangelab) (ranges) | 30 | 10:00 | 0.8-0.9 | vs base rate | 489 | 19.4% | 35.1% | 33 | 15.2% | 35.3% | 1.29 |
+| Broken range returns to far edge (rangelab) (ranges) | 30 | 10:30 | 0.4-0.5 | vs base rate | 298 | 19.5% | 35.1% | 20 | 15.0% | 35.3% | 1.30 |
+| Broken range returns to far edge (rangelab) (ranges) | 30 | 10:30 | 0.2-0.3 | vs base rate | 344 | 19.5% | 35.1% | 23 | 13.0% | 35.3% | 1.42 |
+| Broken range returns to far edge (rangelab) (ranges) | 30 | 21:30 | 0.1-0.2 | vs base rate | 200 | 19.5% | 35.1% | 32 | 21.9% | 35.3% | 0.86 |
+| Broken range returns to far edge (rangelab) (ranges) | 60 | Q5 wide | vs base rate | 13412 | 19.6% | 35.1% | 939 | 18.0% | 35.3% | 1.12 |
+| Broken range returns to far edge (rangelab) (ranges) | 15 | Q5 wide | vs base rate | 59950 | 19.6% | 35.1% | 4517 | 17.8% | 35.3% | 1.13 |
+| Broken range returns to far edge (rangelab) (ranges) | 30 | Q5 wide | vs base rate | 28910 | 19.7% | 35.1% | 2129 | 18.4% | 35.3% | 1.10 |
+| Broken range returns to far edge (rangelab) (ranges) | 30 | 10:00 | 0.7-0.8 | vs base rate | 354 | 19.8% | 35.1% | 28 | 17.9% | 35.3% | 1.14 |
+| Broken range returns to far edge (rangelab) (ranges) | 60 | 00:00 | 0.7-0.8 | vs base rate | 315 | 50.5% | 35.1% | 20 | 50.0% | 35.3% | 0.96 |
+| Broken range returns to far edge (rangelab) (ranges) | 30 | 10:00 | 0.5-0.6 | vs base rate | 302 | 19.9% | 35.1% | 23 | 8.7% | 35.3% | 1.75 |
+| Broken range returns to far edge (rangelab) (ranges) | 30 | 00:30 | 0.1-0.2 | vs base rate | 258 | 50.4% | 35.1% | 26 | 65.4% | 35.3% | 1.97 |
+| Broken range returns to far edge (rangelab) (ranges) | 60 | 20:00 | 0.2-0.3 | vs base rate | 256 | 19.9% | 35.1% | 29 | 20.7% | 35.3% | 0.96 |
+| Broken range returns to far edge (rangelab) (ranges) | 30 | 09:30 | 0.8-0.9 | vs base rate | 411 | 20.0% | 35.1% | 27 | 3.7% | 35.3% | 2.08 |
+| Broken range returns to far edge (rangelab) (ranges) | 30 | 02:30 | 0.7-0.8 | vs base rate | 365 | 50.1% | 35.1% | 42 | 54.8% | 35.3% | 1.29 |
+| Broken range returns to far edge (rangelab) (ranges) | 15 | 07:45 | 0.6-0.7 | vs base rate | 360 | 50.0% | 35.1% | 30 | 53.3% | 35.3% | 1.21 |
+| Broken range returns to far edge (rangelab) (ranges) | 15 | 09:30 | 0.2-0.3 | vs base rate | 428 | 20.3% | 35.1% | 24 | 20.8% | 35.3% | 0.98 |
+| Broken range returns to far edge (rangelab) (ranges) | 30 | 04:00 | 0.2-0.3 | vs base rate | 359 | 20.3% | 35.1% | 33 | 15.2% | 35.3% | 1.36 |
+| Broken range returns to far edge (rangelab) (ranges) | 30 | 01:30 | 0.2-0.3 | vs base rate | 355 | 49.9% | 35.1% | 34 | 47.1% | 35.3% | 0.80 |
+| Broken range returns to far edge (rangelab) (ranges) | 15 | 10:00 | 0.8-0.9 | vs base rate | 482 | 20.5% | 35.1% | 39 | 23.1% | 35.3% | 0.84 |
+| Broken range returns to far edge (rangelab) (ranges) | 60 | 21:00 | 0.4-0.5 | vs base rate | 199 | 20.6% | 35.1% | 25 | 16.0% | 35.3% | 1.33 |
+| Broken range returns to far edge (rangelab) (ranges) | 15 | 10:00 | 0.3-0.4 | vs base rate | 329 | 20.7% | 35.1% | 28 | 17.9% | 35.3% | 1.21 |
+| Broken range returns to far edge (rangelab) (ranges) | 15 | 22:00 | 0.3-0.4 | vs base rate | 219 | 21.0% | 35.1% | 32 | 18.8% | 35.3% | 1.17 |
+| Broken range returns to far edge (rangelab) (ranges) | 15 | 07:45 | 0.4-0.5 | vs base rate | 283 | 49.1% | 35.1% | 28 | 57.1% | 35.3% | 1.56 |
+| Broken range returns to far edge (rangelab) (ranges) | 15 | 10:00 | 0.6-0.7 | vs base rate | 340 | 21.2% | 35.1% | 26 | 11.5% | 35.3% | 1.71 |
+| Broken range returns to far edge (rangelab) (ranges) | 60 | 20:00 | 0.0-0.1 | vs base rate | 160 | 21.2% | 35.1% | 20 | 5.0% | 35.3% | 2.19 |
+| Broken range returns to far edge (rangelab) (ranges) | 15 | 09:30 | 0.4-0.5 | vs base rate | 314 | 21.3% | 35.1% | 21 | 19.0% | 35.3% | 1.18 |
+| Broken range returns to far edge (rangelab) (ranges) | 30 | 09:30 | 0.9-1.0 | vs base rate | 332 | 21.4% | 35.1% | 43 | 20.9% | 35.3% | 1.05 |
+| Broken range returns to far edge (rangelab) (ranges) | 30 | 03:00 | 0.1-0.2 | vs base rate | 377 | 21.5% | 35.1% | 29 | 17.2% | 35.3% | 1.33 |
+| Broken range returns to far edge (rangelab) (ranges) | 15 | 10:00 | 0.2-0.3 | vs base rate | 325 | 21.5% | 35.1% | 20 | 15.0% | 35.3% | 1.50 |
+| Broken range returns to far edge (rangelab) (ranges) | 15 | 01:15 | 0.6-0.7 | vs base rate | 234 | 48.7% | 35.1% | 25 | 48.0% | 35.3% | 0.93 |
+| Broken range returns to far edge (rangelab) (ranges) | 60 | 21:00 | 0.3-0.4 | vs base rate | 181 | 21.5% | 35.1% | 25 | 8.0% | 35.3% | 2.01 |
+| Broken range returns to far edge (rangelab) (ranges) | 15 | 02:00 | 0.1-0.2 | vs base rate | 269 | 21.6% | 35.1% | 32 | 21.9% | 35.3% | 0.99 |
+| Broken range returns to far edge (rangelab) (ranges) | 15 | 04:00 | 0.7-0.8 | vs base rate | 380 | 21.6% | 35.1% | 35 | 11.4% | 35.3% | 1.76 |
+| Broken range returns to far edge (rangelab) (ranges) | 30 | Q1 narrow | vs base rate | 18487 | 48.7% | 35.1% | 1815 | 52.5% | 35.3% | 1.27 |
+| Broken range returns to far edge (rangelab) (ranges) | 15 | 20:00 | 0.8-0.9 | vs base rate | 264 | 21.6% | 35.1% | 37 | 18.9% | 35.3% | 1.21 |
+| Broken range returns to far edge (rangelab) (ranges) | 30 | 04:00 | 0.8-0.9 | vs base rate | 424 | 21.7% | 35.1% | 38 | 18.4% | 35.3% | 1.26 |
+| Broken range returns to far edge (rangelab) (ranges) | 15 | 04:00 | 0.2-0.3 | vs base rate | 377 | 21.8% | 35.1% | 34 | 20.6% | 35.3% | 1.10 |
+| Broken range returns to far edge (rangelab) (ranges) | 30 | 04:00 | 0.5-0.6 | vs base rate | 340 | 21.8% | 35.1% | 32 | 6.2% | 35.3% | 2.18 |
+| Broken range returns to far edge (rangelab) (ranges) | 30 | 22:00 | 0.9-1.0 | vs base rate | 210 | 21.9% | 35.1% | 36 | 25.0% | 35.3% | 0.78 |
+| Broken range returns to far edge (rangelab) (ranges) | 15 | 09:30 | 0.7-0.8 | vs base rate | 364 | 22.0% | 35.1% | 21 | 14.3% | 35.3% | 1.60 |
+| Broken range returns to far edge (rangelab) (ranges) | 30 | 04:00 | 0.0-0.1 | vs base rate | 323 | 22.0% | 35.1% | 26 | 15.4% | 35.3% | 1.52 |
+| Broken range returns to far edge (rangelab) (ranges) | 15 | 09:30 | 0.1-0.2 | vs base rate | 404 | 22.0% | 35.1% | 47 | 21.3% | 35.3% | 1.07 |
+| Broken range returns to far edge (rangelab) (ranges) | 30 | 01:00 | 0.2-0.3 | vs base rate | 295 | 48.1% | 35.1% | 35 | 45.7% | 35.3% | 0.80 |
+| Broken range returns to far edge (rangelab) (ranges) | 60 | 20:00 | 0.4-0.5 | vs base rate | 198 | 22.2% | 35.1% | 28 | 17.9% | 35.3% | 1.35 |
+| Broken range returns to far edge (rangelab) (ranges) | 30 | 03:00 | 0.5-0.6 | vs base rate | 319 | 22.3% | 35.1% | 20 | 15.0% | 35.3% | 1.58 |
+| Broken range returns to far edge (rangelab) (ranges) | 30 | 04:00 | 0.7-0.8 | vs base rate | 358 | 22.3% | 35.1% | 28 | 17.9% | 35.3% | 1.37 |
+| Broken range returns to far edge (rangelab) (ranges) | 15 | 01:45 | 0.9-1.0 | vs base rate | 192 | 47.9% | 35.1% | 24 | 54.2% | 35.3% | 1.47 |
+| Broken range returns to far edge (rangelab) (ranges) | 15 | 02:15 | 0.0-0.1 | vs base rate | 309 | 47.9% | 35.1% | 20 | 50.0% | 35.3% | 1.15 |
+| Broken range returns to far edge (rangelab) (ranges) | 60 | 20:00 | 0.1-0.2 | vs base rate | 219 | 22.4% | 35.1% | 24 | 20.8% | 35.3% | 1.14 |
+| Broken range returns to far edge (rangelab) (ranges) | 15 | 02:00 | 0.5-0.6 | vs base rate | 286 | 22.4% | 35.1% | 23 | 17.4% | 35.3% | 1.41 |
+| Broken range returns to far edge (rangelab) (ranges) | 15 | 10:00 | 0.0-0.1 | vs base rate | 317 | 22.4% | 35.1% | 37 | 16.2% | 35.3% | 1.50 |
+| Broken range returns to far edge (rangelab) (ranges) | 30 | 01:30 | 0.6-0.7 | vs base rate | 320 | 47.8% | 35.1% | 26 | 50.0% | 35.3% | 1.16 |
+| Broken range returns to far edge (rangelab) (ranges) | 15 | 19:30 | 0.5-0.6 | vs base rate | 256 | 47.7% | 35.1% | 31 | 58.1% | 35.3% | 1.81 |
+| Broken range returns to far edge (rangelab) (ranges) | 15 | 21:30 | 0.4-0.5 | vs base rate | 221 | 22.6% | 35.1% | 24 | 16.7% | 35.3% | 1.49 |
+| Broken range returns to far edge (rangelab) (ranges) | 30 | 03:00 | 0.9-1.0 | vs base rate | 256 | 22.7% | 35.1% | 26 | 11.5% | 35.3% | 1.91 |
+| Broken range returns to far edge (rangelab) (ranges) | 15 | Q1 narrow | vs base rate | 38222 | 47.6% | 35.1% | 3759 | 50.3% | 35.3% | 1.20 |
+| Broken range returns to far edge (rangelab) (ranges) | 30 | 11:00 | 0.1-0.2 | vs base rate | 367 | 22.9% | 35.1% | 34 | 20.6% | 35.3% | 1.20 |
+| Broken range returns to far edge (rangelab) (ranges) | 30 | 04:00 | 0.4-0.5 | vs base rate | 275 | 22.9% | 35.1% | 25 | 12.0% | 35.3% | 1.91 |
+| Broken range returns to far edge (rangelab) (ranges) | 30 | 20:00 | 0.8-0.9 | vs base rate | 292 | 22.9% | 35.1% | 43 | 16.3% | 35.3% | 1.56 |
+| Broken range returns to far edge (rangelab) (ranges) | 15 | 04:00 | 0.8-0.9 | vs base rate | 379 | 23.0% | 35.1% | 31 | 22.6% | 35.3% | 1.05 |
+| Broken range returns to far edge (rangelab) (ranges) | 30 | 20:00 | 0.2-0.3 | vs base rate | 270 | 23.0% | 35.1% | 31 | 12.9% | 35.3% | 1.84 |
+| Broken range returns to far edge (rangelab) (ranges) | 30 | 10:30 | 0.0-0.1 | vs base rate | 348 | 23.0% | 35.1% | 24 | 20.8% | 35.3% | 1.19 |
+| Broken range returns to far edge (rangelab) (ranges) | 60 | 11:00 | 0.5-0.6 | vs base rate | 286 | 23.1% | 35.1% | 29 | 17.2% | 35.3% | 1.50 |
+| Broken range returns to far edge (rangelab) (ranges) | 60 | Q2 | vs base rate | 12060 | 47.1% | 35.1% | 1304 | 42.9% | 35.3% | 0.64 |
+| Broken range returns to far edge (rangelab) (ranges) | 30 | 07:30 | 0.0-0.1 | vs base rate | 308 | 47.1% | 35.1% | 29 | 65.5% | 35.3% | 2.53 |
+| Broken range returns to far edge (rangelab) (ranges) | 30 | 22:30 | 0.5-0.6 | vs base rate | 245 | 23.3% | 35.1% | 27 | 22.2% | 35.3% | 1.11 |
+| Broken range returns to far edge (rangelab) (ranges) | 15 | 09:30 | 0.8-0.9 | vs base rate | 424 | 23.3% | 35.1% | 35 | 22.9% | 35.3% | 1.06 |
+| Broken range returns to far edge (rangelab) (ranges) | 15 | 00:45 | 0.8-0.9 | vs base rate | 269 | 46.8% | 35.1% | 39 | 46.2% | 35.3% | 0.92 |
+| Broken range returns to far edge (rangelab) (ranges) | 15 | 00:45 | 0.7-0.8 | vs base rate | 235 | 46.8% | 35.1% | 34 | 50.0% | 35.3% | 1.26 |
+| Broken range returns to far edge (rangelab) (ranges) | 15 | 21:30 | 0.9-1.0 | vs base rate | 179 | 23.5% | 35.1% | 29 | 20.7% | 35.3% | 1.26 |
+| Broken range returns to far edge (rangelab) (ranges) | 15 | 01:30 | 0.2-0.3 | vs base rate | 295 | 46.8% | 35.1% | 37 | 48.6% | 35.3% | 1.14 |
+| Broken range returns to far edge (rangelab) (ranges) | 15 | 02:45 | 0.9-1.0 | vs base rate | 231 | 46.8% | 35.1% | 26 | 69.2% | 35.3% | 2.92 |
+| Broken range returns to far edge (rangelab) (ranges) | 30 | 03:30 | 0.0-0.1 | vs base rate | 352 | 23.6% | 35.1% | 23 | 21.7% | 35.3% | 1.18 |
+| Broken range returns to far edge (rangelab) (ranges) | 30 | 18:30 | 0.8-0.9 | vs base rate | 296 | 46.6% | 35.1% | 33 | 51.5% | 35.3% | 1.41 |
+| Broken range returns to far edge (rangelab) (ranges) | 15 | 07:45 | 0.0-0.1 | vs base rate | 369 | 46.6% | 35.1% | 26 | 53.8% | 35.3% | 1.61 |
+| Broken range returns to far edge (rangelab) (ranges) | 30 | 22:00 | 0.4-0.5 | vs base rate | 186 | 23.7% | 35.1% | 26 | 19.2% | 35.3% | 1.40 |
+| Broken range returns to far edge (rangelab) (ranges) | 15 | 07:45 | 0.9-1.0 | vs base rate | 294 | 46.6% | 35.1% | 36 | 47.2% | 35.3% | 1.04 |
+| Broken range returns to far edge (rangelab) (ranges) | 30 | 11:30 | 0.6-0.7 | vs base rate | 308 | 23.7% | 35.1% | 25 | 16.0% | 35.3% | 1.69 |
+| Broken range returns to far edge (rangelab) (ranges) | 60 | 11:00 | 0.1-0.2 | vs base rate | 357 | 23.8% | 35.1% | 28 | 21.4% | 35.3% | 1.23 |
+| Broken range returns to far edge (rangelab) (ranges) | 15 | 07:00 | 0.9-1.0 | vs base rate | 298 | 23.8% | 35.1% | 33 | 15.2% | 35.3% | 1.79 |
+| Broken range returns to far edge (rangelab) (ranges) | 30 | 10:30 | 0.1-0.2 | vs base rate | 323 | 23.8% | 35.1% | 29 | 17.2% | 35.3% | 1.60 |
+| Broken range returns to far edge (rangelab) (ranges) | 30 | 21:30 | 0.8-0.9 | vs base rate | 310 | 23.9% | 35.1% | 29 | 17.2% | 35.3% | 1.61 |
+| Broken range returns to far edge (rangelab) (ranges) | 30 | 04:00 | 0.1-0.2 | vs base rate | 368 | 23.9% | 35.1% | 24 | 20.8% | 35.3% | 1.29 |
+| Broken range returns to far edge (rangelab) (ranges) | 15 | 03:00 | 0.6-0.7 | vs base rate | 330 | 23.9% | 35.1% | 23 | 17.4% | 35.3% | 1.60 |
+| Broken range returns to far edge (rangelab) (ranges) | 60 | 20:00 | 0.9-1.0 | vs base rate | 225 | 24.0% | 35.1% | 33 | 18.2% | 35.3% | 1.54 |
+| Broken range returns to far edge (rangelab) (ranges) | 60 | 09:00 | 0.8-0.9 | vs base rate | 415 | 24.1% | 35.1% | 31 | 12.9% | 35.3% | 2.03 |
+| Broken range returns to far edge (rangelab) (ranges) | 15 | 11:00 | 0.3-0.4 | vs base rate | 332 | 24.1% | 35.1% | 24 | 20.8% | 35.3% | 1.31 |
+| Broken range returns to far edge (rangelab) (ranges) | 15 | 04:00 | 0.3-0.4 | vs base rate | 327 | 24.2% | 35.1% | 29 | 10.3% | 35.3% | 2.28 |
+| Broken range returns to far edge (rangelab) (ranges) | 30 | 10:00 | 0.9-1.0 | vs base rate | 487 | 24.2% | 35.1% | 48 | 22.9% | 35.3% | 1.14 |
+| Broken range returns to far edge (rangelab) (ranges) | 60 | 09:00 | 0.4-0.5 | vs base rate | 330 | 24.2% | 35.1% | 32 | 12.5% | 35.3% | 2.10 |
+| Broken range returns to far edge (rangelab) (ranges) | 15 | 03:00 | 0.1-0.2 | vs base rate | 338 | 24.3% | 35.1% | 27 | 22.2% | 35.3% | 1.21 |
+| Broken range returns to far edge (rangelab) (ranges) | 15 | 10:30 | 0.5-0.6 | vs base rate | 312 | 24.4% | 35.1% | 22 | 18.2% | 35.3% | 1.59 |
+| Broken range returns to far edge (rangelab) (ranges) | 15 | 04:15 | 0.8-0.9 | vs base rate | 401 | 24.4% | 35.1% | 27 | 22.2% | 35.3% | 1.23 |
+| Broken range returns to far edge (rangelab) (ranges) | 30 | 20:00 | 0.6-0.7 | vs base rate | 278 | 24.5% | 35.1% | 24 | 16.7% | 35.3% | 1.75 |
+| Broken range returns to far edge (rangelab) (ranges) | 15 | 03:00 | 0.8-0.9 | vs base rate | 388 | 24.5% | 35.1% | 31 | 16.1% | 35.3% | 1.80 |
+| Broken range returns to far edge (rangelab) (ranges) | 15 | 20:00 | 0.5-0.6 | vs base rate | 285 | 24.6% | 35.1% | 30 | 23.3% | 35.3% | 1.14 |
+| Broken range returns to far edge (rangelab) (ranges) | 15 | 03:00 | 0.7-0.8 | vs base rate | 329 | 24.6% | 35.1% | 26 | 23.1% | 35.3% | 1.17 |
+| Broken range returns to far edge (rangelab) (ranges) | 30 | 21:00 | 0.4-0.5 | vs base rate | 207 | 24.6% | 35.1% | 32 | 21.9% | 35.3% | 1.28 |
+| Broken range returns to far edge (rangelab) (ranges) | 15 | 09:45 | 0.1-0.2 | vs base rate | 422 | 24.6% | 35.1% | 31 | 9.7% | 35.3% | 2.45 |
+| Broken range returns to far edge (rangelab) (ranges) | 30 | 10:30 | 0.3-0.4 | vs base rate | 320 | 24.7% | 35.1% | 23 | 13.0% | 35.3% | 2.13 |
+| Broken range returns to far edge (rangelab) (ranges) | 30 | 20:00 | 0.1-0.2 | vs base rate | 251 | 24.7% | 35.1% | 25 | 12.0% | 35.3% | 2.24 |
+| Broken range returns to far edge (rangelab) (ranges) | 30 | 11:00 | 0.9-1.0 | vs base rate | 425 | 24.7% | 35.1% | 29 | 20.7% | 35.3% | 1.40 |
+| Broken range returns to far edge (rangelab) (ranges) | 30 | 11:00 | 0.0-0.1 | vs base rate | 376 | 24.7% | 35.1% | 28 | 21.4% | 35.3% | 1.34 |
+| Broken range returns to far edge (rangelab) (ranges) | 60 | 09:00 | 0.5-0.6 | vs base rate | 322 | 24.8% | 35.1% | 28 | 14.3% | 35.3% | 2.05 |
+| Broken range returns to far edge (rangelab) (ranges) | 30 | 21:30 | 0.6-0.7 | vs base rate | 236 | 25.0% | 35.1% | 22 | 13.6% | 35.3% | 2.14 |
+| Broken range returns to far edge (rangelab) (ranges) | 15 | 03:00 | 0.2-0.3 | vs base rate | 397 | 25.2% | 35.1% | 39 | 23.1% | 35.3% | 1.23 |
+| Broken range returns to far edge (rangelab) (ranges) | 60 | 09:00 | 0.1-0.2 | vs base rate | 385 | 25.2% | 35.1% | 31 | 19.4% | 35.3% | 1.61 |
+| Broken range returns to far edge (rangelab) (ranges) | 15 | 08:30 | 0.1-0.2 | vs base rate | 325 | 25.2% | 35.1% | 28 | 17.9% | 35.3% | 1.77 |
+| Broken range returns to far edge (rangelab) (ranges) | 30 | 21:00 | 0.6-0.7 | vs base rate | 269 | 25.3% | 35.1% | 25 | 20.0% | 35.3% | 1.56 |
+| Broken range returns to far edge (rangelab) (ranges) | 15 | 22:45 | 0.1-0.2 | vs base rate | 257 | 25.3% | 35.1% | 23 | 21.7% | 35.3% | 1.38 |
+| Broken range returns to far edge (rangelab) (ranges) | 15 | 19:45 | 0.5-0.6 | vs base rate | 256 | 44.9% | 35.1% | 30 | 50.0% | 35.3% | 1.50 |
+| Broken range returns to far edge (rangelab) (ranges) | 15 | 05:00 | 0.2-0.3 | vs base rate | 347 | 25.4% | 35.1% | 25 | 16.0% | 35.3% | 1.98 |
+| Broken range returns to far edge (rangelab) (ranges) | 15 | 02:00 | 0.0-0.1 | vs base rate | 252 | 25.4% | 35.1% | 22 | 18.2% | 35.3% | 1.76 |
+| Broken range returns to far edge (rangelab) (ranges) | 15 | 11:45 | 0.4-0.5 | vs base rate | 295 | 25.4% | 35.1% | 31 | 16.1% | 35.3% | 1.98 |
+| Broken range returns to far edge (rangelab) (ranges) | 15 | 21:45 | 0.8-0.9 | vs base rate | 295 | 25.4% | 35.1% | 44 | 11.4% | 35.3% | 2.47 |
+| Broken range returns to far edge (rangelab) (ranges) | 60 | 11:00 | 0.9-1.0 | vs base rate | 475 | 25.5% | 35.1% | 43 | 25.6% | 35.3% | 1.01 |
+| Broken range returns to far edge (rangelab) (ranges) | 60 | 09:00 | 0.9-1.0 | vs base rate | 349 | 25.5% | 35.1% | 37 | 21.6% | 35.3% | 1.42 |
+| Broken range returns to far edge (rangelab) (ranges) | 15 | 01:15 | 0.7-0.8 | vs base rate | 257 | 44.7% | 35.1% | 34 | 55.9% | 35.3% | 2.14 |
+| Broken range returns to far edge (rangelab) (ranges) | 15 | 09:45 | 0.5-0.6 | vs base rate | 321 | 25.5% | 35.1% | 21 | 19.0% | 35.3% | 1.70 |
+| Broken range returns to far edge (rangelab) (ranges) | 15 | 21:45 | 0.7-0.8 | vs base rate | 270 | 25.6% | 35.1% | 29 | 17.2% | 35.3% | 1.89 |
+| Broken range returns to far edge (rangelab) (ranges) | 15 | 07:00 | 0.0-0.1 | vs base rate | 356 | 25.6% | 35.1% | 23 | 13.0% | 35.3% | 2.33 |
+| Broken range returns to far edge (rangelab) (ranges) | 60 | 09:00 | 0.6-0.7 | vs base rate | 352 | 25.6% | 35.1% | 23 | 21.7% | 35.3% | 1.42 |
+| Broken range returns to far edge (rangelab) (ranges) | 60 | 11:00 | 0.0-0.1 | vs base rate | 344 | 25.6% | 35.1% | 32 | 18.8% | 35.3% | 1.74 |
+| Broken range returns to far edge (rangelab) (ranges) | 15 | 19:00 | 0.8-0.9 | vs base rate | 284 | 25.7% | 35.1% | 34 | 23.5% | 35.3% | 1.25 |
+| Broken range returns to far edge (rangelab) (ranges) | 15 | 01:45 | 0.1-0.2 | vs base rate | 256 | 44.5% | 35.1% | 28 | 60.7% | 35.3% | 2.70 |
+| Broken range returns to far edge (rangelab) (ranges) | 15 | 21:30 | 0.0-0.1 | vs base rate | 229 | 25.8% | 35.1% | 25 | 20.0% | 35.3% | 1.64 |
+| Broken range returns to far edge (rangelab) (ranges) | 60 | 04:00 | 0.5-0.6 | vs base rate | 357 | 25.8% | 35.1% | 24 | 16.7% | 35.3% | 1.99 |
+| Broken range returns to far edge (rangelab) (ranges) | 60 | 04:00 | 0.7-0.8 | vs base rate | 384 | 25.8% | 35.1% | 30 | 16.7% | 35.3% | 2.00 |
+| Broken range returns to far edge (rangelab) (ranges) | 60 | 11:00 | 0.7-0.8 | vs base rate | 368 | 25.8% | 35.1% | 25 | 4.0% | 35.3% | 3.36 |
+| Broken range returns to far edge (rangelab) (ranges) | 15 | 11:30 | 0.1-0.2 | vs base rate | 371 | 25.9% | 35.1% | 38 | 18.4% | 35.3% | 1.83 |
+| Broken range returns to far edge (rangelab) (ranges) | 15 | 00:45 | 0.0-0.1 | vs base rate | 203 | 44.3% | 35.1% | 24 | 54.2% | 35.3% | 2.05 |
+| Broken range returns to far edge (rangelab) (ranges) | 60 | 05:00 | 0.6-0.7 | vs base rate | 361 | 44.3% | 35.1% | 28 | 50.0% | 35.3% | 1.60 |
+| Broken range returns to far edge (rangelab) (ranges) | 15 | 22:30 | 0.4-0.5 | vs base rate | 204 | 26.0% | 35.1% | 33 | 21.2% | 35.3% | 1.54 |
+| Broken range returns to far edge (rangelab) (ranges) | 15 | 10:15 | 0.7-0.8 | vs base rate | 338 | 26.0% | 35.1% | 26 | 19.2% | 35.3% | 1.77 |
+| Broken range returns to far edge (rangelab) (ranges) | 15 | 04:00 | 0.4-0.5 | vs base rate | 288 | 26.0% | 35.1% | 20 | 15.0% | 35.3% | 2.24 |
+| Broken range returns to far edge (rangelab) (ranges) | 15 | 20:00 | 0.4-0.5 | vs base rate | 215 | 26.0% | 35.1% | 25 | 8.0% | 35.3% | 3.01 |
+| Broken range returns to far edge (rangelab) (ranges) | 15 | 19:45 | 0.7-0.8 | vs base rate | 299 | 44.1% | 35.1% | 38 | 47.4% | 35.3% | 1.33 |
+| Broken range returns to far edge (rangelab) (ranges) | 15 | 10:45 | 0.1-0.2 | vs base rate | 344 | 26.2% | 35.1% | 32 | 21.9% | 35.3% | 1.50 |
+| Broken range returns to far edge (rangelab) (ranges) | 30 | 22:00 | 0.2-0.3 | vs base rate | 256 | 26.2% | 35.1% | 26 | 23.1% | 35.3% | 1.37 |
+| Broken range returns to far edge (rangelab) (ranges) | 15 | 22:00 | 0.4-0.5 | vs base rate | 210 | 26.2% | 35.1% | 30 | 20.0% | 35.3% | 1.72 |
+| Broken range returns to far edge (rangelab) (ranges) | 15 | 23:00 | 0.6-0.7 | vs base rate | 236 | 26.3% | 35.1% | 29 | 20.7% | 35.3% | 1.65 |
+| Broken range returns to far edge (rangelab) (ranges) | 15 | 07:45 | 0.1-0.2 | vs base rate | 391 | 44.0% | 35.1% | 31 | 51.6% | 35.3% | 1.84 |
+| Broken range returns to far edge (rangelab) (ranges) | 60 | 23:00 | 0.4-0.5 | vs base rate | 219 | 43.8% | 35.1% | 25 | 76.0% | 35.3% | 4.67 |
+| Broken range returns to far edge (rangelab) (ranges) | 60 | 05:00 | 0.9-1.0 | vs base rate | 359 | 43.7% | 35.1% | 31 | 64.5% | 35.3% | 3.39 |
+| Broken range returns to far edge (rangelab) (ranges) | 60 | 22:00 | 0.5-0.6 | vs base rate | 226 | 26.5% | 35.1% | 24 | 20.8% | 35.3% | 1.69 |
+| Broken range returns to far edge (rangelab) (ranges) | 60 | 09:00 | 0.0-0.1 | vs base rate | 327 | 26.6% | 35.1% | 26 | 11.5% | 35.3% | 2.79 |
+| Broken range returns to far edge (rangelab) (ranges) | 15 | 20:00 | 0.0-0.1 | vs base rate | 214 | 26.6% | 35.1% | 24 | 12.5% | 35.3% | 2.69 |
+| Broken range returns to far edge (rangelab) (ranges) | 15 | 09:45 | 0.4-0.5 | vs base rate | 259 | 26.6% | 35.1% | 28 | 14.3% | 35.3% | 2.48 |
+| Broken range returns to far edge (rangelab) (ranges) | 15 | 01:45 | 0.8-0.9 | vs base rate | 340 | 43.5% | 35.1% | 35 | 48.6% | 35.3% | 1.58 |
+| Broken range returns to far edge (rangelab) (ranges) | 30 | 02:00 | 0.5-0.6 | vs base rate | 327 | 43.4% | 35.1% | 29 | 51.7% | 35.3% | 1.98 |
+| Broken range returns to far edge (rangelab) (ranges) | 30 | 18:30 | 0.2-0.3 | vs base rate | 272 | 43.4% | 35.1% | 32 | 50.0% | 35.3% | 1.78 |
+| Broken range returns to far edge (rangelab) (ranges) | 15 | 08:30 | 0.4-0.5 | vs base rate | 331 | 26.9% | 35.1% | 25 | 16.0% | 35.3% | 2.35 |
+| Broken range returns to far edge (rangelab) (ranges) | 15 | 19:30 | 0.1-0.2 | vs base rate | 226 | 43.4% | 35.1% | 27 | 55.6% | 35.3% | 2.46 |
+| Broken range returns to far edge (rangelab) (ranges) | 15 | 22:45 | 0.9-1.0 | vs base rate | 152 | 27.0% | 35.1% | 26 | 15.4% | 35.3% | 2.45 |
+| Broken range returns to far edge (rangelab) (ranges) | 30 | 07:30 | 0.1-0.2 | vs base rate | 372 | 43.3% | 35.1% | 38 | 47.4% | 35.3% | 1.48 |
+| Broken range returns to far edge (rangelab) (ranges) | 15 | 09:45 | 0.8-0.9 | vs base rate | 466 | 27.0% | 35.1% | 38 | 18.4% | 35.3% | 2.09 |
+| Broken range returns to far edge (rangelab) (ranges) | 15 | 19:00 | 0.5-0.6 | vs base rate | 244 | 27.0% | 35.1% | 26 | 19.2% | 35.3% | 1.99 |
+| Broken range returns to far edge (rangelab) (ranges) | 15 | 00:00 | 0.7-0.8 | vs base rate | 265 | 27.2% | 35.1% | 29 | 17.2% | 35.3% | 2.27 |
+| Broken range returns to far edge (rangelab) (ranges) | 30 | Q2 | vs base rate | 25583 | 43.1% | 35.1% | 2785 | 40.8% | 35.3% | 0.69 |
+| Broken range returns to far edge (rangelab) (ranges) | 15 | 08:30 | 0.8-0.9 | vs base rate | 408 | 27.2% | 35.1% | 37 | 16.2% | 35.3% | 2.41 |
+| Broken range returns to far edge (rangelab) (ranges) | 15 | 19:45 | 0.6-0.7 | vs base rate | 279 | 43.0% | 35.1% | 24 | 54.2% | 35.3% | 2.39 |
+| Broken range returns to far edge (rangelab) (ranges) | 30 | 19:30 | 0.5-0.6 | vs base rate | 249 | 43.0% | 35.1% | 33 | 51.5% | 35.3% | 2.06 |
+| Broken range returns to far edge (rangelab) (ranges) | 15 | 01:00 | 0.2-0.3 | vs base rate | 238 | 27.3% | 35.1% | 34 | 14.7% | 35.3% | 2.64 |
+| Broken range returns to far edge (rangelab) (ranges) | 15 | 15:00 | 0.5-0.6 | vs base rate | 333 | 42.9% | 35.1% | 24 | 54.2% | 35.3% | 2.41 |
+| Broken range returns to far edge (rangelab) (ranges) | 15 | Q2 | vs base rate | 55656 | 42.8% | 35.1% | 5849 | 42.1% | 35.3% | 0.88 |
+| Broken range returns to far edge (rangelab) (ranges) | 60 | 04:00 | 0.2-0.3 | vs base rate | 320 | 27.5% | 35.1% | 21 | 19.0% | 35.3% | 2.13 |
+| Broken range returns to far edge (rangelab) (ranges) | 15 | 20:00 | 0.1-0.2 | vs base rate | 258 | 27.5% | 35.1% | 25 | 20.0% | 35.3% | 2.01 |
+| Broken range returns to far edge (rangelab) (ranges) | 60 | Q3 | vs base rate | 13095 | 42.6% | 35.1% | 1137 | 39.1% | 35.3% | 0.51 |
+| Broken range returns to far edge (rangelab) (ranges) | 15 | 21:15 | 0.1-0.2 | vs base rate | 257 | 27.6% | 35.1% | 30 | 23.3% | 35.3% | 1.60 |
+| Broken range returns to far edge (rangelab) (ranges) | 30 | 21:00 | 0.5-0.6 | vs base rate | 257 | 27.6% | 35.1% | 26 | 23.1% | 35.3% | 1.63 |
+| Broken range returns to far edge (rangelab) (ranges) | 30 | 19:30 | 0.7-0.8 | vs base rate | 298 | 42.6% | 35.1% | 29 | 55.2% | 35.3% | 2.65 |
+| Broken range returns to far edge (rangelab) (ranges) | 30 | 22:30 | 0.7-0.8 | vs base rate | 264 | 27.7% | 35.1% | 29 | 20.7% | 35.3% | 1.96 |
+| Broken range returns to far edge (rangelab) (ranges) | 30 | 20:00 | 0.3-0.4 | vs base rate | 253 | 27.7% | 35.1% | 25 | 20.0% | 35.3% | 2.05 |
+| Broken range returns to far edge (rangelab) (ranges) | 15 | 10:15 | 0.0-0.1 | vs base rate | 393 | 27.7% | 35.1% | 20 | 15.0% | 35.3% | 2.75 |
+| Broken range returns to far edge (rangelab) (ranges) | 15 | 18:15 | 0.8-0.9 | vs base rate | 274 | 27.7% | 35.1% | 36 | 22.2% | 35.3% | 1.77 |
+| Broken range returns to far edge (rangelab) (ranges) | 30 | 00:30 | 0.0-0.1 | vs base rate | 207 | 42.5% | 35.1% | 32 | 59.4% | 35.3% | 3.26 |
+| Broken range returns to far edge (rangelab) (ranges) | 15 | 15:15 | 0.8-0.9 | vs base rate | 447 | 42.5% | 35.1% | 30 | 46.7% | 35.3% | 1.54 |
+| Broken range returns to far edge (rangelab) (ranges) | 15 | 10:30 | 0.1-0.2 | vs base rate | 353 | 27.8% | 35.1% | 35 | 11.4% | 35.3% | 3.24 |
+| Broken range returns to far edge (rangelab) (ranges) | 15 | 19:00 | 0.6-0.7 | vs base rate | 234 | 27.8% | 35.1% | 27 | 22.2% | 35.3% | 1.78 |
+| Broken range returns to far edge (rangelab) (ranges) | 15 | 20:30 | 0.4-0.5 | vs base rate | 237 | 27.8% | 35.1% | 20 | 15.0% | 35.3% | 2.79 |
+| Broken range returns to far edge (rangelab) (ranges) | 60 | 04:00 | 0.8-0.9 | vs base rate | 433 | 27.9% | 35.1% | 41 | 24.4% | 35.3% | 1.52 |
+| Broken range returns to far edge (rangelab) (ranges) | 15 | 18:15 | 0.9-1.0 | vs base rate | 229 | 27.9% | 35.1% | 20 | 20.0% | 35.3% | 2.13 |
+| Broken range returns to far edge (rangelab) (ranges) | 60 | 05:00 | 0.5-0.6 | vs base rate | 362 | 42.3% | 35.1% | 23 | 65.2% | 35.3% | 4.19 |
+| Broken range returns to far edge (rangelab) (ranges) | 15 | 23:00 | 0.3-0.4 | vs base rate | 232 | 28.0% | 35.1% | 27 | 22.2% | 35.3% | 1.84 |
+| Broken range returns to far edge (rangelab) (ranges) | 15 | 20:00 | 0.3-0.4 | vs base rate | 227 | 28.2% | 35.1% | 27 | 14.8% | 35.3% | 2.96 |
+| Broken range returns to far edge (rangelab) (ranges) | 15 | 14:00 | 0.3-0.4 | vs base rate | 351 | 28.2% | 35.1% | 31 | 22.6% | 35.3% | 1.84 |
+| Broken range returns to far edge (rangelab) (ranges) | 15 | 12:00 | 0.8-0.9 | vs base rate | 431 | 28.3% | 35.1% | 35 | 22.9% | 35.3% | 1.83 |
+| Broken range returns to far edge (rangelab) (ranges) | 15 | 18:15 | 0.0-0.1 | vs base rate | 180 | 28.3% | 35.1% | 21 | 19.0% | 35.3% | 2.40 |
+| Broken range returns to far edge (rangelab) (ranges) | 15 | 10:30 | 0.7-0.8 | vs base rate | 398 | 28.4% | 35.1% | 27 | 22.2% | 35.3% | 1.95 |
+| Broken range returns to far edge (rangelab) (ranges) | 15 | 13:00 | 0.8-0.9 | vs base rate | 485 | 28.5% | 35.1% | 24 | 20.8% | 35.3% | 2.17 |
+| Broken range returns to far edge (rangelab) (ranges) | 15 | 07:45 | 0.7-0.8 | vs base rate | 390 | 41.8% | 35.1% | 22 | 54.5% | 35.3% | 2.88 |
+| Broken range returns to far edge (rangelab) (ranges) | 15 | 06:00 | 0.3-0.4 | vs base rate | 302 | 28.5% | 35.1% | 30 | 23.3% | 35.3% | 1.80 |
+| Broken range returns to far edge (rangelab) (ranges) | 30 | 23:00 | 0.3-0.4 | vs base rate | 217 | 28.6% | 35.1% | 25 | 20.0% | 35.3% | 2.34 |
+| Broken range returns to far edge (rangelab) (ranges) | 15 | 03:45 | 0.0-0.1 | vs base rate | 335 | 28.7% | 35.1% | 20 | 20.0% | 35.3% | 2.37 |
+| Broken range returns to far edge (rangelab) (ranges) | 30 | 04:30 | 0.1-0.2 | vs base rate | 320 | 28.7% | 35.1% | 25 | 20.0% | 35.3% | 2.40 |
+| Broken range returns to far edge (rangelab) (ranges) | 30 | 18:30 | 0.6-0.7 | vs base rate | 256 | 41.4% | 35.1% | 32 | 46.9% | 35.3% | 1.84 |
+| Broken range returns to far edge (rangelab) (ranges) | 15 | 08:00 | 0.8-0.9 | vs base rate | 443 | 41.3% | 35.1% | 33 | 54.5% | 35.3% | 3.11 |
+| Broken range returns to far edge (rangelab) (ranges) | 15 | 04:00 | 0.0-0.1 | vs base rate | 338 | 29.0% | 35.1% | 30 | 6.7% | 35.3% | 4.67 |
+| Broken range returns to far edge (rangelab) (ranges) | 15 | 08:00 | 0.9-1.0 | vs base rate | 260 | 41.2% | 35.1% | 30 | 50.0% | 35.3% | 2.43 |
+| Broken range returns to far edge (rangelab) (ranges) | 15 | 08:15 | 0.4-0.5 | vs base rate | 292 | 41.1% | 35.1% | 21 | 57.1% | 35.3% | 3.66 |
+| Broken range returns to far edge (rangelab) (ranges) | 15 | 07:00 | 0.5-0.6 | vs base rate | 346 | 29.2% | 35.1% | 31 | 22.6% | 35.3% | 2.15 |
+| Broken range returns to far edge (rangelab) (ranges) | 60 | 04:00 | 0.6-0.7 | vs base rate | 363 | 29.2% | 35.1% | 25 | 16.0% | 35.3% | 3.26 |
+| Broken range returns to far edge (rangelab) (ranges) | 15 | 04:30 | 0.1-0.2 | vs base rate | 360 | 29.4% | 35.1% | 32 | 18.8% | 35.3% | 2.92 |
+| Broken range returns to far edge (rangelab) (ranges) | 15 | 08:00 | 0.3-0.4 | vs base rate | 369 | 40.7% | 35.1% | 21 | 57.1% | 35.3% | 3.95 |
+| Broken range returns to far edge (rangelab) (ranges) | 15 | 08:15 | 0.5-0.6 | vs base rate | 367 | 40.6% | 35.1% | 35 | 48.6% | 35.3% | 2.42 |
+| Broken range returns to far edge (rangelab) (ranges) | 15 | Q4 | vs base rate | 60878 | 29.8% | 35.1% | 5120 | 28.0% | 35.3% | 1.37 |
+| Broken range returns to far edge (rangelab) (ranges) | 15 | 04:15 | 0.2-0.3 | vs base rate | 371 | 30.5% | 35.1% | 25 | 20.0% | 35.3% | 3.28 |
+| Broken range returns to far edge (rangelab) (ranges) | 30 | Q3 | vs base rate | 28443 | 39.5% | 35.1% | 2714 | 37.5% | 35.3% | 0.50 |
+| Broken range returns to far edge (rangelab) (ranges) | 30 | Q4 | vs base rate | 28995 | 32.0% | 35.1% | 2341 | 32.0% | 35.3% | 1.05 |
+| Broken range returns to its mid (rangelab) (ranges) | 15 | 15:45 | 0.8-0.9 | vs base rate | 67 | 22.4% | 60.3% | 27 | 29.6% | 61.9% | 0.85 |
+| Broken range returns to its mid (rangelab) (ranges) | 15 | 16:00 | 0.1-0.2 | vs base rate | 61 | 23.0% | 60.3% | 23 | 34.8% | 61.9% | 0.73 |
+| Broken range returns to its mid (rangelab) (ranges) | 15 | 09:00 | 0.1-0.2 | vs base rate | 392 | 87.5% | 60.3% | 32 | 90.6% | 61.9% | 1.06 |
+| Broken range returns to its mid (rangelab) (ranges) | 15 | 09:00 | 0.3-0.4 | vs base rate | 329 | 85.4% | 60.3% | 37 | 78.4% | 61.9% | 0.66 |
+| Broken range returns to its mid (rangelab) (ranges) | 15 | 09:00 | 0.4-0.5 | vs base rate | 330 | 85.2% | 60.3% | 25 | 96.0% | 61.9% | 1.37 |
+| Broken range returns to its mid (rangelab) (ranges) | 15 | 09:00 | 0.2-0.3 | vs base rate | 381 | 85.0% | 60.3% | 35 | 88.6% | 61.9% | 1.08 |
+| Broken range returns to its mid (rangelab) (ranges) | 15 | 08:45 | 0.5-0.6 | vs base rate | 371 | 84.6% | 60.3% | 23 | 87.0% | 61.9% | 1.03 |
+| Broken range returns to its mid (rangelab) (ranges) | 15 | 09:15 | 0.7-0.8 | vs base rate | 369 | 84.6% | 60.3% | 30 | 86.7% | 61.9% | 1.02 |
+| Broken range returns to its mid (rangelab) (ranges) | 15 | 09:00 | 0.5-0.6 | vs base rate | 361 | 84.5% | 60.3% | 24 | 79.2% | 61.9% | 0.72 |
+| Broken range returns to its mid (rangelab) (ranges) | 60 | 07:00 | 0.4-0.5 | vs base rate | 346 | 84.1% | 60.3% | 42 | 88.1% | 61.9% | 1.10 |
+| Broken range returns to its mid (rangelab) (ranges) | 15 | 09:15 | 0.5-0.6 | vs base rate | 379 | 83.9% | 60.3% | 31 | 77.4% | 61.9% | 0.66 |
+| Broken range returns to its mid (rangelab) (ranges) | 30 | 09:00 | 0.5-0.6 | vs base rate | 372 | 83.9% | 60.3% | 30 | 90.0% | 61.9% | 1.19 |
+| Broken range returns to its mid (rangelab) (ranges) | 60 | 07:00 | 0.7-0.8 | vs base rate | 418 | 83.5% | 60.3% | 31 | 74.2% | 61.9% | 0.53 |
+| Broken range returns to its mid (rangelab) (ranges) | 60 | 07:00 | 0.3-0.4 | vs base rate | 350 | 83.4% | 60.3% | 30 | 83.3% | 61.9% | 0.93 |
+| Broken range returns to its mid (rangelab) (ranges) | 15 | 09:15 | 0.3-0.4 | vs base rate | 348 | 83.3% | 60.3% | 35 | 74.3% | 61.9% | 0.54 |
+| Broken range returns to its mid (rangelab) (ranges) | 15 | 09:15 | 0.1-0.2 | vs base rate | 337 | 83.1% | 60.3% | 30 | 76.7% | 61.9% | 0.65 |
+| Broken range returns to its mid (rangelab) (ranges) | 15 | 09:00 | 0.8-0.9 | vs base rate | 424 | 83.0% | 60.3% | 29 | 86.2% | 61.9% | 1.07 |
+| Broken range returns to its mid (rangelab) (ranges) | 60 | 07:00 | 0.5-0.6 | vs base rate | 382 | 83.0% | 60.3% | 29 | 75.9% | 61.9% | 0.62 |
+| Broken range returns to its mid (rangelab) (ranges) | 60 | 07:00 | 0.9-1.0 | vs base rate | 338 | 82.8% | 60.3% | 27 | 85.2% | 61.9% | 1.04 |
+| Broken range returns to its mid (rangelab) (ranges) | 15 | 08:45 | 0.8-0.9 | vs base rate | 425 | 82.8% | 60.3% | 38 | 86.8% | 61.9% | 1.11 |
+| Broken range returns to its mid (rangelab) (ranges) | 60 | 07:00 | 0.8-0.9 | vs base rate | 442 | 82.8% | 60.3% | 41 | 78.0% | 61.9% | 0.72 |
+| Broken range returns to its mid (rangelab) (ranges) | 30 | 08:00 | 0.9-1.0 | vs base rate | 320 | 82.5% | 60.3% | 33 | 87.9% | 61.9% | 1.17 |
+| Broken range returns to its mid (rangelab) (ranges) | 30 | 09:00 | 0.1-0.2 | vs base rate | 397 | 82.4% | 60.3% | 31 | 83.9% | 61.9% | 1.00 |
+| Broken range returns to its mid (rangelab) (ranges) | 15 | 09:00 | 0.0-0.1 | vs base rate | 362 | 82.3% | 60.3% | 22 | 81.8% | 61.9% | 0.91 |
+| Broken range returns to its mid (rangelab) (ranges) | 60 | 07:00 | 0.6-0.7 | vs base rate | 394 | 82.2% | 60.3% | 23 | 82.6% | 61.9% | 0.95 |
+| Broken range returns to its mid (rangelab) (ranges) | 30 | 08:00 | 0.8-0.9 | vs base rate | 427 | 82.2% | 60.3% | 30 | 96.7% | 61.9% | 1.59 |
+| Broken range returns to its mid (rangelab) (ranges) | 15 | 08:45 | 0.7-0.8 | vs base rate | 368 | 82.1% | 60.3% | 26 | 92.3% | 61.9% | 1.40 |
+| Broken range returns to its mid (rangelab) (ranges) | 60 | 07:00 | 0.1-0.2 | vs base rate | 384 | 82.0% | 60.3% | 24 | 95.8% | 61.9% | 1.56 |
+| Broken range returns to its mid (rangelab) (ranges) | 30 | 08:30 | 0.5-0.6 | vs base rate | 400 | 82.0% | 60.3% | 31 | 83.9% | 61.9% | 1.01 |
+| Broken range returns to its mid (rangelab) (ranges) | 30 | 09:00 | 0.7-0.8 | vs base rate | 415 | 81.9% | 60.3% | 33 | 81.8% | 61.9% | 0.92 |
+| Broken range returns to its mid (rangelab) (ranges) | 60 | 06:00 | 0.7-0.8 | vs base rate | 415 | 81.4% | 60.3% | 26 | 92.3% | 61.9% | 1.44 |
+| Broken range returns to its mid (rangelab) (ranges) | 60 | 06:00 | 0.9-1.0 | vs base rate | 350 | 81.4% | 60.3% | 27 | 85.2% | 61.9% | 1.10 |
+| Broken range returns to its mid (rangelab) (ranges) | 15 | 09:00 | 0.9-1.0 | vs base rate | 296 | 81.4% | 60.3% | 37 | 89.2% | 61.9% | 1.29 |
+| Broken range returns to its mid (rangelab) (ranges) | 60 | 07:00 | 0.0-0.1 | vs base rate | 273 | 81.3% | 60.3% | 23 | 82.6% | 61.9% | 0.99 |
+| Broken range returns to its mid (rangelab) (ranges) | 30 | 08:00 | 0.5-0.6 | vs base rate | 351 | 81.2% | 60.3% | 28 | 82.1% | 61.9% | 0.97 |
+| Broken range returns to its mid (rangelab) (ranges) | 15 | 09:15 | 0.2-0.3 | vs base rate | 391 | 81.1% | 60.3% | 27 | 81.5% | 61.9% | 0.94 |
+| Broken range returns to its mid (rangelab) (ranges) | 30 | 08:30 | 0.8-0.9 | vs base rate | 401 | 81.0% | 60.3% | 36 | 83.3% | 61.9% | 1.04 |
+| Broken range returns to its mid (rangelab) (ranges) | 15 | 08:45 | 0.3-0.4 | vs base rate | 390 | 80.8% | 60.3% | 27 | 81.5% | 61.9% | 0.96 |
+| Broken range returns to its mid (rangelab) (ranges) | 15 | 09:15 | 0.0-0.1 | vs base rate | 364 | 80.8% | 60.3% | 22 | 90.9% | 61.9% | 1.42 |
+| Broken range returns to its mid (rangelab) (ranges) | 15 | 09:15 | 0.6-0.7 | vs base rate | 384 | 80.5% | 60.3% | 32 | 78.1% | 61.9% | 0.81 |
+| Broken range returns to its mid (rangelab) (ranges) | 60 | 06:00 | 0.6-0.7 | vs base rate | 389 | 80.5% | 60.3% | 31 | 74.2% | 61.9% | 0.61 |
+| Broken range returns to its mid (rangelab) (ranges) | 60 | 06:00 | 0.4-0.5 | vs base rate | 305 | 80.3% | 60.3% | 24 | 100.0% | 61.9% | 1.91 |
+| Broken range returns to its mid (rangelab) (ranges) | 15 | 08:45 | 0.1-0.2 | vs base rate | 381 | 80.3% | 60.3% | 38 | 81.6% | 61.9% | 0.99 |
+| Broken range returns to its mid (rangelab) (ranges) | 60 | 08:00 | 0.4-0.5 | vs base rate | 339 | 80.2% | 60.3% | 33 | 75.8% | 61.9% | 0.70 |
+| Broken range returns to its mid (rangelab) (ranges) | 30 | 08:30 | 0.1-0.2 | vs base rate | 349 | 80.2% | 60.3% | 32 | 81.2% | 61.9% | 0.97 |
+| Broken range returns to its mid (rangelab) (ranges) | 15 | 02:30 | 0.2-0.3 | vs base rate | 366 | 80.1% | 60.3% | 23 | 78.3% | 61.9% | 0.83 |
+| Broken range returns to its mid (rangelab) (ranges) | 60 | 08:00 | 0.6-0.7 | vs base rate | 333 | 79.9% | 60.3% | 32 | 81.2% | 61.9% | 0.99 |
+| Broken range returns to its mid (rangelab) (ranges) | 15 | 08:45 | 0.4-0.5 | vs base rate | 328 | 79.9% | 60.3% | 24 | 91.7% | 61.9% | 1.52 |
+| Broken range returns to its mid (rangelab) (ranges) | 30 | 09:00 | 0.8-0.9 | vs base rate | 441 | 79.8% | 60.3% | 27 | 81.5% | 61.9% | 1.01 |
+| Broken range returns to its mid (rangelab) (ranges) | 15 | 09:15 | 0.4-0.5 | vs base rate | 292 | 79.8% | 60.3% | 26 | 76.9% | 61.9% | 0.77 |
+| Broken range returns to its mid (rangelab) (ranges) | 30 | 08:00 | 0.6-0.7 | vs base rate | 350 | 79.7% | 60.3% | 31 | 83.9% | 61.9% | 1.13 |
+| Broken range returns to its mid (rangelab) (ranges) | 60 | 08:00 | 0.8-0.9 | vs base rate | 439 | 79.5% | 60.3% | 35 | 77.1% | 61.9% | 0.80 |
+| Broken range returns to its mid (rangelab) (ranges) | 15 | 08:45 | 0.6-0.7 | vs base rate | 360 | 79.4% | 60.3% | 23 | 95.7% | 61.9% | 1.77 |
+| Broken range returns to its mid (rangelab) (ranges) | 60 | 08:00 | 0.7-0.8 | vs base rate | 398 | 79.4% | 60.3% | 26 | 76.9% | 61.9% | 0.79 |
+| Broken range returns to its mid (rangelab) (ranges) | 60 | 00:00 | 0.2-0.3 | vs base rate | 276 | 79.3% | 60.3% | 30 | 73.3% | 61.9% | 0.60 |
+| Broken range returns to its mid (rangelab) (ranges) | 15 | 08:45 | 0.0-0.1 | vs base rate | 319 | 79.3% | 60.3% | 30 | 83.3% | 61.9% | 1.13 |
+| Broken range returns to its mid (rangelab) (ranges) | 60 | 06:00 | 0.3-0.4 | vs base rate | 357 | 79.3% | 60.3% | 33 | 75.8% | 61.9% | 0.73 |
+| Broken range returns to its mid (rangelab) (ranges) | 60 | 10:00 | 0.4-0.5 | vs base rate | 256 | 41.4% | 60.3% | 20 | 35.0% | 61.9% | 1.42 |
+| Broken range returns to its mid (rangelab) (ranges) | 30 | 09:00 | 0.0-0.1 | vs base rate | 347 | 79.3% | 60.3% | 29 | 75.9% | 61.9% | 0.74 |
+| Broken range returns to its mid (rangelab) (ranges) | 15 | 09:15 | 0.8-0.9 | vs base rate | 459 | 79.1% | 60.3% | 29 | 93.1% | 61.9% | 1.66 |
+| Broken range returns to its mid (rangelab) (ranges) | 30 | 08:00 | 0.7-0.8 | vs base rate | 381 | 79.0% | 60.3% | 33 | 81.8% | 61.9% | 1.07 |
+| Broken range returns to its mid (rangelab) (ranges) | 30 | 09:00 | 0.4-0.5 | vs base rate | 327 | 78.9% | 60.3% | 21 | 76.2% | 61.9% | 0.77 |
+| Broken range returns to its mid (rangelab) (ranges) | 30 | 09:00 | 0.9-1.0 | vs base rate | 322 | 78.9% | 60.3% | 36 | 80.6% | 61.9% | 1.01 |
+| Broken range returns to its mid (rangelab) (ranges) | 60 | 08:00 | 0.2-0.3 | vs base rate | 363 | 78.8% | 60.3% | 31 | 74.2% | 61.9% | 0.67 |
+| Broken range returns to its mid (rangelab) (ranges) | 30 | 10:00 | 0.6-0.7 | vs base rate | 296 | 41.9% | 60.3% | 25 | 28.0% | 61.9% | 1.84 |
+| Broken range returns to its mid (rangelab) (ranges) | 60 | 00:00 | 0.4-0.5 | vs base rate | 268 | 78.7% | 60.3% | 28 | 75.0% | 61.9% | 0.71 |
+| Broken range returns to its mid (rangelab) (ranges) | 30 | 08:30 | 0.6-0.7 | vs base rate | 407 | 78.6% | 60.3% | 29 | 89.7% | 61.9% | 1.52 |
+| Broken range returns to its mid (rangelab) (ranges) | 15 | 20:00 | 0.8-0.9 | vs base rate | 264 | 42.0% | 60.3% | 37 | 43.2% | 61.9% | 1.02 |
+| Broken range returns to its mid (rangelab) (ranges) | 60 | 10:00 | 0.0-0.1 | vs base rate | 289 | 42.2% | 60.3% | 35 | 42.9% | 61.9% | 1.05 |
+| Broken range returns to its mid (rangelab) (ranges) | 60 | 21:00 | 0.8-0.9 | vs base rate | 281 | 42.3% | 60.3% | 46 | 50.0% | 61.9% | 0.66 |
+| Broken range returns to its mid (rangelab) (ranges) | 30 | 09:30 | 0.8-0.9 | vs base rate | 411 | 42.6% | 60.3% | 27 | 37.0% | 61.9% | 1.40 |
+| Broken range returns to its mid (rangelab) (ranges) | 60 | 21:00 | 0.4-0.5 | vs base rate | 199 | 42.7% | 60.3% | 25 | 32.0% | 61.9% | 1.70 |
+| Broken range returns to its mid (rangelab) (ranges) | 15 | 02:45 | 0.8-0.9 | vs base rate | 402 | 77.9% | 60.3% | 35 | 77.1% | 61.9% | 0.87 |
+| Broken range returns to its mid (rangelab) (ranges) | 30 | 21:30 | 0.4-0.5 | vs base rate | 209 | 43.1% | 60.3% | 33 | 42.4% | 61.9% | 1.13 |
+| Broken range returns to its mid (rangelab) (ranges) | 60 | 08:00 | 0.5-0.6 | vs base rate | 361 | 77.6% | 60.3% | 24 | 87.5% | 61.9% | 1.49 |
+| Broken range returns to its mid (rangelab) (ranges) | 30 | 08:00 | 0.3-0.4 | vs base rate | 338 | 77.5% | 60.3% | 30 | 90.0% | 61.9% | 1.64 |
+| Broken range returns to its mid (rangelab) (ranges) | 30 | 10:30 | 0.7-0.8 | vs base rate | 428 | 43.2% | 60.3% | 32 | 50.0% | 61.9% | 0.69 |
+| Broken range returns to its mid (rangelab) (ranges) | 60 | 06:00 | 0.8-0.9 | vs base rate | 461 | 77.4% | 60.3% | 35 | 85.7% | 61.9% | 1.39 |
+| Broken range returns to its mid (rangelab) (ranges) | 30 | 09:30 | 0.3-0.4 | vs base rate | 380 | 43.4% | 60.3% | 27 | 48.1% | 61.9% | 0.81 |
+| Broken range returns to its mid (rangelab) (ranges) | 60 | 00:00 | 0.6-0.7 | vs base rate | 319 | 77.1% | 60.3% | 31 | 80.6% | 61.9% | 1.12 |
+| Broken range returns to its mid (rangelab) (ranges) | 30 | 08:30 | 0.3-0.4 | vs base rate | 379 | 77.0% | 60.3% | 22 | 86.4% | 61.9% | 1.46 |
+| Broken range returns to its mid (rangelab) (ranges) | 60 | 08:00 | 0.3-0.4 | vs base rate | 356 | 77.0% | 60.3% | 26 | 80.8% | 61.9% | 1.14 |
+| Broken range returns to its mid (rangelab) (ranges) | 30 | 08:30 | 0.2-0.3 | vs base rate | 390 | 76.9% | 60.3% | 30 | 80.0% | 61.9% | 1.09 |
+| Broken range returns to its mid (rangelab) (ranges) | 60 | 06:00 | 0.0-0.1 | vs base rate | 306 | 76.8% | 60.3% | 22 | 81.8% | 61.9% | 1.21 |
+| Broken range returns to its mid (rangelab) (ranges) | 30 | 08:30 | 0.9-1.0 | vs base rate | 293 | 76.8% | 60.3% | 31 | 74.2% | 61.9% | 0.75 |
+| Broken range returns to its mid (rangelab) (ranges) | 60 | 20:00 | 0.4-0.5 | vs base rate | 198 | 43.9% | 60.3% | 28 | 50.0% | 61.9% | 0.73 |
+| Broken range returns to its mid (rangelab) (ranges) | 30 | 09:30 | 0.7-0.8 | vs base rate | 354 | 44.1% | 60.3% | 27 | 44.4% | 61.9% | 1.07 |
+| Broken range returns to its mid (rangelab) (ranges) | 30 | 09:30 | 0.0-0.1 | vs base rate | 333 | 44.1% | 60.3% | 30 | 26.7% | 61.9% | 2.18 |
+| Broken range returns to its mid (rangelab) (ranges) | 60 | 08:00 | 0.9-1.0 | vs base rate | 360 | 76.4% | 60.3% | 36 | 88.9% | 61.9% | 1.68 |
+| Broken range returns to its mid (rangelab) (ranges) | 30 | 02:30 | 0.8-0.9 | vs base rate | 447 | 76.3% | 60.3% | 35 | 74.3% | 61.9% | 0.78 |
+| Broken range returns to its mid (rangelab) (ranges) | 60 | 08:00 | 0.1-0.2 | vs base rate | 417 | 76.3% | 60.3% | 22 | 90.9% | 61.9% | 1.82 |
+| Broken range returns to its mid (rangelab) (ranges) | 60 | 20:00 | 0.8-0.9 | vs base rate | 281 | 44.5% | 60.3% | 29 | 44.8% | 61.9% | 1.08 |
+| Broken range returns to its mid (rangelab) (ranges) | 60 | 01:00 | 0.2-0.3 | vs base rate | 344 | 76.2% | 60.3% | 35 | 74.3% | 61.9% | 0.78 |
+| Broken range returns to its mid (rangelab) (ranges) | 30 | 09:30 | 0.2-0.3 | vs base rate | 383 | 44.6% | 60.3% | 25 | 28.0% | 61.9% | 2.16 |
+| Broken range returns to its mid (rangelab) (ranges) | 30 | 00:30 | 0.1-0.2 | vs base rate | 258 | 76.0% | 60.3% | 26 | 80.8% | 61.9% | 1.21 |
+| Broken range returns to its mid (rangelab) (ranges) | 30 | 10:00 | 0.4-0.5 | vs base rate | 295 | 44.7% | 60.3% | 21 | 42.9% | 61.9% | 1.22 |
+| Broken range returns to its mid (rangelab) (ranges) | 60 | 06:00 | 0.1-0.2 | vs base rate | 386 | 75.9% | 60.3% | 27 | 77.8% | 61.9% | 1.02 |
+| Broken range returns to its mid (rangelab) (ranges) | 60 | 00:00 | 0.8-0.9 | vs base rate | 390 | 75.9% | 60.3% | 35 | 85.7% | 61.9% | 1.53 |
+| Broken range returns to its mid (rangelab) (ranges) | 30 | 02:30 | 0.4-0.5 | vs base rate | 289 | 75.8% | 60.3% | 21 | 81.0% | 61.9% | 1.23 |
+| Broken range returns to its mid (rangelab) (ranges) | 60 | 03:00 | 0.4-0.5 | vs base rate | 294 | 45.2% | 60.3% | 20 | 45.0% | 61.9% | 1.12 |
+| Broken range returns to its mid (rangelab) (ranges) | 30 | 02:30 | 0.3-0.4 | vs base rate | 326 | 75.2% | 60.3% | 22 | 81.8% | 61.9% | 1.34 |
+| Broken range returns to its mid (rangelab) (ranges) | 15 | 09:30 | 0.8-0.9 | vs base rate | 424 | 45.5% | 60.3% | 35 | 40.0% | 61.9% | 1.48 |
+| Broken range returns to its mid (rangelab) (ranges) | 30 | 08:30 | 0.7-0.8 | vs base rate | 437 | 74.8% | 60.3% | 28 | 89.3% | 61.9% | 1.89 |
+| Broken range returns to its mid (rangelab) (ranges) | 15 | 02:45 | 0.1-0.2 | vs base rate | 325 | 74.8% | 60.3% | 29 | 79.3% | 61.9% | 1.21 |
+| Broken range returns to its mid (rangelab) (ranges) | 60 | 00:00 | 0.3-0.4 | vs base rate | 265 | 74.7% | 60.3% | 36 | 75.0% | 61.9% | 0.91 |
+| Broken range returns to its mid (rangelab) (ranges) | 15 | 09:30 | 0.2-0.3 | vs base rate | 428 | 46.0% | 60.3% | 24 | 45.8% | 61.9% | 1.12 |
+| Broken range returns to its mid (rangelab) (ranges) | 60 | 01:00 | 0.7-0.8 | vs base rate | 347 | 74.6% | 60.3% | 29 | 79.3% | 61.9% | 1.22 |
+| Broken range returns to its mid (rangelab) (ranges) | 60 | 01:00 | 0.9-1.0 | vs base rate | 272 | 74.6% | 60.3% | 32 | 84.4% | 61.9% | 1.57 |
+| Broken range returns to its mid (rangelab) (ranges) | 30 | 20:00 | 0.6-0.7 | vs base rate | 278 | 46.0% | 60.3% | 24 | 45.8% | 61.9% | 1.12 |
+| Broken range returns to its mid (rangelab) (ranges) | 15 | 22:00 | 0.3-0.4 | vs base rate | 219 | 46.1% | 60.3% | 32 | 46.9% | 61.9% | 1.06 |
+| Broken range returns to its mid (rangelab) (ranges) | 15 | 09:30 | 0.7-0.8 | vs base rate | 364 | 46.2% | 60.3% | 21 | 47.6% | 61.9% | 1.01 |
+| Broken range returns to its mid (rangelab) (ranges) | 30 | 21:30 | 0.6-0.7 | vs base rate | 236 | 46.2% | 60.3% | 22 | 45.5% | 61.9% | 1.16 |
+| Broken range returns to its mid (rangelab) (ranges) | 30 | 01:30 | 0.8-0.9 | vs base rate | 389 | 74.3% | 60.3% | 36 | 86.1% | 61.9% | 1.74 |
+| Broken range returns to its mid (rangelab) (ranges) | 15 | Q5 wide | vs base rate | 59950 | 46.7% | 60.3% | 4517 | 46.6% | 61.9% | 1.12 |
+| Broken range returns to its mid (rangelab) (ranges) | 60 | 03:00 | 0.7-0.8 | vs base rate | 364 | 46.7% | 60.3% | 36 | 50.0% | 61.9% | 0.87 |
+| Broken range returns to its mid (rangelab) (ranges) | 30 | 02:30 | 0.1-0.2 | vs base rate | 383 | 73.9% | 60.3% | 23 | 82.6% | 61.9% | 1.53 |
+| Broken range returns to its mid (rangelab) (ranges) | 60 | 00:00 | 0.1-0.2 | vs base rate | 282 | 73.8% | 60.3% | 34 | 76.5% | 61.9% | 1.09 |
+| Broken range returns to its mid (rangelab) (ranges) | 30 | 01:30 | 0.0-0.1 | vs base rate | 293 | 73.7% | 60.3% | 26 | 80.8% | 61.9% | 1.41 |
+| Broken range returns to its mid (rangelab) (ranges) | 15 | 02:00 | 0.3-0.4 | vs base rate | 247 | 47.0% | 60.3% | 34 | 50.0% | 61.9% | 0.89 |
+| Broken range returns to its mid (rangelab) (ranges) | 30 | 01:30 | 0.1-0.2 | vs base rate | 308 | 73.7% | 60.3% | 39 | 79.5% | 61.9% | 1.32 |
+| Broken range returns to its mid (rangelab) (ranges) | 15 | 02:45 | 0.6-0.7 | vs base rate | 353 | 73.7% | 60.3% | 33 | 78.8% | 61.9% | 1.27 |
+| Broken range returns to its mid (rangelab) (ranges) | 60 | Q1 narrow | vs base rate | 9283 | 73.7% | 60.3% | 864 | 75.0% | 61.9% | 0.98 |
+| Broken range returns to its mid (rangelab) (ranges) | 30 | Q5 wide | vs base rate | 28910 | 47.0% | 60.3% | 2129 | 47.1% | 61.9% | 1.11 |
+| Broken range returns to its mid (rangelab) (ranges) | 60 | Q5 wide | vs base rate | 13412 | 47.3% | 60.3% | 939 | 48.1% | 61.9% | 1.05 |
+| Broken range returns to its mid (rangelab) (ranges) | 30 | 22:00 | 0.4-0.5 | vs base rate | 186 | 47.3% | 60.3% | 26 | 30.8% | 61.9% | 2.39 |
+| Broken range returns to its mid (rangelab) (ranges) | 30 | 01:30 | 0.2-0.3 | vs base rate | 355 | 73.2% | 60.3% | 34 | 73.5% | 61.9% | 0.90 |
+| Broken range returns to its mid (rangelab) (ranges) | 15 | 04:00 | 0.8-0.9 | vs base rate | 379 | 47.5% | 60.3% | 31 | 45.2% | 61.9% | 1.30 |
+| Broken range returns to its mid (rangelab) (ranges) | 30 | 20:00 | 0.8-0.9 | vs base rate | 292 | 47.6% | 60.3% | 43 | 48.8% | 61.9% | 1.03 |
+| Broken range returns to its mid (rangelab) (ranges) | 30 | 00:30 | 0.2-0.3 | vs base rate | 256 | 73.0% | 60.3% | 22 | 81.8% | 61.9% | 1.57 |
+| Broken range returns to its mid (rangelab) (ranges) | 60 | 10:00 | 0.9-1.0 | vs base rate | 466 | 47.6% | 60.3% | 45 | 40.0% | 61.9% | 1.72 |
+| Broken range returns to its mid (rangelab) (ranges) | 15 | 10:00 | 0.2-0.3 | vs base rate | 325 | 47.7% | 60.3% | 20 | 40.0% | 61.9% | 1.73 |
+| Broken range returns to its mid (rangelab) (ranges) | 30 | 04:00 | 0.7-0.8 | vs base rate | 358 | 47.8% | 60.3% | 28 | 35.7% | 61.9% | 2.08 |
+| Broken range returns to its mid (rangelab) (ranges) | 60 | 00:00 | 0.9-1.0 | vs base rate | 214 | 72.9% | 60.3% | 27 | 92.6% | 61.9% | 2.44 |
+| Broken range returns to its mid (rangelab) (ranges) | 30 | 07:30 | 0.8-0.9 | vs base rate | 461 | 72.7% | 60.3% | 33 | 72.7% | 61.9% | 0.88 |
+| Broken range returns to its mid (rangelab) (ranges) | 15 | 04:00 | 0.2-0.3 | vs base rate | 377 | 48.0% | 60.3% | 34 | 38.2% | 61.9% | 1.92 |
+| Broken range returns to its mid (rangelab) (ranges) | 15 | 20:00 | 0.6-0.7 | vs base rate | 266 | 48.1% | 60.3% | 29 | 48.3% | 61.9% | 1.11 |
+| Broken range returns to its mid (rangelab) (ranges) | 30 | 04:00 | 0.2-0.3 | vs base rate | 359 | 48.2% | 60.3% | 33 | 39.4% | 61.9% | 1.85 |
+| Broken range returns to its mid (rangelab) (ranges) | 30 | 10:00 | 0.5-0.6 | vs base rate | 302 | 48.3% | 60.3% | 23 | 47.8% | 61.9% | 1.17 |
+| Broken range returns to its mid (rangelab) (ranges) | 30 | 10:30 | 0.6-0.7 | vs base rate | 347 | 48.4% | 60.3% | 26 | 42.3% | 61.9% | 1.64 |
+| Broken range returns to its mid (rangelab) (ranges) | 15 | 20:00 | 0.3-0.4 | vs base rate | 227 | 48.5% | 60.3% | 27 | 33.3% | 61.9% | 2.40 |
+| Broken range returns to its mid (rangelab) (ranges) | 15 | 02:15 | 0.6-0.7 | vs base rate | 317 | 71.9% | 60.3% | 28 | 78.6% | 61.9% | 1.44 |
+| Broken range returns to its mid (rangelab) (ranges) | 30 | 01:30 | 0.4-0.5 | vs base rate | 274 | 71.9% | 60.3% | 29 | 79.3% | 61.9% | 1.51 |
+| Broken range returns to its mid (rangelab) (ranges) | 30 | 03:30 | 0.0-0.1 | vs base rate | 352 | 48.9% | 60.3% | 23 | 47.8% | 61.9% | 1.23 |
+| Broken range returns to its mid (rangelab) (ranges) | 15 | 02:45 | 0.2-0.3 | vs base rate | 350 | 71.7% | 60.3% | 31 | 74.2% | 61.9% | 1.08 |
+| Broken range returns to its mid (rangelab) (ranges) | 15 | 03:00 | 0.8-0.9 | vs base rate | 388 | 49.0% | 60.3% | 31 | 45.2% | 61.9% | 1.47 |
+| Broken range returns to its mid (rangelab) (ranges) | 15 | 21:45 | 0.4-0.5 | vs base rate | 202 | 49.0% | 60.3% | 23 | 47.8% | 61.9% | 1.24 |
+| Broken range returns to its mid (rangelab) (ranges) | 30 | 09:30 | 0.9-1.0 | vs base rate | 332 | 49.1% | 60.3% | 43 | 48.8% | 61.9% | 1.16 |
+| Broken range returns to its mid (rangelab) (ranges) | 15 | 03:00 | 0.1-0.2 | vs base rate | 338 | 49.1% | 60.3% | 27 | 37.0% | 61.9% | 2.21 |
+| Broken range returns to its mid (rangelab) (ranges) | 15 | 21:45 | 0.8-0.9 | vs base rate | 295 | 49.2% | 60.3% | 44 | 43.2% | 61.9% | 1.67 |
+| Broken range returns to its mid (rangelab) (ranges) | 15 | 07:45 | 0.9-1.0 | vs base rate | 294 | 71.4% | 60.3% | 36 | 80.6% | 61.9% | 1.68 |
+| Broken range returns to its mid (rangelab) (ranges) | 15 | 02:00 | 0.5-0.6 | vs base rate | 286 | 49.3% | 60.3% | 23 | 39.1% | 61.9% | 2.06 |
+| Broken range returns to its mid (rangelab) (ranges) | 30 | 09:30 | 0.6-0.7 | vs base rate | 338 | 49.4% | 60.3% | 25 | 40.0% | 61.9% | 2.00 |
+| Broken range returns to its mid (rangelab) (ranges) | 15 | 07:45 | 0.6-0.7 | vs base rate | 360 | 71.1% | 60.3% | 30 | 76.7% | 61.9% | 1.37 |
+| Broken range returns to its mid (rangelab) (ranges) | 30 | 01:00 | 0.2-0.3 | vs base rate | 295 | 70.8% | 60.3% | 35 | 74.3% | 61.9% | 1.18 |
+| Broken range returns to its mid (rangelab) (ranges) | 15 | 09:30 | 0.1-0.2 | vs base rate | 404 | 50.0% | 60.3% | 47 | 46.8% | 61.9% | 1.46 |
+| Broken range returns to its mid (rangelab) (ranges) | 15 | 20:00 | 0.1-0.2 | vs base rate | 258 | 50.0% | 60.3% | 25 | 36.0% | 61.9% | 2.51 |
+| Broken range returns to its mid (rangelab) (ranges) | 60 | 20:00 | 0.0-0.1 | vs base rate | 160 | 50.0% | 60.3% | 20 | 35.0% | 61.9% | 2.60 |
+| Broken range returns to its mid (rangelab) (ranges) | 30 | 02:30 | 0.9-1.0 | vs base rate | 327 | 70.6% | 60.3% | 43 | 72.1% | 61.9% | 0.99 |
+| Broken range returns to its mid (rangelab) (ranges) | 15 | 00:45 | 0.7-0.8 | vs base rate | 235 | 70.6% | 60.3% | 34 | 73.5% | 61.9% | 1.13 |
+| Broken range returns to its mid (rangelab) (ranges) | 60 | 02:00 | 0.5-0.6 | vs base rate | 336 | 70.5% | 60.3% | 24 | 75.0% | 61.9% | 1.29 |
+| Broken range returns to its mid (rangelab) (ranges) | 15 | 02:15 | 0.7-0.8 | vs base rate | 336 | 70.5% | 60.3% | 33 | 81.8% | 61.9% | 1.95 |
+| Broken range returns to its mid (rangelab) (ranges) | 15 | 08:30 | 0.4-0.5 | vs base rate | 331 | 50.2% | 60.3% | 25 | 48.0% | 61.9% | 1.36 |
+| Broken range returns to its mid (rangelab) (ranges) | 15 | 10:00 | 0.8-0.9 | vs base rate | 482 | 50.2% | 60.3% | 39 | 51.3% | 61.9% | 1.05 |
+| Broken range returns to its mid (rangelab) (ranges) | 30 | 20:00 | 0.2-0.3 | vs base rate | 270 | 50.4% | 60.3% | 31 | 41.9% | 61.9% | 2.00 |
+| Broken range returns to its mid (rangelab) (ranges) | 15 | 21:30 | 0.5-0.6 | vs base rate | 240 | 50.4% | 60.3% | 31 | 48.4% | 61.9% | 1.36 |
+| Broken range returns to its mid (rangelab) (ranges) | 30 | 07:30 | 0.9-1.0 | vs base rate | 373 | 70.2% | 60.3% | 30 | 73.3% | 61.9% | 1.16 |
+| Broken range returns to its mid (rangelab) (ranges) | 30 | 10:00 | 0.9-1.0 | vs base rate | 487 | 50.5% | 60.3% | 48 | 52.1% | 61.9% | 1.00 |
+| Broken range returns to its mid (rangelab) (ranges) | 30 | 04:30 | 0.1-0.2 | vs base rate | 320 | 50.6% | 60.3% | 25 | 32.0% | 61.9% | 3.08 |
+| Broken range returns to its mid (rangelab) (ranges) | 30 | Q1 narrow | vs base rate | 18487 | 69.9% | 60.3% | 1815 | 72.9% | 61.9% | 1.15 |
+| Broken range returns to its mid (rangelab) (ranges) | 15 | 19:30 | 0.5-0.6 | vs base rate | 256 | 69.9% | 60.3% | 31 | 77.4% | 61.9% | 1.62 |
+| Broken range returns to its mid (rangelab) (ranges) | 15 | 21:30 | 0.9-1.0 | vs base rate | 179 | 50.8% | 60.3% | 29 | 48.3% | 61.9% | 1.43 |
+| Broken range returns to its mid (rangelab) (ranges) | 60 | Q2 | vs base rate | 12060 | 69.8% | 60.3% | 1304 | 68.0% | 61.9% | 0.65 |
+| Broken range returns to its mid (rangelab) (ranges) | 30 | 10:30 | 0.3-0.4 | vs base rate | 320 | 50.9% | 60.3% | 23 | 43.5% | 61.9% | 1.96 |
+| Broken range returns to its mid (rangelab) (ranges) | 15 | 02:45 | 0.9-1.0 | vs base rate | 231 | 69.7% | 60.3% | 26 | 80.8% | 61.9% | 2.02 |
+| Broken range returns to its mid (rangelab) (ranges) | 60 | 22:00 | 0.8-0.9 | vs base rate | 253 | 51.0% | 60.3% | 32 | 43.8% | 61.9% | 1.94 |
+| Broken range returns to its mid (rangelab) (ranges) | 15 | 21:30 | 0.4-0.5 | vs base rate | 221 | 51.1% | 60.3% | 24 | 41.7% | 61.9% | 2.20 |
+| Broken range returns to its mid (rangelab) (ranges) | 60 | 09:00 | 0.6-0.7 | vs base rate | 352 | 51.1% | 60.3% | 23 | 43.5% | 61.9% | 2.00 |
+| Broken range returns to its mid (rangelab) (ranges) | 15 | 20:00 | 0.4-0.5 | vs base rate | 215 | 51.2% | 60.3% | 25 | 44.0% | 61.9% | 1.95 |
+| Broken range returns to its mid (rangelab) (ranges) | 30 | 04:00 | 0.5-0.6 | vs base rate | 340 | 51.2% | 60.3% | 32 | 46.9% | 61.9% | 1.64 |
+| Broken range returns to its mid (rangelab) (ranges) | 30 | 21:00 | 0.1-0.2 | vs base rate | 250 | 51.2% | 60.3% | 20 | 40.0% | 61.9% | 2.40 |
+| Broken range returns to its mid (rangelab) (ranges) | 15 | 03:00 | 0.6-0.7 | vs base rate | 330 | 51.2% | 60.3% | 23 | 47.8% | 61.9% | 1.54 |
+| Broken range returns to its mid (rangelab) (ranges) | 15 | 09:30 | 0.0-0.1 | vs base rate | 353 | 51.3% | 60.3% | 27 | 40.7% | 61.9% | 2.33 |
+| Broken range returns to its mid (rangelab) (ranges) | 15 | 01:45 | 0.9-1.0 | vs base rate | 192 | 69.3% | 60.3% | 24 | 83.3% | 61.9% | 2.40 |
+| Broken range returns to its mid (rangelab) (ranges) | 60 | 02:00 | 0.0-0.1 | vs base rate | 286 | 69.2% | 60.3% | 28 | 75.0% | 61.9% | 1.47 |
+| Broken range returns to its mid (rangelab) (ranges) | 30 | 10:30 | 0.2-0.3 | vs base rate | 344 | 51.5% | 60.3% | 23 | 34.8% | 61.9% | 3.05 |
+| Broken range returns to its mid (rangelab) (ranges) | 30 | 02:00 | 0.4-0.5 | vs base rate | 263 | 69.2% | 60.3% | 21 | 81.0% | 61.9% | 2.15 |
+| Broken range returns to its mid (rangelab) (ranges) | 30 | 07:30 | 0.6-0.7 | vs base rate | 363 | 69.1% | 60.3% | 22 | 77.3% | 61.9% | 1.75 |
+| Broken range returns to its mid (rangelab) (ranges) | 15 | 04:00 | 0.6-0.7 | vs base rate | 347 | 51.6% | 60.3% | 23 | 30.4% | 61.9% | 3.60 |
+| Broken range returns to its mid (rangelab) (ranges) | 30 | 00:30 | 0.6-0.7 | vs base rate | 258 | 69.0% | 60.3% | 30 | 73.3% | 61.9% | 1.32 |
+| Broken range returns to its mid (rangelab) (ranges) | 15 | 15:15 | 0.8-0.9 | vs base rate | 447 | 68.9% | 60.3% | 30 | 76.7% | 61.9% | 1.72 |
+| Broken range returns to its mid (rangelab) (ranges) | 15 | 15:00 | 0.5-0.6 | vs base rate | 333 | 68.8% | 60.3% | 24 | 83.3% | 61.9% | 2.54 |
+| Broken range returns to its mid (rangelab) (ranges) | 30 | 03:00 | 0.5-0.6 | vs base rate | 319 | 52.0% | 60.3% | 20 | 40.0% | 61.9% | 2.64 |
+| Broken range returns to its mid (rangelab) (ranges) | 15 | 04:00 | 0.4-0.5 | vs base rate | 288 | 52.1% | 60.3% | 20 | 35.0% | 61.9% | 3.26 |
+| Broken range returns to its mid (rangelab) (ranges) | 15 | 01:15 | 0.4-0.5 | vs base rate | 194 | 68.6% | 60.3% | 23 | 78.3% | 61.9% | 1.99 |
+| Broken range returns to its mid (rangelab) (ranges) | 30 | 04:00 | 0.8-0.9 | vs base rate | 424 | 52.1% | 60.3% | 38 | 42.1% | 61.9% | 2.41 |
+| Broken range returns to its mid (rangelab) (ranges) | 30 | 07:30 | 0.0-0.1 | vs base rate | 308 | 68.5% | 60.3% | 29 | 75.9% | 61.9% | 1.71 |
+| Broken range returns to its mid (rangelab) (ranges) | 30 | 20:00 | 0.1-0.2 | vs base rate | 251 | 52.2% | 60.3% | 25 | 44.0% | 61.9% | 2.20 |
+| Broken range returns to its mid (rangelab) (ranges) | 15 | Q1 narrow | vs base rate | 38222 | 68.4% | 60.3% | 3759 | 72.7% | 61.9% | 1.34 |
+| Broken range returns to its mid (rangelab) (ranges) | 15 | 04:00 | 0.3-0.4 | vs base rate | 327 | 52.3% | 60.3% | 29 | 44.8% | 61.9% | 2.12 |
+| Broken range returns to its mid (rangelab) (ranges) | 30 | 10:00 | 0.0-0.1 | vs base rate | 298 | 52.3% | 60.3% | 36 | 50.0% | 61.9% | 1.49 |
+| Broken range returns to its mid (rangelab) (ranges) | 60 | 21:00 | 0.2-0.3 | vs base rate | 210 | 52.4% | 60.3% | 28 | 42.9% | 61.9% | 2.39 |
+| Broken range returns to its mid (rangelab) (ranges) | 15 | 08:30 | 0.8-0.9 | vs base rate | 408 | 52.5% | 60.3% | 37 | 45.9% | 61.9% | 2.02 |
+| Broken range returns to its mid (rangelab) (ranges) | 15 | 19:00 | 0.5-0.6 | vs base rate | 244 | 52.5% | 60.3% | 26 | 38.5% | 61.9% | 2.97 |
+| Broken range returns to its mid (rangelab) (ranges) | 15 | 19:00 | 0.8-0.9 | vs base rate | 284 | 52.5% | 60.3% | 34 | 44.1% | 61.9% | 2.26 |
+| Broken range returns to its mid (rangelab) (ranges) | 60 | 21:00 | 0.3-0.4 | vs base rate | 181 | 52.5% | 60.3% | 25 | 36.0% | 61.9% | 3.30 |
+| Broken range returns to its mid (rangelab) (ranges) | 30 | 11:00 | 0.1-0.2 | vs base rate | 367 | 52.6% | 60.3% | 34 | 50.0% | 61.9% | 1.54 |
+| Broken range returns to its mid (rangelab) (ranges) | 15 | 10:15 | 0.2-0.3 | vs base rate | 355 | 52.7% | 60.3% | 23 | 43.5% | 61.9% | 2.40 |
+| Broken range returns to its mid (rangelab) (ranges) | 30 | 02:00 | 0.7-0.8 | vs base rate | 364 | 67.9% | 60.3% | 21 | 85.7% | 61.9% | 3.17 |
+| Broken range returns to its mid (rangelab) (ranges) | 15 | 07:45 | 0.4-0.5 | vs base rate | 283 | 67.8% | 60.3% | 28 | 75.0% | 61.9% | 1.75 |
+| Broken range returns to its mid (rangelab) (ranges) | 15 | 08:30 | 0.1-0.2 | vs base rate | 325 | 52.9% | 60.3% | 28 | 50.0% | 61.9% | 1.60 |
+| Broken range returns to its mid (rangelab) (ranges) | 15 | 03:15 | 0.1-0.2 | vs base rate | 355 | 53.0% | 60.3% | 36 | 47.2% | 61.9% | 1.99 |
+| Broken range returns to its mid (rangelab) (ranges) | 60 | 05:00 | 0.9-1.0 | vs base rate | 359 | 67.7% | 60.3% | 31 | 74.2% | 61.9% | 1.67 |
+| Broken range returns to its mid (rangelab) (ranges) | 15 | 02:15 | 0.0-0.1 | vs base rate | 309 | 67.6% | 60.3% | 20 | 80.0% | 61.9% | 2.48 |
+| Broken range returns to its mid (rangelab) (ranges) | 15 | 04:15 | 0.0-0.1 | vs base rate | 358 | 53.1% | 60.3% | 29 | 48.3% | 61.9% | 1.87 |
+| Broken range returns to its mid (rangelab) (ranges) | 30 | 00:00 | 0.2-0.3 | vs base rate | 259 | 67.6% | 60.3% | 29 | 86.2% | 61.9% | 3.36 |
+| Broken range returns to its mid (rangelab) (ranges) | 15 | 03:15 | 0.6-0.7 | vs base rate | 335 | 53.1% | 60.3% | 34 | 50.0% | 61.9% | 1.65 |
+| Broken range returns to its mid (rangelab) (ranges) | 30 | 21:00 | 0.4-0.5 | vs base rate | 207 | 53.1% | 60.3% | 32 | 46.9% | 61.9% | 2.09 |
+| Broken range returns to its mid (rangelab) (ranges) | 15 | 04:00 | 0.7-0.8 | vs base rate | 380 | 53.2% | 60.3% | 35 | 34.3% | 61.9% | 3.85 |
+| Broken range returns to its mid (rangelab) (ranges) | 30 | 04:00 | 0.9-1.0 | vs base rate | 280 | 53.2% | 60.3% | 20 | 45.0% | 61.9% | 2.37 |
+| Broken range returns to its mid (rangelab) (ranges) | 60 | 09:00 | 0.8-0.9 | vs base rate | 415 | 53.3% | 60.3% | 31 | 41.9% | 61.9% | 2.82 |
+| Broken range returns to its mid (rangelab) (ranges) | 60 | 11:00 | 0.7-0.8 | vs base rate | 368 | 53.3% | 60.3% | 25 | 28.0% | 61.9% | 4.79 |
+| Broken range returns to its mid (rangelab) (ranges) | 30 | 11:30 | 0.0-0.1 | vs base rate | 307 | 53.4% | 60.3% | 31 | 45.2% | 61.9% | 2.42 |
+| Broken range returns to its mid (rangelab) (ranges) | 60 | 11:00 | 0.1-0.2 | vs base rate | 357 | 53.5% | 60.3% | 28 | 46.4% | 61.9% | 2.26 |
+| Broken range returns to its mid (rangelab) (ranges) | 60 | 02:00 | 0.7-0.8 | vs base rate | 347 | 67.1% | 60.3% | 33 | 72.7% | 61.9% | 1.59 |
+| Broken range returns to its mid (rangelab) (ranges) | 30 | Q2 | vs base rate | 25583 | 67.0% | 60.3% | 2785 | 68.1% | 61.9% | 0.92 |
+| Broken range returns to its mid (rangelab) (ranges) | 15 | 07:00 | 0.1-0.2 | vs base rate | 322 | 53.7% | 60.3% | 33 | 48.5% | 61.9% | 2.03 |
+| Broken range returns to its mid (rangelab) (ranges) | 15 | 09:45 | 0.0-0.1 | vs base rate | 392 | 53.8% | 60.3% | 31 | 32.3% | 61.9% | 4.55 |
+| Broken range returns to its mid (rangelab) (ranges) | 30 | 06:30 | 0.7-0.8 | vs base rate | 378 | 66.7% | 60.3% | 44 | 72.7% | 61.9% | 1.71 |
+| Broken range returns to its mid (rangelab) (ranges) | 15 | Q2 | vs base rate | 55656 | 66.7% | 60.3% | 5849 | 67.7% | 61.9% | 0.92 |
+| Broken range returns to its mid (rangelab) (ranges) | 15 | 03:00 | 0.0-0.1 | vs base rate | 357 | 54.1% | 60.3% | 31 | 48.4% | 61.9% | 2.15 |
+| Broken range returns to its mid (rangelab) (ranges) | 15 | 09:45 | 0.5-0.6 | vs base rate | 321 | 54.2% | 60.3% | 21 | 47.6% | 61.9% | 2.33 |
+| Broken range returns to its mid (rangelab) (ranges) | 30 | 12:30 | 0.9-1.0 | vs base rate | 430 | 66.0% | 60.3% | 29 | 75.9% | 61.9% | 2.45 |
+| Broken range returns to its mid (rangelab) (ranges) | 60 | 04:00 | 0.2-0.3 | vs base rate | 320 | 54.7% | 60.3% | 21 | 47.6% | 61.9% | 2.53 |
+| Broken range returns to its mid (rangelab) (ranges) | 60 | 09:00 | 0.9-1.0 | vs base rate | 349 | 55.0% | 60.3% | 37 | 43.2% | 61.9% | 3.51 |
+| Broken range returns to its mid (rangelab) (ranges) | 15 | 12:00 | 0.6-0.7 | vs base rate | 372 | 55.1% | 60.3% | 28 | 46.4% | 61.9% | 2.96 |
+| Broken range returns to its mid (rangelab) (ranges) | 30 | 11:30 | 0.8-0.9 | vs base rate | 468 | 55.1% | 60.3% | 36 | 38.9% | 61.9% | 4.42 |
+| Broken range returns to its mid (rangelab) (ranges) | 30 | Q3 | vs base rate | 28443 | 65.2% | 60.3% | 2714 | 64.7% | 61.9% | 0.58 |
+| Broken range returns to its mid (rangelab) (ranges) | 15 | Q4 | vs base rate | 60878 | 57.2% | 60.3% | 5120 | 56.9% | 61.9% | 1.61 |
+| Broken range returns to its mid (rangelab) (ranges) | 15 | Q3 | vs base rate | 59730 | 62.8% | 60.3% | 5401 | 63.3% | 61.9% | 0.59 |
+| Broken range returns to its mid (rangelab) (ranges) | 30 | Q4 | vs base rate | 28995 | 58.6% | 60.3% | 2341 | 59.8% | 61.9% | 1.26 |
+| Hour sweeps one side of prev hour, closes back inside (hourly) | 09:00 | swept H only | vs base rate | 1125 | 25.3% | 42.9% | 80 | 27.5% | 44.5% | 0.97 |
+| Hour sweeps one side of prev hour, closes back inside (hourly) | 12:00 | swept L only | vs base rate | 1290 | 54.0% | 42.9% | 92 | 52.2% | 44.5% | 0.69 |
+| Hour sweeps one side of prev hour, closes back inside (hourly) | 11:00 | swept L only | vs base rate | 1272 | 50.2% | 42.9% | 91 | 53.8% | 44.5% | 1.27 |
+| Hour sweeps one side of prev hour, closes back inside (hourly) | 13:00 | swept L only | vs base rate | 1245 | 47.8% | 42.9% | 98 | 52.0% | 44.5% | 1.54 |
+| Hour takes previous hour's high (hourly) | 11:00 | open lower half | vs base rate | 1736 | 15.1% | 52.9% | 124 | 15.3% | 54.5% | 1.04 |
+| Hour takes previous hour's high (hourly) | 12:00 | open lower half | vs base rate | 1639 | 17.3% | 52.9% | 119 | 26.1% | 54.5% | 0.80 |
+| Hour takes previous hour's high (hourly) | 09:00 | open upper half | vs base rate | 1898 | 83.8% | 52.9% | 145 | 82.1% | 54.5% | 0.89 |
+| Hour takes previous hour's high (hourly) | 13:00 | open lower half | vs base rate | 1571 | 25.4% | 52.9% | 128 | 25.8% | 54.5% | 1.04 |
+| Hour takes previous hour's high (hourly) | 10:00 | open lower half | vs base rate | 1722 | 25.4% | 52.9% | 125 | 20.8% | 54.5% | 1.23 |
+| Hour takes previous hour's high (hourly) | 14:00 | open lower half | vs base rate | 1608 | 28.0% | 52.9% | 124 | 26.6% | 54.5% | 1.12 |
+| Hour takes previous hour's high (hourly) | 15:00 | open upper half | vs base rate | 2055 | 74.9% | 52.9% | 150 | 69.3% | 54.5% | 0.67 |
+| Hour takes previous hour's high (hourly) | 15:00 | open lower half | vs base rate | 1582 | 30.8% | 52.9% | 125 | 36.0% | 54.5% | 0.84 |
+| Hour takes previous hour's high (hourly) | 10:00 | open upper half | vs base rate | 2033 | 74.2% | 52.9% | 157 | 78.3% | 54.5% | 1.12 |
+| Hour takes previous hour's high (hourly) | 14:00 | open upper half | vs base rate | 2025 | 71.3% | 52.9% | 154 | 70.8% | 54.5% | 0.89 |
+| Hour takes previous hour's high (hourly) | 13:00 | open upper half | vs base rate | 2075 | 69.5% | 52.9% | 150 | 76.7% | 54.5% | 1.33 |
+| Hour takes previous hour's high (hourly) | 11:00 | open upper half | vs base rate | 2013 | 68.7% | 52.9% | 164 | 72.6% | 54.5% | 1.14 |
+| Hour takes previous hour's high (hourly) | 12:00 | open upper half | vs base rate | 2103 | 64.9% | 52.9% | 168 | 69.6% | 54.5% | 1.26 |
+| Hour takes previous hour's low (hourly) | 09:00 | open lower half | vs base rate | 1844 | 82.5% | 46.4% | 143 | 82.5% | 46.4% | 1.00 |
+| Hour takes previous hour's low (hourly) | 11:00 | open upper half | vs base rate | 2013 | 14.2% | 46.4% | 164 | 12.8% | 46.4% | 1.04 |
+| Hour takes previous hour's low (hourly) | 12:00 | open upper half | vs base rate | 2103 | 16.6% | 46.4% | 168 | 20.2% | 46.4% | 0.88 |
+| Hour takes previous hour's low (hourly) | 15:00 | open lower half | vs base rate | 1582 | 73.5% | 46.4% | 125 | 70.4% | 46.4% | 0.89 |
+| Hour takes previous hour's low (hourly) | 10:00 | open lower half | vs base rate | 1722 | 73.0% | 46.4% | 125 | 73.6% | 46.4% | 1.02 |
+| Hour takes previous hour's low (hourly) | 13:00 | open upper half | vs base rate | 2075 | 21.5% | 46.4% | 150 | 22.0% | 46.4% | 0.98 |
+| Hour takes previous hour's low (hourly) | 14:00 | open lower half | vs base rate | 1608 | 70.1% | 46.4% | 124 | 60.5% | 46.4% | 0.59 |
+| Hour takes previous hour's low (hourly) | 13:00 | open lower half | vs base rate | 1571 | 68.6% | 46.4% | 128 | 67.2% | 46.4% | 0.94 |
+| Hour takes previous hour's low (hourly) | 10:00 | open upper half | vs base rate | 2033 | 26.2% | 46.4% | 157 | 21.0% | 46.4% | 1.25 |
+| Hour takes previous hour's low (hourly) | 12:00 | open lower half | vs base rate | 1639 | 66.0% | 46.4% | 119 | 65.5% | 46.4% | 0.98 |
+| Hour takes previous hour's low (hourly) | 14:00 | open upper half | vs base rate | 2025 | 27.6% | 46.4% | 154 | 25.3% | 46.4% | 1.12 |
+| Hour takes previous hour's low (hourly) | 15:00 | open upper half | vs base rate | 2055 | 28.5% | 46.4% | 150 | 35.3% | 46.4% | 0.62 |
+| Hour takes previous hour's low (hourly) | 11:00 | open lower half | vs base rate | 1736 | 62.6% | 46.4% | 124 | 68.5% | 46.4% | 1.37 |
+| Hour takes previous hour's low (hourly) | 09:00 | open upper half | vs base rate | 1898 | 54.1% | 46.4% | 145 | 57.9% | 46.4% | 1.50 |
+| RTH trades up to prior-day high (opened below it) (session) | below PDL | vs base rate | 523 | 9.6% | 40.6% | 46 | 19.6% | 45.4% | 0.83 |
+| RTH trades up to prior-day high (opened below it) (session) | gap dn >0.5atr | vs base rate | 404 | 12.9% | 40.8% | 34 | 23.5% | 44.5% | 0.75 |
+| RTH trades up to prior-day high (opened below it) (session) | upper half PD | vs base rate | 1238 | 66.9% | 40.6% | 98 | 67.3% | 45.4% | 0.84 |
+| RTH trades up to prior-day high (opened below it) (session) | lower half PD | vs base rate | 968 | 23.9% | 40.6% | 63 | 30.2% | 45.4% | 0.91 |
+| RTH trades up to prior-day high (opened below it) (session) | gap up | vs base rate | 497 | 52.1% | 40.8% | 31 | 71.0% | 44.5% | 2.33 |
+| RTH trades up to prior-day high (opened below it) (session) | flat | vs base rate | 953 | 51.2% | 40.8% | 70 | 52.9% | 44.5% | 0.80 |
+| RTH trades up to prior-day high (opened below it) (session) | gap dn | vs base rate | 656 | 30.8% | 40.8% | 52 | 28.8% | 44.5% | 1.57 |
+| RTH trades up to prior-day high (opened below it) (session) | took Asia H | vs base rate | 985 | 47.3% | 40.8% | 86 | 53.5% | 45.4% | 1.23 |
+| RTH trades up to prior-day high (opened below it) (session) | took Asia L | vs base rate | 1033 | 34.4% | 40.8% | 79 | 38.0% | 45.4% | 1.16 |
+| RTH trades down to prior-day low (opened above it) (session) | lower half PD | vs base rate | 965 | 67.4% | 34.5% | 63 | 58.7% | 30.6% | 0.86 |
+| RTH trades down to prior-day low (opened above it) (session) | gap up >0.5atr | vs base rate | 509 | 13.0% | 34.5% | 50 | 18.0% | 31.1% | 0.61 |
+| RTH trades down to prior-day low (opened above it) (session) | above PDH | vs base rate | 943 | 13.0% | 34.5% | 71 | 8.5% | 30.6% | 1.03 |
+| RTH trades down to prior-day low (opened above it) (session) | gap dn | vs base rate | 481 | 51.6% | 34.5% | 37 | 51.4% | 31.1% | 1.19 |
+| RTH trades down to prior-day low (opened above it) (session) | gap up | vs base rate | 932 | 26.9% | 34.5% | 56 | 17.9% | 31.1% | 1.75 |
+| RTH trades down to prior-day low (opened above it) (session) | flat | vs base rate | 1030 | 40.9% | 34.5% | 74 | 41.9% | 31.1% | 1.70 |
+
+### CONSISTENT (not sig) (519)
+
+| statistic | condition | benchmark | disc n | disc rate | disc bench | holdout n | holdout rate | holdout bench | retained |
+|---|---|---|---:|---:|---:|---:|---:|---:|---:|
+| Range breaks HIGH first (rangelab) (ranges) | 60 | Q3 | MECHANICAL (= random walk) | 13095 | 54.2% | 53.0% | 1137 | 55.8% | 54.1% | 1.50 |
+| C3 takes C2 high before C2 low (candle_1D) | higher (took C1 H) | C1 bull / C2 bull | beats random walk | 854 | 82.1% | 77.7% | 52 | 78.8% | 76.4% | 0.57 |
+| C3 takes C2 high before C2 low (candle_4h) | outside | C1 bear / C2 bull | beats random walk | 870 | 80.7% | 77.6% | 43 | 83.7% | 80.0% | 1.21 |
+| C3 takes C2 high before C2 low (candle_1h) | outside | C1 bull / C2 bull | beats random walk | 1350 | 82.5% | 79.5% | 119 | 84.9% | 82.3% | 0.84 |
+| C3 takes C2 high before C2 low (candle_4h) | outside | C2 closed above C1 H | beats random walk | 886 | 89.4% | 86.4% | 67 | 89.6% | 86.3% | 1.09 |
+| C3 takes C2 high before C2 low (candle_1h) | 03:00 | lower (took C1 L) | beats random walk | 1220 | 38.0% | 41.0% | 87 | 41.4% | 44.0% | 0.88 |
+| C3 takes C2 high before C2 low (candle_1D) | higher (took C1 H) | C1 bull / C2 bear | MECHANICAL (= random walk) | 294 | 31.3% | 28.4% | 27 | 40.7% | 36.0% | 1.63 |
+| C3 takes C2 high before C2 low (candle_1h) | outside | C1 bear / C2 bull | beats random walk | 2368 | 81.0% | 78.2% | 199 | 82.4% | 79.5% | 1.00 |
+| C3 takes C2 high before C2 low (candle_1h) | 07:00 | higher (took C1 H) | MECHANICAL (= random walk) | 1270 | 61.0% | 58.3% | 112 | 61.6% | 58.8% | 1.02 |
+| C3 takes C2 high before C2 low (candle_1h) | 12:00 | higher (took C1 H) | MECHANICAL (= random walk) | 1237 | 66.0% | 63.4% | 104 | 70.2% | 64.3% | 2.28 |
+| C3 takes C2 high before C2 low (candle_1h) | 05:00 | higher (took C1 H) | MECHANICAL (= random walk) | 1067 | 64.6% | 62.0% | 76 | 67.1% | 64.3% | 1.10 |
+| C3 takes C2 high before C2 low (candle_1h) | 21:00 | higher (took C1 H) | MECHANICAL (= random walk) | 1115 | 65.5% | 63.0% | 99 | 64.6% | 62.5% | 0.88 |
+| C3 takes C2 high before C2 low (candle_1h) | 02:00 | lower (took C1 L) | MECHANICAL (= random walk) | 1160 | 44.7% | 42.3% | 98 | 48.0% | 46.2% | 0.77 |
+| C3 takes C2 high before C2 low (candle_4h) | outside | C1 bull / C2 bear | MECHANICAL (= random walk) | 971 | 24.1% | 26.4% | 78 | 23.1% | 27.1% | 1.78 |
+| C3 takes C2 high before C2 low (candle_1h) | 03:00 | outside | MECHANICAL (= random walk) | 568 | 47.4% | 49.5% | 38 | 47.4% | 53.3% | 2.79 |
+| C3 takes C2 high before C2 low (candle_4h) | inside | C1 bear / C2 bull | MECHANICAL (= random walk) | 1177 | 73.3% | 71.2% | 78 | 75.6% | 70.7% | 2.36 |
+| C3 takes C2 high before C2 low (candle_1h) | 16:00 | higher (took C1 H) | MECHANICAL (= random walk) | 912 | 65.9% | 63.8% | 68 | 64.7% | 63.2% | 0.73 |
+| C3 takes C2 high before C2 low (candle_1h) | 14:00 | lower (took C1 L) | MECHANICAL (= random walk) | 1075 | 41.3% | 43.4% | 79 | 44.3% | 47.0% | 1.33 |
+| C3 takes C2 high before C2 low (candle_1h) | 06:00 | lower (took C1 L) | MECHANICAL (= random walk) | 1004 | 41.4% | 43.4% | 77 | 48.1% | 49.1% | 0.55 |
+| C3 takes C2 high before C2 low (candle_1h) | outside | C1 bear / C2 bear | MECHANICAL (= random walk) | 956 | 19.1% | 21.1% | 92 | 16.3% | 19.2% | 1.48 |
+| C3 takes C2 high before C2 low (candle_4h) | 18:00 | lower (took C1 L) | MECHANICAL (= random walk) | 533 | 40.7% | 42.6% | 41 | 46.3% | 47.6% | 0.67 |
+| C3 takes C2 high before C2 low (candle_4h) | outside | C1 bull / C2 bull | MECHANICAL (= random walk) | 531 | 81.0% | 79.2% | 46 | 87.0% | 82.0% | 2.76 |
+| C3 takes C2 high before C2 low (candle_1h) | 10:00 | higher (took C1 H) | MECHANICAL (= random walk) | 1023 | 69.0% | 67.2% | 73 | 71.2% | 68.7% | 1.44 |
+| C3 takes C2 high before C2 low (candle_1h) | 23:00 | higher (took C1 H) | MECHANICAL (= random walk) | 988 | 60.9% | 59.1% | 91 | 65.9% | 59.3% | 3.69 |
+| C3 takes C2 high before C2 low (candle_1h) | 08:00 | inside | MECHANICAL (= random walk) | 494 | 47.8% | 49.4% | 24 | 50.0% | 60.5% | 6.28 |
+| C3 takes C2 high before C2 low (candle_4h) | 14:00 | higher (took C1 H) | MECHANICAL (= random walk) | 1123 | 71.1% | 69.5% | 76 | 76.3% | 70.7% | 3.61 |
+| C3 takes C2 high before C2 low (candle_1h) | 13:00 | higher (took C1 H) | MECHANICAL (= random walk) | 1240 | 63.8% | 62.2% | 108 | 66.7% | 62.6% | 2.60 |
+| C3 takes C2 high before C2 low (candle_1h) | 11:00 | lower (took C1 L) | MECHANICAL (= random walk) | 1078 | 40.9% | 42.4% | 80 | 37.5% | 41.4% | 2.60 |
+| C3 takes C2 high before C2 low (candle_1h) | lower (took C1 L) | C1 bear / C2 bull | MECHANICAL (= random walk) | 5139 | 78.4% | 76.9% | 438 | 79.5% | 77.2% | 1.49 |
+| C3 takes C2 high before C2 low (candle_4h) | outside | C2 closed below C1 L | MECHANICAL (= random walk) | 826 | 14.6% | 16.1% | 60 | 11.7% | 16.1% | 3.09 |
+| C3 takes C2 high before C2 low (candle_1h) | 04:00 | higher (took C1 H) | MECHANICAL (= random walk) | 1024 | 63.7% | 62.3% | 99 | 66.7% | 64.2% | 1.82 |
+| C3 takes C2 high before C2 low (candle_4h) | lower (took C1 L) | C1 bull / C2 bear | MECHANICAL (= random walk) | 1289 | 31.6% | 32.7% | 81 | 29.6% | 33.1% | 3.05 |
+| C3 takes C2 high before C2 low (candle_1h) | 20:00 | higher (took C1 H) | MECHANICAL (= random walk) | 1097 | 60.4% | 61.5% | 106 | 59.4% | 62.8% | 3.08 |
+| C3 takes C2 high before C2 low (candle_4h) | outside | C1 bear / C2 bear | MECHANICAL (= random walk) | 411 | 22.1% | 23.1% | 25 | 20.0% | 22.4% | 2.64 |
+| C3 takes C2 high before C2 low (candle_1h) | 02:00 | higher (took C1 H) | MECHANICAL (= random walk) | 1327 | 62.9% | 62.2% | 99 | 66.7% | 62.1% | 5.93 |
+| C3 takes C2 high before C2 low (candle_1h) | 00:00 | lower (took C1 L) | MECHANICAL (= random walk) | 879 | 43.7% | 44.5% | 92 | 35.9% | 37.0% | 1.44 |
+| C3 takes C2 high before C2 low (candle_1h) | 09:00 | lower (took C1 L) | MECHANICAL (= random walk) | 1288 | 40.3% | 39.6% | 92 | 47.8% | 44.4% | 4.85 |
+| C3 takes C2 high before C2 low (candle_1h) | 22:00 | lower (took C1 L) | MECHANICAL (= random walk) | 897 | 43.6% | 44.3% | 73 | 37.0% | 43.2% | 9.03 |
+| C3 takes C2 high before C2 low (candle_1h) | 01:00 | lower (took C1 L) | MECHANICAL (= random walk) | 1039 | 45.3% | 46.0% | 95 | 41.1% | 43.3% | 3.65 |
+| C3 takes C2 high before C2 low (candle_1h) | 08:00 | lower (took C1 L) | MECHANICAL (= random walk) | 1141 | 40.5% | 41.1% | 86 | 46.5% | 48.0% | 2.43 |
+| C3 takes C2 high before C2 low (candle_4h) | 10:00 | outside | MECHANICAL (= random walk) | 948 | 50.8% | 51.2% | 76 | 50.0% | 50.6% | 1.74 |
+| C3 takes C2 high before C2 low (candle_4h) | inside | C1 bull / C2 bear | MECHANICAL (= random walk) | 1061 | 35.5% | 35.2% | 63 | 38.1% | 33.5% | 14.49 |
+| C3 takes C2 high before C2 low (candle_1h) | 08:00 | higher (took C1 H) | MECHANICAL (= random walk) | 1428 | 59.8% | 60.1% | 107 | 61.7% | 62.1% | 1.32 |
+| C3 takes C2 high before C2 low (candle_1h) | 20:00 | lower (took C1 L) | MECHANICAL (= random walk) | 975 | 41.9% | 42.2% | 74 | 39.2% | 44.1% | 24.28 |
+| Broken range travels >=1 width past edge (rangelab) (ranges) | 60 | 00:00 | 0.7-0.8 | vs base rate | 315 | 60.3% | 40.3% | 20 | 50.0% | 36.2% | 0.69 |
+| Broken range travels >=1 width past edge (rangelab) (ranges) | 30 | 01:30 | 0.7-0.8 | vs base rate | 337 | 59.3% | 40.3% | 26 | 46.2% | 36.2% | 0.52 |
+| Broken range travels >=1 width past edge (rangelab) (ranges) | 60 | 01:00 | 0.9-1.0 | vs base rate | 272 | 59.2% | 40.3% | 32 | 46.9% | 36.2% | 0.56 |
+| Broken range travels >=1 width past edge (rangelab) (ranges) | 30 | 10:00 | 0.5-0.6 | vs base rate | 302 | 21.9% | 40.3% | 23 | 26.1% | 36.2% | 0.55 |
+| Broken range travels >=1 width past edge (rangelab) (ranges) | 30 | 18:30 | 0.5-0.6 | vs base rate | 233 | 57.5% | 40.3% | 23 | 47.8% | 36.2% | 0.67 |
+| Broken range travels >=1 width past edge (rangelab) (ranges) | 30 | 10:00 | 0.7-0.8 | vs base rate | 354 | 23.2% | 40.3% | 28 | 25.0% | 36.2% | 0.66 |
+| Broken range travels >=1 width past edge (rangelab) (ranges) | 60 | 08:00 | 0.1-0.2 | vs base rate | 417 | 57.3% | 40.3% | 22 | 45.5% | 36.2% | 0.54 |
+| Broken range travels >=1 width past edge (rangelab) (ranges) | 15 | 02:45 | 0.5-0.6 | vs base rate | 370 | 57.3% | 40.3% | 22 | 45.5% | 36.2% | 0.54 |
+| Broken range travels >=1 width past edge (rangelab) (ranges) | 60 | 01:00 | 0.6-0.7 | vs base rate | 339 | 57.2% | 40.3% | 25 | 48.0% | 36.2% | 0.69 |
+| Broken range travels >=1 width past edge (rangelab) (ranges) | 15 | 22:00 | 0.7-0.8 | vs base rate | 243 | 23.9% | 40.3% | 36 | 27.8% | 36.2% | 0.52 |
+| Broken range travels >=1 width past edge (rangelab) (ranges) | 60 | 09:00 | 0.9-1.0 | vs base rate | 349 | 24.4% | 40.3% | 37 | 27.0% | 36.2% | 0.58 |
+| Broken range travels >=1 width past edge (rangelab) (ranges) | 15 | 02:30 | 0.7-0.8 | vs base rate | 353 | 56.1% | 40.3% | 24 | 45.8% | 36.2% | 0.61 |
+| Broken range travels >=1 width past edge (rangelab) (ranges) | 30 | 02:30 | 0.3-0.4 | vs base rate | 326 | 55.8% | 40.3% | 22 | 45.5% | 36.2% | 0.59 |
+| Broken range travels >=1 width past edge (rangelab) (ranges) | 15 | 19:15 | 0.2-0.3 | vs base rate | 253 | 55.3% | 40.3% | 24 | 45.8% | 36.2% | 0.64 |
+| Broken range travels >=1 width past edge (rangelab) (ranges) | 30 | 19:30 | 0.4-0.5 | vs base rate | 233 | 54.9% | 40.3% | 22 | 45.5% | 36.2% | 0.63 |
+| Broken range travels >=1 width past edge (rangelab) (ranges) | 30 | 02:30 | 0.0-0.1 | vs base rate | 304 | 54.6% | 40.3% | 20 | 50.0% | 36.2% | 0.96 |
+| Broken range travels >=1 width past edge (rangelab) (ranges) | 30 | 02:30 | 0.1-0.2 | vs base rate | 383 | 54.6% | 40.3% | 23 | 47.8% | 36.2% | 0.81 |
+| Broken range travels >=1 width past edge (rangelab) (ranges) | 15 | 11:15 | 0.4-0.5 | vs base rate | 303 | 26.1% | 40.3% | 24 | 25.0% | 36.2% | 0.79 |
+| Broken range travels >=1 width past edge (rangelab) (ranges) | 15 | 03:00 | 0.8-0.9 | vs base rate | 388 | 26.3% | 40.3% | 31 | 29.0% | 36.2% | 0.52 |
+| Broken range travels >=1 width past edge (rangelab) (ranges) | 60 | 09:00 | 0.7-0.8 | vs base rate | 403 | 26.3% | 40.3% | 25 | 24.0% | 36.2% | 0.88 |
+| Broken range travels >=1 width past edge (rangelab) (ranges) | 30 | 10:30 | 0.4-0.5 | vs base rate | 298 | 26.5% | 40.3% | 20 | 25.0% | 36.2% | 0.82 |
+| Broken range travels >=1 width past edge (rangelab) (ranges) | 30 | 11:00 | 0.0-0.1 | vs base rate | 376 | 26.6% | 40.3% | 28 | 25.0% | 36.2% | 0.82 |
+| Broken range travels >=1 width past edge (rangelab) (ranges) | 15 | 10:45 | 0.5-0.6 | vs base rate | 332 | 26.8% | 40.3% | 25 | 24.0% | 36.2% | 0.91 |
+| Broken range travels >=1 width past edge (rangelab) (ranges) | 15 | 19:30 | 0.8-0.9 | vs base rate | 329 | 53.5% | 40.3% | 28 | 42.9% | 36.2% | 0.50 |
+| Broken range travels >=1 width past edge (rangelab) (ranges) | 60 | 04:00 | 0.2-0.3 | vs base rate | 320 | 27.2% | 40.3% | 21 | 23.8% | 36.2% | 0.95 |
+| Broken range travels >=1 width past edge (rangelab) (ranges) | 15 | 11:00 | 0.0-0.1 | vs base rate | 422 | 27.3% | 40.3% | 30 | 26.7% | 36.2% | 0.74 |
+| Broken range travels >=1 width past edge (rangelab) (ranges) | 15 | 07:45 | 0.3-0.4 | vs base rate | 327 | 53.2% | 40.3% | 22 | 45.5% | 36.2% | 0.71 |
+| Broken range travels >=1 width past edge (rangelab) (ranges) | 15 | 01:45 | 0.1-0.2 | vs base rate | 256 | 53.1% | 40.3% | 28 | 46.4% | 36.2% | 0.79 |
+| Broken range travels >=1 width past edge (rangelab) (ranges) | 15 | 08:30 | 0.6-0.7 | vs base rate | 377 | 27.6% | 40.3% | 24 | 29.2% | 36.2% | 0.56 |
+| Broken range travels >=1 width past edge (rangelab) (ranges) | 30 | 10:30 | 0.9-1.0 | vs base rate | 420 | 27.6% | 40.3% | 45 | 28.9% | 36.2% | 0.58 |
+| Broken range travels >=1 width past edge (rangelab) (ranges) | 30 | 11:30 | 0.0-0.1 | vs base rate | 307 | 27.7% | 40.3% | 31 | 25.8% | 36.2% | 0.83 |
+| Broken range travels >=1 width past edge (rangelab) (ranges) | 15 | 01:30 | 0.1-0.2 | vs base rate | 228 | 52.6% | 40.3% | 31 | 45.2% | 36.2% | 0.72 |
+| Broken range travels >=1 width past edge (rangelab) (ranges) | 30 | 22:30 | 0.8-0.9 | vs base rate | 258 | 27.9% | 40.3% | 32 | 28.1% | 36.2% | 0.66 |
+| Broken range travels >=1 width past edge (rangelab) (ranges) | 15 | 10:30 | 0.9-1.0 | vs base rate | 407 | 28.0% | 40.3% | 40 | 30.0% | 36.2% | 0.51 |
+| Broken range travels >=1 width past edge (rangelab) (ranges) | 15 | 11:15 | 0.3-0.4 | vs base rate | 317 | 28.1% | 40.3% | 20 | 25.0% | 36.2% | 0.92 |
+| Broken range travels >=1 width past edge (rangelab) (ranges) | 60 | 09:00 | 0.4-0.5 | vs base rate | 330 | 28.2% | 40.3% | 32 | 28.1% | 36.2% | 0.67 |
+| Broken range travels >=1 width past edge (rangelab) (ranges) | 30 | 19:30 | 0.1-0.2 | vs base rate | 258 | 52.3% | 40.3% | 26 | 42.3% | 36.2% | 0.50 |
+| Broken range travels >=1 width past edge (rangelab) (ranges) | 15 | 22:30 | 0.9-1.0 | vs base rate | 170 | 28.2% | 40.3% | 23 | 26.1% | 36.2% | 0.84 |
+| Broken range travels >=1 width past edge (rangelab) (ranges) | 15 | 11:00 | 0.8-0.9 | vs base rate | 415 | 28.4% | 40.3% | 38 | 28.9% | 36.2% | 0.62 |
+| Broken range travels >=1 width past edge (rangelab) (ranges) | 15 | 12:00 | 0.6-0.7 | vs base rate | 372 | 28.5% | 40.3% | 28 | 25.0% | 36.2% | 0.96 |
+| Broken range travels >=1 width past edge (rangelab) (ranges) | 15 | 19:45 | 0.4-0.5 | vs base rate | 223 | 52.0% | 40.3% | 23 | 47.8% | 36.2% | 0.99 |
+| Broken range travels >=1 width past edge (rangelab) (ranges) | 60 | 21:00 | 0.9-1.0 | vs base rate | 214 | 28.5% | 40.3% | 33 | 30.3% | 36.2% | 0.50 |
+| Broken range travels >=1 width past edge (rangelab) (ranges) | 15 | 19:45 | 0.6-0.7 | vs base rate | 279 | 52.0% | 40.3% | 24 | 45.8% | 36.2% | 0.82 |
+| Broken range travels >=1 width past edge (rangelab) (ranges) | 60 | 03:00 | 0.4-0.5 | vs base rate | 294 | 28.6% | 40.3% | 20 | 30.0% | 36.2% | 0.53 |
+| Broken range travels >=1 width past edge (rangelab) (ranges) | 15 | 08:30 | 0.1-0.2 | vs base rate | 325 | 28.6% | 40.3% | 28 | 25.0% | 36.2% | 0.97 |
+| Broken range travels >=1 width past edge (rangelab) (ranges) | 15 | 01:30 | 0.9-1.0 | vs base rate | 169 | 51.5% | 40.3% | 31 | 41.9% | 36.2% | 0.51 |
+| Broken range travels >=1 width past edge (rangelab) (ranges) | 30 | 00:30 | 0.4-0.5 | vs base rate | 239 | 51.5% | 40.3% | 25 | 44.0% | 36.2% | 0.69 |
+| Broken range travels >=1 width past edge (rangelab) (ranges) | 15 | 07:45 | 0.9-1.0 | vs base rate | 294 | 51.4% | 40.3% | 36 | 44.4% | 36.2% | 0.74 |
+| Broken range travels >=1 width past edge (rangelab) (ranges) | 15 | 01:15 | 0.8-0.9 | vs base rate | 281 | 51.2% | 40.3% | 23 | 47.8% | 36.2% | 1.05 |
+| Broken range travels >=1 width past edge (rangelab) (ranges) | 15 | 08:30 | 0.4-0.5 | vs base rate | 331 | 29.3% | 40.3% | 25 | 24.0% | 36.2% | 1.12 |
+| Broken range travels >=1 width past edge (rangelab) (ranges) | 15 | 11:00 | 0.6-0.7 | vs base rate | 337 | 29.4% | 40.3% | 24 | 29.2% | 36.2% | 0.65 |
+| Broken range travels >=1 width past edge (rangelab) (ranges) | 60 | 09:00 | 0.8-0.9 | vs base rate | 415 | 29.4% | 40.3% | 31 | 25.8% | 36.2% | 0.96 |
+| Broken range travels >=1 width past edge (rangelab) (ranges) | 15 | 02:00 | 0.4-0.5 | vs base rate | 214 | 29.4% | 40.3% | 24 | 25.0% | 36.2% | 1.04 |
+| Broken range travels >=1 width past edge (rangelab) (ranges) | 15 | 23:30 | 0.7-0.8 | vs base rate | 251 | 29.5% | 40.3% | 38 | 28.9% | 36.2% | 0.68 |
+| Broken range travels >=1 width past edge (rangelab) (ranges) | 30 | 23:00 | 0.2-0.3 | vs base rate | 234 | 29.5% | 40.3% | 38 | 28.9% | 36.2% | 0.68 |
+| Broken range travels >=1 width past edge (rangelab) (ranges) | 15 | 10:30 | 0.4-0.5 | vs base rate | 283 | 29.7% | 40.3% | 25 | 24.0% | 36.2% | 1.16 |
+| Broken range travels >=1 width past edge (rangelab) (ranges) | 15 | 11:30 | 0.5-0.6 | vs base rate | 332 | 29.8% | 40.3% | 26 | 26.9% | 36.2% | 0.89 |
+| Broken range travels >=1 width past edge (rangelab) (ranges) | 30 | 03:00 | 0.3-0.4 | vs base rate | 348 | 29.9% | 40.3% | 24 | 25.0% | 36.2% | 1.08 |
+| Broken range travels >=1 width past edge (rangelab) (ranges) | 15 | 00:00 | 0.9-1.0 | vs base rate | 137 | 29.9% | 40.3% | 21 | 23.8% | 36.2% | 1.20 |
+| Broken range travels >=1 width past edge (rangelab) (ranges) | 15 | 02:00 | 0.2-0.3 | vs base rate | 276 | 30.1% | 40.3% | 25 | 24.0% | 36.2% | 1.20 |
+| Broken range travels >=1 width past edge (rangelab) (ranges) | 15 | 07:45 | 0.1-0.2 | vs base rate | 391 | 50.4% | 40.3% | 31 | 45.2% | 36.2% | 0.88 |
+| Broken range travels >=1 width past edge (rangelab) (ranges) | 30 | 10:30 | 0.7-0.8 | vs base rate | 428 | 30.1% | 40.3% | 32 | 28.1% | 36.2% | 0.80 |
+| Broken range travels >=1 width past edge (rangelab) (ranges) | 30 | 00:30 | 0.5-0.6 | vs base rate | 282 | 50.4% | 40.3% | 27 | 44.4% | 36.2% | 0.81 |
+| Broken range travels >=1 width past edge (rangelab) (ranges) | 60 | 04:00 | 0.8-0.9 | vs base rate | 433 | 30.3% | 40.3% | 41 | 26.8% | 36.2% | 0.94 |
+| Broken range travels >=1 width past edge (rangelab) (ranges) | 15 | 10:15 | 0.0-0.1 | vs base rate | 393 | 30.3% | 40.3% | 20 | 30.0% | 36.2% | 0.63 |
+| Broken range travels >=1 width past edge (rangelab) (ranges) | 15 | 08:30 | 0.7-0.8 | vs base rate | 376 | 30.3% | 40.3% | 25 | 24.0% | 36.2% | 1.23 |
+| Broken range travels >=1 width past edge (rangelab) (ranges) | 15 | 19:45 | 0.7-0.8 | vs base rate | 299 | 50.2% | 40.3% | 38 | 42.1% | 36.2% | 0.59 |
+| Broken range travels >=1 width past edge (rangelab) (ranges) | 30 | 07:30 | 0.2-0.3 | vs base rate | 365 | 50.1% | 40.3% | 29 | 41.4% | 36.2% | 0.52 |
+| Broken range travels >=1 width past edge (rangelab) (ranges) | 30 | 03:00 | 0.7-0.8 | vs base rate | 374 | 30.5% | 40.3% | 34 | 29.4% | 36.2% | 0.70 |
+| Broken range travels >=1 width past edge (rangelab) (ranges) | 30 | 18:30 | 0.1-0.2 | vs base rate | 256 | 50.0% | 40.3% | 20 | 50.0% | 36.2% | 1.41 |
+| Broken range travels >=1 width past edge (rangelab) (ranges) | 30 | 19:00 | 0.7-0.8 | vs base rate | 288 | 50.0% | 40.3% | 30 | 43.3% | 36.2% | 0.73 |
+| Broken range travels >=1 width past edge (rangelab) (ranges) | 30 | 11:00 | 0.9-1.0 | vs base rate | 425 | 30.6% | 40.3% | 29 | 31.0% | 36.2% | 0.54 |
+| Broken range travels >=1 width past edge (rangelab) (ranges) | 15 | 11:00 | 0.4-0.5 | vs base rate | 268 | 30.6% | 40.3% | 25 | 28.0% | 36.2% | 0.85 |
+| Broken range travels >=1 width past edge (rangelab) (ranges) | 15 | 09:45 | 0.0-0.1 | vs base rate | 392 | 30.6% | 40.3% | 31 | 25.8% | 36.2% | 1.08 |
+| Broken range travels >=1 width past edge (rangelab) (ranges) | 15 | 08:15 | 0.7-0.8 | vs base rate | 329 | 49.8% | 40.3% | 26 | 42.3% | 36.2% | 0.63 |
+| Broken range travels >=1 width past edge (rangelab) (ranges) | 15 | 10:15 | 0.6-0.7 | vs base rate | 365 | 30.7% | 40.3% | 29 | 27.6% | 36.2% | 0.90 |
+| Broken range travels >=1 width past edge (rangelab) (ranges) | 15 | 01:15 | 0.3-0.4 | vs base rate | 257 | 49.8% | 40.3% | 26 | 42.3% | 36.2% | 0.64 |
+| Broken range travels >=1 width past edge (rangelab) (ranges) | 30 | 04:00 | 0.7-0.8 | vs base rate | 358 | 30.7% | 40.3% | 28 | 25.0% | 36.2% | 1.18 |
+| Broken range travels >=1 width past edge (rangelab) (ranges) | 60 | 23:00 | 0.1-0.2 | vs base rate | 223 | 49.8% | 40.3% | 33 | 45.5% | 36.2% | 0.97 |
+| Broken range travels >=1 width past edge (rangelab) (ranges) | 15 | 08:15 | 0.2-0.3 | vs base rate | 404 | 49.8% | 40.3% | 33 | 42.4% | 36.2% | 0.65 |
+| Broken range travels >=1 width past edge (rangelab) (ranges) | 15 | 08:00 | 0.7-0.8 | vs base rate | 396 | 49.7% | 40.3% | 28 | 42.9% | 36.2% | 0.70 |
+| Broken range travels >=1 width past edge (rangelab) (ranges) | 15 | 23:15 | 0.9-1.0 | vs base rate | 162 | 30.9% | 40.3% | 22 | 27.3% | 36.2% | 0.95 |
+| Broken range travels >=1 width past edge (rangelab) (ranges) | 15 | 10:45 | 0.8-0.9 | vs base rate | 464 | 31.0% | 40.3% | 38 | 31.6% | 36.2% | 0.50 |
+| Broken range travels >=1 width past edge (rangelab) (ranges) | 15 | 19:00 | 0.4-0.5 | vs base rate | 203 | 31.0% | 40.3% | 26 | 26.9% | 36.2% | 1.01 |
+| Broken range travels >=1 width past edge (rangelab) (ranges) | 60 | 02:00 | 0.7-0.8 | vs base rate | 347 | 49.3% | 40.3% | 33 | 42.4% | 36.2% | 0.69 |
+| Broken range travels >=1 width past edge (rangelab) (ranges) | 60 | 11:00 | 0.7-0.8 | vs base rate | 368 | 31.2% | 40.3% | 25 | 28.0% | 36.2% | 0.91 |
+| Broken range travels >=1 width past edge (rangelab) (ranges) | 15 | 23:30 | 0.4-0.5 | vs base rate | 192 | 31.2% | 40.3% | 23 | 26.1% | 36.2% | 1.13 |
+| Broken range travels >=1 width past edge (rangelab) (ranges) | 15 | 05:00 | 0.4-0.5 | vs base rate | 307 | 31.3% | 40.3% | 31 | 25.8% | 36.2% | 1.16 |
+| Broken range travels >=1 width past edge (rangelab) (ranges) | 60 | 22:00 | 0.7-0.8 | vs base rate | 242 | 31.4% | 40.3% | 32 | 31.2% | 36.2% | 0.56 |
+| Broken range travels >=1 width past edge (rangelab) (ranges) | 15 | 23:00 | 0.1-0.2 | vs base rate | 226 | 31.4% | 40.3% | 32 | 28.1% | 36.2% | 0.92 |
+| Broken range travels >=1 width past edge (rangelab) (ranges) | 15 | 05:15 | 0.3-0.4 | vs base rate | 299 | 31.4% | 40.3% | 25 | 28.0% | 36.2% | 0.93 |
+| Broken range travels >=1 width past edge (rangelab) (ranges) | 30 | 20:00 | 0.9-1.0 | vs base rate | 238 | 31.5% | 40.3% | 24 | 25.0% | 36.2% | 1.28 |
+| Broken range travels >=1 width past edge (rangelab) (ranges) | 15 | 12:00 | 0.5-0.6 | vs base rate | 298 | 31.5% | 40.3% | 29 | 31.0% | 36.2% | 0.60 |
+| Broken range travels >=1 width past edge (rangelab) (ranges) | 15 | 19:15 | 0.1-0.2 | vs base rate | 237 | 48.9% | 40.3% | 35 | 42.9% | 36.2% | 0.76 |
+| Broken range travels >=1 width past edge (rangelab) (ranges) | 30 | 20:00 | 0.3-0.4 | vs base rate | 253 | 31.6% | 40.3% | 25 | 28.0% | 36.2% | 0.95 |
+| Broken range travels >=1 width past edge (rangelab) (ranges) | 15 | 02:15 | 0.8-0.9 | vs base rate | 358 | 48.9% | 40.3% | 37 | 45.9% | 36.2% | 1.13 |
+| Broken range travels >=1 width past edge (rangelab) (ranges) | 30 | 19:30 | 0.3-0.4 | vs base rate | 268 | 48.9% | 40.3% | 33 | 42.4% | 36.2% | 0.72 |
+| Broken range travels >=1 width past edge (rangelab) (ranges) | 30 | 00:30 | 0.1-0.2 | vs base rate | 258 | 48.8% | 40.3% | 26 | 42.3% | 36.2% | 0.71 |
+| Broken range travels >=1 width past edge (rangelab) (ranges) | 15 | 10:30 | 0.6-0.7 | vs base rate | 366 | 31.7% | 40.3% | 25 | 24.0% | 36.2% | 1.43 |
+| Broken range travels >=1 width past edge (rangelab) (ranges) | 30 | 21:00 | 0.8-0.9 | vs base rate | 306 | 31.7% | 40.3% | 38 | 26.3% | 36.2% | 1.16 |
+| Broken range travels >=1 width past edge (rangelab) (ranges) | 15 | 12:00 | 0.8-0.9 | vs base rate | 431 | 31.8% | 40.3% | 35 | 31.4% | 36.2% | 0.57 |
+| Broken range travels >=1 width past edge (rangelab) (ranges) | 15 | 04:00 | 0.4-0.5 | vs base rate | 288 | 31.9% | 40.3% | 20 | 25.0% | 36.2% | 1.35 |
+| Broken range travels >=1 width past edge (rangelab) (ranges) | 15 | 12:15 | 0.5-0.6 | vs base rate | 363 | 32.0% | 40.3% | 27 | 29.6% | 36.2% | 0.80 |
+| Broken range travels >=1 width past edge (rangelab) (ranges) | 15 | 05:00 | 0.5-0.6 | vs base rate | 347 | 32.0% | 40.3% | 25 | 28.0% | 36.2% | 1.00 |
+| Broken range travels >=1 width past edge (rangelab) (ranges) | 30 | 05:00 | 0.4-0.5 | vs base rate | 306 | 32.0% | 40.3% | 27 | 25.9% | 36.2% | 1.25 |
+| Broken range travels >=1 width past edge (rangelab) (ranges) | 30 | 21:30 | 0.3-0.4 | vs base rate | 231 | 32.0% | 40.3% | 29 | 27.6% | 36.2% | 1.05 |
+| Broken range travels >=1 width past edge (rangelab) (ranges) | 30 | 03:30 | 0.9-1.0 | vs base rate | 368 | 32.1% | 40.3% | 30 | 30.0% | 36.2% | 0.76 |
+| Broken range travels >=1 width past edge (rangelab) (ranges) | 15 | 01:45 | 0.9-1.0 | vs base rate | 192 | 48.4% | 40.3% | 24 | 45.8% | 36.2% | 1.17 |
+| Broken range travels >=1 width past edge (rangelab) (ranges) | 15 | 06:45 | 0.3-0.4 | vs base rate | 316 | 48.4% | 40.3% | 23 | 43.5% | 36.2% | 0.89 |
+| Broken range travels >=1 width past edge (rangelab) (ranges) | 15 | 07:45 | 0.2-0.3 | vs base rate | 370 | 48.4% | 40.3% | 37 | 43.2% | 36.2% | 0.86 |
+| Broken range travels >=1 width past edge (rangelab) (ranges) | 15 | 23:30 | 0.1-0.2 | vs base rate | 196 | 32.1% | 40.3% | 24 | 29.2% | 36.2% | 0.87 |
+| Broken range travels >=1 width past edge (rangelab) (ranges) | 30 | 22:30 | 0.1-0.2 | vs base rate | 224 | 32.1% | 40.3% | 32 | 28.1% | 36.2% | 1.00 |
+| Broken range travels >=1 width past edge (rangelab) (ranges) | 15 | 20:00 | 0.3-0.4 | vs base rate | 227 | 32.2% | 40.3% | 27 | 25.9% | 36.2% | 1.27 |
+| Broken range travels >=1 width past edge (rangelab) (ranges) | 15 | 11:15 | 0.8-0.9 | vs base rate | 466 | 32.2% | 40.3% | 38 | 28.9% | 36.2% | 0.90 |
+| Broken range travels >=1 width past edge (rangelab) (ranges) | 15 | 10:30 | 0.2-0.3 | vs base rate | 350 | 32.3% | 40.3% | 30 | 26.7% | 36.2% | 1.20 |
+| Broken range travels >=1 width past edge (rangelab) (ranges) | 15 | 11:00 | 0.1-0.2 | vs base rate | 387 | 32.3% | 40.3% | 28 | 32.1% | 36.2% | 0.51 |
+| Broken range travels >=1 width past edge (rangelab) (ranges) | 15 | 21:30 | 0.0-0.1 | vs base rate | 229 | 32.3% | 40.3% | 25 | 28.0% | 36.2% | 1.04 |
+| Broken range travels >=1 width past edge (rangelab) (ranges) | 15 | 09:45 | 0.6-0.7 | vs base rate | 303 | 32.3% | 40.3% | 26 | 26.9% | 36.2% | 1.18 |
+| Broken range travels >=1 width past edge (rangelab) (ranges) | 30 | 18:30 | 0.2-0.3 | vs base rate | 272 | 48.2% | 40.3% | 32 | 40.6% | 36.2% | 0.56 |
+| Broken range travels >=1 width past edge (rangelab) (ranges) | 15 | 10:15 | 0.1-0.2 | vs base rate | 383 | 32.4% | 40.3% | 25 | 28.0% | 36.2% | 1.04 |
+| Broken range travels >=1 width past edge (rangelab) (ranges) | 15 | 00:45 | 0.2-0.3 | vs base rate | 241 | 48.1% | 40.3% | 30 | 46.7% | 36.2% | 1.32 |
+| Broken range travels >=1 width past edge (rangelab) (ranges) | 15 | 12:15 | 0.6-0.7 | vs base rate | 331 | 32.6% | 40.3% | 26 | 26.9% | 36.2% | 1.22 |
+| Broken range travels >=1 width past edge (rangelab) (ranges) | 30 | 05:00 | 0.1-0.2 | vs base rate | 352 | 32.7% | 40.3% | 33 | 27.3% | 36.2% | 1.18 |
+| Broken range travels >=1 width past edge (rangelab) (ranges) | 15 | 11:30 | 0.8-0.9 | vs base rate | 449 | 32.7% | 40.3% | 37 | 27.0% | 36.2% | 1.22 |
+| Broken range travels >=1 width past edge (rangelab) (ranges) | 15 | 06:00 | 0.8-0.9 | vs base rate | 415 | 32.8% | 40.3% | 25 | 32.0% | 36.2% | 0.57 |
+| Broken range travels >=1 width past edge (rangelab) (ranges) | 30 | 05:00 | 0.9-1.0 | vs base rate | 308 | 32.8% | 40.3% | 31 | 29.0% | 36.2% | 0.96 |
+| Broken range travels >=1 width past edge (rangelab) (ranges) | 15 | 22:15 | 0.2-0.3 | vs base rate | 240 | 32.9% | 40.3% | 31 | 25.8% | 36.2% | 1.42 |
+| Broken range travels >=1 width past edge (rangelab) (ranges) | 15 | 22:30 | 0.8-0.9 | vs base rate | 249 | 32.9% | 40.3% | 20 | 30.0% | 36.2% | 0.85 |
+| Broken range travels >=1 width past edge (rangelab) (ranges) | 15 | 12:00 | 0.4-0.5 | vs base rate | 308 | 33.1% | 40.3% | 24 | 25.0% | 36.2% | 1.57 |
+| Broken range travels >=1 width past edge (rangelab) (ranges) | 15 | 04:00 | 0.0-0.1 | vs base rate | 338 | 33.1% | 40.3% | 30 | 26.7% | 36.2% | 1.34 |
+| Broken range travels >=1 width past edge (rangelab) (ranges) | 30 | 04:30 | 0.7-0.8 | vs base rate | 359 | 33.1% | 40.3% | 31 | 29.0% | 36.2% | 1.01 |
+| Broken range travels >=1 width past edge (rangelab) (ranges) | 60 | 23:00 | 0.6-0.7 | vs base rate | 260 | 47.3% | 40.3% | 28 | 46.4% | 36.2% | 1.45 |
+| Broken range travels >=1 width past edge (rangelab) (ranges) | 30 | 02:00 | 0.0-0.1 | vs base rate | 292 | 47.3% | 40.3% | 26 | 46.2% | 36.2% | 1.42 |
+| Broken range travels >=1 width past edge (rangelab) (ranges) | 30 | 02:00 | 0.7-0.8 | vs base rate | 364 | 47.3% | 40.3% | 21 | 47.6% | 36.2% | 1.63 |
+| Broken range travels >=1 width past edge (rangelab) (ranges) | 15 | 05:15 | 0.1-0.2 | vs base rate | 366 | 33.6% | 40.3% | 29 | 27.6% | 36.2% | 1.30 |
+| Broken range travels >=1 width past edge (rangelab) (ranges) | 15 | 03:15 | 0.9-1.0 | vs base rate | 330 | 33.6% | 40.3% | 28 | 28.6% | 36.2% | 1.16 |
+| Broken range travels >=1 width past edge (rangelab) (ranges) | 15 | 22:15 | 0.8-0.9 | vs base rate | 276 | 33.7% | 40.3% | 38 | 26.3% | 36.2% | 1.51 |
+| Broken range travels >=1 width past edge (rangelab) (ranges) | 60 | 02:00 | 0.1-0.2 | vs base rate | 327 | 46.8% | 40.3% | 35 | 45.7% | 36.2% | 1.45 |
+| Broken range travels >=1 width past edge (rangelab) (ranges) | 30 | 04:30 | 0.8-0.9 | vs base rate | 412 | 33.7% | 40.3% | 30 | 30.0% | 36.2% | 0.96 |
+| Broken range travels >=1 width past edge (rangelab) (ranges) | 15 | 12:30 | 0.5-0.6 | vs base rate | 367 | 33.8% | 40.3% | 25 | 28.0% | 36.2% | 1.27 |
+| Broken range travels >=1 width past edge (rangelab) (ranges) | 15 | 04:15 | 0.0-0.1 | vs base rate | 358 | 33.8% | 40.3% | 29 | 27.6% | 36.2% | 1.34 |
+| Broken range travels >=1 width past edge (rangelab) (ranges) | 30 | 21:00 | 0.6-0.7 | vs base rate | 269 | 33.8% | 40.3% | 25 | 28.0% | 36.2% | 1.28 |
+| Broken range travels >=1 width past edge (rangelab) (ranges) | 15 | 14:00 | 0.8-0.9 | vs base rate | 410 | 33.9% | 40.3% | 36 | 30.6% | 36.2% | 0.89 |
+| Broken range travels >=1 width past edge (rangelab) (ranges) | 15 | 02:00 | 0.5-0.6 | vs base rate | 286 | 33.9% | 40.3% | 23 | 30.4% | 36.2% | 0.91 |
+| Broken range travels >=1 width past edge (rangelab) (ranges) | 15 | 10:15 | 0.3-0.4 | vs base rate | 339 | 33.9% | 40.3% | 33 | 27.3% | 36.2% | 1.41 |
+| Broken range travels >=1 width past edge (rangelab) (ranges) | 30 | 06:30 | 0.7-0.8 | vs base rate | 378 | 46.6% | 40.3% | 44 | 43.2% | 36.2% | 1.10 |
+| Broken range travels >=1 width past edge (rangelab) (ranges) | 15 | 08:30 | 0.8-0.9 | vs base rate | 408 | 34.1% | 40.3% | 37 | 32.4% | 36.2% | 0.61 |
+| Broken range travels >=1 width past edge (rangelab) (ranges) | 15 | 09:45 | 0.8-0.9 | vs base rate | 466 | 34.1% | 40.3% | 38 | 28.9% | 36.2% | 1.19 |
+| Broken range travels >=1 width past edge (rangelab) (ranges) | 15 | 11:45 | 0.4-0.5 | vs base rate | 295 | 34.2% | 40.3% | 31 | 29.0% | 36.2% | 1.20 |
+| Broken range travels >=1 width past edge (rangelab) (ranges) | 15 | 05:00 | 0.7-0.8 | vs base rate | 367 | 34.3% | 40.3% | 30 | 30.0% | 36.2% | 1.05 |
+| Broken range travels >=1 width past edge (rangelab) (ranges) | 15 | 10:45 | 0.6-0.7 | vs base rate | 332 | 34.3% | 40.3% | 21 | 28.6% | 36.2% | 1.29 |
+| Broken range travels >=1 width past edge (rangelab) (ranges) | 15 | 07:15 | 0.0-0.1 | vs base rate | 327 | 46.2% | 40.3% | 31 | 41.9% | 36.2% | 0.96 |
+| Broken range travels >=1 width past edge (rangelab) (ranges) | 15 | 03:15 | 0.1-0.2 | vs base rate | 355 | 34.4% | 40.3% | 36 | 30.6% | 36.2% | 0.96 |
+| Broken range travels >=1 width past edge (rangelab) (ranges) | 30 | 03:30 | 0.6-0.7 | vs base rate | 363 | 34.4% | 40.3% | 28 | 28.6% | 36.2% | 1.32 |
+| Broken range travels >=1 width past edge (rangelab) (ranges) | 30 | 07:00 | 0.7-0.8 | vs base rate | 354 | 46.0% | 40.3% | 31 | 45.2% | 36.2% | 1.54 |
+| Broken range travels >=1 width past edge (rangelab) (ranges) | 15 | 13:45 | 0.6-0.7 | vs base rate | 355 | 34.6% | 40.3% | 24 | 33.3% | 36.2% | 0.52 |
+| Broken range travels >=1 width past edge (rangelab) (ranges) | 30 | 07:00 | 0.2-0.3 | vs base rate | 402 | 45.8% | 40.3% | 22 | 40.9% | 36.2% | 0.85 |
+| Broken range travels >=1 width past edge (rangelab) (ranges) | 30 | 02:00 | 0.3-0.4 | vs base rate | 313 | 45.7% | 40.3% | 27 | 40.7% | 36.2% | 0.83 |
+| Broken range travels >=1 width past edge (rangelab) (ranges) | 15 | 04:15 | 0.3-0.4 | vs base rate | 335 | 34.9% | 40.3% | 34 | 29.4% | 36.2% | 1.28 |
+| Broken range travels >=1 width past edge (rangelab) (ranges) | 30 | 13:30 | 0.0-0.1 | vs base rate | 335 | 34.9% | 40.3% | 28 | 25.0% | 36.2% | 2.11 |
+| Broken range travels >=1 width past edge (rangelab) (ranges) | 15 | 14:15 | 0.9-1.0 | vs base rate | 388 | 35.1% | 40.3% | 29 | 27.6% | 36.2% | 1.66 |
+| Broken range travels >=1 width past edge (rangelab) (ranges) | 15 | 05:00 | 0.6-0.7 | vs base rate | 383 | 35.2% | 40.3% | 22 | 27.3% | 36.2% | 1.79 |
+| Broken range travels >=1 width past edge (rangelab) (ranges) | 15 | 05:00 | 0.8-0.9 | vs base rate | 414 | 35.3% | 40.3% | 32 | 31.2% | 36.2% | 1.00 |
+| Broken range travels >=1 width past edge (rangelab) (ranges) | 30 | 13:30 | 0.8-0.9 | vs base rate | 447 | 35.3% | 40.3% | 33 | 30.3% | 36.2% | 1.21 |
+| Broken range travels >=1 width past edge (rangelab) (ranges) | 15 | 04:45 | 0.1-0.2 | vs base rate | 351 | 35.6% | 40.3% | 28 | 32.1% | 36.2% | 0.88 |
+| Broken range travels >=1 width past edge (rangelab) (ranges) | 15 | 13:00 | 0.8-0.9 | vs base rate | 485 | 35.7% | 40.3% | 24 | 25.0% | 36.2% | 2.45 |
+| RTH gap (>=0.15 ATR) fills to prior RTH close (session) | gap dn >0.5atr | below PDL | vs base rate | 297 | 31.0% | 51.1% | 29 | 34.5% | 45.3% | 0.54 |
+| RTH gap (>=0.15 ATR) fills to prior RTH close (session) | gap dn | ON bear | vs base rate | 611 | 66.4% | 51.2% | 49 | 53.1% | 45.3% | 0.51 |
+| RTH gap (>=0.15 ATR) fills to prior RTH close (session) | gap up | vs base rate | 932 | 60.7% | 51.1% | 56 | 51.8% | 45.3% | 0.67 |
+| RTH gap (>=0.15 ATR) fills to prior RTH close (session) | gap up | ON bull | vs base rate | 891 | 60.0% | 51.2% | 52 | 50.0% | 45.3% | 0.53 |
+| RTH gap (>=0.15 ATR) fills to prior RTH close (session) | gap up | above PDH | vs base rate | 435 | 58.2% | 51.1% | 25 | 52.0% | 45.3% | 0.95 |
+| Hour trades through previous hour's mid (hourly) | 11:00 | open lower half | vs base rate | 1736 | 61.5% | 67.8% | 124 | 63.7% | 67.1% | 0.54 |
+| Hour trades through previous hour's mid (hourly) | 14:00 | open lower half | vs base rate | 1608 | 72.1% | 67.8% | 124 | 70.2% | 67.1% | 0.71 |
+| Hour trades through previous hour's mid (hourly) | 15:00 | open upper half | vs base rate | 2055 | 70.9% | 67.8% | 150 | 70.7% | 67.1% | 1.17 |
+| Both IB extremes taken 10:30-16:00 (session) | Q4 | vs base rate | 732 | 15.7% | 23.1% | 52 | 13.5% | 20.5% | 0.95 |
+| First IB break is UP (given a break) (session) | Q5 wide | closed low third | MECHANICAL (= random walk) | 292 | 12.0% | 14.9% | 22 | 9.1% | 13.1% | 1.40 |
+| First IB break is UP (given a break) (session) | closed high third | MECHANICAL (= random walk) | 1476 | 85.8% | 84.4% | 114 | 88.6% | 87.5% | 0.75 |
+| First IB break is UP (given a break) (session) | IB bull | MECHANICAL (= random walk) | 1837 | 77.4% | 76.0% | 150 | 80.0% | 78.3% | 1.24 |
+| First IB break is UP (given a break) (session) | Q5 wide | closed high third | MECHANICAL (= random walk) | 264 | 89.0% | 88.2% | 25 | 92.0% | 89.7% | 2.67 |
+| First IB break is UP (given a break) (session) | ORB broke up | MECHANICAL (= random walk) | 1754 | 66.2% | 65.6% | 136 | 71.3% | 69.2% | 3.29 |
+| First IB break is UP (given a break) (session) | closed mid third | MECHANICAL (= random walk) | 951 | 50.6% | 49.9% | 70 | 54.3% | 50.9% | 5.23 |
+| First IB break is UP (given a break) (session) | Q4 | closed high third | MECHANICAL (= random walk) | 315 | 84.1% | 84.6% | 24 | 83.3% | 87.0% | 8.24 |
+| First IB break is UP (given a break) (session) | IB took PDH | MECHANICAL (= random walk) | 1490 | 59.3% | 59.7% | 125 | 56.8% | 61.0% | 11.87 |
+| First IB break is UP (given a break) (session) | ORB broke down | MECHANICAL (= random walk) | 1643 | 41.4% | 41.4% | 129 | 37.2% | 42.3% | 90.42 |
+| After first ORB break, price returns to ORB mid (session) | Q1 narrow | vs base rate | 732 | 80.1% | 73.9% | 56 | 73.2% | 69.1% | 0.67 |
+| Both ORB extremes taken 09:45-16:00 (session) | Q4 | vs base rate | 732 | 48.2% | 53.2% | 42 | 45.2% | 49.6% | 0.88 |
+| Both ORB extremes taken 09:45-16:00 (session) | Q2 | vs base rate | 732 | 57.0% | 53.2% | 55 | 54.5% | 49.6% | 1.31 |
+| First 15m-ORB break is UP (given a break) (session) | below PDL | MECHANICAL (= random walk) | 521 | 56.6% | 55.3% | 46 | 54.3% | 51.5% | 2.08 |
+| RTH close above the 10:30 price (session) | IB bear | closed low third | vs base rate | 1090 | 50.7% | 54.8% | 84 | 51.2% | 57.6% | 1.56 |
+| RTH close above the 10:30 price (session) | ORB broke up | IB bull | vs base rate | 1426 | 58.3% | 54.8% | 113 | 60.2% | 57.6% | 0.76 |
+| Broken range returns to far edge (rangelab) (ranges) | 15 | 02:45 | 0.3-0.4 | vs base rate | 319 | 55.8% | 35.1% | 26 | 46.2% | 35.3% | 0.52 |
+| Broken range returns to far edge (rangelab) (ranges) | 15 | 02:45 | 0.6-0.7 | vs base rate | 353 | 55.0% | 35.1% | 33 | 45.5% | 35.3% | 0.51 |
+| Broken range returns to far edge (rangelab) (ranges) | 15 | 02:30 | 0.3-0.4 | vs base rate | 275 | 54.9% | 35.1% | 28 | 46.4% | 35.3% | 0.56 |
+| Broken range returns to far edge (rangelab) (ranges) | 30 | 21:30 | 0.3-0.4 | vs base rate | 231 | 16.9% | 35.1% | 29 | 24.1% | 35.3% | 0.61 |
+| Broken range returns to far edge (rangelab) (ranges) | 30 | 01:30 | 0.4-0.5 | vs base rate | 274 | 52.9% | 35.1% | 29 | 44.8% | 35.3% | 0.53 |
+| Broken range returns to far edge (rangelab) (ranges) | 30 | 01:30 | 0.0-0.1 | vs base rate | 293 | 52.2% | 35.1% | 26 | 46.2% | 35.3% | 0.63 |
+| Broken range returns to far edge (rangelab) (ranges) | 60 | 21:00 | 0.6-0.7 | vs base rate | 229 | 18.3% | 35.1% | 26 | 26.9% | 35.3% | 0.50 |
+| Broken range returns to far edge (rangelab) (ranges) | 30 | 04:00 | 0.9-1.0 | vs base rate | 280 | 18.9% | 35.1% | 20 | 25.0% | 35.3% | 0.64 |
+| Broken range returns to far edge (rangelab) (ranges) | 60 | 20:00 | 0.8-0.9 | vs base rate | 281 | 19.6% | 35.1% | 29 | 24.1% | 35.3% | 0.72 |
+| Broken range returns to far edge (rangelab) (ranges) | 60 | 22:00 | 0.8-0.9 | vs base rate | 253 | 19.8% | 35.1% | 32 | 25.0% | 35.3% | 0.67 |
+| Broken range returns to far edge (rangelab) (ranges) | 15 | 09:30 | 0.3-0.4 | vs base rate | 304 | 20.4% | 35.1% | 26 | 26.9% | 35.3% | 0.57 |
+| Broken range returns to far edge (rangelab) (ranges) | 30 | 07:30 | 0.9-1.0 | vs base rate | 373 | 49.9% | 35.1% | 30 | 43.3% | 35.3% | 0.54 |
+| Broken range returns to far edge (rangelab) (ranges) | 15 | 02:15 | 0.6-0.7 | vs base rate | 317 | 49.8% | 35.1% | 28 | 46.4% | 35.3% | 0.75 |
+| Broken range returns to far edge (rangelab) (ranges) | 30 | 02:30 | 0.9-1.0 | vs base rate | 327 | 49.5% | 35.1% | 43 | 44.2% | 35.3% | 0.61 |
+| Broken range returns to far edge (rangelab) (ranges) | 60 | 23:00 | 0.7-0.8 | vs base rate | 288 | 49.3% | 35.1% | 31 | 45.2% | 35.3% | 0.69 |
+| Broken range returns to far edge (rangelab) (ranges) | 30 | 11:30 | 0.4-0.5 | vs base rate | 300 | 21.0% | 35.1% | 22 | 27.3% | 35.3% | 0.57 |
+| Broken range returns to far edge (rangelab) (ranges) | 30 | 11:00 | 0.3-0.4 | vs base rate | 308 | 21.1% | 35.1% | 29 | 27.6% | 35.3% | 0.55 |
+| Broken range returns to far edge (rangelab) (ranges) | 60 | 01:00 | 0.5-0.6 | vs base rate | 336 | 49.1% | 35.1% | 20 | 45.0% | 35.3% | 0.69 |
+| Broken range returns to far edge (rangelab) (ranges) | 30 | 07:30 | 0.8-0.9 | vs base rate | 461 | 48.8% | 35.1% | 33 | 45.5% | 35.3% | 0.74 |
+| Broken range returns to far edge (rangelab) (ranges) | 30 | 14:30 | 0.0-0.1 | vs base rate | 102 | 21.6% | 35.1% | 25 | 28.0% | 35.3% | 0.54 |
+| Broken range returns to far edge (rangelab) (ranges) | 60 | 03:00 | 0.9-1.0 | vs base rate | 300 | 21.7% | 35.1% | 27 | 25.9% | 35.3% | 0.70 |
+| Broken range returns to far edge (rangelab) (ranges) | 30 | 11:00 | 0.2-0.3 | vs base rate | 383 | 21.9% | 35.1% | 29 | 27.6% | 35.3% | 0.59 |
+| Broken range returns to far edge (rangelab) (ranges) | 60 | 20:00 | 0.7-0.8 | vs base rate | 263 | 22.1% | 35.1% | 29 | 27.6% | 35.3% | 0.59 |
+| Broken range returns to far edge (rangelab) (ranges) | 15 | 03:00 | 0.5-0.6 | vs base rate | 340 | 22.4% | 35.1% | 25 | 24.0% | 35.3% | 0.89 |
+| Broken range returns to far edge (rangelab) (ranges) | 30 | 00:30 | 0.5-0.6 | vs base rate | 282 | 47.9% | 35.1% | 27 | 44.4% | 35.3% | 0.71 |
+| Broken range returns to far edge (rangelab) (ranges) | 60 | 11:00 | 0.3-0.4 | vs base rate | 325 | 22.5% | 35.1% | 23 | 26.1% | 35.3% | 0.73 |
+| Broken range returns to far edge (rangelab) (ranges) | 60 | 03:00 | 0.8-0.9 | vs base rate | 449 | 22.5% | 35.1% | 28 | 25.0% | 35.3% | 0.82 |
+| Broken range returns to far edge (rangelab) (ranges) | 60 | 09:00 | 0.2-0.3 | vs base rate | 383 | 22.7% | 35.1% | 27 | 25.9% | 35.3% | 0.76 |
+| Broken range returns to far edge (rangelab) (ranges) | 30 | 21:00 | 0.9-1.0 | vs base rate | 220 | 22.7% | 35.1% | 28 | 25.0% | 35.3% | 0.83 |
+| Broken range returns to far edge (rangelab) (ranges) | 30 | 11:30 | 0.3-0.4 | vs base rate | 324 | 22.8% | 35.1% | 25 | 28.0% | 35.3% | 0.60 |
+| Broken range returns to far edge (rangelab) (ranges) | 15 | 10:45 | 0.0-0.1 | vs base rate | 356 | 23.0% | 35.1% | 32 | 25.0% | 35.3% | 0.85 |
+| Broken range returns to far edge (rangelab) (ranges) | 15 | 23:00 | 0.0-0.1 | vs base rate | 169 | 23.1% | 35.1% | 29 | 24.1% | 35.3% | 0.93 |
+| Broken range returns to far edge (rangelab) (ranges) | 30 | 22:00 | 0.5-0.6 | vs base rate | 233 | 23.2% | 35.1% | 31 | 29.0% | 35.3% | 0.53 |
+| Broken range returns to far edge (rangelab) (ranges) | 15 | 11:30 | 0.5-0.6 | vs base rate | 332 | 23.2% | 35.1% | 26 | 26.9% | 35.3% | 0.70 |
+| Broken range returns to far edge (rangelab) (ranges) | 30 | 00:30 | 0.4-0.5 | vs base rate | 239 | 46.9% | 35.1% | 25 | 44.0% | 35.3% | 0.74 |
+| Broken range returns to far edge (rangelab) (ranges) | 15 | 21:30 | 0.3-0.4 | vs base rate | 239 | 23.4% | 35.1% | 27 | 25.9% | 35.3% | 0.80 |
+| Broken range returns to far edge (rangelab) (ranges) | 30 | 02:00 | 0.8-0.9 | vs base rate | 364 | 46.4% | 35.1% | 37 | 43.2% | 35.3% | 0.70 |
+| Broken range returns to far edge (rangelab) (ranges) | 15 | 01:15 | 0.4-0.5 | vs base rate | 194 | 46.4% | 35.1% | 23 | 47.8% | 35.3% | 1.11 |
+| Broken range returns to far edge (rangelab) (ranges) | 30 | 21:00 | 0.1-0.2 | vs base rate | 250 | 24.0% | 35.1% | 20 | 25.0% | 35.3% | 0.93 |
+| Broken range returns to far edge (rangelab) (ranges) | 15 | 00:45 | 0.2-0.3 | vs base rate | 241 | 46.1% | 35.1% | 30 | 43.3% | 35.3% | 0.73 |
+| Broken range returns to far edge (rangelab) (ranges) | 30 | 22:00 | 0.8-0.9 | vs base rate | 284 | 24.3% | 35.1% | 34 | 29.4% | 35.3% | 0.55 |
+| Broken range returns to far edge (rangelab) (ranges) | 15 | 02:00 | 0.4-0.5 | vs base rate | 214 | 24.3% | 35.1% | 24 | 25.0% | 35.3% | 0.95 |
+| Broken range returns to far edge (rangelab) (ranges) | 15 | 04:15 | 0.0-0.1 | vs base rate | 358 | 24.3% | 35.1% | 29 | 24.1% | 35.3% | 1.03 |
+| Broken range returns to far edge (rangelab) (ranges) | 60 | 09:00 | 0.7-0.8 | vs base rate | 403 | 24.3% | 35.1% | 25 | 28.0% | 35.3% | 0.68 |
+| Broken range returns to far edge (rangelab) (ranges) | 15 | 23:30 | 0.4-0.5 | vs base rate | 192 | 24.5% | 35.1% | 23 | 26.1% | 35.3% | 0.87 |
+| Broken range returns to far edge (rangelab) (ranges) | 15 | 09:45 | 0.2-0.3 | vs base rate | 396 | 24.5% | 35.1% | 29 | 24.1% | 35.3% | 1.05 |
+| Broken range returns to far edge (rangelab) (ranges) | 15 | 04:30 | 0.0-0.1 | vs base rate | 342 | 24.6% | 35.1% | 31 | 29.0% | 35.3% | 0.60 |
+| Broken range returns to far edge (rangelab) (ranges) | 15 | 09:45 | 0.7-0.8 | vs base rate | 371 | 24.8% | 35.1% | 21 | 28.6% | 35.3% | 0.65 |
+| Broken range returns to far edge (rangelab) (ranges) | 60 | 11:00 | 0.4-0.5 | vs base rate | 274 | 24.8% | 35.1% | 21 | 23.8% | 35.3% | 1.12 |
+| Broken range returns to far edge (rangelab) (ranges) | 30 | 03:30 | 0.3-0.4 | vs base rate | 330 | 24.8% | 35.1% | 24 | 29.2% | 35.3% | 0.60 |
+| Broken range returns to far edge (rangelab) (ranges) | 30 | 03:00 | 0.3-0.4 | vs base rate | 348 | 25.0% | 35.1% | 24 | 29.2% | 35.3% | 0.61 |
+| Broken range returns to far edge (rangelab) (ranges) | 15 | 11:30 | 0.2-0.3 | vs base rate | 343 | 25.1% | 35.1% | 22 | 27.3% | 35.3% | 0.80 |
+| Broken range returns to far edge (rangelab) (ranges) | 30 | 20:00 | 0.7-0.8 | vs base rate | 267 | 25.1% | 35.1% | 28 | 25.0% | 35.3% | 1.03 |
+| Broken range returns to far edge (rangelab) (ranges) | 60 | 04:00 | 0.1-0.2 | vs base rate | 353 | 25.2% | 35.1% | 31 | 29.0% | 35.3% | 0.64 |
+| Broken range returns to far edge (rangelab) (ranges) | 15 | 04:15 | 0.9-1.0 | vs base rate | 333 | 25.2% | 35.1% | 42 | 26.2% | 35.3% | 0.92 |
+| Broken range returns to far edge (rangelab) (ranges) | 30 | 04:30 | 0.0-0.1 | vs base rate | 316 | 25.3% | 35.1% | 31 | 25.8% | 35.3% | 0.97 |
+| Broken range returns to far edge (rangelab) (ranges) | 15 | 00:45 | 0.6-0.7 | vs base rate | 243 | 44.9% | 35.1% | 27 | 44.4% | 35.3% | 0.94 |
+| Broken range returns to far edge (rangelab) (ranges) | 15 | 19:15 | 0.3-0.4 | vs base rate | 235 | 44.7% | 35.1% | 26 | 46.2% | 35.3% | 1.13 |
+| Broken range returns to far edge (rangelab) (ranges) | 15 | 03:15 | 0.1-0.2 | vs base rate | 355 | 25.6% | 35.1% | 36 | 30.6% | 35.3% | 0.50 |
+| Broken range returns to far edge (rangelab) (ranges) | 15 | 10:15 | 0.2-0.3 | vs base rate | 355 | 25.6% | 35.1% | 23 | 26.1% | 35.3% | 0.97 |
+| Broken range returns to far edge (rangelab) (ranges) | 30 | 07:30 | 0.6-0.7 | vs base rate | 363 | 44.6% | 35.1% | 22 | 40.9% | 35.3% | 0.59 |
+| Broken range returns to far edge (rangelab) (ranges) | 15 | 13:00 | 0.1-0.2 | vs base rate | 347 | 25.6% | 35.1% | 35 | 25.7% | 35.3% | 1.01 |
+| Broken range returns to far edge (rangelab) (ranges) | 30 | 00:30 | 0.6-0.7 | vs base rate | 258 | 44.6% | 35.1% | 30 | 43.3% | 35.3% | 0.85 |
+| Broken range returns to far edge (rangelab) (ranges) | 15 | 08:30 | 0.6-0.7 | vs base rate | 377 | 25.7% | 35.1% | 24 | 25.0% | 35.3% | 1.10 |
+| Broken range returns to far edge (rangelab) (ranges) | 15 | 22:00 | 0.5-0.6 | vs base rate | 229 | 25.8% | 35.1% | 33 | 30.3% | 35.3% | 0.54 |
+| Broken range returns to far edge (rangelab) (ranges) | 15 | 20:30 | 0.3-0.4 | vs base rate | 243 | 25.9% | 35.1% | 31 | 29.0% | 35.3% | 0.68 |
+| Broken range returns to far edge (rangelab) (ranges) | 15 | 22:00 | 0.7-0.8 | vs base rate | 243 | 25.9% | 35.1% | 36 | 27.8% | 35.3% | 0.82 |
+| Broken range returns to far edge (rangelab) (ranges) | 30 | 10:30 | 0.9-1.0 | vs base rate | 420 | 26.0% | 35.1% | 45 | 26.7% | 35.3% | 0.94 |
+| Broken range returns to far edge (rangelab) (ranges) | 15 | 22:30 | 0.0-0.1 | vs base rate | 208 | 26.0% | 35.1% | 22 | 27.3% | 35.3% | 0.88 |
+| Broken range returns to far edge (rangelab) (ranges) | 15 | 22:30 | 0.8-0.9 | vs base rate | 249 | 26.1% | 35.1% | 20 | 30.0% | 35.3% | 0.59 |
+| Broken range returns to far edge (rangelab) (ranges) | 15 | 02:00 | 0.8-0.9 | vs base rate | 333 | 26.1% | 35.1% | 35 | 28.6% | 35.3% | 0.75 |
+| Broken range returns to far edge (rangelab) (ranges) | 30 | 11:30 | 0.7-0.8 | vs base rate | 390 | 26.2% | 35.1% | 31 | 29.0% | 35.3% | 0.70 |
+| Broken range returns to far edge (rangelab) (ranges) | 15 | 11:00 | 0.0-0.1 | vs base rate | 422 | 26.3% | 35.1% | 30 | 26.7% | 35.3% | 0.98 |
+| Broken range returns to far edge (rangelab) (ranges) | 15 | 19:00 | 0.7-0.8 | vs base rate | 261 | 26.4% | 35.1% | 28 | 28.6% | 35.3% | 0.78 |
+| Broken range returns to far edge (rangelab) (ranges) | 15 | 01:30 | 0.3-0.4 | vs base rate | 251 | 43.8% | 35.1% | 26 | 42.3% | 35.3% | 0.80 |
+| Broken range returns to far edge (rangelab) (ranges) | 30 | 21:00 | 0.8-0.9 | vs base rate | 306 | 26.5% | 35.1% | 38 | 28.9% | 35.3% | 0.74 |
+| Broken range returns to far edge (rangelab) (ranges) | 15 | 01:00 | 0.1-0.2 | vs base rate | 204 | 26.5% | 35.1% | 27 | 25.9% | 35.3% | 1.09 |
+| Broken range returns to far edge (rangelab) (ranges) | 60 | 22:00 | 0.1-0.2 | vs base rate | 211 | 26.5% | 35.1% | 28 | 25.0% | 35.3% | 1.20 |
+| Broken range returns to far edge (rangelab) (ranges) | 15 | 20:30 | 0.2-0.3 | vs base rate | 290 | 26.6% | 35.1% | 31 | 29.0% | 35.3% | 0.73 |
+| Broken range returns to far edge (rangelab) (ranges) | 15 | 20:15 | 0.7-0.8 | vs base rate | 290 | 26.6% | 35.1% | 26 | 30.8% | 35.3% | 0.53 |
+| Broken range returns to far edge (rangelab) (ranges) | 30 | 03:00 | 0.8-0.9 | vs base rate | 395 | 26.6% | 35.1% | 22 | 22.7% | 35.3% | 1.48 |
+| Broken range returns to far edge (rangelab) (ranges) | 30 | 22:00 | 0.3-0.4 | vs base rate | 195 | 26.7% | 35.1% | 23 | 26.1% | 35.3% | 1.09 |
+| Broken range returns to far edge (rangelab) (ranges) | 30 | 11:30 | 0.8-0.9 | vs base rate | 468 | 26.7% | 35.1% | 36 | 30.6% | 35.3% | 0.57 |
+| Broken range returns to far edge (rangelab) (ranges) | 15 | 21:15 | 0.7-0.8 | vs base rate | 277 | 26.7% | 35.1% | 33 | 30.3% | 35.3% | 0.60 |
+| Broken range returns to far edge (rangelab) (ranges) | 15 | 05:00 | 0.0-0.1 | vs base rate | 318 | 26.7% | 35.1% | 20 | 25.0% | 35.3% | 1.23 |
+| Broken range returns to far edge (rangelab) (ranges) | 30 | 07:30 | 0.5-0.6 | vs base rate | 340 | 43.5% | 35.1% | 27 | 40.7% | 35.3% | 0.64 |
+| Broken range returns to far edge (rangelab) (ranges) | 15 | 04:00 | 0.5-0.6 | vs base rate | 320 | 26.9% | 35.1% | 26 | 30.8% | 35.3% | 0.55 |
+| Broken range returns to far edge (rangelab) (ranges) | 60 | 20:00 | 0.6-0.7 | vs base rate | 234 | 26.9% | 35.1% | 22 | 27.3% | 35.3% | 0.98 |
+| Broken range returns to far edge (rangelab) (ranges) | 15 | 11:30 | 0.0-0.1 | vs base rate | 349 | 26.9% | 35.1% | 37 | 27.0% | 35.3% | 1.01 |
+| Broken range returns to far edge (rangelab) (ranges) | 15 | 10:45 | 0.7-0.8 | vs base rate | 352 | 27.0% | 35.1% | 26 | 30.8% | 35.3% | 0.56 |
+| Broken range returns to far edge (rangelab) (ranges) | 30 | 13:00 | 0.6-0.7 | vs base rate | 352 | 27.0% | 35.1% | 23 | 30.4% | 35.3% | 0.60 |
+| Broken range returns to far edge (rangelab) (ranges) | 15 | 20:30 | 0.8-0.9 | vs base rate | 303 | 27.1% | 35.1% | 28 | 25.0% | 35.3% | 1.28 |
+| Broken range returns to far edge (rangelab) (ranges) | 30 | 22:30 | 0.9-1.0 | vs base rate | 181 | 27.1% | 35.1% | 26 | 30.8% | 35.3% | 0.57 |
+| Broken range returns to far edge (rangelab) (ranges) | 15 | 01:15 | 0.0-0.1 | vs base rate | 255 | 43.1% | 35.1% | 22 | 40.9% | 35.3% | 0.70 |
+| Broken range returns to far edge (rangelab) (ranges) | 15 | 12:00 | 0.2-0.3 | vs base rate | 324 | 27.2% | 35.1% | 31 | 25.8% | 35.3% | 1.20 |
+| Broken range returns to far edge (rangelab) (ranges) | 15 | 08:00 | 0.6-0.7 | vs base rate | 332 | 43.1% | 35.1% | 29 | 44.8% | 35.3% | 1.20 |
+| Broken range returns to far edge (rangelab) (ranges) | 15 | 03:00 | 0.9-1.0 | vs base rate | 235 | 27.2% | 35.1% | 21 | 23.8% | 35.3% | 1.46 |
+| Broken range returns to far edge (rangelab) (ranges) | 15 | 23:00 | 0.4-0.5 | vs base rate | 194 | 27.3% | 35.1% | 23 | 30.4% | 35.3% | 0.63 |
+| Broken range returns to far edge (rangelab) (ranges) | 15 | 11:30 | 0.7-0.8 | vs base rate | 398 | 27.4% | 35.1% | 28 | 28.6% | 35.3% | 0.87 |
+| Broken range returns to far edge (rangelab) (ranges) | 30 | 20:30 | 0.3-0.4 | vs base rate | 259 | 27.4% | 35.1% | 27 | 29.6% | 35.3% | 0.74 |
+| Broken range returns to far edge (rangelab) (ranges) | 15 | 13:00 | 0.4-0.5 | vs base rate | 295 | 27.5% | 35.1% | 27 | 29.6% | 35.3% | 0.74 |
+| Broken range returns to far edge (rangelab) (ranges) | 15 | 11:15 | 0.1-0.2 | vs base rate | 335 | 27.5% | 35.1% | 22 | 27.3% | 35.3% | 1.05 |
+| Broken range returns to far edge (rangelab) (ranges) | 15 | 01:45 | 0.4-0.5 | vs base rate | 236 | 42.8% | 35.1% | 25 | 44.0% | 35.3% | 1.13 |
+| Broken range returns to far edge (rangelab) (ranges) | 15 | 19:45 | 0.8-0.9 | vs base rate | 323 | 42.7% | 35.1% | 31 | 41.9% | 35.3% | 0.87 |
+| Broken range returns to far edge (rangelab) (ranges) | 60 | 05:00 | 0.8-0.9 | vs base rate | 445 | 42.7% | 35.1% | 36 | 44.4% | 35.3% | 1.20 |
+| Broken range returns to far edge (rangelab) (ranges) | 30 | 22:30 | 0.6-0.7 | vs base rate | 250 | 27.6% | 35.1% | 22 | 27.3% | 35.3% | 1.07 |
+| Broken range returns to far edge (rangelab) (ranges) | 60 | 23:00 | 0.1-0.2 | vs base rate | 223 | 42.6% | 35.1% | 33 | 39.4% | 35.3% | 0.54 |
+| Broken range returns to far edge (rangelab) (ranges) | 15 | 11:00 | 0.9-1.0 | vs base rate | 422 | 27.7% | 35.1% | 30 | 26.7% | 35.3% | 1.17 |
+| Broken range returns to far edge (rangelab) (ranges) | 15 | 01:00 | 0.3-0.4 | vs base rate | 237 | 27.8% | 35.1% | 25 | 24.0% | 35.3% | 1.56 |
+| Broken range returns to far edge (rangelab) (ranges) | 15 | 23:00 | 0.8-0.9 | vs base rate | 262 | 27.9% | 35.1% | 33 | 30.3% | 35.3% | 0.69 |
+| Broken range returns to far edge (rangelab) (ranges) | 30 | 05:00 | 0.8-0.9 | vs base rate | 409 | 27.9% | 35.1% | 34 | 26.5% | 35.3% | 1.22 |
+| Broken range returns to far edge (rangelab) (ranges) | 15 | 11:00 | 0.1-0.2 | vs base rate | 387 | 27.9% | 35.1% | 28 | 25.0% | 35.3% | 1.43 |
+| Broken range returns to far edge (rangelab) (ranges) | 30 | 02:00 | 0.7-0.8 | vs base rate | 364 | 42.3% | 35.1% | 21 | 42.9% | 35.3% | 1.05 |
+| Broken range returns to far edge (rangelab) (ranges) | 15 | 19:00 | 0.1-0.2 | vs base rate | 214 | 28.0% | 35.1% | 33 | 30.3% | 35.3% | 0.71 |
+| Broken range returns to far edge (rangelab) (ranges) | 15 | 04:15 | 0.3-0.4 | vs base rate | 335 | 28.1% | 35.1% | 34 | 26.5% | 35.3% | 1.25 |
+| Broken range returns to far edge (rangelab) (ranges) | 60 | 04:00 | 0.4-0.5 | vs base rate | 316 | 28.2% | 35.1% | 29 | 27.6% | 35.3% | 1.11 |
+| Broken range returns to far edge (rangelab) (ranges) | 15 | 20:15 | 0.8-0.9 | vs base rate | 305 | 28.2% | 35.1% | 50 | 30.0% | 35.3% | 0.77 |
+| Broken range returns to far edge (rangelab) (ranges) | 15 | 12:00 | 0.6-0.7 | vs base rate | 372 | 28.2% | 35.1% | 28 | 28.6% | 35.3% | 0.98 |
+| Broken range returns to far edge (rangelab) (ranges) | 15 | 07:00 | 0.1-0.2 | vs base rate | 322 | 28.3% | 35.1% | 33 | 27.3% | 35.3% | 1.17 |
+| Broken range returns to far edge (rangelab) (ranges) | 15 | 23:00 | 0.1-0.2 | vs base rate | 226 | 28.3% | 35.1% | 32 | 31.2% | 35.3% | 0.60 |
+| Broken range returns to far edge (rangelab) (ranges) | 30 | 07:00 | 0.8-0.9 | vs base rate | 452 | 41.8% | 35.1% | 40 | 40.0% | 35.3% | 0.70 |
+| Broken range returns to far edge (rangelab) (ranges) | 15 | 18:15 | 0.2-0.3 | vs base rate | 267 | 28.5% | 35.1% | 38 | 26.3% | 35.3% | 1.35 |
+| Broken range returns to far edge (rangelab) (ranges) | 15 | 04:15 | 0.5-0.6 | vs base rate | 323 | 28.5% | 35.1% | 25 | 32.0% | 35.3% | 0.50 |
+| Broken range returns to far edge (rangelab) (ranges) | 15 | 01:00 | 0.7-0.8 | vs base rate | 249 | 28.5% | 35.1% | 29 | 31.0% | 35.3% | 0.65 |
+| Broken range returns to far edge (rangelab) (ranges) | 15 | 14:00 | 0.8-0.9 | vs base rate | 410 | 28.5% | 35.1% | 36 | 30.6% | 35.3% | 0.73 |
+| Broken range returns to far edge (rangelab) (ranges) | 15 | 10:45 | 0.6-0.7 | vs base rate | 332 | 28.6% | 35.1% | 21 | 28.6% | 35.3% | 1.04 |
+| Broken range returns to far edge (rangelab) (ranges) | 15 | 05:00 | 0.6-0.7 | vs base rate | 383 | 28.7% | 35.1% | 22 | 31.8% | 35.3% | 0.55 |
+| Broken range returns to far edge (rangelab) (ranges) | 30 | 23:00 | 0.7-0.8 | vs base rate | 226 | 28.8% | 35.1% | 44 | 31.8% | 35.3% | 0.55 |
+| Broken range returns to far edge (rangelab) (ranges) | 15 | 08:00 | 0.2-0.3 | vs base rate | 384 | 41.4% | 35.1% | 42 | 40.5% | 35.3% | 0.82 |
+| Broken range returns to far edge (rangelab) (ranges) | 30 | 12:00 | 0.7-0.8 | vs base rate | 367 | 28.9% | 35.1% | 27 | 25.9% | 35.3% | 1.51 |
+| Broken range returns to far edge (rangelab) (ranges) | 15 | 07:45 | 0.8-0.9 | vs base rate | 406 | 41.4% | 35.1% | 30 | 40.0% | 35.3% | 0.75 |
+| Broken range returns to far edge (rangelab) (ranges) | 15 | 14:00 | 0.6-0.7 | vs base rate | 353 | 28.9% | 35.1% | 25 | 28.0% | 35.3% | 1.18 |
+| Broken range returns to far edge (rangelab) (ranges) | 15 | 04:30 | 0.6-0.7 | vs base rate | 351 | 29.1% | 35.1% | 26 | 30.8% | 35.3% | 0.75 |
+| Broken range returns to far edge (rangelab) (ranges) | 30 | 05:00 | 0.7-0.8 | vs base rate | 405 | 29.1% | 35.1% | 29 | 31.0% | 35.3% | 0.72 |
+| Broken range returns to far edge (rangelab) (ranges) | 30 | 05:00 | 0.3-0.4 | vs base rate | 322 | 29.2% | 35.1% | 23 | 30.4% | 35.3% | 0.83 |
+| Broken range returns to far edge (rangelab) (ranges) | 30 | 07:00 | 0.5-0.6 | vs base rate | 351 | 41.0% | 35.1% | 31 | 38.7% | 35.3% | 0.57 |
+| Broken range returns to far edge (rangelab) (ranges) | 15 | 07:00 | 0.8-0.9 | vs base rate | 424 | 29.2% | 35.1% | 32 | 31.2% | 35.3% | 0.69 |
+| Broken range returns to far edge (rangelab) (ranges) | 30 | 06:30 | 0.7-0.8 | vs base rate | 378 | 41.0% | 35.1% | 44 | 40.9% | 35.3% | 0.95 |
+| Broken range returns to far edge (rangelab) (ranges) | 15 | 20:15 | 0.1-0.2 | vs base rate | 270 | 29.3% | 35.1% | 36 | 30.6% | 35.3% | 0.81 |
+| Broken range returns to far edge (rangelab) (ranges) | 30 | 23:30 | 0.8-0.9 | vs base rate | 283 | 41.0% | 35.1% | 38 | 42.1% | 35.3% | 1.16 |
+| Broken range returns to far edge (rangelab) (ranges) | 15 | 11:45 | 0.1-0.2 | vs base rate | 355 | 29.3% | 35.1% | 34 | 26.5% | 35.3% | 1.52 |
+| Broken range returns to far edge (rangelab) (ranges) | 30 | 23:00 | 0.8-0.9 | vs base rate | 259 | 29.3% | 35.1% | 25 | 28.0% | 35.3% | 1.27 |
+| Broken range returns to far edge (rangelab) (ranges) | 15 | 09:45 | 0.6-0.7 | vs base rate | 303 | 29.4% | 35.1% | 26 | 30.8% | 35.3% | 0.79 |
+| Broken range returns to far edge (rangelab) (ranges) | 15 | 12:30 | 0.6-0.7 | vs base rate | 366 | 29.5% | 35.1% | 29 | 27.6% | 35.3% | 1.38 |
+| Broken range returns to far edge (rangelab) (ranges) | 15 | 10:45 | 0.5-0.6 | vs base rate | 332 | 29.5% | 35.1% | 25 | 24.0% | 35.3% | 2.02 |
+| Broken range returns to far edge (rangelab) (ranges) | 15 | 14:30 | 0.6-0.7 | vs base rate | 352 | 29.5% | 35.1% | 23 | 30.4% | 35.3% | 0.88 |
+| Broken range returns to far edge (rangelab) (ranges) | 15 | 03:15 | 0.9-1.0 | vs base rate | 330 | 29.7% | 35.1% | 28 | 28.6% | 35.3% | 1.25 |
+| Broken range returns to far edge (rangelab) (ranges) | 30 | 00:30 | 0.8-0.9 | vs base rate | 274 | 40.5% | 35.1% | 34 | 38.2% | 35.3% | 0.54 |
+| Broken range returns to its mid (rangelab) (ranges) | 30 | 10:00 | 0.1-0.2 | vs base rate | 387 | 38.8% | 60.3% | 24 | 50.0% | 61.9% | 0.55 |
+| Broken range returns to its mid (rangelab) (ranges) | 15 | 09:15 | 0.9-1.0 | vs base rate | 336 | 81.8% | 60.3% | 23 | 73.9% | 61.9% | 0.56 |
+| Broken range returns to its mid (rangelab) (ranges) | 15 | 09:30 | 0.3-0.4 | vs base rate | 304 | 42.8% | 60.3% | 26 | 50.0% | 61.9% | 0.68 |
+| Broken range returns to its mid (rangelab) (ranges) | 30 | 08:00 | 0.2-0.3 | vs base rate | 415 | 77.6% | 60.3% | 26 | 73.1% | 61.9% | 0.65 |
+| Broken range returns to its mid (rangelab) (ranges) | 30 | 10:00 | 0.8-0.9 | vs base rate | 489 | 43.4% | 60.3% | 33 | 51.5% | 61.9% | 0.61 |
+| Broken range returns to its mid (rangelab) (ranges) | 60 | 06:00 | 0.5-0.6 | vs base rate | 335 | 76.7% | 60.3% | 22 | 72.7% | 61.9% | 0.66 |
+| Broken range returns to its mid (rangelab) (ranges) | 30 | 11:00 | 0.3-0.4 | vs base rate | 308 | 45.5% | 60.3% | 29 | 51.7% | 61.9% | 0.68 |
+| Broken range returns to its mid (rangelab) (ranges) | 15 | 09:30 | 0.4-0.5 | vs base rate | 314 | 45.5% | 60.3% | 21 | 52.4% | 61.9% | 0.64 |
+| Broken range returns to its mid (rangelab) (ranges) | 30 | 04:00 | 0.4-0.5 | vs base rate | 275 | 45.8% | 60.3% | 25 | 52.0% | 61.9% | 0.68 |
+| Broken range returns to its mid (rangelab) (ranges) | 15 | 21:30 | 0.2-0.3 | vs base rate | 259 | 45.9% | 60.3% | 25 | 52.0% | 61.9% | 0.69 |
+| Broken range returns to its mid (rangelab) (ranges) | 60 | 01:00 | 0.1-0.2 | vs base rate | 324 | 74.7% | 60.3% | 28 | 71.4% | 61.9% | 0.66 |
+| Broken range returns to its mid (rangelab) (ranges) | 30 | 02:30 | 0.7-0.8 | vs base rate | 365 | 74.5% | 60.3% | 42 | 71.4% | 61.9% | 0.67 |
+| Broken range returns to its mid (rangelab) (ranges) | 15 | 10:00 | 0.3-0.4 | vs base rate | 329 | 46.2% | 60.3% | 28 | 53.6% | 61.9% | 0.59 |
+| Broken range returns to its mid (rangelab) (ranges) | 15 | 02:00 | 0.7-0.8 | vs base rate | 283 | 46.3% | 60.3% | 26 | 53.8% | 61.9% | 0.57 |
+| Broken range returns to its mid (rangelab) (ranges) | 30 | 02:30 | 0.2-0.3 | vs base rate | 380 | 74.2% | 60.3% | 27 | 70.4% | 61.9% | 0.61 |
+| Broken range returns to its mid (rangelab) (ranges) | 15 | 02:45 | 0.7-0.8 | vs base rate | 335 | 73.7% | 60.3% | 34 | 70.6% | 61.9% | 0.65 |
+| Broken range returns to its mid (rangelab) (ranges) | 15 | 22:30 | 0.0-0.1 | vs base rate | 208 | 47.1% | 60.3% | 22 | 50.0% | 61.9% | 0.90 |
+| Broken range returns to its mid (rangelab) (ranges) | 30 | 22:30 | 0.1-0.2 | vs base rate | 224 | 47.3% | 60.3% | 32 | 53.1% | 61.9% | 0.67 |
+| Broken range returns to its mid (rangelab) (ranges) | 30 | 10:30 | 0.5-0.6 | vs base rate | 293 | 47.8% | 60.3% | 26 | 50.0% | 61.9% | 0.95 |
+| Broken range returns to its mid (rangelab) (ranges) | 60 | 03:00 | 0.8-0.9 | vs base rate | 449 | 47.9% | 60.3% | 28 | 53.6% | 61.9% | 0.67 |
+| Broken range returns to its mid (rangelab) (ranges) | 60 | 11:00 | 0.5-0.6 | vs base rate | 286 | 47.9% | 60.3% | 29 | 51.7% | 61.9% | 0.82 |
+| Broken range returns to its mid (rangelab) (ranges) | 30 | 02:30 | 0.5-0.6 | vs base rate | 359 | 72.7% | 60.3% | 22 | 72.7% | 61.9% | 0.88 |
+| Broken range returns to its mid (rangelab) (ranges) | 60 | 21:00 | 0.6-0.7 | vs base rate | 229 | 48.0% | 60.3% | 26 | 53.8% | 61.9% | 0.65 |
+| Broken range returns to its mid (rangelab) (ranges) | 60 | 01:00 | 0.6-0.7 | vs base rate | 339 | 72.6% | 60.3% | 25 | 72.0% | 61.9% | 0.83 |
+| Broken range returns to its mid (rangelab) (ranges) | 15 | 02:00 | 0.1-0.2 | vs base rate | 269 | 48.3% | 60.3% | 32 | 53.1% | 61.9% | 0.73 |
+| Broken range returns to its mid (rangelab) (ranges) | 15 | 11:30 | 0.2-0.3 | vs base rate | 343 | 48.4% | 60.3% | 22 | 50.0% | 61.9% | 1.00 |
+| Broken range returns to its mid (rangelab) (ranges) | 15 | 02:00 | 0.0-0.1 | vs base rate | 252 | 48.4% | 60.3% | 22 | 54.5% | 61.9% | 0.62 |
+| Broken range returns to its mid (rangelab) (ranges) | 60 | 03:00 | 0.1-0.2 | vs base rate | 353 | 48.4% | 60.3% | 34 | 55.9% | 61.9% | 0.51 |
+| Broken range returns to its mid (rangelab) (ranges) | 60 | 20:00 | 0.1-0.2 | vs base rate | 219 | 48.9% | 60.3% | 24 | 54.2% | 61.9% | 0.67 |
+| Broken range returns to its mid (rangelab) (ranges) | 15 | 01:15 | 0.5-0.6 | vs base rate | 248 | 71.8% | 60.3% | 34 | 67.6% | 61.9% | 0.50 |
+| Broken range returns to its mid (rangelab) (ranges) | 60 | 23:00 | 0.7-0.8 | vs base rate | 288 | 71.5% | 60.3% | 31 | 67.7% | 61.9% | 0.52 |
+| Broken range returns to its mid (rangelab) (ranges) | 60 | 20:00 | 0.6-0.7 | vs base rate | 234 | 49.1% | 60.3% | 22 | 54.5% | 61.9% | 0.66 |
+| Broken range returns to its mid (rangelab) (ranges) | 30 | 02:00 | 0.8-0.9 | vs base rate | 364 | 71.4% | 60.3% | 37 | 70.3% | 61.9% | 0.76 |
+| Broken range returns to its mid (rangelab) (ranges) | 60 | 23:00 | 0.5-0.6 | vs base rate | 255 | 71.4% | 60.3% | 31 | 71.0% | 61.9% | 0.82 |
+| Broken range returns to its mid (rangelab) (ranges) | 15 | 11:30 | 0.5-0.6 | vs base rate | 332 | 49.4% | 60.3% | 26 | 53.8% | 61.9% | 0.74 |
+| Broken range returns to its mid (rangelab) (ranges) | 30 | 00:30 | 0.4-0.5 | vs base rate | 239 | 71.1% | 60.3% | 25 | 68.0% | 61.9% | 0.57 |
+| Broken range returns to its mid (rangelab) (ranges) | 15 | 23:00 | 0.0-0.1 | vs base rate | 169 | 49.7% | 60.3% | 29 | 51.7% | 61.9% | 0.96 |
+| Broken range returns to its mid (rangelab) (ranges) | 15 | 01:00 | 0.6-0.7 | vs base rate | 253 | 49.8% | 60.3% | 20 | 50.0% | 61.9% | 1.13 |
+| Broken range returns to its mid (rangelab) (ranges) | 60 | 20:00 | 0.7-0.8 | vs base rate | 263 | 49.8% | 60.3% | 29 | 51.7% | 61.9% | 0.97 |
+| Broken range returns to its mid (rangelab) (ranges) | 30 | 03:00 | 0.1-0.2 | vs base rate | 377 | 49.9% | 60.3% | 29 | 55.2% | 61.9% | 0.64 |
+| Broken range returns to its mid (rangelab) (ranges) | 30 | 11:00 | 0.9-1.0 | vs base rate | 425 | 49.9% | 60.3% | 29 | 51.7% | 61.9% | 0.97 |
+| Broken range returns to its mid (rangelab) (ranges) | 60 | 02:00 | 0.9-1.0 | vs base rate | 324 | 70.7% | 60.3% | 31 | 71.0% | 61.9% | 0.88 |
+| Broken range returns to its mid (rangelab) (ranges) | 30 | 10:30 | 0.0-0.1 | vs base rate | 348 | 50.0% | 60.3% | 24 | 54.2% | 61.9% | 0.75 |
+| Broken range returns to its mid (rangelab) (ranges) | 15 | 19:00 | 0.6-0.7 | vs base rate | 234 | 50.0% | 60.3% | 27 | 55.6% | 61.9% | 0.61 |
+| Broken range returns to its mid (rangelab) (ranges) | 15 | 11:00 | 0.3-0.4 | vs base rate | 332 | 50.0% | 60.3% | 24 | 50.0% | 61.9% | 1.15 |
+| Broken range returns to its mid (rangelab) (ranges) | 15 | 08:30 | 0.9-1.0 | vs base rate | 224 | 50.0% | 60.3% | 26 | 53.8% | 61.9% | 0.78 |
+| Broken range returns to its mid (rangelab) (ranges) | 15 | 07:45 | 0.5-0.6 | vs base rate | 350 | 70.6% | 60.3% | 23 | 73.9% | 61.9% | 1.17 |
+| Broken range returns to its mid (rangelab) (ranges) | 15 | 11:30 | 0.3-0.4 | vs base rate | 295 | 50.2% | 60.3% | 22 | 50.0% | 61.9% | 1.17 |
+| Broken range returns to its mid (rangelab) (ranges) | 30 | 20:00 | 0.7-0.8 | vs base rate | 267 | 50.2% | 60.3% | 28 | 53.6% | 61.9% | 0.82 |
+| Broken range returns to its mid (rangelab) (ranges) | 30 | 21:00 | 0.2-0.3 | vs base rate | 243 | 50.2% | 60.3% | 37 | 54.1% | 61.9% | 0.77 |
+| Broken range returns to its mid (rangelab) (ranges) | 30 | 20:00 | 0.5-0.6 | vs base rate | 239 | 50.2% | 60.3% | 22 | 50.0% | 61.9% | 1.17 |
+| Broken range returns to its mid (rangelab) (ranges) | 30 | 22:00 | 0.5-0.6 | vs base rate | 233 | 50.2% | 60.3% | 31 | 54.8% | 61.9% | 0.70 |
+| Broken range returns to its mid (rangelab) (ranges) | 30 | 21:30 | 0.8-0.9 | vs base rate | 310 | 50.3% | 60.3% | 29 | 51.7% | 61.9% | 1.02 |
+| Broken range returns to its mid (rangelab) (ranges) | 30 | 21:00 | 0.8-0.9 | vs base rate | 306 | 50.3% | 60.3% | 38 | 52.6% | 61.9% | 0.93 |
+| Broken range returns to its mid (rangelab) (ranges) | 30 | 11:00 | 0.2-0.3 | vs base rate | 383 | 50.4% | 60.3% | 29 | 51.7% | 61.9% | 1.02 |
+| Broken range returns to its mid (rangelab) (ranges) | 15 | 01:15 | 0.6-0.7 | vs base rate | 234 | 70.1% | 60.3% | 25 | 72.0% | 61.9% | 1.04 |
+| Broken range returns to its mid (rangelab) (ranges) | 60 | 09:00 | 0.1-0.2 | vs base rate | 385 | 50.6% | 60.3% | 31 | 51.6% | 61.9% | 1.06 |
+| Broken range returns to its mid (rangelab) (ranges) | 15 | 07:00 | 0.9-1.0 | vs base rate | 298 | 50.7% | 60.3% | 33 | 51.5% | 61.9% | 1.07 |
+| Broken range returns to its mid (rangelab) (ranges) | 30 | 11:00 | 0.7-0.8 | vs base rate | 369 | 50.7% | 60.3% | 26 | 53.8% | 61.9% | 0.83 |
+| Broken range returns to its mid (rangelab) (ranges) | 15 | 05:00 | 0.2-0.3 | vs base rate | 347 | 50.7% | 60.3% | 25 | 52.0% | 61.9% | 1.03 |
+| Broken range returns to its mid (rangelab) (ranges) | 60 | 02:00 | 0.4-0.5 | vs base rate | 292 | 69.9% | 60.3% | 23 | 69.6% | 61.9% | 0.81 |
+| Broken range returns to its mid (rangelab) (ranges) | 15 | 19:30 | 0.9-1.0 | vs base rate | 189 | 69.8% | 60.3% | 25 | 72.0% | 61.9% | 1.06 |
+| Broken range returns to its mid (rangelab) (ranges) | 15 | 01:30 | 0.2-0.3 | vs base rate | 295 | 69.8% | 60.3% | 37 | 70.3% | 61.9% | 0.88 |
+| Broken range returns to its mid (rangelab) (ranges) | 30 | 00:00 | 0.4-0.5 | vs base rate | 202 | 69.8% | 60.3% | 33 | 66.7% | 61.9% | 0.50 |
+| Broken range returns to its mid (rangelab) (ranges) | 15 | 21:30 | 0.0-0.1 | vs base rate | 229 | 51.1% | 60.3% | 25 | 52.0% | 61.9% | 1.07 |
+| Broken range returns to its mid (rangelab) (ranges) | 60 | 05:00 | 0.6-0.7 | vs base rate | 361 | 69.5% | 60.3% | 28 | 71.4% | 61.9% | 1.04 |
+| Broken range returns to its mid (rangelab) (ranges) | 30 | 02:00 | 0.0-0.1 | vs base rate | 292 | 69.5% | 60.3% | 26 | 69.2% | 61.9% | 0.80 |
+| Broken range returns to its mid (rangelab) (ranges) | 60 | 23:00 | 0.1-0.2 | vs base rate | 223 | 69.5% | 60.3% | 33 | 66.7% | 61.9% | 0.52 |
+| Broken range returns to its mid (rangelab) (ranges) | 60 | 02:00 | 0.6-0.7 | vs base rate | 341 | 69.5% | 60.3% | 36 | 72.2% | 61.9% | 1.13 |
+| Broken range returns to its mid (rangelab) (ranges) | 30 | 11:30 | 0.5-0.6 | vs base rate | 322 | 51.2% | 60.3% | 23 | 56.5% | 61.9% | 0.59 |
+| Broken range returns to its mid (rangelab) (ranges) | 15 | 03:00 | 0.2-0.3 | vs base rate | 397 | 51.4% | 60.3% | 39 | 56.4% | 61.9% | 0.61 |
+| Broken range returns to its mid (rangelab) (ranges) | 15 | 20:30 | 0.3-0.4 | vs base rate | 243 | 51.4% | 60.3% | 31 | 51.6% | 61.9% | 1.16 |
+| Broken range returns to its mid (rangelab) (ranges) | 15 | 08:30 | 0.6-0.7 | vs base rate | 377 | 51.5% | 60.3% | 24 | 50.0% | 61.9% | 1.34 |
+| Broken range returns to its mid (rangelab) (ranges) | 15 | 11:30 | 0.1-0.2 | vs base rate | 371 | 51.5% | 60.3% | 38 | 52.6% | 61.9% | 1.05 |
+| Broken range returns to its mid (rangelab) (ranges) | 15 | 23:00 | 0.4-0.5 | vs base rate | 194 | 51.5% | 60.3% | 23 | 56.5% | 61.9% | 0.61 |
+| Broken range returns to its mid (rangelab) (ranges) | 15 | 11:15 | 0.1-0.2 | vs base rate | 335 | 51.6% | 60.3% | 22 | 54.5% | 61.9% | 0.84 |
+| Broken range returns to its mid (rangelab) (ranges) | 15 | 00:30 | 0.4-0.5 | vs base rate | 184 | 69.0% | 60.3% | 22 | 72.7% | 61.9% | 1.25 |
+| Broken range returns to its mid (rangelab) (ranges) | 30 | 07:30 | 0.4-0.5 | vs base rate | 293 | 68.9% | 60.3% | 26 | 69.2% | 61.9% | 0.85 |
+| Broken range returns to its mid (rangelab) (ranges) | 60 | 09:00 | 0.5-0.6 | vs base rate | 322 | 51.9% | 60.3% | 28 | 57.1% | 61.9% | 0.56 |
+| Broken range returns to its mid (rangelab) (ranges) | 30 | 00:30 | 0.5-0.6 | vs base rate | 282 | 68.8% | 60.3% | 27 | 66.7% | 61.9% | 0.56 |
+| Broken range returns to its mid (rangelab) (ranges) | 30 | 01:00 | 0.4-0.5 | vs base rate | 239 | 68.6% | 60.3% | 22 | 72.7% | 61.9% | 1.31 |
+| Broken range returns to its mid (rangelab) (ranges) | 15 | 06:30 | 0.9-1.0 | vs base rate | 274 | 68.6% | 60.3% | 25 | 68.0% | 61.9% | 0.74 |
+| Broken range returns to its mid (rangelab) (ranges) | 15 | 10:00 | 0.7-0.8 | vs base rate | 366 | 52.2% | 60.3% | 20 | 55.0% | 61.9% | 0.85 |
+| Broken range returns to its mid (rangelab) (ranges) | 15 | 22:00 | 0.0-0.1 | vs base rate | 197 | 52.3% | 60.3% | 21 | 57.1% | 61.9% | 0.59 |
+| Broken range returns to its mid (rangelab) (ranges) | 15 | 02:00 | 0.4-0.5 | vs base rate | 214 | 52.3% | 60.3% | 24 | 54.2% | 61.9% | 0.97 |
+| Broken range returns to its mid (rangelab) (ranges) | 15 | 10:30 | 0.1-0.2 | vs base rate | 353 | 52.4% | 60.3% | 35 | 57.1% | 61.9% | 0.60 |
+| Broken range returns to its mid (rangelab) (ranges) | 15 | 01:45 | 0.7-0.8 | vs base rate | 327 | 68.2% | 60.3% | 44 | 70.5% | 61.9% | 1.09 |
+| Broken range returns to its mid (rangelab) (ranges) | 15 | 08:00 | 0.0-0.1 | vs base rate | 308 | 68.2% | 60.3% | 21 | 66.7% | 61.9% | 0.61 |
+| Broken range returns to its mid (rangelab) (ranges) | 60 | 23:00 | 0.3-0.4 | vs base rate | 245 | 68.2% | 60.3% | 28 | 71.4% | 61.9% | 1.22 |
+| Broken range returns to its mid (rangelab) (ranges) | 15 | 10:45 | 0.0-0.1 | vs base rate | 356 | 52.5% | 60.3% | 32 | 56.2% | 61.9% | 0.72 |
+| Broken range returns to its mid (rangelab) (ranges) | 30 | 00:30 | 0.3-0.4 | vs base rate | 241 | 68.0% | 60.3% | 28 | 67.9% | 61.9% | 0.77 |
+| Broken range returns to its mid (rangelab) (ranges) | 30 | 22:00 | 0.1-0.2 | vs base rate | 241 | 52.7% | 60.3% | 33 | 51.5% | 61.9% | 1.36 |
+| Broken range returns to its mid (rangelab) (ranges) | 15 | 22:45 | 0.6-0.7 | vs base rate | 271 | 52.8% | 60.3% | 28 | 57.1% | 61.9% | 0.63 |
+| Broken range returns to its mid (rangelab) (ranges) | 15 | 09:45 | 0.1-0.2 | vs base rate | 422 | 52.8% | 60.3% | 31 | 54.8% | 61.9% | 0.94 |
+| Broken range returns to its mid (rangelab) (ranges) | 30 | 21:00 | 0.3-0.4 | vs base rate | 227 | 52.9% | 60.3% | 21 | 57.1% | 61.9% | 0.64 |
+| Broken range returns to its mid (rangelab) (ranges) | 30 | 11:00 | 0.8-0.9 | vs base rate | 452 | 52.9% | 60.3% | 48 | 56.2% | 61.9% | 0.76 |
+| Broken range returns to its mid (rangelab) (ranges) | 15 | 07:45 | 0.0-0.1 | vs base rate | 369 | 67.8% | 60.3% | 26 | 69.2% | 61.9% | 0.99 |
+| Broken range returns to its mid (rangelab) (ranges) | 15 | 22:30 | 0.4-0.5 | vs base rate | 204 | 52.9% | 60.3% | 33 | 51.5% | 61.9% | 1.40 |
+| Broken range returns to its mid (rangelab) (ranges) | 60 | 03:00 | 0.9-1.0 | vs base rate | 300 | 53.0% | 60.3% | 27 | 51.9% | 61.9% | 1.37 |
+| Broken range returns to its mid (rangelab) (ranges) | 15 | 10:30 | 0.6-0.7 | vs base rate | 366 | 53.0% | 60.3% | 25 | 56.0% | 61.9% | 0.80 |
+| Broken range returns to its mid (rangelab) (ranges) | 15 | 03:45 | 0.9-1.0 | vs base rate | 273 | 53.1% | 60.3% | 36 | 52.8% | 61.9% | 1.26 |
+| Broken range returns to its mid (rangelab) (ranges) | 15 | 10:45 | 0.7-0.8 | vs base rate | 352 | 53.1% | 60.3% | 26 | 57.7% | 61.9% | 0.58 |
+| Broken range returns to its mid (rangelab) (ranges) | 15 | 07:00 | 0.6-0.7 | vs base rate | 348 | 53.2% | 60.3% | 30 | 53.3% | 61.9% | 1.19 |
+| Broken range returns to its mid (rangelab) (ranges) | 30 | 04:00 | 0.1-0.2 | vs base rate | 368 | 53.3% | 60.3% | 24 | 54.2% | 61.9% | 1.09 |
+| Broken range returns to its mid (rangelab) (ranges) | 15 | 09:45 | 0.2-0.3 | vs base rate | 396 | 53.3% | 60.3% | 29 | 51.7% | 61.9% | 1.44 |
+| Broken range returns to its mid (rangelab) (ranges) | 15 | 00:45 | 0.8-0.9 | vs base rate | 269 | 67.3% | 60.3% | 39 | 66.7% | 61.9% | 0.69 |
+| Broken range returns to its mid (rangelab) (ranges) | 30 | 18:30 | 0.2-0.3 | vs base rate | 272 | 67.3% | 60.3% | 32 | 68.8% | 61.9% | 0.99 |
+| Broken range returns to its mid (rangelab) (ranges) | 15 | 03:30 | 0.0-0.1 | vs base rate | 367 | 53.4% | 60.3% | 25 | 52.0% | 61.9% | 1.43 |
+| Broken range returns to its mid (rangelab) (ranges) | 15 | 08:30 | 0.5-0.6 | vs base rate | 366 | 53.6% | 60.3% | 32 | 56.2% | 61.9% | 0.83 |
+| Broken range returns to its mid (rangelab) (ranges) | 15 | 12:00 | 0.8-0.9 | vs base rate | 431 | 53.6% | 60.3% | 35 | 51.4% | 61.9% | 1.55 |
+| Broken range returns to its mid (rangelab) (ranges) | 15 | 10:15 | 0.0-0.1 | vs base rate | 393 | 53.7% | 60.3% | 20 | 50.0% | 61.9% | 1.79 |
+| Broken range returns to its mid (rangelab) (ranges) | 15 | 22:45 | 0.1-0.2 | vs base rate | 257 | 53.7% | 60.3% | 23 | 52.2% | 61.9% | 1.46 |
+| Broken range returns to its mid (rangelab) (ranges) | 15 | 15:00 | 0.8-0.9 | vs base rate | 454 | 67.0% | 60.3% | 39 | 71.8% | 61.9% | 1.49 |
+| Broken range returns to its mid (rangelab) (ranges) | 15 | 08:30 | 0.2-0.3 | vs base rate | 350 | 53.7% | 60.3% | 28 | 57.1% | 61.9% | 0.72 |
+| Broken range returns to its mid (rangelab) (ranges) | 30 | 20:00 | 0.3-0.4 | vs base rate | 253 | 53.8% | 60.3% | 25 | 56.0% | 61.9% | 0.90 |
+| Broken range returns to its mid (rangelab) (ranges) | 30 | 04:00 | 0.6-0.7 | vs base rate | 377 | 53.8% | 60.3% | 25 | 56.0% | 61.9% | 0.91 |
+| Broken range returns to its mid (rangelab) (ranges) | 30 | 22:00 | 0.8-0.9 | vs base rate | 284 | 53.9% | 60.3% | 34 | 55.9% | 61.9% | 0.93 |
+| Broken range returns to its mid (rangelab) (ranges) | 30 | 07:00 | 0.8-0.9 | vs base rate | 452 | 66.6% | 60.3% | 40 | 70.0% | 61.9% | 1.30 |
+| Broken range returns to its mid (rangelab) (ranges) | 30 | 04:00 | 0.0-0.1 | vs base rate | 323 | 54.2% | 60.3% | 26 | 57.7% | 61.9% | 0.68 |
+| Broken range returns to its mid (rangelab) (ranges) | 30 | 07:30 | 0.5-0.6 | vs base rate | 340 | 66.5% | 60.3% | 27 | 66.7% | 61.9% | 0.78 |
+| Broken range returns to its mid (rangelab) (ranges) | 15 | 10:30 | 0.9-1.0 | vs base rate | 407 | 54.3% | 60.3% | 40 | 55.0% | 61.9% | 1.14 |
+| Broken range returns to its mid (rangelab) (ranges) | 60 | 04:00 | 0.5-0.6 | vs base rate | 357 | 54.3% | 60.3% | 24 | 54.2% | 61.9% | 1.29 |
+| Broken range returns to its mid (rangelab) (ranges) | 30 | 11:30 | 0.7-0.8 | vs base rate | 390 | 54.4% | 60.3% | 31 | 54.8% | 61.9% | 1.18 |
+| Broken range returns to its mid (rangelab) (ranges) | 60 | 05:00 | 0.5-0.6 | vs base rate | 362 | 66.3% | 60.3% | 23 | 73.9% | 61.9% | 2.02 |
+| Broken range returns to its mid (rangelab) (ranges) | 30 | 05:30 | 0.6-0.7 | vs base rate | 356 | 66.3% | 60.3% | 29 | 69.0% | 61.9% | 1.19 |
+| Broken range returns to its mid (rangelab) (ranges) | 30 | 07:30 | 0.7-0.8 | vs base rate | 403 | 66.0% | 60.3% | 31 | 71.0% | 61.9% | 1.60 |
+| Broken range returns to its mid (rangelab) (ranges) | 30 | 05:30 | 0.7-0.8 | vs base rate | 397 | 66.0% | 60.3% | 32 | 68.8% | 61.9% | 1.21 |
+| Broken range returns to its mid (rangelab) (ranges) | 30 | 01:30 | 0.6-0.7 | vs base rate | 320 | 65.9% | 60.3% | 26 | 73.1% | 61.9% | 2.00 |
+| Broken range returns to its mid (rangelab) (ranges) | 15 | 14:45 | 0.8-0.9 | vs base rate | 498 | 65.9% | 60.3% | 27 | 70.4% | 61.9% | 1.53 |
+| Broken range returns to its mid (rangelab) (ranges) | 30 | 07:30 | 0.1-0.2 | vs base rate | 372 | 65.9% | 60.3% | 38 | 71.1% | 61.9% | 1.66 |
+| Broken range returns to its mid (rangelab) (ranges) | 30 | 07:00 | 0.0-0.1 | vs base rate | 316 | 65.8% | 60.3% | 27 | 66.7% | 61.9% | 0.87 |
+| Broken range returns to its mid (rangelab) (ranges) | 60 | 05:00 | 0.4-0.5 | vs base rate | 333 | 65.8% | 60.3% | 23 | 69.6% | 61.9% | 1.41 |
+| Broken range returns to its mid (rangelab) (ranges) | 15 | 12:30 | 0.9-1.0 | vs base rate | 394 | 65.7% | 60.3% | 24 | 70.8% | 61.9% | 1.66 |
+| Broken range returns to its mid (rangelab) (ranges) | 15 | 12:00 | 0.1-0.2 | vs base rate | 383 | 55.1% | 60.3% | 33 | 57.6% | 61.9% | 0.82 |
+| Hour sweeps one side of prev hour, closes back inside (hourly) | 09:00 | swept L only | vs base rate | 1037 | 30.5% | 42.9% | 77 | 37.7% | 44.5% | 0.55 |
+| RTH trades down to prior-day low (opened above it) (session) | took Asia L | vs base rate | 874 | 42.0% | 34.5% | 66 | 36.4% | 30.6% | 0.76 |
+| RTH trades down to prior-day low (opened above it) (session) | took Asia H | vs base rate | 1441 | 29.2% | 34.5% | 121 | 27.3% | 30.6% | 0.64 |
+
+### FADED (347)
+
+| statistic | condition | benchmark | disc n | disc rate | disc bench | holdout n | holdout rate | holdout bench | retained |
+|---|---|---|---:|---:|---:|---:|---:|---:|---:|
+| Range breaks HIGH first (rangelab) (ranges) | 30 | Q4 | MECHANICAL (= random walk) | 28995 | 53.4% | 52.9% | 2341 | 53.2% | 53.0% | 0.38 |
+| C3 takes C2 high before C2 low (candle_4h) | 18:00 | higher (took C1 H) | beats random walk | 793 | 68.5% | 63.8% | 74 | 59.5% | 57.9% | 0.33 |
+| C3 takes C2 high before C2 low (candle_1D) | lower (took C1 L) | C1 bear / C2 bear | MECHANICAL (= random walk) | 448 | 34.2% | 31.1% | 28 | 35.7% | 35.4% | 0.12 |
+| C3 takes C2 high before C2 low (candle_1h) | lower (took C1 L) | C1 bull / C2 bear | beats random walk | 5590 | 27.5% | 30.3% | 423 | 29.8% | 30.3% | 0.18 |
+| C3 takes C2 high before C2 low (candle_1h) | inside | C1 bear / C2 bear | MECHANICAL (= random walk) | 1676 | 32.5% | 30.3% | 133 | 31.6% | 31.5% | 0.04 |
+| C3 takes C2 high before C2 low (candle_1h) | 10:00 | lower (took C1 L) | MECHANICAL (= random walk) | 939 | 39.1% | 40.7% | 69 | 42.0% | 42.4% | 0.23 |
+| C3 takes C2 high before C2 low (candle_4h) | higher (took C1 H) | C1 bull / C2 bear | MECHANICAL (= random walk) | 1121 | 24.9% | 26.5% | 104 | 26.0% | 26.0% | 0.02 |
+| C3 takes C2 high before C2 low (candle_4h) | higher (took C1 H) | C2 closed inside C1 | MECHANICAL (= random walk) | 2442 | 37.4% | 39.0% | 206 | 37.4% | 37.7% | 0.20 |
+| Broken range travels >=1 width past edge (rangelab) (ranges) | 30 | 01:30 | 0.6-0.7 | vs base rate | 320 | 63.1% | 40.3% | 26 | 42.3% | 36.2% | 0.27 |
+| Broken range travels >=1 width past edge (rangelab) (ranges) | 15 | 02:45 | 0.2-0.3 | vs base rate | 350 | 62.3% | 40.3% | 31 | 41.9% | 36.2% | 0.26 |
+| Broken range travels >=1 width past edge (rangelab) (ranges) | 30 | 08:30 | 0.7-0.8 | vs base rate | 437 | 62.2% | 40.3% | 28 | 46.4% | 36.2% | 0.46 |
+| Broken range travels >=1 width past edge (rangelab) (ranges) | 60 | 00:00 | 0.8-0.9 | vs base rate | 390 | 61.3% | 40.3% | 35 | 42.9% | 36.2% | 0.31 |
+| Broken range travels >=1 width past edge (rangelab) (ranges) | 30 | 01:30 | 0.5-0.6 | vs base rate | 291 | 60.8% | 40.3% | 28 | 46.4% | 36.2% | 0.50 |
+| Broken range travels >=1 width past edge (rangelab) (ranges) | 15 | 02:30 | 0.1-0.2 | vs base rate | 323 | 60.4% | 40.3% | 24 | 41.7% | 36.2% | 0.27 |
+| Broken range travels >=1 width past edge (rangelab) (ranges) | 60 | 01:00 | 0.8-0.9 | vs base rate | 381 | 58.5% | 40.3% | 36 | 41.7% | 36.2% | 0.30 |
+| Broken range travels >=1 width past edge (rangelab) (ranges) | 15 | 02:45 | 0.1-0.2 | vs base rate | 325 | 57.5% | 40.3% | 29 | 44.8% | 36.2% | 0.50 |
+| Broken range travels >=1 width past edge (rangelab) (ranges) | 15 | 01:45 | 0.2-0.3 | vs base rate | 281 | 57.3% | 40.3% | 27 | 40.7% | 36.2% | 0.26 |
+| Broken range travels >=1 width past edge (rangelab) (ranges) | 60 | 21:00 | 0.3-0.4 | vs base rate | 181 | 23.8% | 40.3% | 25 | 28.0% | 36.2% | 0.50 |
+| Broken range travels >=1 width past edge (rangelab) (ranges) | 30 | 02:30 | 0.4-0.5 | vs base rate | 289 | 56.7% | 40.3% | 21 | 38.1% | 36.2% | 0.11 |
+| Broken range travels >=1 width past edge (rangelab) (ranges) | 15 | 10:00 | 0.6-0.7 | vs base rate | 340 | 23.8% | 40.3% | 26 | 34.6% | 36.2% | 0.10 |
+| Broken range travels >=1 width past edge (rangelab) (ranges) | 15 | 02:30 | 0.5-0.6 | vs base rate | 360 | 56.7% | 40.3% | 30 | 43.3% | 36.2% | 0.43 |
+| Broken range travels >=1 width past edge (rangelab) (ranges) | 15 | 01:45 | 0.3-0.4 | vs base rate | 253 | 56.5% | 40.3% | 21 | 38.1% | 36.2% | 0.11 |
+| Broken range travels >=1 width past edge (rangelab) (ranges) | 60 | 03:00 | 0.1-0.2 | vs base rate | 353 | 24.1% | 40.3% | 34 | 32.4% | 36.2% | 0.24 |
+| Broken range travels >=1 width past edge (rangelab) (ranges) | 15 | 02:30 | 0.6-0.7 | vs base rate | 345 | 56.2% | 40.3% | 25 | 40.0% | 36.2% | 0.24 |
+| Broken range travels >=1 width past edge (rangelab) (ranges) | 15 | 01:30 | 0.7-0.8 | vs base rate | 273 | 56.0% | 40.3% | 26 | 42.3% | 36.2% | 0.38 |
+| Broken range travels >=1 width past edge (rangelab) (ranges) | 15 | 11:00 | 0.2-0.3 | vs base rate | 378 | 24.6% | 40.3% | 34 | 32.4% | 36.2% | 0.25 |
+| Broken range travels >=1 width past edge (rangelab) (ranges) | 15 | 10:00 | 0.3-0.4 | vs base rate | 329 | 24.6% | 40.3% | 28 | 32.1% | 36.2% | 0.26 |
+| Broken range travels >=1 width past edge (rangelab) (ranges) | 60 | 03:00 | 0.8-0.9 | vs base rate | 449 | 24.7% | 40.3% | 28 | 28.6% | 36.2% | 0.49 |
+| Broken range travels >=1 width past edge (rangelab) (ranges) | 60 | 20:00 | 0.9-1.0 | vs base rate | 225 | 24.9% | 40.3% | 33 | 33.3% | 36.2% | 0.19 |
+| Broken range travels >=1 width past edge (rangelab) (ranges) | 60 | 03:00 | 0.2-0.3 | vs base rate | 345 | 24.9% | 40.3% | 21 | 33.3% | 36.2% | 0.19 |
+| Broken range travels >=1 width past edge (rangelab) (ranges) | 15 | 19:30 | 0.6-0.7 | vs base rate | 283 | 55.5% | 40.3% | 32 | 43.8% | 36.2% | 0.49 |
+| Broken range travels >=1 width past edge (rangelab) (ranges) | 15 | 19:45 | 0.8-0.9 | vs base rate | 323 | 55.4% | 40.3% | 31 | 41.9% | 36.2% | 0.38 |
+| Broken range travels >=1 width past edge (rangelab) (ranges) | 30 | 01:30 | 0.1-0.2 | vs base rate | 308 | 55.2% | 40.3% | 39 | 38.5% | 36.2% | 0.15 |
+| Broken range travels >=1 width past edge (rangelab) (ranges) | 15 | 19:30 | 0.3-0.4 | vs base rate | 272 | 55.1% | 40.3% | 38 | 42.1% | 36.2% | 0.39 |
+| Broken range travels >=1 width past edge (rangelab) (ranges) | 15 | 03:00 | 0.1-0.2 | vs base rate | 338 | 25.7% | 40.3% | 27 | 33.3% | 36.2% | 0.20 |
+| Broken range travels >=1 width past edge (rangelab) (ranges) | 30 | 22:00 | 0.5-0.6 | vs base rate | 233 | 25.8% | 40.3% | 31 | 29.0% | 36.2% | 0.50 |
+| Broken range travels >=1 width past edge (rangelab) (ranges) | 15 | 08:30 | 0.3-0.4 | vs base rate | 353 | 25.8% | 40.3% | 24 | 29.2% | 36.2% | 0.49 |
+| Broken range travels >=1 width past edge (rangelab) (ranges) | 15 | 00:45 | 0.4-0.5 | vs base rate | 205 | 54.6% | 40.3% | 21 | 38.1% | 36.2% | 0.13 |
+| Broken range travels >=1 width past edge (rangelab) (ranges) | 15 | 03:00 | 0.9-1.0 | vs base rate | 235 | 26.0% | 40.3% | 21 | 33.3% | 36.2% | 0.20 |
+| Broken range travels >=1 width past edge (rangelab) (ranges) | 60 | 03:00 | 0.6-0.7 | vs base rate | 307 | 26.1% | 40.3% | 37 | 35.1% | 36.2% | 0.08 |
+| Broken range travels >=1 width past edge (rangelab) (ranges) | 15 | 03:00 | 0.4-0.5 | vs base rate | 291 | 26.1% | 40.3% | 28 | 32.1% | 36.2% | 0.29 |
+| Broken range travels >=1 width past edge (rangelab) (ranges) | 15 | 10:00 | 0.2-0.3 | vs base rate | 325 | 26.2% | 40.3% | 20 | 30.0% | 36.2% | 0.44 |
+| Broken range travels >=1 width past edge (rangelab) (ranges) | 30 | 02:30 | 0.8-0.9 | vs base rate | 447 | 54.4% | 40.3% | 35 | 42.9% | 36.2% | 0.47 |
+| Broken range travels >=1 width past edge (rangelab) (ranges) | 30 | 03:00 | 0.1-0.2 | vs base rate | 377 | 26.5% | 40.3% | 29 | 31.0% | 36.2% | 0.38 |
+| Broken range travels >=1 width past edge (rangelab) (ranges) | 60 | 03:00 | 0.9-1.0 | vs base rate | 300 | 26.7% | 40.3% | 27 | 33.3% | 36.2% | 0.21 |
+| Broken range travels >=1 width past edge (rangelab) (ranges) | 15 | 11:30 | 0.1-0.2 | vs base rate | 371 | 26.7% | 40.3% | 38 | 31.6% | 36.2% | 0.34 |
+| Broken range travels >=1 width past edge (rangelab) (ranges) | 15 | 01:45 | 0.4-0.5 | vs base rate | 236 | 53.8% | 40.3% | 25 | 40.0% | 36.2% | 0.28 |
+| Broken range travels >=1 width past edge (rangelab) (ranges) | 60 | 09:00 | 0.6-0.7 | vs base rate | 352 | 26.7% | 40.3% | 23 | 34.8% | 36.2% | 0.11 |
+| Broken range travels >=1 width past edge (rangelab) (ranges) | 15 | 01:00 | 0.0-0.1 | vs base rate | 157 | 26.8% | 40.3% | 20 | 35.0% | 36.2% | 0.09 |
+| Broken range travels >=1 width past edge (rangelab) (ranges) | 30 | 19:30 | 0.7-0.8 | vs base rate | 298 | 53.4% | 40.3% | 29 | 41.4% | 36.2% | 0.39 |
+| Broken range travels >=1 width past edge (rangelab) (ranges) | 30 | 00:30 | 0.2-0.3 | vs base rate | 256 | 53.1% | 40.3% | 22 | 40.9% | 36.2% | 0.36 |
+| Broken range travels >=1 width past edge (rangelab) (ranges) | 30 | 07:00 | 0.8-0.9 | vs base rate | 452 | 53.1% | 40.3% | 40 | 42.5% | 36.2% | 0.49 |
+| Broken range travels >=1 width past edge (rangelab) (ranges) | 15 | 10:15 | 0.4-0.5 | vs base rate | 287 | 27.5% | 40.3% | 38 | 31.6% | 36.2% | 0.37 |
+| Broken range travels >=1 width past edge (rangelab) (ranges) | 15 | 08:15 | 0.3-0.4 | vs base rate | 309 | 52.8% | 40.3% | 24 | 41.7% | 36.2% | 0.43 |
+| Broken range travels >=1 width past edge (rangelab) (ranges) | 15 | 19:30 | 0.7-0.8 | vs base rate | 283 | 51.9% | 40.3% | 27 | 40.7% | 36.2% | 0.39 |
+| Broken range travels >=1 width past edge (rangelab) (ranges) | 15 | 02:15 | 0.0-0.1 | vs base rate | 309 | 51.8% | 40.3% | 20 | 40.0% | 36.2% | 0.33 |
+| Broken range travels >=1 width past edge (rangelab) (ranges) | 15 | 19:30 | 0.1-0.2 | vs base rate | 226 | 51.8% | 40.3% | 27 | 40.7% | 36.2% | 0.39 |
+| Broken range travels >=1 width past edge (rangelab) (ranges) | 15 | 02:00 | 0.7-0.8 | vs base rate | 283 | 29.0% | 40.3% | 26 | 34.6% | 36.2% | 0.14 |
+| Broken range travels >=1 width past edge (rangelab) (ranges) | 15 | 02:15 | 0.6-0.7 | vs base rate | 317 | 51.4% | 40.3% | 28 | 39.3% | 36.2% | 0.27 |
+| Broken range travels >=1 width past edge (rangelab) (ranges) | 15 | 03:00 | 0.5-0.6 | vs base rate | 340 | 29.1% | 40.3% | 25 | 36.0% | 36.2% | 0.02 |
+| Broken range travels >=1 width past edge (rangelab) (ranges) | 15 | 11:30 | 0.3-0.4 | vs base rate | 295 | 29.2% | 40.3% | 22 | 31.8% | 36.2% | 0.40 |
+| Broken range travels >=1 width past edge (rangelab) (ranges) | 30 | 05:00 | 0.0-0.1 | vs base rate | 308 | 29.2% | 40.3% | 21 | 33.3% | 36.2% | 0.26 |
+| Broken range travels >=1 width past edge (rangelab) (ranges) | 30 | 06:30 | 0.6-0.7 | vs base rate | 385 | 51.2% | 40.3% | 27 | 37.0% | 36.2% | 0.07 |
+| Broken range travels >=1 width past edge (rangelab) (ranges) | 15 | 02:00 | 0.0-0.1 | vs base rate | 252 | 29.4% | 40.3% | 22 | 31.8% | 36.2% | 0.41 |
+| Broken range travels >=1 width past edge (rangelab) (ranges) | 15 | 10:15 | 0.9-1.0 | vs base rate | 437 | 29.5% | 40.3% | 35 | 34.3% | 36.2% | 0.18 |
+| Broken range travels >=1 width past edge (rangelab) (ranges) | 15 | 21:45 | 0.1-0.2 | vs base rate | 254 | 29.5% | 40.3% | 25 | 32.0% | 36.2% | 0.39 |
+| Broken range travels >=1 width past edge (rangelab) (ranges) | 30 | 21:30 | 0.5-0.6 | vs base rate | 247 | 29.6% | 40.3% | 36 | 36.1% | 36.2% | 0.01 |
+| Broken range travels >=1 width past edge (rangelab) (ranges) | 15 | 02:15 | 0.7-0.8 | vs base rate | 336 | 50.9% | 40.3% | 33 | 36.4% | 36.2% | 0.01 |
+| Broken range travels >=1 width past edge (rangelab) (ranges) | 30 | 07:30 | 0.4-0.5 | vs base rate | 293 | 50.9% | 40.3% | 26 | 38.5% | 36.2% | 0.21 |
+| Broken range travels >=1 width past edge (rangelab) (ranges) | 30 | 21:30 | 0.4-0.5 | vs base rate | 209 | 29.7% | 40.3% | 33 | 33.3% | 36.2% | 0.27 |
+| Broken range travels >=1 width past edge (rangelab) (ranges) | 15 | 04:00 | 0.2-0.3 | vs base rate | 377 | 29.7% | 40.3% | 34 | 32.4% | 36.2% | 0.37 |
+| Broken range travels >=1 width past edge (rangelab) (ranges) | 30 | 03:00 | 0.4-0.5 | vs base rate | 275 | 29.8% | 40.3% | 24 | 33.3% | 36.2% | 0.28 |
+| Broken range travels >=1 width past edge (rangelab) (ranges) | 15 | 19:15 | 0.3-0.4 | vs base rate | 235 | 50.6% | 40.3% | 26 | 38.5% | 36.2% | 0.21 |
+| Broken range travels >=1 width past edge (rangelab) (ranges) | 30 | 23:00 | 0.0-0.1 | vs base rate | 170 | 30.0% | 40.3% | 29 | 34.5% | 36.2% | 0.17 |
+| Broken range travels >=1 width past edge (rangelab) (ranges) | 15 | 11:45 | 0.2-0.3 | vs base rate | 352 | 30.1% | 40.3% | 20 | 35.0% | 36.2% | 0.12 |
+| Broken range travels >=1 width past edge (rangelab) (ranges) | 15 | 11:15 | 0.0-0.1 | vs base rate | 358 | 30.2% | 40.3% | 35 | 31.4% | 36.2% | 0.48 |
+| Broken range travels >=1 width past edge (rangelab) (ranges) | 15 | 14:00 | 0.3-0.4 | vs base rate | 351 | 30.2% | 40.3% | 31 | 32.3% | 36.2% | 0.40 |
+| Broken range travels >=1 width past edge (rangelab) (ranges) | 15 | 19:15 | 0.7-0.8 | vs base rate | 261 | 50.2% | 40.3% | 28 | 39.3% | 36.2% | 0.31 |
+| Broken range travels >=1 width past edge (rangelab) (ranges) | 30 | 19:30 | 0.6-0.7 | vs base rate | 279 | 50.2% | 40.3% | 34 | 41.2% | 36.2% | 0.50 |
+| Broken range travels >=1 width past edge (rangelab) (ranges) | 15 | 01:00 | 0.9-1.0 | vs base rate | 145 | 30.3% | 40.3% | 22 | 31.8% | 36.2% | 0.45 |
+| Broken range travels >=1 width past edge (rangelab) (ranges) | 60 | 22:00 | 0.3-0.4 | vs base rate | 207 | 30.4% | 40.3% | 26 | 34.6% | 36.2% | 0.17 |
+| Broken range travels >=1 width past edge (rangelab) (ranges) | 15 | 19:45 | 0.0-0.1 | vs base rate | 238 | 50.0% | 40.3% | 25 | 40.0% | 36.2% | 0.39 |
+| Broken range travels >=1 width past edge (rangelab) (ranges) | 60 | 02:00 | 0.8-0.9 | vs base rate | 425 | 49.9% | 40.3% | 32 | 37.5% | 36.2% | 0.13 |
+| Broken range travels >=1 width past edge (rangelab) (ranges) | 15 | 01:30 | 0.4-0.5 | vs base rate | 239 | 49.8% | 40.3% | 22 | 40.9% | 36.2% | 0.49 |
+| Broken range travels >=1 width past edge (rangelab) (ranges) | 15 | 23:00 | 0.5-0.6 | vs base rate | 224 | 30.8% | 40.3% | 29 | 34.5% | 36.2% | 0.19 |
+| Broken range travels >=1 width past edge (rangelab) (ranges) | 15 | 14:00 | 0.7-0.8 | vs base rate | 383 | 30.8% | 40.3% | 30 | 33.3% | 36.2% | 0.31 |
+| Broken range travels >=1 width past edge (rangelab) (ranges) | 30 | 22:00 | 0.7-0.8 | vs base rate | 230 | 30.9% | 40.3% | 26 | 34.6% | 36.2% | 0.17 |
+| Broken range travels >=1 width past edge (rangelab) (ranges) | 15 | 19:30 | 0.2-0.3 | vs base rate | 264 | 49.6% | 40.3% | 22 | 40.9% | 36.2% | 0.50 |
+| Broken range travels >=1 width past edge (rangelab) (ranges) | 30 | 22:30 | 0.6-0.7 | vs base rate | 250 | 31.2% | 40.3% | 22 | 31.8% | 36.2% | 0.49 |
+| Broken range travels >=1 width past edge (rangelab) (ranges) | 15 | 22:00 | 0.8-0.9 | vs base rate | 307 | 31.3% | 40.3% | 28 | 32.1% | 36.2% | 0.46 |
+| Broken range travels >=1 width past edge (rangelab) (ranges) | 60 | 23:00 | 0.2-0.3 | vs base rate | 242 | 49.2% | 40.3% | 35 | 37.1% | 36.2% | 0.10 |
+| Broken range travels >=1 width past edge (rangelab) (ranges) | 15 | 04:30 | 0.7-0.8 | vs base rate | 317 | 31.5% | 40.3% | 26 | 34.6% | 36.2% | 0.19 |
+| Broken range travels >=1 width past edge (rangelab) (ranges) | 15 | 11:30 | 0.7-0.8 | vs base rate | 398 | 31.7% | 40.3% | 28 | 35.7% | 36.2% | 0.06 |
+| Broken range travels >=1 width past edge (rangelab) (ranges) | 15 | 02:15 | 0.9-1.0 | vs base rate | 262 | 48.9% | 40.3% | 33 | 39.4% | 36.2% | 0.37 |
+| Broken range travels >=1 width past edge (rangelab) (ranges) | 30 | 01:00 | 0.6-0.7 | vs base rate | 305 | 48.9% | 40.3% | 30 | 40.0% | 36.2% | 0.44 |
+| Broken range travels >=1 width past edge (rangelab) (ranges) | 15 | 21:30 | 0.9-1.0 | vs base rate | 179 | 31.8% | 40.3% | 29 | 34.5% | 36.2% | 0.21 |
+| Broken range travels >=1 width past edge (rangelab) (ranges) | 15 | 01:45 | 0.7-0.8 | vs base rate | 327 | 48.6% | 40.3% | 44 | 36.4% | 36.2% | 0.02 |
+| Broken range travels >=1 width past edge (rangelab) (ranges) | 15 | 01:30 | 0.6-0.7 | vs base rate | 285 | 48.4% | 40.3% | 30 | 40.0% | 36.2% | 0.46 |
+| Broken range travels >=1 width past edge (rangelab) (ranges) | 15 | 11:45 | 0.8-0.9 | vs base rate | 403 | 32.3% | 40.3% | 40 | 32.5% | 36.2% | 0.47 |
+| Broken range travels >=1 width past edge (rangelab) (ranges) | 15 | 19:45 | 0.2-0.3 | vs base rate | 274 | 48.2% | 40.3% | 33 | 36.4% | 36.2% | 0.02 |
+| Broken range travels >=1 width past edge (rangelab) (ranges) | 15 | 00:30 | 0.7-0.8 | vs base rate | 218 | 48.2% | 40.3% | 24 | 37.5% | 36.2% | 0.16 |
+| Broken range travels >=1 width past edge (rangelab) (ranges) | 15 | 18:45 | 0.8-0.9 | vs base rate | 272 | 48.2% | 40.3% | 34 | 38.2% | 36.2% | 0.25 |
+| Broken range travels >=1 width past edge (rangelab) (ranges) | 30 | 21:00 | 0.1-0.2 | vs base rate | 250 | 32.4% | 40.3% | 20 | 35.0% | 36.2% | 0.16 |
+| Broken range travels >=1 width past edge (rangelab) (ranges) | 15 | 14:00 | 0.2-0.3 | vs base rate | 358 | 32.4% | 40.3% | 23 | 34.8% | 36.2% | 0.19 |
+| Broken range travels >=1 width past edge (rangelab) (ranges) | 60 | 22:00 | 0.6-0.7 | vs base rate | 225 | 32.4% | 40.3% | 23 | 34.8% | 36.2% | 0.19 |
+| Broken range travels >=1 width past edge (rangelab) (ranges) | 15 | 08:00 | 0.0-0.1 | vs base rate | 308 | 48.1% | 40.3% | 21 | 38.1% | 36.2% | 0.24 |
+| Broken range travels >=1 width past edge (rangelab) (ranges) | 15 | 08:00 | 0.1-0.2 | vs base rate | 406 | 48.0% | 40.3% | 25 | 40.0% | 36.2% | 0.48 |
+| Broken range travels >=1 width past edge (rangelab) (ranges) | 60 | 19:00 | 0.8-0.9 | vs base rate | 315 | 47.9% | 40.3% | 35 | 40.0% | 36.2% | 0.49 |
+| Broken range travels >=1 width past edge (rangelab) (ranges) | 60 | 04:00 | 0.3-0.4 | vs base rate | 359 | 32.6% | 40.3% | 24 | 33.3% | 36.2% | 0.38 |
+| Broken range travels >=1 width past edge (rangelab) (ranges) | 15 | 23:15 | 0.1-0.2 | vs base rate | 233 | 32.6% | 40.3% | 33 | 33.3% | 36.2% | 0.38 |
+| Broken range travels >=1 width past edge (rangelab) (ranges) | 60 | 23:00 | 0.5-0.6 | vs base rate | 255 | 47.8% | 40.3% | 31 | 38.7% | 36.2% | 0.33 |
+| Broken range travels >=1 width past edge (rangelab) (ranges) | 30 | 05:00 | 0.2-0.3 | vs base rate | 366 | 32.8% | 40.3% | 35 | 34.3% | 36.2% | 0.26 |
+| Broken range travels >=1 width past edge (rangelab) (ranges) | 15 | 04:30 | 0.4-0.5 | vs base rate | 323 | 33.4% | 40.3% | 24 | 33.3% | 36.2% | 0.43 |
+| Broken range travels >=1 width past edge (rangelab) (ranges) | 15 | 03:45 | 0.7-0.8 | vs base rate | 380 | 46.1% | 40.3% | 37 | 37.8% | 36.2% | 0.28 |
+| Broken range travels >=1 width past edge (rangelab) (ranges) | 15 | 04:30 | 0.9-1.0 | vs base rate | 304 | 34.5% | 40.3% | 32 | 34.4% | 36.2% | 0.33 |
+| Broken range travels >=1 width past edge (rangelab) (ranges) | 30 | 05:30 | 0.8-0.9 | vs base rate | 428 | 34.8% | 40.3% | 37 | 35.1% | 36.2% | 0.20 |
+| Broken range travels >=1 width past edge (rangelab) (ranges) | 30 | Q3 | vs base rate | 28443 | 44.0% | 40.3% | 2714 | 38.0% | 36.2% | 0.46 |
+| RTH gap (>=0.15 ATR) fills to prior RTH close (session) | gap dn >0.5atr | ON bear | vs base rate | 385 | 31.2% | 51.2% | 34 | 38.2% | 45.3% | 0.35 |
+| RTH gap (>=0.15 ATR) fills to prior RTH close (session) | gap dn >0.5atr | vs base rate | 404 | 31.9% | 51.1% | 34 | 38.2% | 45.3% | 0.37 |
+| RTH gap (>=0.15 ATR) fills to prior RTH close (session) | gap dn | lower half PD | vs base rate | 305 | 64.3% | 51.1% | 24 | 50.0% | 45.3% | 0.36 |
+| RTH gap (>=0.15 ATR) fills to prior RTH close (session) | gap up | upper half PD | vs base rate | 342 | 62.6% | 51.1% | 25 | 48.0% | 45.3% | 0.24 |
+| After first IB break, price returns to IB mid (session) | Q2 | vs base rate | 719 | 54.4% | 49.8% | 57 | 49.1% | 48.0% | 0.25 |
+| Both IB extremes taken 10:30-16:00 (session) | Q4 | IB bull | vs base rate | 375 | 15.2% | 23.1% | 30 | 16.7% | 20.5% | 0.49 |
+| IB broken (either side) 10:30-16:00 (session) | Q1 narrow | vs base rate | 732 | 99.3% | 95.9% | 57 | 98.2% | 96.8% | 0.43 |
+| First IB break extends >=0.5x IB width (session) | Q1 narrow | vs base rate | 727 | 65.3% | 54.5% | 56 | 51.8% | 50.2% | 0.15 |
+| After first ORB break, price returns to ORB mid (session) | Q5 wide | vs base rate | 729 | 63.8% | 73.9% | 65 | 64.6% | 69.1% | 0.44 |
+| First ORB break extends >=0.5x ORB width (session) | Q4 | vs base rate | 732 | 72.8% | 76.2% | 42 | 76.2% | 77.3% | 0.34 |
+| RTH close above the 10:30 price (session) | ORB broke down | IB bear | vs base rate | 1325 | 51.5% | 54.8% | 97 | 56.7% | 57.6% | 0.25 |
+| RTH close above the 10:30 price (session) | IB bear | vs base rate | 1778 | 51.7% | 54.8% | 126 | 56.3% | 57.6% | 0.38 |
+| RTH close above the 10:30 price (session) | IB bull | vs base rate | 1892 | 57.8% | 54.8% | 152 | 58.6% | 57.6% | 0.34 |
+| Low set 18:00-08:00 survives to 16:00 (session) | took Asia H | vs base rate | 1542 | 44.8% | 36.3% | 131 | 43.5% | 41.4% | 0.25 |
+| Broken range returns to far edge (rangelab) (ranges) | 60 | 07:00 | 0.7-0.8 | vs base rate | 418 | 69.1% | 35.1% | 31 | 51.6% | 35.3% | 0.48 |
+| Broken range returns to far edge (rangelab) (ranges) | 30 | 09:00 | 0.0-0.1 | vs base rate | 347 | 62.0% | 35.1% | 29 | 44.8% | 35.3% | 0.35 |
+| Broken range returns to far edge (rangelab) (ranges) | 30 | 08:30 | 0.9-1.0 | vs base rate | 293 | 61.1% | 35.1% | 31 | 41.9% | 35.3% | 0.25 |
+| Broken range returns to far edge (rangelab) (ranges) | 15 | 02:45 | 0.0-0.1 | vs base rate | 394 | 58.6% | 35.1% | 22 | 45.5% | 35.3% | 0.43 |
+| Broken range returns to far edge (rangelab) (ranges) | 60 | 00:00 | 0.5-0.6 | vs base rate | 308 | 57.5% | 35.1% | 28 | 35.7% | 35.3% | 0.02 |
+| Broken range returns to far edge (rangelab) (ranges) | 60 | 01:00 | 0.1-0.2 | vs base rate | 324 | 57.1% | 35.1% | 28 | 39.3% | 35.3% | 0.18 |
+| Broken range returns to far edge (rangelab) (ranges) | 15 | 02:30 | 0.4-0.5 | vs base rate | 282 | 55.3% | 35.1% | 22 | 40.9% | 35.3% | 0.28 |
+| Broken range returns to far edge (rangelab) (ranges) | 60 | 21:00 | 0.1-0.2 | vs base rate | 234 | 15.0% | 35.1% | 26 | 26.9% | 35.3% | 0.42 |
+| Broken range returns to far edge (rangelab) (ranges) | 30 | 02:30 | 0.6-0.7 | vs base rate | 360 | 54.7% | 35.1% | 28 | 42.9% | 35.3% | 0.38 |
+| Broken range returns to far edge (rangelab) (ranges) | 30 | 22:00 | 0.1-0.2 | vs base rate | 241 | 16.2% | 35.1% | 33 | 27.3% | 35.3% | 0.43 |
+| Broken range returns to far edge (rangelab) (ranges) | 60 | 01:00 | 0.8-0.9 | vs base rate | 381 | 53.8% | 35.1% | 36 | 38.9% | 35.3% | 0.19 |
+| Broken range returns to far edge (rangelab) (ranges) | 60 | 10:00 | 0.7-0.8 | vs base rate | 334 | 16.5% | 35.1% | 30 | 30.0% | 35.3% | 0.29 |
+| Broken range returns to far edge (rangelab) (ranges) | 15 | 02:30 | 0.5-0.6 | vs base rate | 360 | 53.6% | 35.1% | 30 | 40.0% | 35.3% | 0.25 |
+| Broken range returns to far edge (rangelab) (ranges) | 30 | 01:30 | 0.9-1.0 | vs base rate | 226 | 53.5% | 35.1% | 27 | 44.4% | 35.3% | 0.49 |
+| Broken range returns to far edge (rangelab) (ranges) | 60 | 21:00 | 0.8-0.9 | vs base rate | 281 | 16.7% | 35.1% | 46 | 28.3% | 35.3% | 0.38 |
+| Broken range returns to far edge (rangelab) (ranges) | 60 | 22:00 | 0.3-0.4 | vs base rate | 207 | 16.9% | 35.1% | 26 | 34.6% | 35.3% | 0.04 |
+| Broken range returns to far edge (rangelab) (ranges) | 15 | 02:45 | 0.7-0.8 | vs base rate | 335 | 53.1% | 35.1% | 34 | 44.1% | 35.3% | 0.49 |
+| Broken range returns to far edge (rangelab) (ranges) | 15 | 07:45 | 0.3-0.4 | vs base rate | 327 | 52.6% | 35.1% | 22 | 36.4% | 35.3% | 0.06 |
+| Broken range returns to far edge (rangelab) (ranges) | 30 | 02:30 | 0.5-0.6 | vs base rate | 359 | 52.4% | 35.1% | 22 | 40.9% | 35.3% | 0.32 |
+| Broken range returns to far edge (rangelab) (ranges) | 60 | 03:00 | 0.6-0.7 | vs base rate | 307 | 17.9% | 35.1% | 37 | 27.0% | 35.3% | 0.48 |
+| Broken range returns to far edge (rangelab) (ranges) | 30 | 21:30 | 0.7-0.8 | vs base rate | 247 | 18.6% | 35.1% | 25 | 32.0% | 35.3% | 0.20 |
+| Broken range returns to far edge (rangelab) (ranges) | 15 | 02:00 | 0.3-0.4 | vs base rate | 247 | 18.6% | 35.1% | 34 | 29.4% | 35.3% | 0.36 |
+| Broken range returns to far edge (rangelab) (ranges) | 15 | 02:15 | 0.8-0.9 | vs base rate | 358 | 51.4% | 35.1% | 37 | 37.8% | 35.3% | 0.15 |
+| Broken range returns to far edge (rangelab) (ranges) | 15 | 21:30 | 0.2-0.3 | vs base rate | 259 | 18.9% | 35.1% | 25 | 32.0% | 35.3% | 0.21 |
+| Broken range returns to far edge (rangelab) (ranges) | 15 | 21:30 | 0.6-0.7 | vs base rate | 264 | 18.9% | 35.1% | 27 | 29.6% | 35.3% | 0.35 |
+| Broken range returns to far edge (rangelab) (ranges) | 30 | 22:30 | 0.1-0.2 | vs base rate | 224 | 19.2% | 35.1% | 32 | 28.1% | 35.3% | 0.45 |
+| Broken range returns to far edge (rangelab) (ranges) | 15 | 02:30 | 0.9-1.0 | vs base rate | 243 | 51.0% | 35.1% | 39 | 35.9% | 35.3% | 0.04 |
+| Broken range returns to far edge (rangelab) (ranges) | 30 | 21:00 | 0.2-0.3 | vs base rate | 243 | 19.3% | 35.1% | 37 | 29.7% | 35.3% | 0.36 |
+| Broken range returns to far edge (rangelab) (ranges) | 60 | 03:00 | 0.4-0.5 | vs base rate | 294 | 19.4% | 35.1% | 20 | 35.0% | 35.3% | 0.02 |
+| Broken range returns to far edge (rangelab) (ranges) | 30 | 03:00 | 0.2-0.3 | vs base rate | 376 | 19.4% | 35.1% | 35 | 28.6% | 35.3% | 0.43 |
+| Broken range returns to far edge (rangelab) (ranges) | 30 | 10:30 | 0.6-0.7 | vs base rate | 347 | 19.9% | 35.1% | 26 | 30.8% | 35.3% | 0.30 |
+| Broken range returns to far edge (rangelab) (ranges) | 15 | 02:30 | 0.7-0.8 | vs base rate | 353 | 50.1% | 35.1% | 24 | 41.7% | 35.3% | 0.42 |
+| Broken range returns to far edge (rangelab) (ranges) | 15 | 02:15 | 0.7-0.8 | vs base rate | 336 | 50.0% | 35.1% | 33 | 42.4% | 35.3% | 0.48 |
+| Broken range returns to far edge (rangelab) (ranges) | 30 | 00:30 | 0.9-1.0 | vs base rate | 183 | 49.7% | 35.1% | 29 | 37.9% | 35.3% | 0.18 |
+| Broken range returns to far edge (rangelab) (ranges) | 30 | 04:00 | 0.6-0.7 | vs base rate | 377 | 20.7% | 35.1% | 25 | 32.0% | 35.3% | 0.23 |
+| Broken range returns to far edge (rangelab) (ranges) | 60 | 03:00 | 0.0-0.1 | vs base rate | 309 | 20.7% | 35.1% | 23 | 30.4% | 35.3% | 0.34 |
+| Broken range returns to far edge (rangelab) (ranges) | 60 | 02:00 | 0.8-0.9 | vs base rate | 425 | 49.4% | 35.1% | 32 | 40.6% | 35.3% | 0.37 |
+| Broken range returns to far edge (rangelab) (ranges) | 30 | 01:30 | 0.7-0.8 | vs base rate | 337 | 49.3% | 35.1% | 26 | 38.5% | 35.3% | 0.22 |
+| Broken range returns to far edge (rangelab) (ranges) | 15 | 01:15 | 0.5-0.6 | vs base rate | 248 | 49.2% | 35.1% | 34 | 41.2% | 35.3% | 0.42 |
+| Broken range returns to far edge (rangelab) (ranges) | 15 | 19:45 | 0.3-0.4 | vs base rate | 230 | 49.1% | 35.1% | 30 | 36.7% | 35.3% | 0.09 |
+| Broken range returns to far edge (rangelab) (ranges) | 30 | 10:00 | 0.0-0.1 | vs base rate | 298 | 21.1% | 35.1% | 36 | 33.3% | 35.3% | 0.14 |
+| Broken range returns to far edge (rangelab) (ranges) | 15 | 02:15 | 0.3-0.4 | vs base rate | 290 | 49.0% | 35.1% | 33 | 39.4% | 35.3% | 0.29 |
+| Broken range returns to far edge (rangelab) (ranges) | 60 | 02:00 | 0.1-0.2 | vs base rate | 327 | 48.9% | 35.1% | 35 | 40.0% | 35.3% | 0.34 |
+| Broken range returns to far edge (rangelab) (ranges) | 30 | 03:00 | 0.6-0.7 | vs base rate | 323 | 21.4% | 35.1% | 35 | 28.6% | 35.3% | 0.49 |
+| Broken range returns to far edge (rangelab) (ranges) | 30 | 11:00 | 0.7-0.8 | vs base rate | 369 | 21.4% | 35.1% | 26 | 30.8% | 35.3% | 0.33 |
+| Broken range returns to far edge (rangelab) (ranges) | 30 | 10:30 | 0.8-0.9 | vs base rate | 476 | 21.4% | 35.1% | 30 | 33.3% | 35.3% | 0.15 |
+| Broken range returns to far edge (rangelab) (ranges) | 15 | 03:00 | 0.3-0.4 | vs base rate | 303 | 21.5% | 35.1% | 25 | 32.0% | 35.3% | 0.24 |
+| Broken range returns to far edge (rangelab) (ranges) | 15 | 10:00 | 0.1-0.2 | vs base rate | 356 | 21.6% | 35.1% | 24 | 29.2% | 35.3% | 0.46 |
+| Broken range returns to far edge (rangelab) (ranges) | 30 | 02:00 | 0.2-0.3 | vs base rate | 333 | 48.3% | 35.1% | 29 | 41.4% | 35.3% | 0.46 |
+| Broken range returns to far edge (rangelab) (ranges) | 15 | 09:30 | 0.9-1.0 | vs base rate | 319 | 21.9% | 35.1% | 40 | 32.5% | 35.3% | 0.22 |
+| Broken range returns to far edge (rangelab) (ranges) | 15 | 21:30 | 0.5-0.6 | vs base rate | 240 | 22.1% | 35.1% | 31 | 29.0% | 35.3% | 0.48 |
+| Broken range returns to far edge (rangelab) (ranges) | 15 | 03:00 | 0.0-0.1 | vs base rate | 357 | 22.1% | 35.1% | 31 | 29.0% | 35.3% | 0.48 |
+| Broken range returns to far edge (rangelab) (ranges) | 30 | 20:00 | 0.5-0.6 | vs base rate | 239 | 22.2% | 35.1% | 22 | 31.8% | 35.3% | 0.27 |
+| Broken range returns to far edge (rangelab) (ranges) | 15 | 10:45 | 0.2-0.3 | vs base rate | 354 | 22.3% | 35.1% | 23 | 34.8% | 35.3% | 0.04 |
+| Broken range returns to far edge (rangelab) (ranges) | 30 | 11:30 | 0.1-0.2 | vs base rate | 345 | 22.3% | 35.1% | 29 | 31.0% | 35.3% | 0.34 |
+| Broken range returns to far edge (rangelab) (ranges) | 60 | 21:00 | 0.9-1.0 | vs base rate | 214 | 22.4% | 35.1% | 33 | 33.3% | 35.3% | 0.16 |
+| Broken range returns to far edge (rangelab) (ranges) | 15 | 09:45 | 0.3-0.4 | vs base rate | 279 | 22.9% | 35.1% | 22 | 31.8% | 35.3% | 0.29 |
+| Broken range returns to far edge (rangelab) (ranges) | 15 | 07:45 | 0.2-0.3 | vs base rate | 370 | 47.3% | 35.1% | 37 | 37.8% | 35.3% | 0.21 |
+| Broken range returns to far edge (rangelab) (ranges) | 30 | 03:00 | 0.0-0.1 | vs base rate | 322 | 23.0% | 35.1% | 27 | 29.6% | 35.3% | 0.47 |
+| Broken range returns to far edge (rangelab) (ranges) | 15 | 11:30 | 0.3-0.4 | vs base rate | 295 | 23.1% | 35.1% | 22 | 31.8% | 35.3% | 0.29 |
+| Broken range returns to far edge (rangelab) (ranges) | 15 | 10:00 | 0.7-0.8 | vs base rate | 366 | 23.2% | 35.1% | 20 | 30.0% | 35.3% | 0.45 |
+| Broken range returns to far edge (rangelab) (ranges) | 15 | 20:00 | 0.7-0.8 | vs base rate | 241 | 23.2% | 35.1% | 36 | 33.3% | 35.3% | 0.17 |
+| Broken range returns to far edge (rangelab) (ranges) | 60 | 02:00 | 0.5-0.6 | vs base rate | 336 | 47.0% | 35.1% | 24 | 37.5% | 35.3% | 0.18 |
+| Broken range returns to far edge (rangelab) (ranges) | 30 | 03:00 | 0.7-0.8 | vs base rate | 374 | 23.3% | 35.1% | 34 | 29.4% | 35.3% | 0.50 |
+| Broken range returns to far edge (rangelab) (ranges) | 30 | 11:30 | 0.5-0.6 | vs base rate | 322 | 23.3% | 35.1% | 23 | 30.4% | 35.3% | 0.41 |
+| Broken range returns to far edge (rangelab) (ranges) | 15 | 10:15 | 0.3-0.4 | vs base rate | 339 | 23.3% | 35.1% | 33 | 33.3% | 35.3% | 0.17 |
+| Broken range returns to far edge (rangelab) (ranges) | 15 | 04:30 | 0.7-0.8 | vs base rate | 317 | 23.3% | 35.1% | 26 | 30.8% | 35.3% | 0.39 |
+| Broken range returns to far edge (rangelab) (ranges) | 15 | 01:45 | 0.7-0.8 | vs base rate | 327 | 46.8% | 35.1% | 44 | 40.9% | 35.3% | 0.48 |
+| Broken range returns to far edge (rangelab) (ranges) | 30 | 20:00 | 0.9-1.0 | vs base rate | 238 | 23.5% | 35.1% | 24 | 33.3% | 35.3% | 0.17 |
+| Broken range returns to far edge (rangelab) (ranges) | 15 | 01:45 | 0.0-0.1 | vs base rate | 300 | 46.7% | 35.1% | 25 | 36.0% | 35.3% | 0.06 |
+| Broken range returns to far edge (rangelab) (ranges) | 15 | 20:00 | 0.6-0.7 | vs base rate | 266 | 23.7% | 35.1% | 29 | 31.0% | 35.3% | 0.38 |
+| Broken range returns to far edge (rangelab) (ranges) | 15 | 22:15 | 0.3-0.4 | vs base rate | 238 | 23.9% | 35.1% | 36 | 30.6% | 35.3% | 0.43 |
+| Broken range returns to far edge (rangelab) (ranges) | 15 | 02:00 | 0.7-0.8 | vs base rate | 283 | 24.0% | 35.1% | 26 | 34.6% | 35.3% | 0.07 |
+| Broken range returns to far edge (rangelab) (ranges) | 60 | 09:00 | 0.3-0.4 | vs base rate | 362 | 24.0% | 35.1% | 23 | 30.4% | 35.3% | 0.44 |
+| Broken range returns to far edge (rangelab) (ranges) | 15 | 14:00 | 0.0-0.1 | vs base rate | 303 | 24.1% | 35.1% | 23 | 30.4% | 35.3% | 0.44 |
+| Broken range returns to far edge (rangelab) (ranges) | 30 | 21:30 | 0.9-1.0 | vs base rate | 194 | 24.2% | 35.1% | 32 | 31.2% | 35.3% | 0.37 |
+| Broken range returns to far edge (rangelab) (ranges) | 15 | 10:30 | 0.2-0.3 | vs base rate | 350 | 24.6% | 35.1% | 30 | 33.3% | 35.3% | 0.19 |
+| Broken range returns to far edge (rangelab) (ranges) | 30 | 00:30 | 0.3-0.4 | vs base rate | 241 | 45.6% | 35.1% | 28 | 35.7% | 35.3% | 0.04 |
+| Broken range returns to far edge (rangelab) (ranges) | 30 | 22:00 | 0.7-0.8 | vs base rate | 230 | 24.8% | 35.1% | 26 | 30.8% | 35.3% | 0.44 |
+| Broken range returns to far edge (rangelab) (ranges) | 15 | 10:00 | 0.9-1.0 | vs base rate | 443 | 24.8% | 35.1% | 46 | 30.4% | 35.3% | 0.48 |
+| Broken range returns to far edge (rangelab) (ranges) | 15 | 07:45 | 0.5-0.6 | vs base rate | 350 | 45.1% | 35.1% | 23 | 39.1% | 35.3% | 0.38 |
+| Broken range returns to far edge (rangelab) (ranges) | 60 | 02:00 | 0.0-0.1 | vs base rate | 286 | 45.1% | 35.1% | 28 | 39.3% | 35.3% | 0.40 |
+| Broken range returns to far edge (rangelab) (ranges) | 15 | 08:30 | 0.5-0.6 | vs base rate | 366 | 25.4% | 35.1% | 32 | 34.4% | 35.3% | 0.10 |
+| Broken range returns to far edge (rangelab) (ranges) | 60 | 11:00 | 0.8-0.9 | vs base rate | 458 | 25.5% | 35.1% | 38 | 34.2% | 35.3% | 0.12 |
+| Broken range returns to far edge (rangelab) (ranges) | 15 | 19:30 | 0.2-0.3 | vs base rate | 264 | 44.7% | 35.1% | 22 | 36.4% | 35.3% | 0.11 |
+| Broken range returns to far edge (rangelab) (ranges) | 30 | 21:00 | 0.0-0.1 | vs base rate | 203 | 25.6% | 35.1% | 21 | 33.3% | 35.3% | 0.21 |
+| Broken range returns to far edge (rangelab) (ranges) | 30 | 23:00 | 0.2-0.3 | vs base rate | 234 | 25.6% | 35.1% | 38 | 31.6% | 35.3% | 0.40 |
+| Broken range returns to far edge (rangelab) (ranges) | 15 | 20:30 | 0.1-0.2 | vs base rate | 257 | 25.7% | 35.1% | 31 | 32.3% | 35.3% | 0.33 |
+| Broken range returns to far edge (rangelab) (ranges) | 30 | 11:30 | 0.0-0.1 | vs base rate | 307 | 26.1% | 35.1% | 31 | 32.3% | 35.3% | 0.34 |
+| Broken range returns to far edge (rangelab) (ranges) | 60 | 05:00 | 0.2-0.3 | vs base rate | 351 | 43.9% | 35.1% | 33 | 36.4% | 35.3% | 0.12 |
+| Broken range returns to far edge (rangelab) (ranges) | 15 | 00:30 | 0.6-0.7 | vs base rate | 206 | 43.7% | 35.1% | 22 | 36.4% | 35.3% | 0.12 |
+| Broken range returns to far edge (rangelab) (ranges) | 15 | 08:30 | 0.7-0.8 | vs base rate | 376 | 26.6% | 35.1% | 25 | 32.0% | 35.3% | 0.39 |
+| Broken range returns to far edge (rangelab) (ranges) | 30 | 00:00 | 0.2-0.3 | vs base rate | 259 | 43.6% | 35.1% | 29 | 37.9% | 35.3% | 0.31 |
+| Broken range returns to far edge (rangelab) (ranges) | 15 | 22:30 | 0.5-0.6 | vs base rate | 225 | 26.7% | 35.1% | 31 | 32.3% | 35.3% | 0.36 |
+| Broken range returns to far edge (rangelab) (ranges) | 15 | 21:30 | 0.8-0.9 | vs base rate | 326 | 26.7% | 35.1% | 30 | 33.3% | 35.3% | 0.24 |
+| Broken range returns to far edge (rangelab) (ranges) | 30 | 03:30 | 0.9-1.0 | vs base rate | 368 | 27.2% | 35.1% | 30 | 33.3% | 35.3% | 0.25 |
+| Broken range returns to far edge (rangelab) (ranges) | 30 | 02:00 | 0.1-0.2 | vs base rate | 323 | 43.0% | 35.1% | 28 | 39.3% | 35.3% | 0.50 |
+| Broken range returns to far edge (rangelab) (ranges) | 15 | 01:30 | 0.1-0.2 | vs base rate | 228 | 43.0% | 35.1% | 31 | 38.7% | 35.3% | 0.43 |
+| Broken range returns to far edge (rangelab) (ranges) | 30 | 21:00 | 0.7-0.8 | vs base rate | 300 | 27.3% | 35.1% | 31 | 32.3% | 35.3% | 0.39 |
+| Broken range returns to far edge (rangelab) (ranges) | 30 | 07:30 | 0.7-0.8 | vs base rate | 403 | 42.9% | 35.1% | 31 | 35.5% | 35.3% | 0.02 |
+| Broken range returns to far edge (rangelab) (ranges) | 30 | 19:30 | 0.4-0.5 | vs base rate | 233 | 42.9% | 35.1% | 22 | 36.4% | 35.3% | 0.13 |
+| Broken range returns to far edge (rangelab) (ranges) | 30 | 22:30 | 0.2-0.3 | vs base rate | 236 | 27.5% | 35.1% | 27 | 33.3% | 35.3% | 0.26 |
+| Broken range returns to far edge (rangelab) (ranges) | 15 | 10:15 | 0.1-0.2 | vs base rate | 383 | 27.7% | 35.1% | 25 | 32.0% | 35.3% | 0.45 |
+| Broken range returns to far edge (rangelab) (ranges) | 60 | 22:00 | 0.0-0.1 | vs base rate | 176 | 27.8% | 35.1% | 20 | 35.0% | 35.3% | 0.05 |
+| Broken range returns to far edge (rangelab) (ranges) | 15 | 08:00 | 0.5-0.6 | vs base rate | 361 | 42.4% | 35.1% | 26 | 38.5% | 35.3% | 0.43 |
+| Broken range returns to far edge (rangelab) (ranges) | 15 | 11:45 | 0.5-0.6 | vs base rate | 326 | 27.9% | 35.1% | 20 | 35.0% | 35.3% | 0.05 |
+| Broken range returns to far edge (rangelab) (ranges) | 15 | 21:45 | 0.6-0.7 | vs base rate | 247 | 27.9% | 35.1% | 34 | 35.3% | 35.3% | 0.01 |
+| Broken range returns to far edge (rangelab) (ranges) | 30 | 22:00 | 0.6-0.7 | vs base rate | 239 | 28.0% | 35.1% | 25 | 32.0% | 35.3% | 0.47 |
+| Broken range returns to far edge (rangelab) (ranges) | 15 | 18:30 | 0.6-0.7 | vs base rate | 238 | 28.2% | 35.1% | 30 | 33.3% | 35.3% | 0.29 |
+| Broken range returns to far edge (rangelab) (ranges) | 60 | 23:00 | 0.8-0.9 | vs base rate | 285 | 42.1% | 35.1% | 30 | 36.7% | 35.3% | 0.19 |
+| Broken range returns to far edge (rangelab) (ranges) | 15 | 08:15 | 0.3-0.4 | vs base rate | 309 | 42.1% | 35.1% | 24 | 37.5% | 35.3% | 0.31 |
+| Broken range returns to far edge (rangelab) (ranges) | 15 | 03:15 | 0.2-0.3 | vs base rate | 371 | 28.3% | 35.1% | 20 | 35.0% | 35.3% | 0.05 |
+| Broken range returns to far edge (rangelab) (ranges) | 30 | 19:30 | 0.9-1.0 | vs base rate | 236 | 41.9% | 35.1% | 24 | 37.5% | 35.3% | 0.32 |
+| Broken range returns to far edge (rangelab) (ranges) | 60 | 12:00 | 0.1-0.2 | vs base rate | 321 | 28.3% | 35.1% | 27 | 33.3% | 35.3% | 0.30 |
+| Broken range returns to far edge (rangelab) (ranges) | 15 | 08:00 | 0.0-0.1 | vs base rate | 308 | 41.9% | 35.1% | 21 | 38.1% | 35.3% | 0.41 |
+| Broken range returns to far edge (rangelab) (ranges) | 30 | 03:30 | 0.7-0.8 | vs base rate | 351 | 28.5% | 35.1% | 31 | 32.3% | 35.3% | 0.46 |
+| Broken range returns to far edge (rangelab) (ranges) | 15 | 03:45 | 0.1-0.2 | vs base rate | 375 | 28.5% | 35.1% | 29 | 34.5% | 35.3% | 0.13 |
+| Broken range returns to far edge (rangelab) (ranges) | 30 | 12:00 | 0.6-0.7 | vs base rate | 343 | 28.6% | 35.1% | 27 | 33.3% | 35.3% | 0.31 |
+| Broken range returns to far edge (rangelab) (ranges) | 15 | 03:15 | 0.6-0.7 | vs base rate | 335 | 28.7% | 35.1% | 34 | 35.3% | 35.3% | 0.01 |
+| Broken range returns to far edge (rangelab) (ranges) | 30 | 12:00 | 0.8-0.9 | vs base rate | 421 | 29.2% | 35.1% | 55 | 34.5% | 35.3% | 0.13 |
+| Broken range returns to far edge (rangelab) (ranges) | 60 | 05:00 | 0.7-0.8 | vs base rate | 385 | 40.5% | 35.1% | 28 | 35.7% | 35.3% | 0.07 |
+| Broken range returns to far edge (rangelab) (ranges) | 15 | 06:00 | 0.6-0.7 | vs base rate | 357 | 30.0% | 35.1% | 20 | 35.0% | 35.3% | 0.07 |
+| Broken range returns to far edge (rangelab) (ranges) | 30 | 04:30 | 0.3-0.4 | vs base rate | 377 | 30.0% | 35.1% | 26 | 34.6% | 35.3% | 0.14 |
+| Broken range returns to far edge (rangelab) (ranges) | 15 | 05:15 | 0.5-0.6 | vs base rate | 369 | 30.1% | 35.1% | 29 | 34.5% | 35.3% | 0.17 |
+| Broken range returns to far edge (rangelab) (ranges) | 15 | Q3 | vs base rate | 59730 | 37.1% | 35.1% | 5401 | 35.3% | 35.3% | 0.00 |
+| Broken range returns to its mid (rangelab) (ranges) | 15 | 16:00 | 0.0-0.1 | vs base rate | 64 | 29.7% | 60.3% | 25 | 48.0% | 61.9% | 0.45 |
+| Broken range returns to its mid (rangelab) (ranges) | 15 | 09:00 | 0.7-0.8 | vs base rate | 394 | 85.0% | 60.3% | 30 | 73.3% | 61.9% | 0.46 |
+| Broken range returns to its mid (rangelab) (ranges) | 30 | 09:00 | 0.2-0.3 | vs base rate | 390 | 83.8% | 60.3% | 30 | 73.3% | 61.9% | 0.49 |
+| Broken range returns to its mid (rangelab) (ranges) | 30 | 09:00 | 0.6-0.7 | vs base rate | 360 | 83.1% | 60.3% | 32 | 71.9% | 61.9% | 0.44 |
+| Broken range returns to its mid (rangelab) (ranges) | 15 | 08:45 | 0.9-1.0 | vs base rate | 343 | 82.8% | 60.3% | 33 | 72.7% | 61.9% | 0.48 |
+| Broken range returns to its mid (rangelab) (ranges) | 60 | 21:00 | 0.7-0.8 | vs base rate | 245 | 39.2% | 60.3% | 31 | 51.6% | 61.9% | 0.49 |
+| Broken range returns to its mid (rangelab) (ranges) | 30 | 08:30 | 0.4-0.5 | vs base rate | 340 | 80.9% | 60.3% | 33 | 66.7% | 61.9% | 0.23 |
+| Broken range returns to its mid (rangelab) (ranges) | 60 | 10:00 | 0.8-0.9 | vs base rate | 474 | 40.1% | 60.3% | 30 | 53.3% | 61.9% | 0.42 |
+| Broken range returns to its mid (rangelab) (ranges) | 15 | 08:45 | 0.2-0.3 | vs base rate | 384 | 79.9% | 60.3% | 25 | 68.0% | 61.9% | 0.31 |
+| Broken range returns to its mid (rangelab) (ranges) | 30 | 08:00 | 0.1-0.2 | vs base rate | 442 | 78.7% | 60.3% | 30 | 63.3% | 61.9% | 0.08 |
+| Broken range returns to its mid (rangelab) (ranges) | 15 | 02:45 | 0.5-0.6 | vs base rate | 370 | 78.1% | 60.3% | 22 | 68.2% | 61.9% | 0.35 |
+| Broken range returns to its mid (rangelab) (ranges) | 60 | 06:00 | 0.2-0.3 | vs base rate | 361 | 77.8% | 60.3% | 33 | 66.7% | 61.9% | 0.27 |
+| Broken range returns to its mid (rangelab) (ranges) | 30 | 02:30 | 0.6-0.7 | vs base rate | 360 | 77.8% | 60.3% | 28 | 67.9% | 61.9% | 0.34 |
+| Broken range returns to its mid (rangelab) (ranges) | 30 | 08:00 | 0.4-0.5 | vs base rate | 323 | 77.4% | 60.3% | 23 | 69.6% | 61.9% | 0.45 |
+| Broken range returns to its mid (rangelab) (ranges) | 15 | 02:30 | 0.4-0.5 | vs base rate | 282 | 77.0% | 60.3% | 22 | 68.2% | 61.9% | 0.38 |
+| Broken range returns to its mid (rangelab) (ranges) | 60 | 03:00 | 0.6-0.7 | vs base rate | 307 | 44.0% | 60.3% | 37 | 56.8% | 61.9% | 0.31 |
+| Broken range returns to its mid (rangelab) (ranges) | 15 | 02:45 | 0.3-0.4 | vs base rate | 319 | 75.9% | 60.3% | 26 | 69.2% | 61.9% | 0.47 |
+| Broken range returns to its mid (rangelab) (ranges) | 15 | 02:30 | 0.1-0.2 | vs base rate | 323 | 75.9% | 60.3% | 24 | 66.7% | 61.9% | 0.31 |
+| Broken range returns to its mid (rangelab) (ranges) | 15 | 02:30 | 0.6-0.7 | vs base rate | 345 | 75.7% | 60.3% | 25 | 68.0% | 61.9% | 0.40 |
+| Broken range returns to its mid (rangelab) (ranges) | 30 | 03:00 | 0.2-0.3 | vs base rate | 376 | 45.2% | 60.3% | 35 | 57.1% | 61.9% | 0.31 |
+| Broken range returns to its mid (rangelab) (ranges) | 30 | 09:30 | 0.1-0.2 | vs base rate | 359 | 45.4% | 60.3% | 44 | 54.5% | 61.9% | 0.49 |
+| Broken range returns to its mid (rangelab) (ranges) | 60 | 10:00 | 0.1-0.2 | vs base rate | 386 | 45.6% | 60.3% | 24 | 58.3% | 61.9% | 0.24 |
+| Broken range returns to its mid (rangelab) (ranges) | 60 | 21:00 | 0.9-1.0 | vs base rate | 214 | 45.8% | 60.3% | 33 | 60.6% | 61.9% | 0.09 |
+| Broken range returns to its mid (rangelab) (ranges) | 60 | 02:00 | 0.1-0.2 | vs base rate | 327 | 74.6% | 60.3% | 35 | 62.9% | 61.9% | 0.07 |
+| Broken range returns to its mid (rangelab) (ranges) | 60 | 21:00 | 0.1-0.2 | vs base rate | 234 | 46.2% | 60.3% | 26 | 61.5% | 61.9% | 0.02 |
+| Broken range returns to its mid (rangelab) (ranges) | 15 | 02:30 | 0.9-1.0 | vs base rate | 243 | 74.5% | 60.3% | 39 | 66.7% | 61.9% | 0.34 |
+| Broken range returns to its mid (rangelab) (ranges) | 30 | 00:30 | 0.7-0.8 | vs base rate | 247 | 74.1% | 60.3% | 31 | 67.7% | 61.9% | 0.43 |
+| Broken range returns to its mid (rangelab) (ranges) | 30 | 10:30 | 0.4-0.5 | vs base rate | 298 | 46.6% | 60.3% | 20 | 60.0% | 61.9% | 0.14 |
+| Broken range returns to its mid (rangelab) (ranges) | 60 | 10:00 | 0.7-0.8 | vs base rate | 334 | 46.7% | 60.3% | 30 | 60.0% | 61.9% | 0.14 |
+| Broken range returns to its mid (rangelab) (ranges) | 30 | 03:00 | 0.6-0.7 | vs base rate | 323 | 46.7% | 60.3% | 35 | 60.0% | 61.9% | 0.14 |
+| Broken range returns to its mid (rangelab) (ranges) | 60 | 20:00 | 0.2-0.3 | vs base rate | 256 | 46.9% | 60.3% | 29 | 55.2% | 61.9% | 0.50 |
+| Broken range returns to its mid (rangelab) (ranges) | 60 | 01:00 | 0.8-0.9 | vs base rate | 381 | 73.2% | 60.3% | 36 | 63.9% | 61.9% | 0.16 |
+| Broken range returns to its mid (rangelab) (ranges) | 60 | 01:00 | 0.4-0.5 | vs base rate | 310 | 72.9% | 60.3% | 28 | 67.9% | 61.9% | 0.47 |
+| Broken range returns to its mid (rangelab) (ranges) | 15 | 02:30 | 0.8-0.9 | vs base rate | 410 | 72.7% | 60.3% | 46 | 63.0% | 61.9% | 0.09 |
+| Broken range returns to its mid (rangelab) (ranges) | 15 | 20:00 | 0.5-0.6 | vs base rate | 285 | 48.1% | 60.3% | 30 | 60.0% | 61.9% | 0.15 |
+| Broken range returns to its mid (rangelab) (ranges) | 30 | 22:00 | 0.7-0.8 | vs base rate | 230 | 48.3% | 60.3% | 26 | 61.5% | 61.9% | 0.03 |
+| Broken range returns to its mid (rangelab) (ranges) | 15 | 09:30 | 0.9-1.0 | vs base rate | 319 | 48.3% | 60.3% | 40 | 60.0% | 61.9% | 0.16 |
+| Broken range returns to its mid (rangelab) (ranges) | 60 | 03:00 | 0.0-0.1 | vs base rate | 309 | 48.5% | 60.3% | 23 | 60.9% | 61.9% | 0.09 |
+| Broken range returns to its mid (rangelab) (ranges) | 15 | 07:45 | 0.1-0.2 | vs base rate | 391 | 72.1% | 60.3% | 31 | 67.7% | 61.9% | 0.50 |
+| Broken range returns to its mid (rangelab) (ranges) | 15 | 22:00 | 0.5-0.6 | vs base rate | 229 | 48.9% | 60.3% | 33 | 60.6% | 61.9% | 0.11 |
+| Broken range returns to its mid (rangelab) (ranges) | 15 | 07:00 | 0.0-0.1 | vs base rate | 356 | 49.2% | 60.3% | 23 | 56.5% | 61.9% | 0.48 |
+| Broken range returns to its mid (rangelab) (ranges) | 60 | 01:00 | 0.5-0.6 | vs base rate | 336 | 71.4% | 60.3% | 20 | 65.0% | 61.9% | 0.28 |
+| Broken range returns to its mid (rangelab) (ranges) | 15 | 01:00 | 0.3-0.4 | vs base rate | 237 | 49.8% | 60.3% | 25 | 60.0% | 61.9% | 0.18 |
+| Broken range returns to its mid (rangelab) (ranges) | 15 | 03:00 | 0.7-0.8 | vs base rate | 329 | 49.8% | 60.3% | 26 | 57.7% | 61.9% | 0.40 |
+| Broken range returns to its mid (rangelab) (ranges) | 15 | 02:00 | 0.8-0.9 | vs base rate | 333 | 49.8% | 60.3% | 35 | 60.0% | 61.9% | 0.18 |
+| Broken range returns to its mid (rangelab) (ranges) | 30 | 02:00 | 0.5-0.6 | vs base rate | 327 | 70.6% | 60.3% | 29 | 62.1% | 61.9% | 0.02 |
+| Broken range returns to its mid (rangelab) (ranges) | 15 | 02:15 | 0.9-1.0 | vs base rate | 262 | 70.6% | 60.3% | 33 | 63.6% | 61.9% | 0.17 |
+| Broken range returns to its mid (rangelab) (ranges) | 15 | 02:15 | 0.2-0.3 | vs base rate | 326 | 70.6% | 60.3% | 29 | 62.1% | 61.9% | 0.02 |
+| Broken range returns to its mid (rangelab) (ranges) | 30 | 21:30 | 0.7-0.8 | vs base rate | 247 | 50.2% | 60.3% | 25 | 60.0% | 61.9% | 0.19 |
+| Broken range returns to its mid (rangelab) (ranges) | 30 | 02:00 | 0.3-0.4 | vs base rate | 313 | 70.3% | 60.3% | 27 | 63.0% | 61.9% | 0.11 |
+| Broken range returns to its mid (rangelab) (ranges) | 30 | 02:00 | 0.2-0.3 | vs base rate | 333 | 70.3% | 60.3% | 29 | 65.5% | 61.9% | 0.37 |
+| Broken range returns to its mid (rangelab) (ranges) | 15 | 02:30 | 0.7-0.8 | vs base rate | 353 | 70.3% | 60.3% | 24 | 66.7% | 61.9% | 0.48 |
+| Broken range returns to its mid (rangelab) (ranges) | 60 | 00:00 | 0.7-0.8 | vs base rate | 315 | 70.2% | 60.3% | 20 | 65.0% | 61.9% | 0.32 |
+| Broken range returns to its mid (rangelab) (ranges) | 30 | 21:30 | 0.5-0.6 | vs base rate | 247 | 50.6% | 60.3% | 36 | 61.1% | 61.9% | 0.08 |
+| Broken range returns to its mid (rangelab) (ranges) | 60 | 11:00 | 0.3-0.4 | vs base rate | 325 | 50.8% | 60.3% | 23 | 60.9% | 61.9% | 0.11 |
+| Broken range returns to its mid (rangelab) (ranges) | 15 | 22:15 | 0.3-0.4 | vs base rate | 238 | 50.8% | 60.3% | 36 | 61.1% | 61.9% | 0.08 |
+| Broken range returns to its mid (rangelab) (ranges) | 15 | 19:15 | 0.3-0.4 | vs base rate | 235 | 69.8% | 60.3% | 26 | 65.4% | 61.9% | 0.37 |
+| Broken range returns to its mid (rangelab) (ranges) | 15 | 07:45 | 0.2-0.3 | vs base rate | 370 | 69.7% | 60.3% | 37 | 64.9% | 61.9% | 0.32 |
+| Broken range returns to its mid (rangelab) (ranges) | 30 | 03:00 | 0.9-1.0 | vs base rate | 256 | 51.2% | 60.3% | 26 | 57.7% | 61.9% | 0.46 |
+| Broken range returns to its mid (rangelab) (ranges) | 30 | 23:30 | 0.7-0.8 | vs base rate | 254 | 69.3% | 60.3% | 26 | 65.4% | 61.9% | 0.39 |
+| Broken range returns to its mid (rangelab) (ranges) | 30 | 10:30 | 0.8-0.9 | vs base rate | 476 | 51.5% | 60.3% | 30 | 60.0% | 61.9% | 0.21 |
+| Broken range returns to its mid (rangelab) (ranges) | 30 | 11:30 | 0.2-0.3 | vs base rate | 314 | 51.6% | 60.3% | 24 | 58.3% | 61.9% | 0.41 |
+| Broken range returns to its mid (rangelab) (ranges) | 15 | 21:45 | 0.6-0.7 | vs base rate | 247 | 51.8% | 60.3% | 34 | 61.8% | 61.9% | 0.01 |
+| Broken range returns to its mid (rangelab) (ranges) | 15 | 20:15 | 0.1-0.2 | vs base rate | 270 | 51.9% | 60.3% | 36 | 58.3% | 61.9% | 0.42 |
+| Broken range returns to its mid (rangelab) (ranges) | 15 | 15:00 | 0.1-0.2 | vs base rate | 311 | 68.8% | 60.3% | 35 | 62.9% | 61.9% | 0.11 |
+| Broken range returns to its mid (rangelab) (ranges) | 60 | 22:00 | 0.3-0.4 | vs base rate | 207 | 52.2% | 60.3% | 26 | 61.5% | 61.9% | 0.04 |
+| Broken range returns to its mid (rangelab) (ranges) | 15 | 10:30 | 0.5-0.6 | vs base rate | 312 | 52.2% | 60.3% | 22 | 59.1% | 61.9% | 0.35 |
+| Broken range returns to its mid (rangelab) (ranges) | 15 | 20:30 | 0.6-0.7 | vs base rate | 256 | 52.3% | 60.3% | 28 | 60.7% | 61.9% | 0.15 |
+| Broken range returns to its mid (rangelab) (ranges) | 15 | 10:15 | 0.6-0.7 | vs base rate | 365 | 52.9% | 60.3% | 29 | 58.6% | 61.9% | 0.44 |
+| Broken range returns to its mid (rangelab) (ranges) | 30 | 03:30 | 0.6-0.7 | vs base rate | 363 | 52.9% | 60.3% | 28 | 60.7% | 61.9% | 0.16 |
+| Broken range returns to its mid (rangelab) (ranges) | 30 | 03:00 | 0.7-0.8 | vs base rate | 374 | 52.9% | 60.3% | 34 | 61.8% | 61.9% | 0.02 |
+| Broken range returns to its mid (rangelab) (ranges) | 60 | 23:00 | 0.8-0.9 | vs base rate | 285 | 67.7% | 60.3% | 30 | 63.3% | 61.9% | 0.20 |
+| Broken range returns to its mid (rangelab) (ranges) | 30 | 03:30 | 0.9-1.0 | vs base rate | 368 | 53.0% | 60.3% | 30 | 60.0% | 61.9% | 0.26 |
+| Broken range returns to its mid (rangelab) (ranges) | 15 | 11:45 | 0.5-0.6 | vs base rate | 326 | 53.1% | 60.3% | 20 | 60.0% | 61.9% | 0.26 |
+| Broken range returns to its mid (rangelab) (ranges) | 30 | 03:00 | 0.3-0.4 | vs base rate | 348 | 53.2% | 60.3% | 24 | 58.3% | 61.9% | 0.50 |
+| Broken range returns to its mid (rangelab) (ranges) | 15 | 19:30 | 0.7-0.8 | vs base rate | 283 | 67.5% | 60.3% | 27 | 63.0% | 61.9% | 0.15 |
+| Broken range returns to its mid (rangelab) (ranges) | 15 | 08:30 | 0.7-0.8 | vs base rate | 376 | 53.2% | 60.3% | 25 | 60.0% | 61.9% | 0.26 |
+| Broken range returns to its mid (rangelab) (ranges) | 30 | 03:30 | 0.8-0.9 | vs base rate | 435 | 53.6% | 60.3% | 31 | 61.3% | 61.9% | 0.09 |
+| Broken range returns to its mid (rangelab) (ranges) | 60 | 09:00 | 0.7-0.8 | vs base rate | 403 | 53.6% | 60.3% | 25 | 60.0% | 61.9% | 0.28 |
+| Broken range returns to its mid (rangelab) (ranges) | 60 | 09:00 | 0.3-0.4 | vs base rate | 362 | 53.9% | 60.3% | 23 | 60.9% | 61.9% | 0.16 |
+| Broken range returns to its mid (rangelab) (ranges) | 60 | Q3 | vs base rate | 13095 | 66.8% | 60.3% | 1137 | 62.5% | 61.9% | 0.10 |
+| Broken range returns to its mid (rangelab) (ranges) | 15 | 09:45 | 0.9-1.0 | vs base rate | 462 | 53.9% | 60.3% | 34 | 58.8% | 61.9% | 0.48 |
+| Broken range returns to its mid (rangelab) (ranges) | 30 | 14:00 | 0.7-0.8 | vs base rate | 376 | 66.5% | 60.3% | 25 | 64.0% | 61.9% | 0.34 |
+| Broken range returns to its mid (rangelab) (ranges) | 15 | 04:15 | 0.3-0.4 | vs base rate | 335 | 54.3% | 60.3% | 34 | 61.8% | 61.9% | 0.02 |
+| Broken range returns to its mid (rangelab) (ranges) | 30 | 21:00 | 0.7-0.8 | vs base rate | 300 | 54.3% | 60.3% | 31 | 61.3% | 61.9% | 0.10 |
+| Broken range returns to its mid (rangelab) (ranges) | 30 | 14:00 | 0.8-0.9 | vs base rate | 486 | 66.3% | 60.3% | 33 | 63.6% | 61.9% | 0.29 |
+| Broken range returns to its mid (rangelab) (ranges) | 15 | 11:00 | 0.0-0.1 | vs base rate | 422 | 54.5% | 60.3% | 30 | 60.0% | 61.9% | 0.32 |
+| Broken range returns to its mid (rangelab) (ranges) | 15 | 12:00 | 0.3-0.4 | vs base rate | 328 | 54.6% | 60.3% | 28 | 60.7% | 61.9% | 0.20 |
+| Broken range returns to its mid (rangelab) (ranges) | 60 | 05:00 | 0.8-0.9 | vs base rate | 445 | 65.6% | 60.3% | 36 | 63.9% | 61.9% | 0.38 |
+| Hour sweeps one side of prev hour, closes back inside (hourly) | 14:00 | swept L only | vs base rate | 1305 | 47.7% | 42.9% | 87 | 46.0% | 44.5% | 0.31 |
+| RTH trades down to prior-day low (opened above it) (session) | upper half PD | vs base rate | 1238 | 25.2% | 34.5% | 98 | 28.6% | 30.6% | 0.22 |
+
+### FLIPPED (364)
+
+| statistic | condition | benchmark | disc n | disc rate | disc bench | holdout n | holdout rate | holdout bench | retained |
+|---|---|---|---:|---:|---:|---:|---:|---:|---:|
+| Range breaks HIGH first (rangelab) (ranges) | 60 | Q4 | MECHANICAL (= random walk) | 12875 | 54.6% | 53.8% | 1071 | 54.0% | 54.9% | -1.15 |
+| Range breaks HIGH first (rangelab) (ranges) | 15 | Q5 wide | MECHANICAL (= random walk) | 59950 | 50.7% | 50.7% | 4517 | 51.1% | 51.0% | -2.52 |
+| C3 takes C2 high before C2 low (candle_1D) | higher (took C1 H) | C2 closed above C1 H | beats random walk | 909 | 88.0% | 82.3% | 61 | 80.3% | 80.6% | -0.06 |
+| C3 takes C2 high before C2 low (candle_1h) | 11:00 | inside | MECHANICAL (= random walk) | 321 | 59.2% | 53.7% | 26 | 50.0% | 60.8% | -1.96 |
+| C3 takes C2 high before C2 low (candle_1D) | lower (took C1 L) | C2 closed inside C1 | MECHANICAL (= random walk) | 490 | 71.0% | 67.6% | 33 | 57.6% | 66.4% | -2.62 |
+| C3 takes C2 high before C2 low (candle_1h) | 22:00 | higher (took C1 H) | MECHANICAL (= random walk) | 1051 | 62.7% | 60.0% | 99 | 61.6% | 63.2% | -0.58 |
+| C3 takes C2 high before C2 low (candle_1D) | higher (took C1 H) | C1 bear / C2 bull | MECHANICAL (= random walk) | 262 | 77.9% | 75.5% | 24 | 83.3% | 83.5% | -0.07 |
+| C3 takes C2 high before C2 low (candle_1h) | 03:00 | higher (took C1 H) | MECHANICAL (= random walk) | 1441 | 58.2% | 60.5% | 124 | 64.5% | 59.2% | -2.29 |
+| C3 takes C2 high before C2 low (candle_4h) | inside | C1 bear / C2 bear | MECHANICAL (= random walk) | 470 | 34.5% | 32.3% | 37 | 32.4% | 38.0% | -2.57 |
+| C3 takes C2 high before C2 low (candle_1h) | 19:00 | lower (took C1 L) | MECHANICAL (= random walk) | 766 | 47.5% | 45.5% | 72 | 37.5% | 40.0% | -1.23 |
+| C3 takes C2 high before C2 low (candle_1h) | higher (took C1 H) | C1 bull / C2 bear | MECHANICAL (= random walk) | 5033 | 23.5% | 25.5% | 468 | 27.1% | 26.9% | -0.14 |
+| C3 takes C2 high before C2 low (candle_1h) | 09:00 | higher (took C1 H) | MECHANICAL (= random walk) | 1340 | 63.3% | 61.4% | 103 | 56.3% | 59.6% | -1.77 |
+| C3 takes C2 high before C2 low (candle_4h) | inside | C1 bull / C2 bull | MECHANICAL (= random walk) | 587 | 73.6% | 71.8% | 36 | 69.4% | 75.1% | -3.15 |
+| C3 takes C2 high before C2 low (candle_1h) | 23:00 | lower (took C1 L) | MECHANICAL (= random walk) | 849 | 44.6% | 43.2% | 75 | 33.3% | 38.2% | -3.26 |
+| C3 takes C2 high before C2 low (candle_1h) | 12:00 | lower (took C1 L) | MECHANICAL (= random walk) | 955 | 42.8% | 44.2% | 67 | 44.8% | 44.7% | -0.04 |
+| C3 takes C2 high before C2 low (candle_1h) | inside | C1 bear / C2 bull | MECHANICAL (= random walk) | 4505 | 69.5% | 68.1% | 304 | 65.8% | 67.9% | -1.50 |
+| C3 takes C2 high before C2 low (candle_1h) | 18:00 | lower (took C1 L) | MECHANICAL (= random walk) | 501 | 46.9% | 45.6% | 51 | 49.0% | 53.4% | -3.27 |
+| C3 takes C2 high before C2 low (candle_1h) | 15:00 | lower (took C1 L) | MECHANICAL (= random walk) | 1170 | 42.7% | 44.0% | 76 | 46.1% | 42.3% | -2.98 |
+| C3 takes C2 high before C2 low (candle_1h) | 16:00 | lower (took C1 L) | MECHANICAL (= random walk) | 667 | 37.3% | 38.5% | 58 | 37.9% | 37.2% | -0.61 |
+| C3 takes C2 high before C2 low (candle_1h) | 05:00 | lower (took C1 L) | MECHANICAL (= random walk) | 988 | 41.2% | 42.2% | 77 | 42.9% | 40.3% | -2.69 |
+| C3 takes C2 high before C2 low (candle_1h) | inside | C1 bull / C2 bull | MECHANICAL (= random walk) | 2249 | 69.9% | 70.8% | 131 | 74.0% | 71.5% | -2.73 |
+| C3 takes C2 high before C2 low (candle_1h) | 21:00 | lower (took C1 L) | MECHANICAL (= random walk) | 1042 | 41.1% | 42.0% | 78 | 48.7% | 46.1% | -2.84 |
+| C3 takes C2 high before C2 low (candle_1h) | higher (took C1 H) | C1 bear / C2 bear | MECHANICAL (= random walk) | 548 | 20.1% | 19.3% | 44 | 13.6% | 19.2% | -6.84 |
+| C3 takes C2 high before C2 low (candle_1h) | 01:00 | higher (took C1 H) | MECHANICAL (= random walk) | 1143 | 59.8% | 59.1% | 113 | 56.6% | 60.9% | -5.54 |
+| C3 takes C2 high before C2 low (candle_1h) | 15:00 | higher (took C1 H) | MECHANICAL (= random walk) | 1404 | 64.7% | 64.0% | 101 | 55.4% | 58.7% | -5.03 |
+| C3 takes C2 high before C2 low (candle_1h) | higher (took C1 H) | C2 closed inside C1 | MECHANICAL (= random walk) | 11352 | 38.7% | 39.3% | 974 | 39.6% | 39.3% | -0.60 |
+| C3 takes C2 high before C2 low (candle_1h) | lower (took C1 L) | C1 bull / C2 bull | MECHANICAL (= random walk) | 780 | 81.3% | 80.8% | 57 | 78.9% | 80.9% | -3.80 |
+| C3 takes C2 high before C2 low (candle_4h) | outside | C2 closed inside C1 | MECHANICAL (= random walk) | 1071 | 50.8% | 51.2% | 65 | 49.2% | 48.4% | -1.91 |
+| C3 takes C2 high before C2 low (candle_1h) | inside | C1 bull / C2 bear | MECHANICAL (= random walk) | 4498 | 34.4% | 34.8% | 296 | 41.2% | 37.3% | -9.28 |
+| C3 takes C2 high before C2 low (candle_1h) | 14:00 | higher (took C1 H) | MECHANICAL (= random walk) | 1395 | 62.2% | 62.6% | 106 | 66.0% | 60.4% | -13.97 |
+| C3 takes C2 high before C2 low (candle_4h) | lower (took C1 L) | C1 bear / C2 bear | MECHANICAL (= random walk) | 2670 | 31.2% | 31.0% | 237 | 32.5% | 33.6% | -5.55 |
+| C3 takes C2 high before C2 low (candle_1D) | higher (took C1 H) | C2 closed inside C1 | MECHANICAL (= random walk) | 532 | 38.3% | 38.5% | 45 | 53.3% | 48.3% | -25.88 |
+| C3 takes C2 high before C2 low (candle_4h) | higher (took C1 H) | C1 bear / C2 bull | MECHANICAL (= random walk) | 1451 | 73.5% | 73.6% | 123 | 75.6% | 74.9% | -5.44 |
+| C3 takes C2 high (candle_1D) | higher (took C1 H) | C2 closed inside C1 | vs base rate | 615 | 43.9% | 56.2% | 49 | 59.2% | 56.0% | -0.26 |
+| C3 takes C2 high (candle_1D) | lower (took C1 L) | C2 closed inside C1 | vs base rate | 552 | 66.1% | 56.2% | 38 | 55.3% | 56.0% | -0.07 |
+| C3 takes C2 high (candle_1D) | inside | C2 closed inside C1 | vs base rate | 440 | 63.4% | 56.2% | 32 | 43.8% | 56.0% | -1.69 |
+| Broken range travels >=1 width past edge (rangelab) (ranges) | 30 | 00:30 | 0.0-0.1 | vs base rate | 207 | 59.4% | 40.3% | 32 | 31.2% | 36.2% | -0.26 |
+| Broken range travels >=1 width past edge (rangelab) (ranges) | 15 | 09:30 | 0.0-0.1 | vs base rate | 353 | 22.4% | 40.3% | 27 | 44.4% | 36.2% | -0.46 |
+| Broken range travels >=1 width past edge (rangelab) (ranges) | 30 | 02:30 | 0.2-0.3 | vs base rate | 380 | 57.1% | 40.3% | 27 | 33.3% | 36.2% | -0.17 |
+| Broken range travels >=1 width past edge (rangelab) (ranges) | 30 | 10:00 | 0.4-0.5 | vs base rate | 295 | 23.7% | 40.3% | 21 | 38.1% | 36.2% | -0.11 |
+| Broken range travels >=1 width past edge (rangelab) (ranges) | 30 | 09:30 | 0.0-0.1 | vs base rate | 333 | 24.0% | 40.3% | 30 | 36.7% | 36.2% | -0.03 |
+| Broken range travels >=1 width past edge (rangelab) (ranges) | 30 | 11:30 | 0.3-0.4 | vs base rate | 324 | 24.7% | 40.3% | 25 | 44.0% | 36.2% | -0.50 |
+| Broken range travels >=1 width past edge (rangelab) (ranges) | 30 | 10:30 | 0.6-0.7 | vs base rate | 347 | 25.1% | 40.3% | 26 | 42.3% | 36.2% | -0.40 |
+| Broken range travels >=1 width past edge (rangelab) (ranges) | 15 | 02:30 | 0.2-0.3 | vs base rate | 366 | 55.2% | 40.3% | 23 | 30.4% | 36.2% | -0.39 |
+| Broken range travels >=1 width past edge (rangelab) (ranges) | 30 | 03:00 | 0.5-0.6 | vs base rate | 319 | 25.4% | 40.3% | 20 | 45.0% | 36.2% | -0.59 |
+| Broken range travels >=1 width past edge (rangelab) (ranges) | 30 | 15:00 | 0.9-1.0 | vs base rate | 123 | 26.0% | 40.3% | 23 | 39.1% | 36.2% | -0.20 |
+| Broken range travels >=1 width past edge (rangelab) (ranges) | 60 | 11:00 | 0.1-0.2 | vs base rate | 357 | 26.1% | 40.3% | 28 | 39.3% | 36.2% | -0.21 |
+| Broken range travels >=1 width past edge (rangelab) (ranges) | 60 | 01:00 | 0.2-0.3 | vs base rate | 344 | 54.4% | 40.3% | 35 | 31.4% | 36.2% | -0.34 |
+| Broken range travels >=1 width past edge (rangelab) (ranges) | 60 | 23:00 | 0.4-0.5 | vs base rate | 219 | 54.3% | 40.3% | 25 | 36.0% | 36.2% | -0.02 |
+| Broken range travels >=1 width past edge (rangelab) (ranges) | 30 | 22:30 | 0.0-0.1 | vs base rate | 178 | 26.4% | 40.3% | 30 | 43.3% | 36.2% | -0.51 |
+| Broken range travels >=1 width past edge (rangelab) (ranges) | 60 | 04:00 | 0.6-0.7 | vs base rate | 363 | 26.4% | 40.3% | 25 | 44.0% | 36.2% | -0.56 |
+| Broken range travels >=1 width past edge (rangelab) (ranges) | 30 | 03:00 | 0.9-1.0 | vs base rate | 256 | 26.6% | 40.3% | 26 | 38.5% | 36.2% | -0.16 |
+| Broken range travels >=1 width past edge (rangelab) (ranges) | 15 | 22:00 | 0.9-1.0 | vs base rate | 173 | 26.6% | 40.3% | 28 | 39.3% | 36.2% | -0.22 |
+| Broken range travels >=1 width past edge (rangelab) (ranges) | 15 | 01:30 | 0.3-0.4 | vs base rate | 251 | 53.8% | 40.3% | 26 | 26.9% | 36.2% | -0.69 |
+| Broken range travels >=1 width past edge (rangelab) (ranges) | 15 | 10:00 | 0.7-0.8 | vs base rate | 366 | 26.8% | 40.3% | 20 | 50.0% | 36.2% | -1.02 |
+| Broken range travels >=1 width past edge (rangelab) (ranges) | 15 | 09:45 | 0.5-0.6 | vs base rate | 321 | 26.8% | 40.3% | 21 | 47.6% | 36.2% | -0.85 |
+| Broken range travels >=1 width past edge (rangelab) (ranges) | 15 | 01:30 | 0.0-0.1 | vs base rate | 277 | 53.4% | 40.3% | 25 | 20.0% | 36.2% | -1.23 |
+| Broken range travels >=1 width past edge (rangelab) (ranges) | 15 | 19:15 | 0.6-0.7 | vs base rate | 246 | 53.3% | 40.3% | 33 | 33.3% | 36.2% | -0.22 |
+| Broken range travels >=1 width past edge (rangelab) (ranges) | 60 | 04:00 | 0.4-0.5 | vs base rate | 316 | 28.2% | 40.3% | 29 | 37.9% | 36.2% | -0.14 |
+| Broken range travels >=1 width past edge (rangelab) (ranges) | 15 | 01:15 | 0.5-0.6 | vs base rate | 248 | 52.0% | 40.3% | 34 | 35.3% | 36.2% | -0.08 |
+| Broken range travels >=1 width past edge (rangelab) (ranges) | 15 | 02:15 | 0.1-0.2 | vs base rate | 354 | 52.0% | 40.3% | 29 | 31.0% | 36.2% | -0.44 |
+| Broken range travels >=1 width past edge (rangelab) (ranges) | 15 | 11:15 | 0.5-0.6 | vs base rate | 335 | 28.7% | 40.3% | 24 | 37.5% | 36.2% | -0.11 |
+| Broken range travels >=1 width past edge (rangelab) (ranges) | 15 | 00:45 | 0.5-0.6 | vs base rate | 234 | 51.7% | 40.3% | 27 | 33.3% | 36.2% | -0.25 |
+| Broken range travels >=1 width past edge (rangelab) (ranges) | 30 | 03:00 | 0.6-0.7 | vs base rate | 323 | 29.1% | 40.3% | 35 | 40.0% | 36.2% | -0.34 |
+| Broken range travels >=1 width past edge (rangelab) (ranges) | 15 | 08:15 | 0.0-0.1 | vs base rate | 372 | 51.3% | 40.3% | 20 | 30.0% | 36.2% | -0.56 |
+| Broken range travels >=1 width past edge (rangelab) (ranges) | 60 | 22:00 | 0.0-0.1 | vs base rate | 176 | 29.5% | 40.3% | 20 | 40.0% | 36.2% | -0.35 |
+| Broken range travels >=1 width past edge (rangelab) (ranges) | 30 | 12:00 | 0.5-0.6 | vs base rate | 311 | 29.6% | 40.3% | 26 | 38.5% | 36.2% | -0.21 |
+| Broken range travels >=1 width past edge (rangelab) (ranges) | 15 | 11:15 | 0.7-0.8 | vs base rate | 378 | 29.6% | 40.3% | 24 | 37.5% | 36.2% | -0.12 |
+| Broken range travels >=1 width past edge (rangelab) (ranges) | 15 | 04:00 | 0.6-0.7 | vs base rate | 347 | 29.7% | 40.3% | 23 | 39.1% | 36.2% | -0.27 |
+| Broken range travels >=1 width past edge (rangelab) (ranges) | 15 | 21:30 | 0.7-0.8 | vs base rate | 286 | 29.7% | 40.3% | 26 | 42.3% | 36.2% | -0.58 |
+| Broken range travels >=1 width past edge (rangelab) (ranges) | 15 | 10:30 | 0.7-0.8 | vs base rate | 398 | 29.9% | 40.3% | 27 | 37.0% | 36.2% | -0.08 |
+| Broken range travels >=1 width past edge (rangelab) (ranges) | 15 | 11:45 | 0.6-0.7 | vs base rate | 386 | 30.1% | 40.3% | 27 | 40.7% | 36.2% | -0.44 |
+| Broken range travels >=1 width past edge (rangelab) (ranges) | 30 | 21:30 | 0.6-0.7 | vs base rate | 236 | 30.1% | 40.3% | 22 | 40.9% | 36.2% | -0.46 |
+| Broken range travels >=1 width past edge (rangelab) (ranges) | 60 | 21:00 | 0.7-0.8 | vs base rate | 245 | 30.2% | 40.3% | 31 | 38.7% | 36.2% | -0.25 |
+| Broken range travels >=1 width past edge (rangelab) (ranges) | 30 | 00:00 | 0.1-0.2 | vs base rate | 201 | 50.2% | 40.3% | 26 | 34.6% | 36.2% | -0.16 |
+| Broken range travels >=1 width past edge (rangelab) (ranges) | 30 | 22:00 | 0.8-0.9 | vs base rate | 284 | 30.3% | 40.3% | 34 | 41.2% | 36.2% | -0.50 |
+| Broken range travels >=1 width past edge (rangelab) (ranges) | 15 | 13:00 | 0.7-0.8 | vs base rate | 373 | 30.3% | 40.3% | 36 | 38.9% | 36.2% | -0.27 |
+| Broken range travels >=1 width past edge (rangelab) (ranges) | 30 | 03:00 | 0.2-0.3 | vs base rate | 376 | 30.3% | 40.3% | 35 | 40.0% | 36.2% | -0.38 |
+| Broken range travels >=1 width past edge (rangelab) (ranges) | 15 | 01:15 | 0.7-0.8 | vs base rate | 257 | 50.2% | 40.3% | 34 | 29.4% | 36.2% | -0.69 |
+| Broken range travels >=1 width past edge (rangelab) (ranges) | 15 | 22:30 | 0.4-0.5 | vs base rate | 204 | 30.4% | 40.3% | 33 | 36.4% | 36.2% | -0.01 |
+| Broken range travels >=1 width past edge (rangelab) (ranges) | 30 | 07:00 | 0.4-0.5 | vs base rate | 274 | 50.0% | 40.3% | 26 | 30.8% | 36.2% | -0.56 |
+| Broken range travels >=1 width past edge (rangelab) (ranges) | 30 | 22:30 | 0.5-0.6 | vs base rate | 245 | 30.6% | 40.3% | 27 | 51.9% | 36.2% | -1.62 |
+| Broken range travels >=1 width past edge (rangelab) (ranges) | 30 | 12:00 | 0.7-0.8 | vs base rate | 367 | 30.8% | 40.3% | 27 | 44.4% | 36.2% | -0.87 |
+| Broken range travels >=1 width past edge (rangelab) (ranges) | 60 | 04:00 | 0.9-1.0 | vs base rate | 328 | 31.1% | 40.3% | 28 | 42.9% | 36.2% | -0.72 |
+| Broken range travels >=1 width past edge (rangelab) (ranges) | 30 | 01:00 | 0.3-0.4 | vs base rate | 254 | 49.2% | 40.3% | 27 | 18.5% | 36.2% | -1.98 |
+| Broken range travels >=1 width past edge (rangelab) (ranges) | 60 | 13:00 | 0.3-0.4 | vs base rate | 275 | 31.6% | 40.3% | 25 | 40.0% | 36.2% | -0.44 |
+| Broken range travels >=1 width past edge (rangelab) (ranges) | 15 | 07:30 | 0.3-0.4 | vs base rate | 336 | 48.8% | 40.3% | 29 | 27.6% | 36.2% | -1.01 |
+| Broken range travels >=1 width past edge (rangelab) (ranges) | 15 | 08:00 | 0.8-0.9 | vs base rate | 443 | 48.8% | 40.3% | 33 | 33.3% | 36.2% | -0.34 |
+| Broken range travels >=1 width past edge (rangelab) (ranges) | 30 | 19:00 | 0.8-0.9 | vs base rate | 320 | 48.8% | 40.3% | 38 | 23.7% | 36.2% | -1.48 |
+| Broken range travels >=1 width past edge (rangelab) (ranges) | 30 | 00:00 | 0.8-0.9 | vs base rate | 306 | 48.7% | 40.3% | 32 | 28.1% | 36.2% | -0.96 |
+| Broken range travels >=1 width past edge (rangelab) (ranges) | 60 | 02:00 | 0.6-0.7 | vs base rate | 341 | 48.7% | 40.3% | 36 | 36.1% | 36.2% | -0.01 |
+| Broken range travels >=1 width past edge (rangelab) (ranges) | 15 | 01:00 | 0.1-0.2 | vs base rate | 204 | 31.9% | 40.3% | 27 | 37.0% | 36.2% | -0.10 |
+| Broken range travels >=1 width past edge (rangelab) (ranges) | 60 | 19:00 | 0.5-0.6 | vs base rate | 256 | 48.4% | 40.3% | 25 | 36.0% | 36.2% | -0.03 |
+| Broken range travels >=1 width past edge (rangelab) (ranges) | 30 | 21:00 | 0.2-0.3 | vs base rate | 243 | 32.1% | 40.3% | 37 | 37.8% | 36.2% | -0.20 |
+| Broken range travels >=1 width past edge (rangelab) (ranges) | 60 | 19:00 | 0.1-0.2 | vs base rate | 252 | 48.4% | 40.3% | 28 | 32.1% | 36.2% | -0.50 |
+| Broken range travels >=1 width past edge (rangelab) (ranges) | 30 | 02:00 | 0.2-0.3 | vs base rate | 333 | 48.3% | 40.3% | 29 | 20.7% | 36.2% | -1.92 |
+| Broken range travels >=1 width past edge (rangelab) (ranges) | 15 | 08:15 | 0.4-0.5 | vs base rate | 292 | 48.3% | 40.3% | 21 | 33.3% | 36.2% | -0.36 |
+| Broken range travels >=1 width past edge (rangelab) (ranges) | 15 | 05:45 | 0.9-1.0 | vs base rate | 262 | 32.4% | 40.3% | 23 | 39.1% | 36.2% | -0.37 |
+| Broken range travels >=1 width past edge (rangelab) (ranges) | 30 | 19:00 | 0.1-0.2 | vs base rate | 248 | 48.0% | 40.3% | 34 | 26.5% | 36.2% | -1.26 |
+| Broken range travels >=1 width past edge (rangelab) (ranges) | 15 | 14:00 | 0.9-1.0 | vs base rate | 343 | 32.7% | 40.3% | 20 | 40.0% | 36.2% | -0.49 |
+| Broken range travels >=1 width past edge (rangelab) (ranges) | 30 | 04:30 | 0.6-0.7 | vs base rate | 348 | 32.8% | 40.3% | 28 | 39.3% | 36.2% | -0.41 |
+| Broken range travels >=1 width past edge (rangelab) (ranges) | 15 | 13:00 | 0.4-0.5 | vs base rate | 295 | 32.9% | 40.3% | 27 | 37.0% | 36.2% | -0.11 |
+| Broken range travels >=1 width past edge (rangelab) (ranges) | 15 | 18:45 | 0.3-0.4 | vs base rate | 208 | 47.6% | 40.3% | 22 | 27.3% | 36.2% | -1.22 |
+| Broken range travels >=1 width past edge (rangelab) (ranges) | 30 | 18:30 | 0.9-1.0 | vs base rate | 257 | 47.5% | 40.3% | 25 | 32.0% | 36.2% | -0.59 |
+| Broken range travels >=1 width past edge (rangelab) (ranges) | 15 | 01:30 | 0.2-0.3 | vs base rate | 295 | 47.5% | 40.3% | 37 | 29.7% | 36.2% | -0.90 |
+| Broken range travels >=1 width past edge (rangelab) (ranges) | 15 | 02:00 | 0.1-0.2 | vs base rate | 269 | 33.1% | 40.3% | 32 | 37.5% | 36.2% | -0.18 |
+| Broken range travels >=1 width past edge (rangelab) (ranges) | 15 | 12:30 | 0.8-0.9 | vs base rate | 441 | 33.1% | 40.3% | 24 | 37.5% | 36.2% | -0.18 |
+| Broken range travels >=1 width past edge (rangelab) (ranges) | 15 | 06:00 | 0.1-0.2 | vs base rate | 326 | 33.1% | 40.3% | 31 | 38.7% | 36.2% | -0.35 |
+| Broken range travels >=1 width past edge (rangelab) (ranges) | 60 | 22:00 | 0.9-1.0 | vs base rate | 238 | 33.2% | 40.3% | 39 | 41.0% | 36.2% | -0.68 |
+| Broken range travels >=1 width past edge (rangelab) (ranges) | 15 | 11:30 | 0.2-0.3 | vs base rate | 343 | 33.2% | 40.3% | 22 | 40.9% | 36.2% | -0.67 |
+| Broken range travels >=1 width past edge (rangelab) (ranges) | 15 | 15:00 | 0.5-0.6 | vs base rate | 333 | 33.3% | 40.3% | 24 | 37.5% | 36.2% | -0.18 |
+| Broken range travels >=1 width past edge (rangelab) (ranges) | 15 | 11:00 | 0.9-1.0 | vs base rate | 422 | 33.4% | 40.3% | 30 | 36.7% | 36.2% | -0.06 |
+| Broken range travels >=1 width past edge (rangelab) (ranges) | 60 | 02:00 | 0.5-0.6 | vs base rate | 336 | 47.0% | 40.3% | 24 | 20.8% | 36.2% | -2.28 |
+| Broken range travels >=1 width past edge (rangelab) (ranges) | 15 | 12:15 | 0.4-0.5 | vs base rate | 313 | 33.5% | 40.3% | 27 | 40.7% | 36.2% | -0.67 |
+| Broken range travels >=1 width past edge (rangelab) (ranges) | 15 | 11:45 | 0.7-0.8 | vs base rate | 383 | 33.7% | 40.3% | 26 | 46.2% | 36.2% | -1.51 |
+| Broken range travels >=1 width past edge (rangelab) (ranges) | 30 | 12:30 | 0.7-0.8 | vs base rate | 344 | 33.7% | 40.3% | 29 | 41.4% | 36.2% | -0.79 |
+| Broken range travels >=1 width past edge (rangelab) (ranges) | 30 | 05:30 | 0.4-0.5 | vs base rate | 302 | 33.8% | 40.3% | 22 | 59.1% | 36.2% | -3.52 |
+| Broken range travels >=1 width past edge (rangelab) (ranges) | 15 | 15:00 | 0.2-0.3 | vs base rate | 337 | 33.8% | 40.3% | 25 | 44.0% | 36.2% | -1.21 |
+| Broken range travels >=1 width past edge (rangelab) (ranges) | 15 | 01:15 | 0.0-0.1 | vs base rate | 255 | 46.7% | 40.3% | 22 | 27.3% | 36.2% | -1.40 |
+| Broken range travels >=1 width past edge (rangelab) (ranges) | 30 | 03:30 | 0.3-0.4 | vs base rate | 330 | 33.9% | 40.3% | 24 | 37.5% | 36.2% | -0.20 |
+| Broken range travels >=1 width past edge (rangelab) (ranges) | 60 | 05:00 | 0.3-0.4 | vs base rate | 333 | 46.5% | 40.3% | 25 | 32.0% | 36.2% | -0.67 |
+| Broken range travels >=1 width past edge (rangelab) (ranges) | 15 | 04:45 | 0.4-0.5 | vs base rate | 287 | 34.1% | 40.3% | 27 | 40.7% | 36.2% | -0.74 |
+| Broken range travels >=1 width past edge (rangelab) (ranges) | 30 | 07:00 | 0.1-0.2 | vs base rate | 341 | 46.3% | 40.3% | 26 | 30.8% | 36.2% | -0.90 |
+| Broken range travels >=1 width past edge (rangelab) (ranges) | 15 | 08:00 | 0.3-0.4 | vs base rate | 369 | 46.1% | 40.3% | 21 | 33.3% | 36.2% | -0.50 |
+| Broken range travels >=1 width past edge (rangelab) (ranges) | 15 | 05:30 | 0.8-0.9 | vs base rate | 410 | 34.6% | 40.3% | 36 | 47.2% | 36.2% | -1.95 |
+| Broken range travels >=1 width past edge (rangelab) (ranges) | 15 | 13:45 | 0.9-1.0 | vs base rate | 373 | 45.8% | 40.3% | 30 | 33.3% | 36.2% | -0.52 |
+| Broken range travels >=1 width past edge (rangelab) (ranges) | 30 | 05:00 | 0.8-0.9 | vs base rate | 409 | 35.5% | 40.3% | 34 | 41.2% | 36.2% | -1.03 |
+| Broken range travels >=1 width past edge (rangelab) (ranges) | 15 | 03:30 | 0.8-0.9 | vs base rate | 431 | 35.5% | 40.3% | 27 | 40.7% | 36.2% | -0.95 |
+| Hour trades through previous hour's mid (hourly) | 13:00 | open lower half | vs base rate | 1571 | 70.6% | 67.8% | 128 | 65.6% | 67.1% | -0.53 |
+| Both IB extremes taken 10:30-16:00 (session) | Q2 | IB bear | vs base rate | 332 | 28.6% | 23.1% | 23 | 13.0% | 20.5% | -1.35 |
+| IB broken (either side) 10:30-16:00 (session) | Q4 | vs base rate | 732 | 93.7% | 95.9% | 52 | 98.1% | 96.8% | -0.61 |
+| First IB break is UP (given a break) (session) | Q2 | closed high third | MECHANICAL (= random walk) | 284 | 87.0% | 83.3% | 26 | 84.6% | 86.1% | -0.41 |
+| First IB break is UP (given a break) (session) | IB took PDL | MECHANICAL (= random walk) | 1027 | 47.1% | 46.9% | 76 | 50.0% | 50.3% | -0.98 |
+| First IB break is UP (given a break) (session) | Q3 | closed high third | MECHANICAL (= random walk) | 297 | 84.5% | 84.5% | 20 | 95.0% | 88.6% | -198.45 |
+| After first ORB break, price returns to ORB mid (session) | Q3 | vs base rate | 732 | 77.3% | 73.9% | 60 | 65.0% | 69.1% | -1.18 |
+| First ORB break extends >=0.5x ORB width (session) | Q1 narrow | vs base rate | 732 | 84.3% | 76.2% | 56 | 76.8% | 77.3% | -0.07 |
+| First 15m-ORB break is UP (given a break) (session) | closed low third | MECHANICAL (= random walk) | 1295 | 17.6% | 16.1% | 98 | 10.2% | 16.8% | -4.23 |
+| First 15m-ORB break is UP (given a break) (session) | ORB bull | MECHANICAL (= random walk) | 1858 | 74.2% | 75.3% | 146 | 74.0% | 72.9% | -0.97 |
+| First 15m-ORB break is UP (given a break) (session) | ORB bear | MECHANICAL (= random walk) | 1809 | 28.0% | 27.1% | 132 | 23.5% | 26.9% | -3.71 |
+| First 15m-ORB break is UP (given a break) (session) | closed high third | MECHANICAL (= random walk) | 1401 | 84.4% | 84.9% | 96 | 88.5% | 85.9% | -5.48 |
+| Broken range returns to far edge (rangelab) (ranges) | 30 | 02:30 | 0.0-0.1 | vs base rate | 304 | 56.6% | 35.1% | 20 | 35.0% | 35.3% | -0.02 |
+| Broken range returns to far edge (rangelab) (ranges) | 15 | 02:30 | 0.8-0.9 | vs base rate | 410 | 54.9% | 35.1% | 46 | 32.6% | 35.3% | -0.14 |
+| Broken range returns to far edge (rangelab) (ranges) | 30 | 01:30 | 0.5-0.6 | vs base rate | 291 | 53.6% | 35.1% | 28 | 28.6% | 35.3% | -0.37 |
+| Broken range returns to far edge (rangelab) (ranges) | 60 | 01:00 | 0.3-0.4 | vs base rate | 313 | 53.4% | 35.1% | 34 | 26.5% | 35.3% | -0.49 |
+| Broken range returns to far edge (rangelab) (ranges) | 30 | 03:00 | 0.4-0.5 | vs base rate | 275 | 17.1% | 35.1% | 24 | 37.5% | 35.3% | -0.12 |
+| Broken range returns to far edge (rangelab) (ranges) | 30 | 10:30 | 0.7-0.8 | vs base rate | 428 | 18.0% | 35.1% | 32 | 40.6% | 35.3% | -0.31 |
+| Broken range returns to far edge (rangelab) (ranges) | 15 | 00:45 | 0.1-0.2 | vs base rate | 224 | 50.9% | 35.1% | 37 | 35.1% | 35.3% | -0.01 |
+| Broken range returns to far edge (rangelab) (ranges) | 60 | 03:00 | 0.1-0.2 | vs base rate | 353 | 19.8% | 35.1% | 34 | 38.2% | 35.3% | -0.19 |
+| Broken range returns to far edge (rangelab) (ranges) | 60 | 03:00 | 0.2-0.3 | vs base rate | 345 | 20.6% | 35.1% | 21 | 38.1% | 35.3% | -0.19 |
+| Broken range returns to far edge (rangelab) (ranges) | 30 | 22:30 | 0.4-0.5 | vs base rate | 188 | 21.3% | 35.1% | 25 | 36.0% | 35.3% | -0.05 |
+| Broken range returns to far edge (rangelab) (ranges) | 30 | 02:00 | 0.3-0.4 | vs base rate | 313 | 48.9% | 35.1% | 27 | 33.3% | 35.3% | -0.15 |
+| Broken range returns to far edge (rangelab) (ranges) | 15 | 21:30 | 0.7-0.8 | vs base rate | 286 | 22.0% | 35.1% | 26 | 42.3% | 35.3% | -0.53 |
+| Broken range returns to far edge (rangelab) (ranges) | 15 | 19:00 | 0.4-0.5 | vs base rate | 203 | 22.2% | 35.1% | 26 | 38.5% | 35.3% | -0.24 |
+| Broken range returns to far edge (rangelab) (ranges) | 15 | 19:45 | 0.1-0.2 | vs base rate | 296 | 48.0% | 35.1% | 23 | 30.4% | 35.3% | -0.38 |
+| Broken range returns to far edge (rangelab) (ranges) | 30 | 21:30 | 0.0-0.1 | vs base rate | 183 | 22.4% | 35.1% | 21 | 38.1% | 35.3% | -0.22 |
+| Broken range returns to far edge (rangelab) (ranges) | 30 | 21:30 | 0.5-0.6 | vs base rate | 247 | 22.7% | 35.1% | 36 | 36.1% | 35.3% | -0.06 |
+| Broken range returns to far edge (rangelab) (ranges) | 30 | 03:30 | 0.1-0.2 | vs base rate | 381 | 22.8% | 35.1% | 28 | 35.7% | 35.3% | -0.03 |
+| Broken range returns to far edge (rangelab) (ranges) | 15 | 11:30 | 0.4-0.5 | vs base rate | 306 | 22.9% | 35.1% | 23 | 47.8% | 35.3% | -1.02 |
+| Broken range returns to far edge (rangelab) (ranges) | 15 | 19:00 | 0.2-0.3 | vs base rate | 250 | 23.2% | 35.1% | 30 | 43.3% | 35.3% | -0.67 |
+| Broken range returns to far edge (rangelab) (ranges) | 15 | 21:30 | 0.1-0.2 | vs base rate | 224 | 23.2% | 35.1% | 30 | 40.0% | 35.3% | -0.39 |
+| Broken range returns to far edge (rangelab) (ranges) | 60 | 22:00 | 0.4-0.5 | vs base rate | 176 | 23.3% | 35.1% | 21 | 38.1% | 35.3% | -0.23 |
+| Broken range returns to far edge (rangelab) (ranges) | 30 | 11:00 | 0.8-0.9 | vs base rate | 452 | 23.5% | 35.1% | 48 | 35.4% | 35.3% | -0.01 |
+| Broken range returns to far edge (rangelab) (ranges) | 15 | 02:15 | 0.1-0.2 | vs base rate | 354 | 46.6% | 35.1% | 29 | 31.0% | 35.3% | -0.37 |
+| Broken range returns to far edge (rangelab) (ranges) | 30 | 22:30 | 0.3-0.4 | vs base rate | 190 | 23.7% | 35.1% | 23 | 52.2% | 35.3% | -1.47 |
+| Broken range returns to far edge (rangelab) (ranges) | 15 | 03:15 | 0.0-0.1 | vs base rate | 404 | 24.0% | 35.1% | 39 | 38.5% | 35.3% | -0.28 |
+| Broken range returns to far edge (rangelab) (ranges) | 15 | 22:00 | 0.2-0.3 | vs base rate | 260 | 24.2% | 35.1% | 31 | 41.9% | 35.3% | -0.61 |
+| Broken range returns to far edge (rangelab) (ranges) | 60 | 04:00 | 0.0-0.1 | vs base rate | 305 | 24.3% | 35.1% | 24 | 37.5% | 35.3% | -0.20 |
+| Broken range returns to far edge (rangelab) (ranges) | 30 | 11:30 | 0.2-0.3 | vs base rate | 314 | 24.5% | 35.1% | 24 | 37.5% | 35.3% | -0.20 |
+| Broken range returns to far edge (rangelab) (ranges) | 15 | 21:45 | 0.5-0.6 | vs base rate | 240 | 24.6% | 35.1% | 32 | 46.9% | 35.3% | -1.09 |
+| Broken range returns to far edge (rangelab) (ranges) | 15 | 22:30 | 0.6-0.7 | vs base rate | 248 | 24.6% | 35.1% | 26 | 50.0% | 35.3% | -1.39 |
+| Broken range returns to far edge (rangelab) (ranges) | 30 | 21:00 | 0.3-0.4 | vs base rate | 227 | 24.7% | 35.1% | 21 | 38.1% | 35.3% | -0.26 |
+| Broken range returns to far edge (rangelab) (ranges) | 60 | 02:00 | 0.6-0.7 | vs base rate | 341 | 45.5% | 35.1% | 36 | 30.6% | 35.3% | -0.46 |
+| Broken range returns to far edge (rangelab) (ranges) | 30 | 12:00 | 0.2-0.3 | vs base rate | 310 | 24.8% | 35.1% | 20 | 40.0% | 35.3% | -0.45 |
+| Broken range returns to far edge (rangelab) (ranges) | 15 | 10:30 | 0.0-0.1 | vs base rate | 349 | 24.9% | 35.1% | 24 | 37.5% | 35.3% | -0.21 |
+| Broken range returns to far edge (rangelab) (ranges) | 15 | 11:15 | 0.4-0.5 | vs base rate | 303 | 25.1% | 35.1% | 24 | 41.7% | 35.3% | -0.63 |
+| Broken range returns to far edge (rangelab) (ranges) | 30 | 11:30 | 0.9-1.0 | vs base rate | 455 | 25.3% | 35.1% | 30 | 36.7% | 35.3% | -0.13 |
+| Broken range returns to far edge (rangelab) (ranges) | 30 | 03:30 | 0.2-0.3 | vs base rate | 352 | 25.3% | 35.1% | 27 | 40.7% | 35.3% | -0.55 |
+| Broken range returns to far edge (rangelab) (ranges) | 15 | 01:15 | 0.2-0.3 | vs base rate | 278 | 45.0% | 35.1% | 24 | 25.0% | 35.3% | -1.05 |
+| Broken range returns to far edge (rangelab) (ranges) | 15 | 02:00 | 0.2-0.3 | vs base rate | 276 | 25.4% | 35.1% | 25 | 36.0% | 35.3% | -0.07 |
+| Broken range returns to far edge (rangelab) (ranges) | 15 | 20:15 | 0.5-0.6 | vs base rate | 268 | 25.4% | 35.1% | 27 | 37.0% | 35.3% | -0.17 |
+| Broken range returns to far edge (rangelab) (ranges) | 15 | 20:15 | 0.4-0.5 | vs base rate | 216 | 25.5% | 35.1% | 25 | 48.0% | 35.3% | -1.31 |
+| Broken range returns to far edge (rangelab) (ranges) | 15 | 11:00 | 0.8-0.9 | vs base rate | 415 | 25.5% | 35.1% | 38 | 36.8% | 35.3% | -0.16 |
+| Broken range returns to far edge (rangelab) (ranges) | 30 | 07:30 | 0.2-0.3 | vs base rate | 365 | 44.7% | 35.1% | 29 | 27.6% | 35.3% | -0.81 |
+| Broken range returns to far edge (rangelab) (ranges) | 15 | 22:30 | 0.2-0.3 | vs base rate | 234 | 25.6% | 35.1% | 20 | 40.0% | 35.3% | -0.49 |
+| Broken range returns to far edge (rangelab) (ranges) | 15 | 21:15 | 0.2-0.3 | vs base rate | 292 | 25.7% | 35.1% | 25 | 40.0% | 35.3% | -0.49 |
+| Broken range returns to far edge (rangelab) (ranges) | 15 | 22:30 | 0.1-0.2 | vs base rate | 218 | 25.7% | 35.1% | 37 | 45.9% | 35.3% | -1.12 |
+| Broken range returns to far edge (rangelab) (ranges) | 15 | 22:15 | 0.6-0.7 | vs base rate | 206 | 25.7% | 35.1% | 31 | 38.7% | 35.3% | -0.36 |
+| Broken range returns to far edge (rangelab) (ranges) | 60 | 02:00 | 0.3-0.4 | vs base rate | 347 | 44.4% | 35.1% | 23 | 30.4% | 35.3% | -0.53 |
+| Broken range returns to far edge (rangelab) (ranges) | 15 | 08:30 | 0.9-1.0 | vs base rate | 224 | 25.9% | 35.1% | 26 | 42.3% | 35.3% | -0.75 |
+| Broken range returns to far edge (rangelab) (ranges) | 30 | 18:30 | 0.3-0.4 | vs base rate | 244 | 44.3% | 35.1% | 34 | 32.4% | 35.3% | -0.33 |
+| Broken range returns to far edge (rangelab) (ranges) | 15 | 01:00 | 0.6-0.7 | vs base rate | 253 | 26.1% | 35.1% | 20 | 40.0% | 35.3% | -0.52 |
+| Broken range returns to far edge (rangelab) (ranges) | 15 | 11:00 | 0.6-0.7 | vs base rate | 337 | 26.1% | 35.1% | 24 | 37.5% | 35.3% | -0.24 |
+| Broken range returns to far edge (rangelab) (ranges) | 15 | 03:00 | 0.4-0.5 | vs base rate | 291 | 26.1% | 35.1% | 28 | 39.3% | 35.3% | -0.44 |
+| Broken range returns to far edge (rangelab) (ranges) | 30 | 03:30 | 0.6-0.7 | vs base rate | 363 | 26.2% | 35.1% | 28 | 46.4% | 35.3% | -1.24 |
+| Broken range returns to far edge (rangelab) (ranges) | 15 | 22:15 | 0.9-1.0 | vs base rate | 186 | 26.3% | 35.1% | 29 | 37.9% | 35.3% | -0.30 |
+| Broken range returns to far edge (rangelab) (ranges) | 15 | 11:00 | 0.7-0.8 | vs base rate | 334 | 26.3% | 35.1% | 31 | 41.9% | 35.3% | -0.75 |
+| Broken range returns to far edge (rangelab) (ranges) | 15 | 12:00 | 0.7-0.8 | vs base rate | 337 | 26.4% | 35.1% | 37 | 43.2% | 35.3% | -0.91 |
+| Broken range returns to far edge (rangelab) (ranges) | 15 | 14:00 | 0.5-0.6 | vs base rate | 363 | 26.4% | 35.1% | 34 | 44.1% | 35.3% | -1.01 |
+| Broken range returns to far edge (rangelab) (ranges) | 60 | 04:00 | 0.3-0.4 | vs base rate | 359 | 26.5% | 35.1% | 24 | 37.5% | 35.3% | -0.25 |
+| Broken range returns to far edge (rangelab) (ranges) | 15 | 11:00 | 0.4-0.5 | vs base rate | 268 | 26.5% | 35.1% | 25 | 48.0% | 35.3% | -1.47 |
+| Broken range returns to far edge (rangelab) (ranges) | 15 | 10:30 | 0.8-0.9 | vs base rate | 466 | 26.6% | 35.1% | 38 | 36.8% | 35.3% | -0.18 |
+| Broken range returns to far edge (rangelab) (ranges) | 15 | 04:15 | 0.1-0.2 | vs base rate | 352 | 26.7% | 35.1% | 27 | 37.0% | 35.3% | -0.20 |
+| Broken range returns to far edge (rangelab) (ranges) | 15 | 02:15 | 0.2-0.3 | vs base rate | 326 | 43.6% | 35.1% | 29 | 31.0% | 35.3% | -0.51 |
+| Broken range returns to far edge (rangelab) (ranges) | 30 | 01:00 | 0.4-0.5 | vs base rate | 239 | 43.5% | 35.1% | 22 | 27.3% | 35.3% | -0.96 |
+| Broken range returns to far edge (rangelab) (ranges) | 15 | 01:30 | 0.6-0.7 | vs base rate | 285 | 43.5% | 35.1% | 30 | 33.3% | 35.3% | -0.24 |
+| Broken range returns to far edge (rangelab) (ranges) | 30 | 20:30 | 0.4-0.5 | vs base rate | 224 | 26.8% | 35.1% | 20 | 45.0% | 35.3% | -1.16 |
+| Broken range returns to far edge (rangelab) (ranges) | 15 | 13:45 | 0.3-0.4 | vs base rate | 327 | 43.4% | 35.1% | 31 | 29.0% | 35.3% | -0.76 |
+| Broken range returns to far edge (rangelab) (ranges) | 15 | 01:00 | 0.9-1.0 | vs base rate | 145 | 26.9% | 35.1% | 22 | 40.9% | 35.3% | -0.68 |
+| Broken range returns to far edge (rangelab) (ranges) | 15 | 18:15 | 0.6-0.7 | vs base rate | 211 | 27.0% | 35.1% | 20 | 45.0% | 35.3% | -1.19 |
+| Broken range returns to far edge (rangelab) (ranges) | 15 | 22:15 | 0.2-0.3 | vs base rate | 240 | 27.1% | 35.1% | 31 | 38.7% | 35.3% | -0.42 |
+| Broken range returns to far edge (rangelab) (ranges) | 15 | 20:45 | 0.1-0.2 | vs base rate | 278 | 43.2% | 35.1% | 22 | 27.3% | 35.3% | -1.00 |
+| Broken range returns to far edge (rangelab) (ranges) | 15 | 21:45 | 0.2-0.3 | vs base rate | 276 | 27.2% | 35.1% | 25 | 36.0% | 35.3% | -0.08 |
+| Broken range returns to far edge (rangelab) (ranges) | 15 | 15:15 | 0.1-0.2 | vs base rate | 376 | 43.1% | 35.1% | 29 | 34.5% | 35.3% | -0.11 |
+| Broken range returns to far edge (rangelab) (ranges) | 15 | 11:15 | 0.8-0.9 | vs base rate | 466 | 27.3% | 35.1% | 38 | 39.5% | 35.3% | -0.52 |
+| Broken range returns to far edge (rangelab) (ranges) | 15 | 04:30 | 0.8-0.9 | vs base rate | 396 | 27.3% | 35.1% | 35 | 37.1% | 35.3% | -0.23 |
+| Broken range returns to far edge (rangelab) (ranges) | 15 | 11:45 | 0.8-0.9 | vs base rate | 403 | 27.3% | 35.1% | 40 | 40.0% | 35.3% | -0.59 |
+| Broken range returns to far edge (rangelab) (ranges) | 15 | 04:45 | 0.9-1.0 | vs base rate | 267 | 27.3% | 35.1% | 27 | 44.4% | 35.3% | -1.17 |
+| Broken range returns to far edge (rangelab) (ranges) | 60 | 12:00 | 0.6-0.7 | vs base rate | 336 | 42.9% | 35.1% | 24 | 33.3% | 35.3% | -0.26 |
+| Broken range returns to far edge (rangelab) (ranges) | 15 | 22:00 | 0.0-0.1 | vs base rate | 197 | 27.4% | 35.1% | 21 | 38.1% | 35.3% | -0.36 |
+| Broken range returns to far edge (rangelab) (ranges) | 15 | 04:30 | 0.5-0.6 | vs base rate | 341 | 27.6% | 35.1% | 20 | 45.0% | 35.3% | -1.28 |
+| Broken range returns to far edge (rangelab) (ranges) | 60 | 23:00 | 0.6-0.7 | vs base rate | 260 | 42.7% | 35.1% | 28 | 32.1% | 35.3% | -0.42 |
+| Broken range returns to far edge (rangelab) (ranges) | 15 | 02:00 | 0.9-1.0 | vs base rate | 228 | 27.6% | 35.1% | 30 | 36.7% | 35.3% | -0.18 |
+| Broken range returns to far edge (rangelab) (ranges) | 15 | 22:45 | 0.6-0.7 | vs base rate | 271 | 27.7% | 35.1% | 28 | 35.7% | 35.3% | -0.05 |
+| Broken range returns to far edge (rangelab) (ranges) | 60 | 22:00 | 0.7-0.8 | vs base rate | 242 | 27.7% | 35.1% | 32 | 37.5% | 35.3% | -0.29 |
+| Broken range returns to far edge (rangelab) (ranges) | 15 | 05:30 | 0.3-0.4 | vs base rate | 353 | 27.8% | 35.1% | 21 | 42.9% | 35.3% | -1.02 |
+| Broken range returns to far edge (rangelab) (ranges) | 15 | 23:15 | 0.7-0.8 | vs base rate | 215 | 27.9% | 35.1% | 25 | 40.0% | 35.3% | -0.65 |
+| Broken range returns to far edge (rangelab) (ranges) | 15 | 10:45 | 0.3-0.4 | vs base rate | 351 | 27.9% | 35.1% | 27 | 40.7% | 35.3% | -0.75 |
+| Broken range returns to far edge (rangelab) (ranges) | 15 | 08:30 | 0.2-0.3 | vs base rate | 350 | 28.0% | 35.1% | 28 | 39.3% | 35.3% | -0.55 |
+| Broken range returns to far edge (rangelab) (ranges) | 30 | 03:30 | 0.8-0.9 | vs base rate | 435 | 28.0% | 35.1% | 31 | 41.9% | 35.3% | -0.93 |
+| Broken range returns to far edge (rangelab) (ranges) | 15 | 12:00 | 0.3-0.4 | vs base rate | 328 | 28.0% | 35.1% | 28 | 39.3% | 35.3% | -0.56 |
+| Broken range returns to far edge (rangelab) (ranges) | 15 | 06:00 | 0.5-0.6 | vs base rate | 360 | 28.1% | 35.1% | 24 | 37.5% | 35.3% | -0.31 |
+| Broken range returns to far edge (rangelab) (ranges) | 15 | 15:00 | 0.1-0.2 | vs base rate | 311 | 42.1% | 35.1% | 35 | 31.4% | 35.3% | -0.56 |
+| Broken range returns to far edge (rangelab) (ranges) | 15 | 10:30 | 0.6-0.7 | vs base rate | 366 | 28.1% | 35.1% | 25 | 36.0% | 35.3% | -0.09 |
+| Broken range returns to far edge (rangelab) (ranges) | 15 | 01:30 | 0.5-0.6 | vs base rate | 290 | 42.1% | 35.1% | 24 | 33.3% | 35.3% | -0.29 |
+| Broken range returns to far edge (rangelab) (ranges) | 15 | 15:15 | 0.9-1.0 | vs base rate | 353 | 41.9% | 35.1% | 30 | 33.3% | 35.3% | -0.30 |
+| Broken range returns to far edge (rangelab) (ranges) | 60 | 13:00 | 0.3-0.4 | vs base rate | 275 | 28.4% | 35.1% | 25 | 44.0% | 35.3% | -1.28 |
+| Broken range returns to far edge (rangelab) (ranges) | 30 | 02:00 | 0.6-0.7 | vs base rate | 347 | 41.8% | 35.1% | 29 | 31.0% | 35.3% | -0.65 |
+| Broken range returns to far edge (rangelab) (ranges) | 15 | 13:30 | 0.9-1.0 | vs base rate | 395 | 41.8% | 35.1% | 28 | 32.1% | 35.3% | -0.48 |
+| Broken range returns to far edge (rangelab) (ranges) | 60 | 05:00 | 0.4-0.5 | vs base rate | 333 | 41.7% | 35.1% | 23 | 34.8% | 35.3% | -0.08 |
+| Broken range returns to far edge (rangelab) (ranges) | 15 | 19:45 | 0.4-0.5 | vs base rate | 223 | 41.7% | 35.1% | 23 | 34.8% | 35.3% | -0.08 |
+| Broken range returns to far edge (rangelab) (ranges) | 30 | 07:00 | 0.9-1.0 | vs base rate | 343 | 41.7% | 35.1% | 31 | 32.3% | 35.3% | -0.47 |
+| Broken range returns to far edge (rangelab) (ranges) | 15 | 01:15 | 0.1-0.2 | vs base rate | 264 | 41.7% | 35.1% | 34 | 35.3% | 35.3% | -0.01 |
+| Broken range returns to far edge (rangelab) (ranges) | 15 | 13:00 | 0.6-0.7 | vs base rate | 304 | 28.6% | 35.1% | 24 | 37.5% | 35.3% | -0.33 |
+| Broken range returns to far edge (rangelab) (ranges) | 15 | 13:00 | 0.5-0.6 | vs base rate | 352 | 28.7% | 35.1% | 22 | 40.9% | 35.3% | -0.87 |
+| Broken range returns to far edge (rangelab) (ranges) | 15 | 21:45 | 0.3-0.4 | vs base rate | 216 | 28.7% | 35.1% | 25 | 36.0% | 35.3% | -0.10 |
+| Broken range returns to far edge (rangelab) (ranges) | 15 | 10:30 | 0.9-1.0 | vs base rate | 407 | 28.7% | 35.1% | 40 | 40.0% | 35.3% | -0.73 |
+| Broken range returns to far edge (rangelab) (ranges) | 15 | 20:45 | 0.6-0.7 | vs base rate | 280 | 41.4% | 35.1% | 21 | 23.8% | 35.3% | -1.83 |
+| Broken range returns to far edge (rangelab) (ranges) | 15 | 06:15 | 0.3-0.4 | vs base rate | 314 | 41.4% | 35.1% | 27 | 33.3% | 35.3% | -0.32 |
+| Broken range returns to far edge (rangelab) (ranges) | 15 | 20:45 | 0.3-0.4 | vs base rate | 237 | 29.1% | 35.1% | 39 | 38.5% | 35.3% | -0.52 |
+| Broken range returns to far edge (rangelab) (ranges) | 30 | 04:30 | 0.8-0.9 | vs base rate | 412 | 29.1% | 35.1% | 30 | 36.7% | 35.3% | -0.22 |
+| Broken range returns to far edge (rangelab) (ranges) | 30 | 19:00 | 0.2-0.3 | vs base rate | 275 | 41.1% | 35.1% | 27 | 22.2% | 35.3% | -2.20 |
+| Broken range returns to far edge (rangelab) (ranges) | 15 | 03:30 | 0.7-0.8 | vs base rate | 373 | 29.5% | 35.1% | 26 | 38.5% | 35.3% | -0.55 |
+| Broken range returns to far edge (rangelab) (ranges) | 15 | 12:00 | 0.1-0.2 | vs base rate | 383 | 29.5% | 35.1% | 33 | 36.4% | 35.3% | -0.18 |
+| Broken range returns to far edge (rangelab) (ranges) | 15 | 13:45 | 0.6-0.7 | vs base rate | 355 | 40.6% | 35.1% | 24 | 29.2% | 35.3% | -1.14 |
+| Broken range returns to its mid (rangelab) (ranges) | 30 | 01:30 | 0.9-1.0 | vs base rate | 226 | 80.1% | 60.3% | 27 | 59.3% | 61.9% | -0.13 |
+| Broken range returns to its mid (rangelab) (ranges) | 60 | 00:00 | 0.5-0.6 | vs base rate | 308 | 78.6% | 60.3% | 28 | 53.6% | 61.9% | -0.46 |
+| Broken range returns to its mid (rangelab) (ranges) | 30 | 21:30 | 0.3-0.4 | vs base rate | 231 | 42.9% | 60.3% | 29 | 62.1% | 61.9% | -0.01 |
+| Broken range returns to its mid (rangelab) (ranges) | 15 | 21:30 | 0.3-0.4 | vs base rate | 239 | 43.9% | 60.3% | 27 | 63.0% | 61.9% | -0.07 |
+| Broken range returns to its mid (rangelab) (ranges) | 15 | 21:30 | 0.7-0.8 | vs base rate | 286 | 44.8% | 60.3% | 26 | 65.4% | 61.9% | -0.22 |
+| Broken range returns to its mid (rangelab) (ranges) | 15 | 07:45 | 0.3-0.4 | vs base rate | 327 | 75.5% | 60.3% | 22 | 59.1% | 61.9% | -0.18 |
+| Broken range returns to its mid (rangelab) (ranges) | 30 | 02:30 | 0.0-0.1 | vs base rate | 304 | 75.3% | 60.3% | 20 | 60.0% | 61.9% | -0.13 |
+| Broken range returns to its mid (rangelab) (ranges) | 30 | 01:30 | 0.5-0.6 | vs base rate | 291 | 75.3% | 60.3% | 28 | 60.7% | 61.9% | -0.08 |
+| Broken range returns to its mid (rangelab) (ranges) | 15 | 02:45 | 0.0-0.1 | vs base rate | 394 | 74.9% | 60.3% | 22 | 54.5% | 61.9% | -0.51 |
+| Broken range returns to its mid (rangelab) (ranges) | 15 | 02:15 | 0.8-0.9 | vs base rate | 358 | 74.3% | 60.3% | 37 | 56.8% | 61.9% | -0.37 |
+| Broken range returns to its mid (rangelab) (ranges) | 60 | 01:00 | 0.3-0.4 | vs base rate | 313 | 74.1% | 60.3% | 34 | 52.9% | 61.9% | -0.65 |
+| Broken range returns to its mid (rangelab) (ranges) | 60 | 20:00 | 0.5-0.6 | vs base rate | 214 | 46.7% | 60.3% | 32 | 65.6% | 61.9% | -0.27 |
+| Broken range returns to its mid (rangelab) (ranges) | 60 | 02:00 | 0.8-0.9 | vs base rate | 425 | 73.9% | 60.3% | 32 | 53.1% | 61.9% | -0.65 |
+| Broken range returns to its mid (rangelab) (ranges) | 60 | 03:00 | 0.5-0.6 | vs base rate | 369 | 46.9% | 60.3% | 27 | 63.0% | 61.9% | -0.08 |
+| Broken range returns to its mid (rangelab) (ranges) | 30 | 03:00 | 0.4-0.5 | vs base rate | 275 | 46.9% | 60.3% | 24 | 70.8% | 61.9% | -0.67 |
+| Broken range returns to its mid (rangelab) (ranges) | 15 | 00:45 | 0.1-0.2 | vs base rate | 224 | 73.7% | 60.3% | 37 | 54.1% | 61.9% | -0.59 |
+| Broken range returns to its mid (rangelab) (ranges) | 30 | 21:30 | 0.1-0.2 | vs base rate | 200 | 47.5% | 60.3% | 32 | 68.8% | 61.9% | -0.53 |
+| Broken range returns to its mid (rangelab) (ranges) | 60 | 03:00 | 0.2-0.3 | vs base rate | 345 | 47.5% | 60.3% | 21 | 61.9% | 61.9% | -0.00 |
+| Broken range returns to its mid (rangelab) (ranges) | 15 | 09:30 | 0.6-0.7 | vs base rate | 334 | 47.9% | 60.3% | 24 | 66.7% | 61.9% | -0.38 |
+| Broken range returns to its mid (rangelab) (ranges) | 15 | 03:00 | 0.5-0.6 | vs base rate | 340 | 47.9% | 60.3% | 25 | 68.0% | 61.9% | -0.49 |
+| Broken range returns to its mid (rangelab) (ranges) | 30 | 10:00 | 0.7-0.8 | vs base rate | 354 | 48.0% | 60.3% | 28 | 67.9% | 61.9% | -0.48 |
+| Broken range returns to its mid (rangelab) (ranges) | 15 | 02:15 | 0.3-0.4 | vs base rate | 290 | 72.4% | 60.3% | 33 | 60.6% | 61.9% | -0.11 |
+| Broken range returns to its mid (rangelab) (ranges) | 15 | 10:00 | 0.0-0.1 | vs base rate | 317 | 48.3% | 60.3% | 37 | 62.2% | 61.9% | -0.02 |
+| Broken range returns to its mid (rangelab) (ranges) | 15 | 20:30 | 0.2-0.3 | vs base rate | 290 | 48.3% | 60.3% | 31 | 64.5% | 61.9% | -0.22 |
+| Broken range returns to its mid (rangelab) (ranges) | 15 | 10:00 | 0.1-0.2 | vs base rate | 356 | 48.3% | 60.3% | 24 | 62.5% | 61.9% | -0.05 |
+| Broken range returns to its mid (rangelab) (ranges) | 60 | 02:00 | 0.3-0.4 | vs base rate | 347 | 72.3% | 60.3% | 23 | 60.9% | 61.9% | -0.09 |
+| Broken range returns to its mid (rangelab) (ranges) | 15 | 02:30 | 0.5-0.6 | vs base rate | 360 | 72.2% | 60.3% | 30 | 60.0% | 61.9% | -0.16 |
+| Broken range returns to its mid (rangelab) (ranges) | 15 | 10:45 | 0.1-0.2 | vs base rate | 344 | 48.8% | 60.3% | 32 | 68.8% | 61.9% | -0.60 |
+| Broken range returns to its mid (rangelab) (ranges) | 30 | 01:30 | 0.7-0.8 | vs base rate | 337 | 71.5% | 60.3% | 26 | 53.8% | 61.9% | -0.72 |
+| Broken range returns to its mid (rangelab) (ranges) | 15 | 11:00 | 0.6-0.7 | vs base rate | 337 | 49.3% | 60.3% | 24 | 75.0% | 61.9% | -1.18 |
+| Broken range returns to its mid (rangelab) (ranges) | 15 | 10:30 | 0.2-0.3 | vs base rate | 350 | 49.4% | 60.3% | 30 | 70.0% | 61.9% | -0.74 |
+| Broken range returns to its mid (rangelab) (ranges) | 30 | 10:30 | 0.1-0.2 | vs base rate | 323 | 49.5% | 60.3% | 29 | 62.1% | 61.9% | -0.02 |
+| Broken range returns to its mid (rangelab) (ranges) | 15 | 12:00 | 0.7-0.8 | vs base rate | 337 | 49.6% | 60.3% | 37 | 67.6% | 61.9% | -0.53 |
+| Broken range returns to its mid (rangelab) (ranges) | 30 | 20:00 | 0.9-1.0 | vs base rate | 238 | 49.6% | 60.3% | 24 | 62.5% | 61.9% | -0.06 |
+| Broken range returns to its mid (rangelab) (ranges) | 15 | 09:45 | 0.3-0.4 | vs base rate | 279 | 49.8% | 60.3% | 22 | 63.6% | 61.9% | -0.17 |
+| Broken range returns to its mid (rangelab) (ranges) | 60 | 04:00 | 0.0-0.1 | vs base rate | 305 | 49.8% | 60.3% | 24 | 66.7% | 61.9% | -0.45 |
+| Broken range returns to its mid (rangelab) (ranges) | 15 | 21:30 | 0.6-0.7 | vs base rate | 264 | 50.0% | 60.3% | 27 | 66.7% | 61.9% | -0.46 |
+| Broken range returns to its mid (rangelab) (ranges) | 15 | 10:00 | 0.6-0.7 | vs base rate | 340 | 50.0% | 60.3% | 26 | 65.4% | 61.9% | -0.34 |
+| Broken range returns to its mid (rangelab) (ranges) | 15 | 10:15 | 0.3-0.4 | vs base rate | 339 | 50.1% | 60.3% | 33 | 69.7% | 61.9% | -0.77 |
+| Broken range returns to its mid (rangelab) (ranges) | 15 | 22:00 | 0.2-0.3 | vs base rate | 260 | 50.8% | 60.3% | 31 | 67.7% | 61.9% | -0.61 |
+| Broken range returns to its mid (rangelab) (ranges) | 15 | 14:00 | 0.0-0.1 | vs base rate | 303 | 50.8% | 60.3% | 23 | 65.2% | 61.9% | -0.35 |
+| Broken range returns to its mid (rangelab) (ranges) | 60 | 09:00 | 0.2-0.3 | vs base rate | 383 | 50.9% | 60.3% | 27 | 70.4% | 61.9% | -0.90 |
+| Broken range returns to its mid (rangelab) (ranges) | 60 | 11:00 | 0.9-1.0 | vs base rate | 475 | 50.9% | 60.3% | 43 | 62.8% | 61.9% | -0.10 |
+| Broken range returns to its mid (rangelab) (ranges) | 60 | 04:00 | 0.3-0.4 | vs base rate | 359 | 51.0% | 60.3% | 24 | 62.5% | 61.9% | -0.07 |
+| Broken range returns to its mid (rangelab) (ranges) | 15 | 10:30 | 0.8-0.9 | vs base rate | 466 | 51.1% | 60.3% | 38 | 65.8% | 61.9% | -0.42 |
+| Broken range returns to its mid (rangelab) (ranges) | 15 | 13:00 | 0.5-0.6 | vs base rate | 352 | 51.1% | 60.3% | 22 | 81.8% | 61.9% | -2.17 |
+| Broken range returns to its mid (rangelab) (ranges) | 15 | 03:00 | 0.4-0.5 | vs base rate | 291 | 51.2% | 60.3% | 28 | 67.9% | 61.9% | -0.65 |
+| Broken range returns to its mid (rangelab) (ranges) | 15 | 21:30 | 0.8-0.9 | vs base rate | 326 | 51.2% | 60.3% | 30 | 66.7% | 61.9% | -0.52 |
+| Broken range returns to its mid (rangelab) (ranges) | 15 | 00:30 | 0.6-0.7 | vs base rate | 206 | 69.4% | 60.3% | 22 | 50.0% | 61.9% | -1.31 |
+| Broken range returns to its mid (rangelab) (ranges) | 15 | 11:30 | 0.4-0.5 | vs base rate | 306 | 51.3% | 60.3% | 23 | 69.6% | 61.9% | -0.85 |
+| Broken range returns to its mid (rangelab) (ranges) | 30 | 11:30 | 0.4-0.5 | vs base rate | 300 | 51.3% | 60.3% | 22 | 72.7% | 61.9% | -1.20 |
+| Broken range returns to its mid (rangelab) (ranges) | 30 | 18:30 | 0.3-0.4 | vs base rate | 244 | 69.3% | 60.3% | 34 | 52.9% | 61.9% | -1.00 |
+| Broken range returns to its mid (rangelab) (ranges) | 30 | 03:30 | 0.1-0.2 | vs base rate | 381 | 51.4% | 60.3% | 28 | 67.9% | 61.9% | -0.67 |
+| Broken range returns to its mid (rangelab) (ranges) | 30 | 22:00 | 0.6-0.7 | vs base rate | 239 | 51.5% | 60.3% | 25 | 64.0% | 61.9% | -0.24 |
+| Broken range returns to its mid (rangelab) (ranges) | 15 | 03:00 | 0.3-0.4 | vs base rate | 303 | 51.5% | 60.3% | 25 | 68.0% | 61.9% | -0.69 |
+| Broken range returns to its mid (rangelab) (ranges) | 15 | 22:15 | 0.5-0.6 | vs base rate | 227 | 51.5% | 60.3% | 25 | 64.0% | 61.9% | -0.24 |
+| Broken range returns to its mid (rangelab) (ranges) | 15 | 04:00 | 0.5-0.6 | vs base rate | 320 | 51.6% | 60.3% | 26 | 65.4% | 61.9% | -0.40 |
+| Broken range returns to its mid (rangelab) (ranges) | 30 | 02:00 | 0.1-0.2 | vs base rate | 323 | 69.0% | 60.3% | 28 | 57.1% | 61.9% | -0.55 |
+| Broken range returns to its mid (rangelab) (ranges) | 15 | 11:00 | 0.1-0.2 | vs base rate | 387 | 51.7% | 60.3% | 28 | 67.9% | 61.9% | -0.69 |
+| Broken range returns to its mid (rangelab) (ranges) | 15 | 19:45 | 0.1-0.2 | vs base rate | 296 | 68.9% | 60.3% | 23 | 39.1% | 61.9% | -2.65 |
+| Broken range returns to its mid (rangelab) (ranges) | 15 | 20:30 | 0.1-0.2 | vs base rate | 257 | 51.8% | 60.3% | 31 | 64.5% | 61.9% | -0.31 |
+| Broken range returns to its mid (rangelab) (ranges) | 15 | 02:00 | 0.2-0.3 | vs base rate | 276 | 51.8% | 60.3% | 25 | 68.0% | 61.9% | -0.72 |
+| Broken range returns to its mid (rangelab) (ranges) | 30 | 20:30 | 0.5-0.6 | vs base rate | 245 | 51.8% | 60.3% | 22 | 72.7% | 61.9% | -1.28 |
+| Broken range returns to its mid (rangelab) (ranges) | 15 | 06:00 | 0.5-0.6 | vs base rate | 360 | 51.9% | 60.3% | 24 | 62.5% | 61.9% | -0.07 |
+| Broken range returns to its mid (rangelab) (ranges) | 15 | 07:15 | 0.0-0.1 | vs base rate | 327 | 52.0% | 60.3% | 31 | 71.0% | 61.9% | -1.09 |
+| Broken range returns to its mid (rangelab) (ranges) | 30 | 21:30 | 0.9-1.0 | vs base rate | 194 | 52.1% | 60.3% | 32 | 65.6% | 61.9% | -0.45 |
+| Broken range returns to its mid (rangelab) (ranges) | 30 | 23:30 | 0.3-0.4 | vs base rate | 207 | 68.6% | 60.3% | 35 | 60.0% | 61.9% | -0.23 |
+| Broken range returns to its mid (rangelab) (ranges) | 30 | 03:30 | 0.3-0.4 | vs base rate | 330 | 52.1% | 60.3% | 24 | 62.5% | 61.9% | -0.07 |
+| Broken range returns to its mid (rangelab) (ranges) | 30 | 22:30 | 0.4-0.5 | vs base rate | 188 | 52.1% | 60.3% | 25 | 72.0% | 61.9% | -1.23 |
+| Broken range returns to its mid (rangelab) (ranges) | 30 | 03:00 | 0.0-0.1 | vs base rate | 322 | 52.2% | 60.3% | 27 | 63.0% | 61.9% | -0.13 |
+| Broken range returns to its mid (rangelab) (ranges) | 60 | 23:00 | 0.6-0.7 | vs base rate | 260 | 68.5% | 60.3% | 28 | 60.7% | 61.9% | -0.14 |
+| Broken range returns to its mid (rangelab) (ranges) | 15 | 11:00 | 0.8-0.9 | vs base rate | 415 | 52.3% | 60.3% | 38 | 63.2% | 61.9% | -0.16 |
+| Broken range returns to its mid (rangelab) (ranges) | 15 | 02:15 | 0.1-0.2 | vs base rate | 354 | 68.4% | 60.3% | 29 | 55.2% | 61.9% | -0.84 |
+| Broken range returns to its mid (rangelab) (ranges) | 15 | 19:00 | 0.2-0.3 | vs base rate | 250 | 52.4% | 60.3% | 30 | 73.3% | 61.9% | -1.44 |
+| Broken range returns to its mid (rangelab) (ranges) | 15 | 03:15 | 0.0-0.1 | vs base rate | 404 | 52.5% | 60.3% | 39 | 71.8% | 61.9% | -1.26 |
+| Broken range returns to its mid (rangelab) (ranges) | 30 | 11:30 | 0.6-0.7 | vs base rate | 308 | 52.6% | 60.3% | 25 | 64.0% | 61.9% | -0.27 |
+| Broken range returns to its mid (rangelab) (ranges) | 15 | 20:15 | 0.9-1.0 | vs base rate | 228 | 52.6% | 60.3% | 31 | 64.5% | 61.9% | -0.34 |
+| Broken range returns to its mid (rangelab) (ranges) | 15 | 10:45 | 0.6-0.7 | vs base rate | 332 | 52.7% | 60.3% | 21 | 61.9% | 61.9% | -0.00 |
+| Broken range returns to its mid (rangelab) (ranges) | 15 | 04:15 | 0.9-1.0 | vs base rate | 333 | 52.9% | 60.3% | 42 | 61.9% | 61.9% | -0.00 |
+| Broken range returns to its mid (rangelab) (ranges) | 30 | 22:00 | 0.9-1.0 | vs base rate | 210 | 52.9% | 60.3% | 36 | 63.9% | 61.9% | -0.27 |
+| Broken range returns to its mid (rangelab) (ranges) | 15 | 20:15 | 0.5-0.6 | vs base rate | 268 | 53.0% | 60.3% | 27 | 63.0% | 61.9% | -0.15 |
+| Broken range returns to its mid (rangelab) (ranges) | 15 | 14:30 | 0.7-0.8 | vs base rate | 361 | 67.6% | 60.3% | 25 | 48.0% | 61.9% | -1.91 |
+| Broken range returns to its mid (rangelab) (ranges) | 60 | 12:00 | 0.6-0.7 | vs base rate | 336 | 67.6% | 60.3% | 24 | 58.3% | 61.9% | -0.49 |
+| Broken range returns to its mid (rangelab) (ranges) | 15 | 15:15 | 0.1-0.2 | vs base rate | 376 | 67.6% | 60.3% | 29 | 55.2% | 61.9% | -0.93 |
+| Broken range returns to its mid (rangelab) (ranges) | 30 | 04:30 | 0.0-0.1 | vs base rate | 316 | 53.2% | 60.3% | 31 | 71.0% | 61.9% | -1.27 |
+| Broken range returns to its mid (rangelab) (ranges) | 30 | 02:00 | 0.6-0.7 | vs base rate | 347 | 67.4% | 60.3% | 29 | 51.7% | 61.9% | -1.43 |
+| Broken range returns to its mid (rangelab) (ranges) | 15 | 15:15 | 0.9-1.0 | vs base rate | 353 | 67.4% | 60.3% | 30 | 53.3% | 61.9% | -1.21 |
+| Broken range returns to its mid (rangelab) (ranges) | 15 | 11:00 | 0.9-1.0 | vs base rate | 422 | 53.3% | 60.3% | 30 | 66.7% | 61.9% | -0.68 |
+| Broken range returns to its mid (rangelab) (ranges) | 15 | 11:00 | 0.4-0.5 | vs base rate | 268 | 53.4% | 60.3% | 25 | 76.0% | 61.9% | -2.02 |
+| Broken range returns to its mid (rangelab) (ranges) | 15 | 09:45 | 0.7-0.8 | vs base rate | 371 | 53.4% | 60.3% | 21 | 71.4% | 61.9% | -1.37 |
+| Broken range returns to its mid (rangelab) (ranges) | 15 | 14:15 | 0.3-0.4 | vs base rate | 311 | 67.2% | 60.3% | 30 | 53.3% | 61.9% | -1.25 |
+| Broken range returns to its mid (rangelab) (ranges) | 15 | 00:30 | 0.3-0.4 | vs base rate | 216 | 67.1% | 60.3% | 31 | 54.8% | 61.9% | -1.04 |
+| Broken range returns to its mid (rangelab) (ranges) | 30 | 03:30 | 0.7-0.8 | vs base rate | 351 | 53.6% | 60.3% | 31 | 74.2% | 61.9% | -1.82 |
+| Broken range returns to its mid (rangelab) (ranges) | 15 | 01:30 | 0.6-0.7 | vs base rate | 285 | 67.0% | 60.3% | 30 | 56.7% | 61.9% | -0.78 |
+| Broken range returns to its mid (rangelab) (ranges) | 15 | 15:00 | 0.3-0.4 | vs base rate | 309 | 67.0% | 60.3% | 29 | 55.2% | 61.9% | -1.01 |
+| Broken range returns to its mid (rangelab) (ranges) | 15 | 12:00 | 0.2-0.3 | vs base rate | 324 | 53.7% | 60.3% | 31 | 64.5% | 61.9% | -0.40 |
+| Broken range returns to its mid (rangelab) (ranges) | 15 | 22:45 | 0.5-0.6 | vs base rate | 239 | 66.9% | 60.3% | 26 | 61.5% | 61.9% | -0.05 |
+| Broken range returns to its mid (rangelab) (ranges) | 15 | 03:45 | 0.2-0.3 | vs base rate | 359 | 53.8% | 60.3% | 25 | 72.0% | 61.9% | -1.54 |
+| Broken range returns to its mid (rangelab) (ranges) | 15 | 03:30 | 0.1-0.2 | vs base rate | 360 | 53.9% | 60.3% | 34 | 64.7% | 61.9% | -0.44 |
+| Broken range returns to its mid (rangelab) (ranges) | 15 | 01:15 | 0.2-0.3 | vs base rate | 278 | 66.5% | 60.3% | 24 | 37.5% | 61.9% | -3.93 |
+| Broken range returns to its mid (rangelab) (ranges) | 60 | 11:00 | 0.8-0.9 | vs base rate | 458 | 54.1% | 60.3% | 38 | 71.1% | 61.9% | -1.48 |
+| Broken range returns to its mid (rangelab) (ranges) | 15 | 06:15 | 0.2-0.3 | vs base rate | 391 | 66.5% | 60.3% | 21 | 57.1% | 61.9% | -0.77 |
+| Broken range returns to its mid (rangelab) (ranges) | 15 | 03:45 | 0.7-0.8 | vs base rate | 380 | 54.2% | 60.3% | 37 | 67.6% | 61.9% | -0.93 |
+| Broken range returns to its mid (rangelab) (ranges) | 15 | 11:00 | 0.2-0.3 | vs base rate | 378 | 54.2% | 60.3% | 34 | 64.7% | 61.9% | -0.46 |
+| Broken range returns to its mid (rangelab) (ranges) | 15 | 10:45 | 0.3-0.4 | vs base rate | 351 | 54.4% | 60.3% | 27 | 74.1% | 61.9% | -2.06 |
+| Broken range returns to its mid (rangelab) (ranges) | 15 | 13:00 | 0.6-0.7 | vs base rate | 304 | 54.6% | 60.3% | 24 | 70.8% | 61.9% | -1.56 |
+| Broken range returns to its mid (rangelab) (ranges) | 15 | 11:15 | 0.9-1.0 | vs base rate | 459 | 54.7% | 60.3% | 49 | 71.4% | 61.9% | -1.69 |
+| Broken range returns to its mid (rangelab) (ranges) | 15 | 11:00 | 0.7-0.8 | vs base rate | 334 | 54.8% | 60.3% | 31 | 80.6% | 61.9% | -3.38 |
+| Broken range returns to its mid (rangelab) (ranges) | 15 | 04:30 | 0.8-0.9 | vs base rate | 396 | 54.8% | 60.3% | 35 | 68.6% | 61.9% | -1.21 |
+| Broken range returns to its mid (rangelab) (ranges) | 15 | 13:00 | 0.8-0.9 | vs base rate | 485 | 55.7% | 60.3% | 24 | 62.5% | 61.9% | -0.13 |
+
+### TOO FEW (246)
+
+| statistic | condition | benchmark | disc n | disc rate | disc bench | holdout n | holdout rate | holdout bench | retained |
+|---|---|---|---:|---:|---:|---:|---:|---:|---:|
+| C3 takes C2 high before C2 low (candle_1D) | outside | C2 closed below C1 L | beats random walk | 106 | 6.6% | 15.7% | 4 | 25.0% | 8.6% | -1.80 |
+| C3 takes C2 high before C2 low (candle_1D) | outside | C1 bear / C2 bull | beats random walk | 125 | 89.6% | 82.1% | 12 | 58.3% | 78.4% | -2.69 |
+| C3 takes C2 high before C2 low (candle_1D) | outside | C1 bull / C2 bear | beats random walk | 154 | 17.5% | 24.8% | 9 | 44.4% | 24.4% | -2.75 |
+| C3 takes C2 high before C2 low (candle_1D) | lower (took C1 L) | C1 bear / C2 bull | beats random walk | 249 | 83.9% | 78.6% | 15 | 66.7% | 78.9% | -2.30 |
+| C3 takes C2 high before C2 low (candle_1D) | outside | C2 closed above C1 H | MECHANICAL (= random walk) | 116 | 95.7% | 90.5% | 14 | 78.6% | 86.5% | -1.53 |
+| C3 takes C2 high before C2 low (candle_4h) | lower (took C1 L) | C1 bull / C2 bull | MECHANICAL (= random walk) | 175 | 87.4% | 82.6% | 18 | 72.2% | 85.3% | -2.74 |
+| C3 takes C2 high before C2 low (candle_1D) | inside | C1 bull / C2 bear | MECHANICAL (= random walk) | 119 | 41.2% | 37.5% | 9 | 0.0% | 33.2% | -9.03 |
+| C3 takes C2 high before C2 low (candle_1D) | lower (took C1 L) | C1 bull / C2 bear | MECHANICAL (= random walk) | 206 | 29.1% | 32.3% | 18 | 55.6% | 35.2% | -6.35 |
+| C3 takes C2 high before C2 low (candle_1D) | outside | C2 closed inside C1 | MECHANICAL (= random walk) | 161 | 50.3% | 51.2% | 12 | 58.3% | 54.1% | -4.86 |
+| C3 takes C2 high (candle_1D) | outside | C2 closed below C1 L | vs base rate | 138 | 8.7% | 56.2% | 8 | 12.5% | 56.0% | 0.92 |
+| C3 takes C2 high (candle_1D) | outside | C2 closed above C1 H | vs base rate | 129 | 86.0% | 56.2% | 17 | 64.7% | 56.0% | 0.29 |
+| C3 takes C2 high (candle_1D) | outside | C2 closed inside C1 | vs base rate | 210 | 41.4% | 56.2% | 15 | 53.3% | 56.0% | 0.18 |
+| C3 takes C2 low (candle_1D) | outside | C2 closed above C1 H | vs base rate | 135 | 6.7% | 42.6% | 18 | 22.2% | 40.3% | 0.50 |
+| C3 takes C2 low (candle_1D) | outside | C2 closed below C1 L | vs base rate | 131 | 75.6% | 42.6% | 6 | 50.0% | 40.3% | 0.29 |
+| Broken range travels >=1 width past edge (rangelab) (ranges) | 30 | 08:00 | 0.0-0.1 | vs base rate | 323 | 72.8% | 40.3% | 17 | 82.4% | 36.2% | 1.42 |
+| Broken range travels >=1 width past edge (rangelab) (ranges) | 30 | 09:00 | 0.3-0.4 | vs base rate | 351 | 72.6% | 40.3% | 19 | 78.9% | 36.2% | 1.32 |
+| Broken range travels >=1 width past edge (rangelab) (ranges) | 15 | 09:00 | 0.6-0.7 | vs base rate | 394 | 70.8% | 40.3% | 16 | 68.8% | 36.2% | 1.06 |
+| Broken range travels >=1 width past edge (rangelab) (ranges) | 60 | 07:00 | 0.2-0.3 | vs base rate | 356 | 69.9% | 40.3% | 14 | 85.7% | 36.2% | 1.67 |
+| Broken range travels >=1 width past edge (rangelab) (ranges) | 30 | 08:30 | 0.0-0.1 | vs base rate | 276 | 68.8% | 40.3% | 9 | 33.3% | 36.2% | -0.10 |
+| Broken range travels >=1 width past edge (rangelab) (ranges) | 60 | 01:00 | 0.0-0.1 | vs base rate | 223 | 67.7% | 40.3% | 18 | 27.8% | 36.2% | -0.31 |
+| Broken range travels >=1 width past edge (rangelab) (ranges) | 60 | 00:00 | 0.0-0.1 | vs base rate | 193 | 66.3% | 40.3% | 17 | 52.9% | 36.2% | 0.64 |
+| Broken range travels >=1 width past edge (rangelab) (ranges) | 60 | 10:00 | 0.3-0.4 | vs base rate | 276 | 14.9% | 40.3% | 19 | 21.1% | 36.2% | 0.60 |
+| Broken range travels >=1 width past edge (rangelab) (ranges) | 60 | 10:00 | 0.2-0.3 | vs base rate | 337 | 15.7% | 40.3% | 18 | 22.2% | 36.2% | 0.57 |
+| Broken range travels >=1 width past edge (rangelab) (ranges) | 60 | 10:00 | 0.5-0.6 | vs base rate | 277 | 18.4% | 40.3% | 18 | 16.7% | 36.2% | 0.90 |
+| Broken range travels >=1 width past edge (rangelab) (ranges) | 30 | 09:30 | 0.5-0.6 | vs base rate | 316 | 18.7% | 40.3% | 14 | 21.4% | 36.2% | 0.69 |
+| Broken range travels >=1 width past edge (rangelab) (ranges) | 15 | 01:45 | 0.5-0.6 | vs base rate | 300 | 61.7% | 40.3% | 19 | 63.2% | 36.2% | 1.26 |
+| Broken range travels >=1 width past edge (rangelab) (ranges) | 15 | 09:30 | 0.5-0.6 | vs base rate | 309 | 19.4% | 40.3% | 12 | 0.0% | 36.2% | 1.74 |
+| Broken range travels >=1 width past edge (rangelab) (ranges) | 30 | 09:30 | 0.4-0.5 | vs base rate | 326 | 19.9% | 40.3% | 16 | 6.2% | 36.2% | 1.48 |
+| Broken range travels >=1 width past edge (rangelab) (ranges) | 30 | 10:00 | 0.3-0.4 | vs base rate | 287 | 20.6% | 40.3% | 16 | 43.8% | 36.2% | -0.38 |
+| Broken range travels >=1 width past edge (rangelab) (ranges) | 30 | 01:30 | 0.3-0.4 | vs base rate | 292 | 59.2% | 40.3% | 12 | 50.0% | 36.2% | 0.72 |
+| Broken range travels >=1 width past edge (rangelab) (ranges) | 60 | 08:00 | 0.0-0.1 | vs base rate | 317 | 59.0% | 40.3% | 19 | 57.9% | 36.2% | 1.16 |
+| Broken range travels >=1 width past edge (rangelab) (ranges) | 60 | 10:00 | 0.6-0.7 | vs base rate | 272 | 22.8% | 40.3% | 19 | 15.8% | 36.2% | 1.17 |
+| Broken range travels >=1 width past edge (rangelab) (ranges) | 30 | 10:00 | 0.2-0.3 | vs base rate | 381 | 22.8% | 40.3% | 18 | 22.2% | 36.2% | 0.80 |
+| Broken range travels >=1 width past edge (rangelab) (ranges) | 15 | 02:30 | 0.0-0.1 | vs base rate | 330 | 57.3% | 40.3% | 19 | 52.6% | 36.2% | 0.96 |
+| Broken range travels >=1 width past edge (rangelab) (ranges) | 60 | 21:00 | 0.0-0.1 | vs base rate | 161 | 23.6% | 40.3% | 19 | 26.3% | 36.2% | 0.60 |
+| Broken range travels >=1 width past edge (rangelab) (ranges) | 60 | 21:00 | 0.5-0.6 | vs base rate | 206 | 23.8% | 40.3% | 19 | 26.3% | 36.2% | 0.60 |
+| Broken range travels >=1 width past edge (rangelab) (ranges) | 15 | 10:00 | 0.5-0.6 | vs base rate | 350 | 24.0% | 40.3% | 19 | 15.8% | 36.2% | 1.26 |
+| Broken range travels >=1 width past edge (rangelab) (ranges) | 30 | 11:00 | 0.4-0.5 | vs base rate | 281 | 24.2% | 40.3% | 18 | 27.8% | 36.2% | 0.53 |
+| Broken range travels >=1 width past edge (rangelab) (ranges) | 15 | 19:30 | pHigh or above | vs base rate | 119 | 56.3% | 40.3% | 5 | 0.0% | 36.2% | -2.26 |
+| Broken range travels >=1 width past edge (rangelab) (ranges) | 30 | 11:00 | 0.6-0.7 | vs base rate | 311 | 24.4% | 40.3% | 17 | 35.3% | 36.2% | 0.06 |
+| Broken range travels >=1 width past edge (rangelab) (ranges) | 15 | 02:45 | 0.4-0.5 | vs base rate | 315 | 55.6% | 40.3% | 19 | 42.1% | 36.2% | 0.38 |
+| Broken range travels >=1 width past edge (rangelab) (ranges) | 60 | 03:00 | 0.3-0.4 | vs base rate | 327 | 25.1% | 40.3% | 19 | 31.6% | 36.2% | 0.31 |
+| Broken range travels >=1 width past edge (rangelab) (ranges) | 30 | 22:00 | 0.0-0.1 | vs base rate | 178 | 25.8% | 40.3% | 16 | 25.0% | 36.2% | 0.78 |
+| Broken range travels >=1 width past edge (rangelab) (ranges) | 15 | 10:15 | 0.5-0.6 | vs base rate | 343 | 26.2% | 40.3% | 17 | 52.9% | 36.2% | -1.19 |
+| Broken range travels >=1 width past edge (rangelab) (ranges) | 30 | 12:00 | 0.0-0.1 | vs base rate | 350 | 26.3% | 40.3% | 18 | 27.8% | 36.2% | 0.61 |
+| Broken range travels >=1 width past edge (rangelab) (ranges) | 15 | 02:00 | 0.6-0.7 | vs base rate | 277 | 26.7% | 40.3% | 16 | 37.5% | 36.2% | -0.09 |
+| Broken range travels >=1 width past edge (rangelab) (ranges) | 30 | 04:00 | 0.3-0.4 | vs base rate | 317 | 26.8% | 40.3% | 17 | 29.4% | 36.2% | 0.51 |
+| Broken range travels >=1 width past edge (rangelab) (ranges) | 60 | 11:00 | 0.2-0.3 | vs base rate | 331 | 26.9% | 40.3% | 14 | 7.1% | 36.2% | 2.18 |
+| Broken range travels >=1 width past edge (rangelab) (ranges) | 15 | 12:00 | 0.0-0.1 | vs base rate | 346 | 27.2% | 40.3% | 15 | 40.0% | 36.2% | -0.29 |
+| Broken range travels >=1 width past edge (rangelab) (ranges) | 60 | 11:00 | 0.6-0.7 | vs base rate | 290 | 27.2% | 40.3% | 17 | 41.2% | 36.2% | -0.38 |
+| Broken range travels >=1 width past edge (rangelab) (ranges) | 30 | 11:00 | 0.5-0.6 | vs base rate | 328 | 27.4% | 40.3% | 17 | 17.6% | 36.2% | 1.45 |
+| Broken range travels >=1 width past edge (rangelab) (ranges) | 15 | 19:00 | 0.0-0.1 | vs base rate | 193 | 27.5% | 40.3% | 17 | 23.5% | 36.2% | 0.99 |
+| Broken range travels >=1 width past edge (rangelab) (ranges) | 30 | 21:30 | 0.2-0.3 | vs base rate | 261 | 27.6% | 40.3% | 16 | 31.2% | 36.2% | 0.39 |
+| Broken range travels >=1 width past edge (rangelab) (ranges) | 15 | 23:00 | 0.9-1.0 | vs base rate | 154 | 27.9% | 40.3% | 17 | 17.6% | 36.2% | 1.51 |
+| Broken range travels >=1 width past edge (rangelab) (ranges) | 15 | 10:45 | 0.4-0.5 | vs base rate | 271 | 28.4% | 40.3% | 13 | 46.2% | 36.2% | -0.84 |
+| Broken range travels >=1 width past edge (rangelab) (ranges) | 15 | 15:30 | 0.9-1.0 | vs base rate | 119 | 28.6% | 40.3% | 13 | 15.4% | 36.2% | 1.78 |
+| Broken range travels >=1 width past edge (rangelab) (ranges) | 15 | 10:30 | 0.3-0.4 | vs base rate | 332 | 28.9% | 40.3% | 17 | 35.3% | 36.2% | 0.08 |
+| Broken range travels >=1 width past edge (rangelab) (ranges) | 15 | 11:30 | 0.6-0.7 | vs base rate | 346 | 29.5% | 40.3% | 19 | 31.6% | 36.2% | 0.43 |
+| Broken range travels >=1 width past edge (rangelab) (ranges) | 15 | 10:00 | 0.4-0.5 | vs base rate | 305 | 29.5% | 40.3% | 19 | 21.1% | 36.2% | 1.41 |
+| Broken range travels >=1 width past edge (rangelab) (ranges) | 15 | 11:00 | 0.5-0.6 | vs base rate | 332 | 29.5% | 40.3% | 18 | 38.9% | 36.2% | -0.25 |
+| Broken range travels >=1 width past edge (rangelab) (ranges) | 15 | 19:15 | 0.0-0.1 | vs base rate | 225 | 50.7% | 40.3% | 17 | 29.4% | 36.2% | -0.66 |
+| Broken range travels >=1 width past edge (rangelab) (ranges) | 15 | 02:15 | 0.5-0.6 | vs base rate | 308 | 50.6% | 40.3% | 17 | 52.9% | 36.2% | 1.61 |
+| Broken range travels >=1 width past edge (rangelab) (ranges) | 30 | 05:00 | 0.6-0.7 | vs base rate | 362 | 30.4% | 40.3% | 19 | 31.6% | 36.2% | 0.47 |
+| Broken range travels >=1 width past edge (rangelab) (ranges) | 15 | 01:45 | pHigh or above | vs base rate | 198 | 50.0% | 40.3% | 6 | 50.0% | 36.2% | 1.41 |
+| Broken range travels >=1 width past edge (rangelab) (ranges) | 30 | 12:00 | 0.3-0.4 | vs base rate | 306 | 30.7% | 40.3% | 19 | 36.8% | 36.2% | -0.06 |
+| Broken range travels >=1 width past edge (rangelab) (ranges) | 30 | 18:30 | 0.4-0.5 | vs base rate | 209 | 49.8% | 40.3% | 19 | 36.8% | 36.2% | 0.06 |
+| Broken range travels >=1 width past edge (rangelab) (ranges) | 15 | 04:00 | 0.1-0.2 | vs base rate | 366 | 30.9% | 40.3% | 17 | 35.3% | 36.2% | 0.10 |
+| Broken range travels >=1 width past edge (rangelab) (ranges) | 30 | 20:00 | 0.0-0.1 | vs base rate | 201 | 31.8% | 40.3% | 19 | 10.5% | 36.2% | 3.05 |
+| Broken range travels >=1 width past edge (rangelab) (ranges) | 15 | 08:30 | 0.0-0.1 | vs base rate | 267 | 32.2% | 40.3% | 10 | 10.0% | 36.2% | 3.26 |
+| Broken range travels >=1 width past edge (rangelab) (ranges) | 30 | 07:30 | 0.3-0.4 | vs base rate | 344 | 48.3% | 40.3% | 17 | 47.1% | 36.2% | 1.35 |
+| Broken range travels >=1 width past edge (rangelab) (ranges) | 30 | 23:00 | 0.5-0.6 | vs base rate | 216 | 32.4% | 40.3% | 18 | 22.2% | 36.2% | 1.79 |
+| Broken range travels >=1 width past edge (rangelab) (ranges) | 30 | 20:30 | 0.0-0.1 | vs base rate | 200 | 32.5% | 40.3% | 16 | 12.5% | 36.2% | 3.06 |
+| Broken range travels >=1 width past edge (rangelab) (ranges) | 15 | 12:15 | 0.2-0.3 | vs base rate | 367 | 33.0% | 40.3% | 17 | 29.4% | 36.2% | 0.94 |
+| Broken range travels >=1 width past edge (rangelab) (ranges) | 60 | 02:00 | 0.2-0.3 | vs base rate | 362 | 47.5% | 40.3% | 17 | 35.3% | 36.2% | -0.13 |
+| Broken range travels >=1 width past edge (rangelab) (ranges) | 15 | 12:30 | 0.4-0.5 | vs base rate | 292 | 33.2% | 40.3% | 19 | 42.1% | 36.2% | -0.83 |
+| Broken range travels >=1 width past edge (rangelab) (ranges) | 15 | 13:15 | 0.4-0.5 | vs base rate | 288 | 47.2% | 40.3% | 10 | 40.0% | 36.2% | 0.54 |
+| Broken range travels >=1 width past edge (rangelab) (ranges) | 15 | 03:45 | 0.4-0.5 | vs base rate | 308 | 46.8% | 40.3% | 19 | 21.1% | 36.2% | -2.34 |
+| Broken range travels >=1 width past edge (rangelab) (ranges) | 15 | 05:15 | 0.6-0.7 | vs base rate | 331 | 33.8% | 40.3% | 19 | 31.6% | 36.2% | 0.73 |
+| RTH gap (>=0.15 ATR) fills to prior RTH close (session) | gap dn >0.5atr | Mon | vs base rate | 87 | 23.0% | 51.1% | 6 | 83.3% | 45.3% | -1.35 |
+| RTH gap (>=0.15 ATR) fills to prior RTH close (session) | gap up >0.5atr | Mon | vs base rate | 86 | 24.4% | 51.1% | 17 | 17.6% | 45.3% | 1.04 |
+| RTH gap (>=0.15 ATR) fills to prior RTH close (session) | gap up >0.5atr | Tue | vs base rate | 99 | 27.3% | 51.1% | 6 | 33.3% | 45.3% | 0.50 |
+| RTH gap (>=0.15 ATR) fills to prior RTH close (session) | gap up >0.5atr | Wed | vs base rate | 109 | 27.5% | 51.1% | 9 | 33.3% | 45.3% | 0.51 |
+| RTH gap (>=0.15 ATR) fills to prior RTH close (session) | gap dn | Wed | vs base rate | 133 | 73.7% | 51.1% | 6 | 50.0% | 45.3% | 0.21 |
+| RTH gap (>=0.15 ATR) fills to prior RTH close (session) | gap dn | upper half PD | vs base rate | 176 | 73.3% | 51.1% | 13 | 76.9% | 45.3% | 1.43 |
+| RTH gap (>=0.15 ATR) fills to prior RTH close (session) | gap up >0.5atr | Thu | vs base rate | 112 | 30.4% | 51.1% | 10 | 50.0% | 45.3% | -0.23 |
+| RTH gap (>=0.15 ATR) fills to prior RTH close (session) | gap dn | Thu | vs base rate | 131 | 70.2% | 51.1% | 14 | 57.1% | 45.3% | 0.62 |
+| RTH gap (>=0.15 ATR) fills to prior RTH close (session) | gap up >0.5atr | upper half PD | vs base rate | 120 | 34.2% | 51.1% | 12 | 50.0% | 45.3% | -0.28 |
+| RTH gap (>=0.15 ATR) fills to prior RTH close (session) | gap dn | Mon | vs base rate | 114 | 67.5% | 51.1% | 10 | 80.0% | 45.3% | 2.11 |
+| RTH gap (>=0.15 ATR) fills to prior RTH close (session) | gap dn >0.5atr | Thu | vs base rate | 88 | 35.2% | 51.1% | 8 | 25.0% | 45.3% | 1.28 |
+| RTH gap (>=0.15 ATR) fills to prior RTH close (session) | gap up | Tue | vs base rate | 212 | 66.5% | 51.1% | 14 | 42.9% | 45.3% | -0.16 |
+| RTH gap (>=0.15 ATR) fills to prior RTH close (session) | gap up >0.5atr | Fri | vs base rate | 103 | 36.9% | 51.1% | 8 | 37.5% | 45.3% | 0.55 |
+| RTH gap (>=0.15 ATR) fills to prior RTH close (session) | gap up | Thu | vs base rate | 172 | 64.0% | 51.1% | 7 | 71.4% | 45.3% | 2.04 |
+| RTH gap (>=0.15 ATR) fills to prior RTH close (session) | gap up | lower half PD | vs base rate | 155 | 63.9% | 51.1% | 6 | 66.7% | 45.3% | 1.68 |
+| RTH gap (>=0.15 ATR) fills to prior RTH close (session) | gap dn | below PDL | vs base rate | 175 | 62.3% | 51.1% | 15 | 46.7% | 45.3% | 0.12 |
+| RTH gap (>=0.15 ATR) fills to prior RTH close (session) | gap up | Wed | vs base rate | 190 | 62.1% | 51.1% | 17 | 58.8% | 45.3% | 1.23 |
+| RTH gap (>=0.15 ATR) fills to prior RTH close (session) | gap dn | Fri | vs base rate | 133 | 60.9% | 51.1% | 10 | 40.0% | 45.3% | -0.54 |
+| RTH gap (>=0.15 ATR) fills to prior RTH close (session) | gap dn | Tue | vs base rate | 145 | 59.3% | 51.1% | 12 | 50.0% | 45.3% | 0.57 |
+| First IB break is UP (given a break) (session) | Q1 narrow | closed high third | MECHANICAL (= random walk) | 312 | 84.6% | 81.8% | 19 | 89.5% | 86.2% | 1.17 |
+| First IB break is UP (given a break) (session) | Q3 | closed mid third | MECHANICAL (= random walk) | 204 | 46.6% | 49.0% | 12 | 50.0% | 50.8% | 0.34 |
+| First IB break is UP (given a break) (session) | Q4 | closed low third | MECHANICAL (= random walk) | 232 | 12.1% | 14.3% | 12 | 8.3% | 18.0% | 4.24 |
+| First IB break is UP (given a break) (session) | Q2 | closed low third | MECHANICAL (= random walk) | 184 | 19.0% | 17.9% | 16 | 0.0% | 19.6% | -17.29 |
+| First IB break is UP (given a break) (session) | Q1 narrow | closed low third | MECHANICAL (= random walk) | 173 | 18.5% | 19.6% | 17 | 11.8% | 18.4% | 5.87 |
+| First IB break is UP (given a break) (session) | Q3 | closed low third | MECHANICAL (= random walk) | 208 | 16.3% | 16.5% | 18 | 5.6% | 15.2% | 68.68 |
+| Broken range returns to far edge (rangelab) (ranges) | 15 | 09:00 | 0.6-0.7 | vs base rate | 394 | 69.0% | 35.1% | 16 | 68.8% | 35.3% | 0.99 |
+| Broken range returns to far edge (rangelab) (ranges) | 60 | 07:00 | 0.2-0.3 | vs base rate | 356 | 68.3% | 35.1% | 14 | 100.0% | 35.3% | 1.95 |
+| Broken range returns to far edge (rangelab) (ranges) | 30 | 09:00 | 0.3-0.4 | vs base rate | 351 | 67.0% | 35.1% | 19 | 63.2% | 35.3% | 0.87 |
+| Broken range returns to far edge (rangelab) (ranges) | 15 | 16:00 | 0.4-0.5 | vs base rate | 53 | 3.8% | 35.1% | 15 | 6.7% | 35.3% | 0.91 |
+| Broken range returns to far edge (rangelab) (ranges) | 15 | 15:45 | 0.4-0.5 | vs base rate | 63 | 4.8% | 35.1% | 19 | 10.5% | 35.3% | 0.82 |
+| Broken range returns to far edge (rangelab) (ranges) | 15 | 15:45 | 0.1-0.2 | vs base rate | 91 | 5.5% | 35.1% | 19 | 15.8% | 35.3% | 0.66 |
+| Broken range returns to far edge (rangelab) (ranges) | 15 | 15:45 | 0.0-0.1 | vs base rate | 86 | 5.8% | 35.1% | 17 | 11.8% | 35.3% | 0.80 |
+| Broken range returns to far edge (rangelab) (ranges) | 30 | 08:30 | 0.0-0.1 | vs base rate | 276 | 62.0% | 35.1% | 9 | 77.8% | 35.3% | 1.58 |
+| Broken range returns to far edge (rangelab) (ranges) | 30 | 08:00 | 0.0-0.1 | vs base rate | 323 | 61.6% | 35.1% | 17 | 41.2% | 35.3% | 0.22 |
+| Broken range returns to far edge (rangelab) (ranges) | 15 | 16:00 | 0.2-0.3 | vs base rate | 65 | 9.2% | 35.1% | 18 | 22.2% | 35.3% | 0.51 |
+| Broken range returns to far edge (rangelab) (ranges) | 60 | 10:00 | 0.6-0.7 | vs base rate | 272 | 9.6% | 35.1% | 19 | 21.1% | 35.3% | 0.56 |
+| Broken range returns to far edge (rangelab) (ranges) | 60 | 08:00 | 0.0-0.1 | vs base rate | 317 | 57.4% | 35.1% | 19 | 52.6% | 35.3% | 0.78 |
+| Broken range returns to far edge (rangelab) (ranges) | 60 | 10:00 | 0.3-0.4 | vs base rate | 276 | 13.4% | 35.1% | 19 | 21.1% | 35.3% | 0.66 |
+| Broken range returns to far edge (rangelab) (ranges) | 60 | 10:00 | 0.2-0.3 | vs base rate | 337 | 13.9% | 35.1% | 18 | 11.1% | 35.3% | 1.14 |
+| Broken range returns to far edge (rangelab) (ranges) | 60 | 10:00 | 0.5-0.6 | vs base rate | 277 | 14.8% | 35.1% | 18 | 22.2% | 35.3% | 0.65 |
+| Broken range returns to far edge (rangelab) (ranges) | 60 | 00:00 | 0.0-0.1 | vs base rate | 193 | 54.9% | 35.1% | 17 | 35.3% | 35.3% | -0.00 |
+| Broken range returns to far edge (rangelab) (ranges) | 60 | 21:00 | 0.0-0.1 | vs base rate | 161 | 16.1% | 35.1% | 19 | 21.1% | 35.3% | 0.75 |
+| Broken range returns to far edge (rangelab) (ranges) | 15 | 02:30 | 0.0-0.1 | vs base rate | 330 | 53.6% | 35.1% | 19 | 31.6% | 35.3% | -0.20 |
+| Broken range returns to far edge (rangelab) (ranges) | 30 | 21:30 | 0.2-0.3 | vs base rate | 261 | 16.9% | 35.1% | 16 | 6.2% | 35.3% | 1.59 |
+| Broken range returns to far edge (rangelab) (ranges) | 30 | 09:30 | 0.4-0.5 | vs base rate | 326 | 17.5% | 35.1% | 16 | 31.2% | 35.3% | 0.23 |
+| Broken range returns to far edge (rangelab) (ranges) | 15 | 02:45 | 0.4-0.5 | vs base rate | 315 | 52.4% | 35.1% | 19 | 26.3% | 35.3% | -0.52 |
+| Broken range returns to far edge (rangelab) (ranges) | 30 | 01:30 | 0.3-0.4 | vs base rate | 292 | 51.7% | 35.1% | 12 | 58.3% | 35.3% | 1.39 |
+| Broken range returns to far edge (rangelab) (ranges) | 60 | 20:00 | 0.3-0.4 | vs base rate | 217 | 18.9% | 35.1% | 19 | 0.0% | 35.3% | 2.18 |
+| Broken range returns to far edge (rangelab) (ranges) | 30 | 09:30 | 0.5-0.6 | vs base rate | 316 | 19.0% | 35.1% | 14 | 7.1% | 35.3% | 1.75 |
+| Broken range returns to far edge (rangelab) (ranges) | 15 | 09:30 | 0.5-0.6 | vs base rate | 309 | 19.1% | 35.1% | 12 | 16.7% | 35.3% | 1.16 |
+| Broken range returns to far edge (rangelab) (ranges) | 30 | 10:00 | 0.3-0.4 | vs base rate | 287 | 19.9% | 35.1% | 16 | 37.5% | 35.3% | -0.14 |
+| Broken range returns to far edge (rangelab) (ranges) | 60 | 21:00 | 0.5-0.6 | vs base rate | 206 | 19.9% | 35.1% | 19 | 31.6% | 35.3% | 0.25 |
+| Broken range returns to far edge (rangelab) (ranges) | 30 | 10:00 | 0.2-0.3 | vs base rate | 381 | 19.9% | 35.1% | 18 | 27.8% | 35.3% | 0.50 |
+| Broken range returns to far edge (rangelab) (ranges) | 60 | 03:00 | 0.3-0.4 | vs base rate | 327 | 20.2% | 35.1% | 19 | 26.3% | 35.3% | 0.60 |
+| Broken range returns to far edge (rangelab) (ranges) | 60 | 11:00 | 0.2-0.3 | vs base rate | 331 | 20.2% | 35.1% | 14 | 7.1% | 35.3% | 1.89 |
+| Broken range returns to far edge (rangelab) (ranges) | 15 | 01:45 | pHigh or above | vs base rate | 198 | 49.5% | 35.1% | 6 | 50.0% | 35.3% | 1.02 |
+| Broken range returns to far edge (rangelab) (ranges) | 30 | 11:00 | 0.4-0.5 | vs base rate | 281 | 21.0% | 35.1% | 18 | 27.8% | 35.3% | 0.53 |
+| Broken range returns to far edge (rangelab) (ranges) | 15 | 20:00 | 0.9-1.0 | vs base rate | 202 | 21.3% | 35.1% | 18 | 22.2% | 35.3% | 0.95 |
+| Broken range returns to far edge (rangelab) (ranges) | 15 | 02:00 | 0.6-0.7 | vs base rate | 277 | 21.7% | 35.1% | 16 | 31.2% | 35.3% | 0.30 |
+| Broken range returns to far edge (rangelab) (ranges) | 15 | 20:00 | 0.2-0.3 | vs base rate | 281 | 21.7% | 35.1% | 17 | 23.5% | 35.3% | 0.88 |
+| Broken range returns to far edge (rangelab) (ranges) | 30 | 22:00 | 0.0-0.1 | vs base rate | 178 | 21.9% | 35.1% | 16 | 25.0% | 35.3% | 0.78 |
+| Broken range returns to far edge (rangelab) (ranges) | 15 | 10:00 | 0.4-0.5 | vs base rate | 305 | 22.0% | 35.1% | 19 | 26.3% | 35.3% | 0.69 |
+| Broken range returns to far edge (rangelab) (ranges) | 15 | 11:15 | 0.2-0.3 | vs base rate | 327 | 22.0% | 35.1% | 18 | 38.9% | 35.3% | -0.27 |
+| Broken range returns to far edge (rangelab) (ranges) | 15 | 11:30 | 0.6-0.7 | vs base rate | 346 | 22.8% | 35.1% | 19 | 15.8% | 35.3% | 1.59 |
+| Broken range returns to far edge (rangelab) (ranges) | 15 | 10:45 | 0.4-0.5 | vs base rate | 271 | 22.9% | 35.1% | 13 | 30.8% | 35.3% | 0.37 |
+| Broken range returns to far edge (rangelab) (ranges) | 30 | 03:30 | 0.4-0.5 | vs base rate | 270 | 23.0% | 35.1% | 18 | 22.2% | 35.3% | 1.08 |
+| Broken range returns to far edge (rangelab) (ranges) | 15 | 02:15 | 0.4-0.5 | vs base rate | 248 | 47.2% | 35.1% | 19 | 31.6% | 35.3% | -0.31 |
+| Broken range returns to far edge (rangelab) (ranges) | 15 | 20:00 | pHigh or above | vs base rate | 160 | 23.1% | 35.1% | 6 | 33.3% | 35.3% | 0.17 |
+| Broken range returns to far edge (rangelab) (ranges) | 15 | 02:15 | 0.5-0.6 | vs base rate | 308 | 47.1% | 35.1% | 17 | 47.1% | 35.3% | 0.98 |
+| Broken range returns to far edge (rangelab) (ranges) | 15 | 04:00 | 0.1-0.2 | vs base rate | 366 | 23.2% | 35.1% | 17 | 17.6% | 35.3% | 1.49 |
+| Broken range returns to far edge (rangelab) (ranges) | 30 | 20:00 | 0.0-0.1 | vs base rate | 201 | 23.4% | 35.1% | 19 | 15.8% | 35.3% | 1.66 |
+| Broken range returns to far edge (rangelab) (ranges) | 30 | 04:00 | 0.3-0.4 | vs base rate | 317 | 23.7% | 35.1% | 17 | 11.8% | 35.3% | 2.05 |
+| Broken range returns to far edge (rangelab) (ranges) | 15 | 10:00 | 0.5-0.6 | vs base rate | 350 | 23.7% | 35.1% | 19 | 15.8% | 35.3% | 1.71 |
+| Broken range returns to far edge (rangelab) (ranges) | 30 | 07:30 | 0.3-0.4 | vs base rate | 344 | 46.5% | 35.1% | 17 | 29.4% | 35.3% | -0.52 |
+| Broken range returns to far edge (rangelab) (ranges) | 30 | 11:00 | 0.5-0.6 | vs base rate | 328 | 24.4% | 35.1% | 17 | 17.6% | 35.3% | 1.65 |
+| Broken range returns to far edge (rangelab) (ranges) | 15 | 22:00 | 0.1-0.2 | vs base rate | 254 | 24.8% | 35.1% | 17 | 23.5% | 35.3% | 1.14 |
+| Broken range returns to far edge (rangelab) (ranges) | 15 | 21:45 | 0.0-0.1 | vs base rate | 219 | 25.1% | 35.1% | 17 | 41.2% | 35.3% | -0.58 |
+| Broken range returns to far edge (rangelab) (ranges) | 60 | 01:00 | 0.0-0.1 | vs base rate | 223 | 44.8% | 35.1% | 18 | 44.4% | 35.3% | 0.94 |
+| Broken range returns to far edge (rangelab) (ranges) | 60 | 02:00 | 0.2-0.3 | vs base rate | 362 | 44.8% | 35.1% | 17 | 52.9% | 35.3% | 1.83 |
+| Broken range returns to far edge (rangelab) (ranges) | 15 | 11:00 | 0.5-0.6 | vs base rate | 332 | 25.6% | 35.1% | 18 | 27.8% | 35.3% | 0.79 |
+| Broken range returns to far edge (rangelab) (ranges) | 15 | 00:45 | 0.3-0.4 | vs base rate | 240 | 44.6% | 35.1% | 17 | 52.9% | 35.3% | 1.86 |
+| Broken range returns to far edge (rangelab) (ranges) | 60 | 11:00 | 0.6-0.7 | vs base rate | 290 | 25.9% | 35.1% | 17 | 29.4% | 35.3% | 0.64 |
+| Broken range returns to far edge (rangelab) (ranges) | 30 | 11:00 | 0.6-0.7 | vs base rate | 311 | 26.0% | 35.1% | 17 | 23.5% | 35.3% | 1.30 |
+| Broken range returns to far edge (rangelab) (ranges) | 15 | 03:15 | 0.5-0.6 | vs base rate | 341 | 26.1% | 35.1% | 18 | 44.4% | 35.3% | -1.01 |
+| Broken range returns to far edge (rangelab) (ranges) | 15 | 12:00 | 0.0-0.1 | vs base rate | 346 | 26.3% | 35.1% | 15 | 6.7% | 35.3% | 3.25 |
+| Broken range returns to far edge (rangelab) (ranges) | 15 | 23:45 | 0.9-1.0 | vs base rate | 139 | 43.9% | 35.1% | 16 | 56.2% | 35.3% | 2.39 |
+| Broken range returns to far edge (rangelab) (ranges) | 15 | 03:45 | 0.3-0.4 | vs base rate | 322 | 26.4% | 35.1% | 19 | 57.9% | 35.3% | -2.58 |
+| Broken range returns to far edge (rangelab) (ranges) | 15 | 10:30 | 0.3-0.4 | vs base rate | 332 | 26.5% | 35.1% | 17 | 35.3% | 35.3% | 0.01 |
+| Broken range returns to far edge (rangelab) (ranges) | 15 | 02:00 | pHigh or above | vs base rate | 183 | 26.8% | 35.1% | 11 | 27.3% | 35.3% | 0.97 |
+| Broken range returns to far edge (rangelab) (ranges) | 15 | 07:00 | 0.4-0.5 | vs base rate | 272 | 26.8% | 35.1% | 17 | 17.6% | 35.3% | 2.13 |
+| Broken range returns to far edge (rangelab) (ranges) | 15 | 04:15 | 0.6-0.7 | vs base rate | 336 | 27.1% | 35.1% | 19 | 15.8% | 35.3% | 2.43 |
+| Broken range returns to far edge (rangelab) (ranges) | 15 | 11:45 | 0.3-0.4 | vs base rate | 321 | 27.1% | 35.1% | 19 | 21.1% | 35.3% | 1.78 |
+| Broken range returns to far edge (rangelab) (ranges) | 15 | 07:00 | 0.2-0.3 | vs base rate | 380 | 27.1% | 35.1% | 19 | 47.4% | 35.3% | -1.50 |
+| Broken range returns to far edge (rangelab) (ranges) | 15 | 15:15 | 0.5-0.6 | vs base rate | 322 | 42.5% | 35.1% | 18 | 50.0% | 35.3% | 1.98 |
+| Broken range returns to far edge (rangelab) (ranges) | 15 | 06:30 | 0.5-0.6 | vs base rate | 360 | 41.9% | 35.1% | 17 | 35.3% | 35.3% | -0.01 |
+| Broken range returns to far edge (rangelab) (ranges) | 30 | 12:00 | 0.0-0.1 | vs base rate | 350 | 28.6% | 35.1% | 18 | 22.2% | 35.3% | 2.00 |
+| Broken range returns to far edge (rangelab) (ranges) | 15 | 22:00 | 0.6-0.7 | vs base rate | 236 | 28.8% | 35.1% | 17 | 29.4% | 35.3% | 0.94 |
+| Broken range returns to far edge (rangelab) (ranges) | 30 | 04:30 | 0.5-0.6 | vs base rate | 350 | 28.9% | 35.1% | 17 | 11.8% | 35.3% | 3.76 |
+| Broken range returns to far edge (rangelab) (ranges) | 15 | 10:15 | 0.5-0.6 | vs base rate | 343 | 28.9% | 35.1% | 17 | 5.9% | 35.3% | 4.70 |
+| Broken range returns to far edge (rangelab) (ranges) | 30 | 07:00 | 0.3-0.4 | vs base rate | 361 | 41.3% | 35.1% | 17 | 47.1% | 35.3% | 1.91 |
+| Broken range returns to far edge (rangelab) (ranges) | 15 | 15:00 | 0.4-0.5 | vs base rate | 327 | 41.0% | 35.1% | 14 | 35.7% | 35.3% | 0.06 |
+| Broken range returns to far edge (rangelab) (ranges) | 15 | 03:15 | 0.4-0.5 | vs base rate | 285 | 29.5% | 35.1% | 18 | 16.7% | 35.3% | 3.30 |
+| Broken range returns to its mid (rangelab) (ranges) | 15 | 15:45 | 0.4-0.5 | vs base rate | 63 | 12.7% | 60.3% | 19 | 31.6% | 61.9% | 0.64 |
+| Broken range returns to its mid (rangelab) (ranges) | 15 | 15:45 | 0.1-0.2 | vs base rate | 91 | 14.3% | 60.3% | 19 | 36.8% | 61.9% | 0.54 |
+| Broken range returns to its mid (rangelab) (ranges) | 15 | 16:00 | 0.2-0.3 | vs base rate | 65 | 20.0% | 60.3% | 18 | 50.0% | 61.9% | 0.29 |
+| Broken range returns to its mid (rangelab) (ranges) | 15 | 15:45 | 0.3-0.4 | vs base rate | 64 | 20.3% | 60.3% | 17 | 41.2% | 61.9% | 0.52 |
+| Broken range returns to its mid (rangelab) (ranges) | 15 | 15:45 | 0.0-0.1 | vs base rate | 86 | 23.3% | 60.3% | 17 | 47.1% | 61.9% | 0.40 |
+| Broken range returns to its mid (rangelab) (ranges) | 15 | 16:00 | 0.4-0.5 | vs base rate | 53 | 32.1% | 60.3% | 15 | 40.0% | 61.9% | 0.77 |
+| Broken range returns to its mid (rangelab) (ranges) | 15 | 09:00 | 0.6-0.7 | vs base rate | 394 | 83.8% | 60.3% | 16 | 81.2% | 61.9% | 0.83 |
+| Broken range returns to its mid (rangelab) (ranges) | 30 | 08:30 | 0.0-0.1 | vs base rate | 276 | 82.6% | 60.3% | 9 | 100.0% | 61.9% | 1.71 |
+| Broken range returns to its mid (rangelab) (ranges) | 60 | 07:00 | 0.2-0.3 | vs base rate | 356 | 82.3% | 60.3% | 14 | 100.0% | 61.9% | 1.73 |
+| Broken range returns to its mid (rangelab) (ranges) | 60 | 10:00 | 0.6-0.7 | vs base rate | 272 | 38.6% | 60.3% | 19 | 47.4% | 61.9% | 0.67 |
+| Broken range returns to its mid (rangelab) (ranges) | 30 | 09:00 | 0.3-0.4 | vs base rate | 351 | 82.1% | 60.3% | 19 | 78.9% | 61.9% | 0.79 |
+| Broken range returns to its mid (rangelab) (ranges) | 60 | 10:00 | 0.2-0.3 | vs base rate | 337 | 38.9% | 60.3% | 18 | 33.3% | 61.9% | 1.33 |
+| Broken range returns to its mid (rangelab) (ranges) | 60 | 10:00 | 0.3-0.4 | vs base rate | 276 | 39.9% | 60.3% | 19 | 26.3% | 61.9% | 1.74 |
+| Broken range returns to its mid (rangelab) (ranges) | 60 | 10:00 | 0.5-0.6 | vs base rate | 277 | 40.8% | 60.3% | 18 | 44.4% | 61.9% | 0.89 |
+| Broken range returns to its mid (rangelab) (ranges) | 30 | 10:00 | 0.3-0.4 | vs base rate | 287 | 42.9% | 60.3% | 16 | 68.8% | 61.9% | -0.39 |
+| Broken range returns to its mid (rangelab) (ranges) | 30 | 08:00 | 0.0-0.1 | vs base rate | 323 | 77.1% | 60.3% | 17 | 76.5% | 61.9% | 0.87 |
+| Broken range returns to its mid (rangelab) (ranges) | 30 | 10:00 | 0.2-0.3 | vs base rate | 381 | 44.6% | 60.3% | 18 | 66.7% | 61.9% | -0.30 |
+| Broken range returns to its mid (rangelab) (ranges) | 15 | 20:00 | pHigh or above | vs base rate | 160 | 45.0% | 60.3% | 6 | 50.0% | 61.9% | 0.78 |
+| Broken range returns to its mid (rangelab) (ranges) | 60 | 20:00 | 0.3-0.4 | vs base rate | 217 | 45.2% | 60.3% | 19 | 10.5% | 61.9% | 3.39 |
+| Broken range returns to its mid (rangelab) (ranges) | 15 | 11:15 | 0.2-0.3 | vs base rate | 327 | 45.3% | 60.3% | 18 | 66.7% | 61.9% | -0.32 |
+| Broken range returns to its mid (rangelab) (ranges) | 60 | 08:00 | 0.0-0.1 | vs base rate | 317 | 75.1% | 60.3% | 19 | 68.4% | 61.9% | 0.44 |
+| Broken range returns to its mid (rangelab) (ranges) | 15 | 02:45 | 0.4-0.5 | vs base rate | 315 | 74.6% | 60.3% | 19 | 63.2% | 61.9% | 0.09 |
+| Broken range returns to its mid (rangelab) (ranges) | 60 | 21:00 | 0.5-0.6 | vs base rate | 206 | 46.1% | 60.3% | 19 | 63.2% | 61.9% | -0.09 |
+| Broken range returns to its mid (rangelab) (ranges) | 60 | 03:00 | 0.3-0.4 | vs base rate | 327 | 46.2% | 60.3% | 19 | 57.9% | 61.9% | 0.28 |
+| Broken range returns to its mid (rangelab) (ranges) | 30 | 09:30 | 0.5-0.6 | vs base rate | 316 | 46.5% | 60.3% | 14 | 35.7% | 61.9% | 1.89 |
+| Broken range returns to its mid (rangelab) (ranges) | 15 | 20:00 | 0.2-0.3 | vs base rate | 281 | 46.6% | 60.3% | 17 | 47.1% | 61.9% | 1.08 |
+| Broken range returns to its mid (rangelab) (ranges) | 30 | 01:30 | 0.3-0.4 | vs base rate | 292 | 73.6% | 60.3% | 12 | 75.0% | 61.9% | 0.99 |
+| Broken range returns to its mid (rangelab) (ranges) | 60 | 21:00 | 0.0-0.1 | vs base rate | 161 | 47.2% | 60.3% | 19 | 31.6% | 61.9% | 2.31 |
+| Broken range returns to its mid (rangelab) (ranges) | 15 | 20:00 | 0.9-1.0 | vs base rate | 202 | 47.5% | 60.3% | 18 | 55.6% | 61.9% | 0.49 |
+| Broken range returns to its mid (rangelab) (ranges) | 60 | 11:00 | 0.2-0.3 | vs base rate | 331 | 47.7% | 60.3% | 14 | 35.7% | 61.9% | 2.08 |
+| Broken range returns to its mid (rangelab) (ranges) | 15 | 09:30 | 0.5-0.6 | vs base rate | 309 | 47.9% | 60.3% | 12 | 66.7% | 61.9% | -0.38 |
+| Broken range returns to its mid (rangelab) (ranges) | 30 | 20:00 | 0.0-0.1 | vs base rate | 201 | 48.3% | 60.3% | 19 | 52.6% | 61.9% | 0.77 |
+| Broken range returns to its mid (rangelab) (ranges) | 30 | 21:30 | 0.2-0.3 | vs base rate | 261 | 48.3% | 60.3% | 16 | 43.8% | 61.9% | 1.50 |
+| Broken range returns to its mid (rangelab) (ranges) | 15 | 02:15 | 0.4-0.5 | vs base rate | 248 | 71.8% | 60.3% | 19 | 78.9% | 61.9% | 1.49 |
+| Broken range returns to its mid (rangelab) (ranges) | 30 | 11:00 | 0.4-0.5 | vs base rate | 281 | 49.1% | 60.3% | 18 | 44.4% | 61.9% | 1.55 |
+| Broken range returns to its mid (rangelab) (ranges) | 15 | 22:00 | 0.6-0.7 | vs base rate | 236 | 49.2% | 60.3% | 17 | 41.2% | 61.9% | 1.85 |
+| Broken range returns to its mid (rangelab) (ranges) | 30 | 04:00 | 0.3-0.4 | vs base rate | 317 | 49.5% | 60.3% | 17 | 35.3% | 61.9% | 2.46 |
+| Broken range returns to its mid (rangelab) (ranges) | 15 | 15:15 | 0.5-0.6 | vs base rate | 322 | 70.8% | 60.3% | 18 | 66.7% | 61.9% | 0.46 |
+| Broken range returns to its mid (rangelab) (ranges) | 15 | 10:30 | 0.3-0.4 | vs base rate | 332 | 50.0% | 60.3% | 17 | 52.9% | 61.9% | 0.87 |
+| Broken range returns to its mid (rangelab) (ranges) | 15 | 02:30 | 0.0-0.1 | vs base rate | 330 | 70.3% | 60.3% | 19 | 47.4% | 61.9% | -1.46 |
+| Broken range returns to its mid (rangelab) (ranges) | 15 | 22:00 | 0.1-0.2 | vs base rate | 254 | 50.4% | 60.3% | 17 | 47.1% | 61.9% | 1.49 |
+| Broken range returns to its mid (rangelab) (ranges) | 15 | 04:00 | 0.1-0.2 | vs base rate | 366 | 50.5% | 60.3% | 17 | 47.1% | 61.9% | 1.52 |
+| Broken range returns to its mid (rangelab) (ranges) | 15 | 10:45 | 0.4-0.5 | vs base rate | 271 | 50.6% | 60.3% | 13 | 84.6% | 61.9% | -2.32 |
+| Broken range returns to its mid (rangelab) (ranges) | 15 | 20:15 | 0.0-0.1 | vs base rate | 237 | 50.6% | 60.3% | 17 | 47.1% | 61.9% | 1.53 |
+| Broken range returns to its mid (rangelab) (ranges) | 15 | 10:00 | 0.4-0.5 | vs base rate | 305 | 50.8% | 60.3% | 19 | 63.2% | 61.9% | -0.13 |
+| Broken range returns to its mid (rangelab) (ranges) | 15 | 02:00 | 0.6-0.7 | vs base rate | 277 | 50.9% | 60.3% | 16 | 50.0% | 61.9% | 1.26 |
+| Broken range returns to its mid (rangelab) (ranges) | 30 | 11:00 | 0.5-0.6 | vs base rate | 328 | 50.9% | 60.3% | 17 | 52.9% | 61.9% | 0.95 |
+| Broken range returns to its mid (rangelab) (ranges) | 30 | 09:30 | 0.4-0.5 | vs base rate | 326 | 50.9% | 60.3% | 16 | 62.5% | 61.9% | -0.06 |
+| Broken range returns to its mid (rangelab) (ranges) | 60 | 00:00 | 0.0-0.1 | vs base rate | 193 | 68.9% | 60.3% | 17 | 76.5% | 61.9% | 1.70 |
+| Broken range returns to its mid (rangelab) (ranges) | 15 | 02:15 | 0.5-0.6 | vs base rate | 308 | 68.8% | 60.3% | 17 | 64.7% | 61.9% | 0.33 |
+| Broken range returns to its mid (rangelab) (ranges) | 15 | 07:00 | 0.2-0.3 | vs base rate | 380 | 51.8% | 60.3% | 19 | 57.9% | 61.9% | 0.47 |
+| Broken range returns to its mid (rangelab) (ranges) | 15 | 15:00 | 0.6-0.7 | vs base rate | 379 | 68.6% | 60.3% | 19 | 63.2% | 61.9% | 0.15 |
+| Broken range returns to its mid (rangelab) (ranges) | 30 | 11:00 | 0.6-0.7 | vs base rate | 311 | 52.4% | 60.3% | 17 | 47.1% | 61.9% | 1.87 |
+| Broken range returns to its mid (rangelab) (ranges) | 60 | 02:00 | 0.2-0.3 | vs base rate | 362 | 68.2% | 60.3% | 17 | 58.8% | 61.9% | -0.39 |
+| Broken range returns to its mid (rangelab) (ranges) | 15 | 03:45 | 0.3-0.4 | vs base rate | 322 | 52.5% | 60.3% | 19 | 63.2% | 61.9% | -0.16 |
+| Broken range returns to its mid (rangelab) (ranges) | 15 | 21:45 | 0.0-0.1 | vs base rate | 219 | 52.5% | 60.3% | 17 | 70.6% | 61.9% | -1.11 |
+| Broken range returns to its mid (rangelab) (ranges) | 60 | 11:00 | 0.6-0.7 | vs base rate | 290 | 52.8% | 60.3% | 17 | 41.2% | 61.9% | 2.73 |
+| Broken range returns to its mid (rangelab) (ranges) | 30 | 03:30 | 0.4-0.5 | vs base rate | 270 | 53.0% | 60.3% | 18 | 61.1% | 61.9% | 0.11 |
+| Broken range returns to its mid (rangelab) (ranges) | 15 | 03:15 | 0.5-0.6 | vs base rate | 341 | 53.1% | 60.3% | 18 | 77.8% | 61.9% | -2.19 |
+| Broken range returns to its mid (rangelab) (ranges) | 15 | 10:00 | 0.5-0.6 | vs base rate | 350 | 53.1% | 60.3% | 19 | 36.8% | 61.9% | 3.48 |
+| Broken range returns to its mid (rangelab) (ranges) | 15 | 11:45 | 0.3-0.4 | vs base rate | 321 | 53.3% | 60.3% | 19 | 63.2% | 61.9% | -0.18 |
+| Broken range returns to its mid (rangelab) (ranges) | 60 | 01:00 | 0.0-0.1 | vs base rate | 223 | 67.3% | 60.3% | 18 | 72.2% | 61.9% | 1.49 |
+| Broken range returns to its mid (rangelab) (ranges) | 15 | 07:00 | 0.4-0.5 | vs base rate | 272 | 53.7% | 60.3% | 17 | 47.1% | 61.9% | 2.23 |
+| Broken range returns to its mid (rangelab) (ranges) | 30 | 07:30 | 0.3-0.4 | vs base rate | 344 | 66.9% | 60.3% | 17 | 64.7% | 61.9% | 0.43 |
+| RTH trades up to prior-day high (opened below it) (session) | gap up >0.5atr | vs base rate | 140 | 56.4% | 40.8% | 13 | 53.8% | 44.5% | 0.60 |
+| RTH trades down to prior-day low (opened above it) (session) | gap dn >0.5atr | vs base rate | 106 | 65.1% | 34.5% | 5 | 0.0% | 31.1% | -1.02 |
+
+## Per test: was the best cell better than luck?
+
+| test | table | outcome | by | cells_tested | base_% | best_edge_pp | null_p95_pp | best_vs_null | fdr_pass | shortlisted |
+|---|---|---|---|---|---|---|---|---|---|---|
+| T000 | session | RTH closes above its 09:30 open | open_vs_pd | 4 | 54.14 | 1.88 | 5.19 | 0.36 | 0 | 0 |
+| T001 | session | RTH closes above its 09:30 open | gap_b | 5 | 54.15 | 2.63 | 5.39 | 0.49 | 0 | 0 |
+| T002 | session | RTH closes above its 09:30 open | ldn_vs_asia | 4 | 54.1 | 2.44 | 5.76 | 0.42 | 2 | 0 |
+| T003 | session | RTH closes above its 09:30 open | on_dir | 2 | 54.14 | 1.09 | 1.79 | 0.61 | 0 | 0 |
+| T004 | session | RTH closes above its 09:30 open | open_vs_69 | 4 | 54.1 | 3.22 | 5.15 | 0.62 | 0 | 0 |
+| T005 | session | RTH closes above its 09:30 open | dow | 5 | 54.12 | 3.29 | 4.19 | 0.78 | 0 | 0 |
+| T006 | session | RTH closes above its 09:30 open | open_vs_pd x gap_b | 13 | 54.15 | 4.18 | 13.12 | 0.32 | 0 | 0 |
+| T007 | session | RTH closes above its 09:30 open | ldn_vs_asia x on_dir | 8 | 54.14 | 6.57 | 9.52 | 0.69 | 0 | 0 |
+| T008 | session | RTH close above the 10:30 price | ib_dir | 2 | 54.82 | 3.14 | 1.7 | 1.84 | 2 | 2 |
+| T009 | session | RTH close above the 10:30 price | ib_dir x ib_close_pos | 5 | 54.82 | 4.29 | 8.81 | 0.49 | 1 | 1 |
+| T010 | session | RTH close above the 10:30 price | orb_first_in_ib x ib_dir | 4 | 54.82 | 3.45 | 5.18 | 0.67 | 2 | 2 |
+| T011 | session | RTH close above the 10:30 price | ib_vs_pd | 3 | 54.82 | 1.4 | 3.71 | 0.38 | 0 | 0 |
+| T012 | session | RTH gap (>=0.15 ATR) fills to prior RTH close | gap_b | 4 | 51.14 | 21.67 | 5.56 | 3.9 | 4 | 4 |
+| T013 | session | RTH gap (>=0.15 ATR) fills to prior RTH close | gap_b x open_vs_pd | 10 | 51.14 | 23.77 | 11.36 | 2.09 | 10 | 9 |
+| T014 | session | RTH gap (>=0.15 ATR) fills to prior RTH close | gap_b x dow | 17 | 51.14 | 28.15 | 13.93 | 2.02 | 15 | 15 |
+| T015 | session | RTH gap (>=0.15 ATR) fills to prior RTH close | gap_b x on_dir | 4 | 51.24 | 22.06 | 5.53 | 3.99 | 4 | 4 |
+| T016 | session | RTH trades up to prior-day high (opened below it) | open_vs_pd | 3 | 40.64 | 31.08 | 6.04 | 5.15 | 3 | 3 |
+| T017 | session | RTH trades up to prior-day high (opened below it) | gap_b | 5 | 40.75 | 27.88 | 7.59 | 3.68 | 5 | 5 |
+| T018 | session | RTH trades up to prior-day high (opened below it) | ldn_vs_asia | 4 | 40.75 | 6.56 | 6.91 | 0.95 | 2 | 2 |
+| T019 | session | RTH trades down to prior-day low (opened above it) | open_vs_pd | 3 | 34.49 | 32.87 | 4.58 | 7.18 | 3 | 3 |
+| T020 | session | RTH trades down to prior-day low (opened above it) | gap_b | 5 | 34.5 | 30.59 | 9.03 | 3.39 | 5 | 5 |
+| T021 | session | RTH trades down to prior-day low (opened above it) | ldn_vs_asia | 4 | 34.46 | 7.53 | 6.66 | 1.13 | 2 | 2 |
+| T022 | session | RTH returns to 6-9am range mid (opened outside 6-9) | open_vs_69 | 2 | 72.01 | 0.76 | 3.12 | 0.24 | 0 | 0 |
+| T023 | session | RTH returns to 6-9am range mid (opened outside 6-9) | open_vs_69 x gap_b | 6 | 71.81 | 7.73 | 10.28 | 0.75 | 0 | 0 |
+| T024 | session | High set 18:00-08:00 survives to 16:00 | pos_at_8 | 3 | 29.02 | 24.13 | 2.99 | 8.06 | 2 | 2 |
+| T025 | session | High set 18:00-08:00 survives to 16:00 | ldn_vs_asia | 4 | 29.05 | 12.14 | 4.86 | 2.5 | 2 | 2 |
+| T026 | session | High set 18:00-08:00 survives to 16:00 | pos_at_8 x on_dir_8 | 5 | 29.02 | 24.88 | 8.81 | 2.82 | 2 | 2 |
+| T027 | session | Low set 18:00-08:00 survives to 16:00 | pos_at_8 | 3 | 36.24 | 23.23 | 3.09 | 7.52 | 3 | 3 |
+| T028 | session | Low set 18:00-08:00 survives to 16:00 | ldn_vs_asia | 4 | 36.29 | 9.99 | 5.59 | 1.79 | 2 | 2 |
+| T029 | session | Low set 18:00-08:00 survives to 16:00 | pos_at_8 x on_dir_8 | 5 | 36.24 | 23.9 | 9.5 | 2.52 | 4 | 2 |
+| T030 | session | IB broken (either side) 10:30-16:00 | ib_w_q | 5 | 95.87 | 4.62 | 2.08 | 2.22 | 4 | 4 |
+| T031 | session | Both IB extremes taken 10:30-16:00 | ib_w_q | 5 | 23.09 | 15.71 | 4.64 | 3.38 | 4 | 3 |
+| T032 | session | Both IB extremes taken 10:30-16:00 | ib_w_q x ib_dir | 10 | 23.09 | 19.15 | 6.75 | 2.84 | 7 | 7 |
+| T033 | session | First IB break is UP (given a break) | ib_dir | 2 | 54.33 | 25.2 | 2.79 | 9.04 | 2 | 2 |
+| T034 | session | First IB break is UP (given a break) | ib_close_pos | 3 | 54.33 | 39.22 | 4.34 | 9.03 | 3 | 3 |
+| T035 | session | First IB break is UP (given a break) | orb_first_in_ib | 3 | 54.33 | 12.95 | 9.6 | 1.35 | 2 | 2 |
+| T036 | session | First IB break is UP (given a break) | open_vs_pd | 4 | 54.35 | 2.59 | 4.45 | 0.58 | 0 | 0 |
+| T037 | session | First IB break is UP (given a break) | ib_vs_pd | 3 | 54.33 | 7.21 | 3.31 | 2.18 | 2 | 2 |
+| T038 | session | First IB break is UP (given a break) | ib_w_q x ib_close_pos | 15 | 54.29 | 42.3 | 11.12 | 3.8 | 12 | 11 |
+| T039 | session | After first IB break, price returns to IB mid | ib_w_q | 5 | 49.76 | 14.2 | 4.7 | 3.02 | 4 | 4 |
+| T040 | session | After first IB break, price returns to IB mid | ib_close_pos | 3 | 49.76 | 3.13 | 2.82 | 1.11 | 2 | 0 |
+| T041 | session | First IB break extends >=0.5x IB width | ib_w_q | 5 | 54.52 | 11.85 | 4.38 | 2.71 | 3 | 2 |
+| T042 | session | First IB break extends >=0.5x IB width | ib_dir | 2 | 54.53 | 0.61 | 1.83 | 0.33 | 0 | 0 |
+| T043 | session | RTH closes beyond the first-broken IB edge | ib_w_q | 5 | 52.09 | 2.72 | 4.19 | 0.65 | 0 | 0 |
+| T044 | session | RTH closes beyond the first-broken IB edge | ib_dir | 2 | 52.09 | 2.39 | 1.73 | 1.38 | 2 | 0 |
+| T045 | session | First 15m-ORB break is UP (given a break) | orb_dir | 2 | 51.43 | 23.41 | 2.29 | 10.23 | 2 | 2 |
+| T046 | session | First 15m-ORB break is UP (given a break) | orb_close_pos | 3 | 51.43 | 33.83 | 3.32 | 10.18 | 3 | 2 |
+| T047 | session | First 15m-ORB break is UP (given a break) | open_vs_pd | 4 | 51.45 | 5.18 | 3.85 | 1.34 | 1 | 1 |
+| T048 | session | First 15m-ORB break is UP (given a break) | gap_b | 5 | 51.42 | 1.57 | 5.05 | 0.31 | 0 | 0 |
+| T049 | session | Both ORB extremes taken 09:45-16:00 | orb_w_q | 5 | 53.22 | 11.67 | 6.07 | 1.92 | 4 | 4 |
+| T050 | session | After first ORB break, price returns to ORB mid | orb_w_q | 5 | 73.89 | 10.1 | 4.48 | 2.26 | 4 | 3 |
+| T051 | session | First ORB break extends >=0.5x ORB width | orb_w_q | 5 | 76.21 | 9.68 | 4.25 | 2.28 | 4 | 4 |
+| T052 | session | RTH closes beyond the first-broken ORB edge | orb_w_q | 5 | 50.53 | 2.93 | 4.2 | 0.7 | 0 | 0 |
+| T053 | hourly | Hour takes previous hour's high | hour x open_pos | 14 | 52.89 | 37.79 | 8.99 | 4.21 | 13 | 13 |
+| T054 | hourly | Hour takes previous hour's low | hour x open_pos | 14 | 46.44 | 36.04 | 9.07 | 3.97 | 14 | 14 |
+| T055 | hourly | Hour sweeps one side of prev hour, closes back inside | hour x swept_side | 14 | 42.89 | 17.55 | 4.84 | 3.62 | 6 | 6 |
+| T056 | hourly | Hour trades through previous hour's mid | hour x open_pos | 14 | 67.8 | 16.66 | 3.3 | 5.05 | 12 | 10 |
+| T057 | hourly | Hour closes above its open | hour x prev_dir | 14 | 52.69 | 3.2 | 11.07 | 0.29 | 0 | 0 |
+| T058 | hourly | Hour closes above its open | hour x open_pos | 14 | 52.69 | 3.19 | 8.95 | 0.36 | 0 | 0 |
+| T059 | candle_1h | C3 takes C2 high before C2 low | c2_rel x c2_close | 8 | 52.98 | 41.62 | 5.48 | 7.59 | 6 | 6 |
+| T060 | candle_1h | C3 takes C2 high before C2 low | c2_rel x colours | 16 | 52.98 | 33.83 | 5.49 | 6.16 | 16 | 16 |
+| T061 | candle_1h | C3 takes C2 high | c2_rel x c2_close | 8 | 48.44 | 33.17 | 4.27 | 7.77 | 8 | 8 |
+| T062 | candle_1h | C3 takes C2 low | c2_rel x c2_close | 8 | 43.55 | 28.8 | 4.3 | 6.7 | 7 | 7 |
+| T063 | candle_1h | C3 closes bullish | c2_rel x colours | 16 | 51.53 | 2.08 | 7.81 | 0.27 | 0 | 0 |
+| T064 | candle_1h | C3 closes bullish | c2_rel x c2_close | 8 | 51.53 | 2.04 | 3.65 | 0.56 | 0 | 0 |
+| T065 | candle_1h | C3 takes C2 high before C2 low | c3_hour x c2_rel | 74 | 52.98 | 16.04 | 8.57 | 1.87 | 46 | 46 |
+| T066 | candle_4h | C3 takes C2 high before C2 low | c2_rel x c2_close | 8 | 55.02 | 40.37 | 18.63 | 2.17 | 7 | 7 |
+| T067 | candle_4h | C3 takes C2 high before C2 low | c2_rel x colours | 15 | 55.02 | 32.88 | 18.32 | 1.79 | 15 | 15 |
+| T068 | candle_4h | C3 takes C2 high | c2_rel x c2_close | 8 | 51.21 | 29.17 | 13.96 | 2.09 | 6 | 6 |
+| T069 | candle_4h | C3 takes C2 low | c2_rel x c2_close | 8 | 44.06 | 30.71 | 12.47 | 2.46 | 5 | 5 |
+| T070 | candle_4h | C3 closes bullish | c2_rel x colours | 16 | 53.03 | 2.38 | 21.16 | 0.11 | 0 | 0 |
+| T071 | candle_4h | C3 closes bullish | c2_rel x c2_close | 8 | 53.03 | 4.21 | 11.17 | 0.38 | 0 | 0 |
+| T072 | candle_4h | C3 takes C2 high before C2 low | c3_hour x c2_rel | 20 | 55.02 | 16.04 | 18.08 | 0.89 | 4 | 4 |
+| T073 | candle_1D | C3 takes C2 high before C2 low | c2_rel x c2_close | 8 | 59.15 | 52.54 | 10.57 | 4.97 | 8 | 7 |
+| T074 | candle_1D | C3 takes C2 high before C2 low | c2_rel x colours | 10 | 59.15 | 41.61 | 11.57 | 3.6 | 9 | 9 |
+| T075 | candle_1D | C3 takes C2 high | c2_rel x c2_close | 8 | 56.18 | 47.48 | 9.72 | 4.89 | 8 | 8 |
+| T076 | candle_1D | C3 takes C2 low | c2_rel x c2_close | 8 | 42.62 | 35.95 | 10.07 | 3.57 | 6 | 6 |
+| T077 | candle_1D | C3 closes bullish | c2_rel x colours | 10 | 55.82 | 5.9 | 9.83 | 0.6 | 0 | 0 |
+| T078 | candle_1D | C3 closes bullish | c2_rel x c2_close | 8 | 55.82 | 4.59 | 9.59 | 0.48 | 0 | 0 |
+| T079 | ranges | Range breaks HIGH first (rangelab) | duration x w_atr_q | 15 | 52.01 | 2.57 | 1.58 | 1.63 | 4 | 4 |
+| T080 | ranges | Range breaks HIGH first (rangelab) | duration x slot x op_bucket | 1606 | 52.01 | 15.99 | 21.58 | 0.74 | 0 | 0 |
+| T081 | ranges | Broken range returns to its mid (rangelab) | duration x w_atr_q | 15 | 60.33 | 13.65 | 1.86 | 7.36 | 14 | 14 |
+| T082 | ranges | Broken range returns to its mid (rangelab) | duration x slot x op_bucket | 1606 | 60.33 | 48.33 | 20.83 | 2.32 | 702 | 623 |
+| T083 | ranges | Broken range returns to far edge (rangelab) | duration x w_atr_q | 15 | 35.13 | 18.26 | 1.21 | 15.04 | 14 | 14 |
+| T084 | ranges | Broken range returns to far edge (rangelab) | duration x slot x op_bucket | 1606 | 35.13 | 39.41 | 20.33 | 1.94 | 896 | 795 |
+| T085 | ranges | Broken range travels >=1 width past edge (rangelab) | duration x w_atr_q | 15 | 40.26 | 18.89 | 1.72 | 11.0 | 15 | 14 |
+| T086 | ranges | Broken range travels >=1 width past edge (rangelab) | duration x slot x op_bucket | 1606 | 40.26 | 40.22 | 20.65 | 1.95 | 906 | 766 |
