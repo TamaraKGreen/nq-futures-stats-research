@@ -1,0 +1,4 @@
+research/data/raw_nt/
+research/data/nq_base_2020_2026.parquet
+research/data/nq_1min_2020_2026.parquet
+__pycache__/
