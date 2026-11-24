@@ -44,6 +44,14 @@ c4 = ev.groupby(["dur", "sess"]).close.shift(4)
 tr = (ev.close - c4) / ev.atr_prev
 ev["trend4"] = pd.cut(tr, [-np.inf, -2, -0.5, 0.5, 2, np.inf], labels=["strong down", "down", "flat", "up", "strong up"])
 
+# VWAP: where the range closed vs its own VWAP (in widths), and vs the PREVIOUS range's VWAP
+ev["close_vs_vwap"] = (ev.close - ev.vwap) / ev.width
+ev["vwap_pos"] = pd.cut(ev.close_vs_vwap, [-np.inf, -.25, -.05, .05, .25, np.inf],
+                        labels=["well below", "below", "at", "above", "well above"])
+pv = ev.vwap.shift(1).where(prev_adj)
+ev["vs_prev_vwap"] = np.where(pv.isna(), "n/a", np.where(ev.close > pv, "above prev VWAP", "below prev VWAP"))
+ev["prev_formed_first"] = np.where(prev_adj, "prev " + ev.formed_first.shift(1).astype(str) + " first", "n/a")
+
 brk = ev[ev.broke].copy()
 brk["up"] = (brk.side == "up").astype(float)
 
@@ -72,10 +80,13 @@ for title, by in [("1. CLOSE POSITION (decile) - the mechanical driver", "close_
                   ("5. WIDTH vs SAME-SLOT NORM", "width_q"),
                   ("6. CLOSE vs PREVIOUS RANGE", "vs_prev"),
                   ("7. SHORT TREND (close vs 4 ranges ago, ATR units)", "trend4"),
-                  ("8. SESSION BLOCK", "block")]:
+                  ("8. SESSION BLOCK", "block"),
+                  ("9. CLOSE vs OWN VWAP (widths)", "vwap_pos"),
+                  ("10. CLOSE vs PREVIOUS RANGE VWAP", "vs_prev_vwap"),
+                  ("11. PREVIOUS RANGE: WHICH EXTREME FORMED FIRST", "prev_formed_first")]:
     print("\n" + "=" * 110, f"\n{title}\n")
     print(edge_table(brk, ["dur", by]).to_string())
 
-for c in ("close_dec", "delta_q", "width_q", "trend4"):
+for c in ("close_dec", "delta_q", "width_q", "trend4", "vwap_pos"):
     brk[c] = brk[c].astype(str)
 brk.to_parquet(OUT / f"direction_dev_wait{WAIT_MULT:g}.parquet", index=False)

@@ -44,11 +44,12 @@ def build_ranges(bars: pd.DataFrame, dur: int, offset: int = 0, min_cov: float =
     b["slot_idx"] = slot_idx[ok]
     key = b.sess.astype("int64") // 86_400_000_000 * 1000 + b.slot_idx   # unique per (sess, slot)
     b["rid"] = key.to_numpy()
+    b["pv"] = (b.high + b.low + b.close) / 3 * b.volume          # for the range VWAP
     g = b.groupby("rid", sort=True)
     r = g.agg(sess=("sess", "first"), slot_idx=("slot_idx", "first"),
               start=("ts", "first"), end=("ts", "last"),
               open=("open", "first"), high=("high", "max"), low=("low", "min"), close=("close", "last"),
-              volume=("volume", "sum"), delta=("delta", "sum"), n=("close", "size"),
+              volume=("volume", "sum"), delta=("delta", "sum"), pv=("pv", "sum"), n=("close", "size"),
               i0=("pos", "first"), i1=("pos", "last"),
               partial_sess=("partial_sess", "first"), roll_adj=("roll_adj", "first"))
     # which extreme formed first (bar index of max high vs min low)
@@ -62,6 +63,7 @@ def build_ranges(bars: pd.DataFrame, dur: int, offset: int = 0, min_cov: float =
     r["cov"] = r.n / dur
     r = r[r["cov"] >= min_cov].reset_index(drop=True)
     r["width"] = r.high - r.low
+    r["vwap"] = (r.pv / r.volume.replace(0, np.nan)).fillna((r.high + r.low + r.close) / 3)
     r["mid"] = (r.high + r.low) / 2
     r["close_pos"] = np.where(r.width > 0, (r.close - r.low) / r.width.where(r.width > 0), np.nan)
     r["open_pos"] = np.where(r.width > 0, (r.open - r.low) / r.width.where(r.width > 0), np.nan)
