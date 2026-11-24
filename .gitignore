@@ -3,3 +3,5 @@ research/data/nq_base_2020_2026.parquet
 research/data/nq_1min_2020_2026.parquet
 __pycache__/
 research/output/*.parquet
+oos/cache/
+oos/results/*.parquet
