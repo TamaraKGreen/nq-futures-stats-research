@@ -1,0 +1,125 @@
+============================================================================================================== 
+PART A - RTH SESSION: first FVG / iFVG after 09:30
+
+bull%/bear%: share of days where RTH closes ABOVE the signal price (bull signal should be high,
+bear signal low). touch: +0.25 ATR hit before -0.25 ATR from the signal (RW 50%).
+open->close: your original framing (biased: includes the FVG's own move).
+
+baseline: RTH close above the price at a random RTH minute: {'dev': 54.4, 'later': 51.3} 
+
+                      n_bull  n_bear  bull: close>sig%  bear: close>sig%  spread_pp  bull: touch up%  bear: touch up%  touch spread_pp  bull: open->close up%  bear: open->close up%
+tf signal     period                                                                                                                                                                
+1m first FVG  dev      354.0   331.0              58.5              51.1        7.4             47.4             51.2             -3.8                   66.4                   46.2
+              later     71.0    93.0              59.2              43.0       16.1             45.1             47.3             -2.2                   63.4                   32.3
+   first iFVG dev      745.0   626.0              56.5              51.1        5.4             50.7             47.1              3.5                   60.4                   48.2
+              later    162.0   183.0              56.2              47.0        9.2             43.7             52.2             -8.6                   59.3                   42.1
+5m first FVG  dev      425.0   396.0              58.4              51.5        6.8             53.1             50.0              3.1                   70.1                   38.1
+              later     78.0    85.0              56.4              50.6        5.8             57.3             56.8              0.5                   66.7                   36.5
+   first iFVG dev      652.0   719.0              54.1              55.6       -1.5             52.2             51.1              1.1                   59.8                   50.3
+              later    167.0   178.0              52.7              47.2        5.5             40.6             52.9            -12.2                   61.7                   39.3
+
+By time of the signal (dev):
+
+                           n_bull  n_bear  bull: close>sig%  bear: close>sig%  spread_pp  bull: touch up%  bear: touch up%  touch spread_pp  bull: open->close up%  bear: open->close up%
+tf signal     when                                                                                                                                                                       
+1m first FVG  09:30-10:00   351.0   331.0              58.4              51.1        7.3             47.7             51.2             -3.6                   66.4                   46.2
+              10:00-11:00     3.0     0.0              66.7               NaN        NaN              0.0              NaN              NaN                   66.7                    NaN
+   first iFVG 09:30-10:00   740.0   616.0              56.8              51.3        5.5             50.7             47.4              3.3                   60.5                   48.5
+              10:00-11:00     5.0    10.0              20.0              40.0      -20.0             50.0             25.0             25.0                   40.0                   30.0
+5m first FVG  09:30-10:00   244.0   244.0              59.0              50.8        8.2             54.5             48.9              5.6                   69.7                   34.8
+              10:00-11:00   168.0   144.0              57.7              51.4        6.3             50.3             50.4             -0.0                   70.8                   41.7
+              after 11:00    13.0     8.0              53.8              75.0      -21.2             61.5             75.0            -13.5                   69.2                   75.0
+   first iFVG 09:30-10:00   540.0   576.0              54.8              54.7        0.1             52.4             51.2              1.1                   62.6                   47.0
+              10:00-11:00    85.0   114.0              49.4              59.6      -10.2             51.2             50.5              0.7                   47.1                   62.3
+              after 11:00    27.0    29.0              55.6              58.6       -3.1             52.2             52.0              0.2                   44.4                   69.0
+
+By year (dev + later), 5m first FVG:
+
+      n_bull  n_bear  spread_pp  touch spread_pp
+day                                             
+2020    83.0    57.0        4.1            -11.7
+2021    68.0    75.0       10.5             12.8
+2022    78.0    71.0        1.6              2.6
+2023    79.0    79.0       13.9              7.1
+2024    76.0    79.0        0.8              3.1
+2025    67.0    67.0        6.0              6.3
+2026    52.0    53.0        8.6             -3.9
+
+============================================================================================================== 
+PART B - RANGES: 1m FVG / iFVG inside the range -> which side breaks first (dev, 1x wait)
+
+excess = up-first% minus the random-walk expectation (close position). Same test as direction.py.
+
+--- FIRST FVG in the range
+
+              n  up_first%   rw%  excess_pp yrs_same_sign
+dur c                                                    
+15  bear  47691       41.2  42.6       -1.4           6/6
+    bull  50333       62.4  61.1        1.2           5/6
+    none   5947       52.3  50.9        1.4           4/6
+30  bear  24805       47.3  48.5       -1.1           5/6
+    bull  26073       57.6  57.0        0.6           6/6
+    none    123       51.2  51.9       -0.6           3/6
+60  bear  12328       50.6  51.6       -1.0           6/6
+    bull  12957       55.6  55.1        0.4           4/6
+    none      1        0.0   0.0        0.0           1/1 
+
+--- LAST FVG in the range
+
+              n  up_first%   rw%  excess_pp yrs_same_sign
+dur c                                                    
+15  bear  47020       29.2  30.8       -1.6           6/6
+    bull  51004       73.1  71.8        1.4           6/6
+    none   5947       52.3  50.9        1.4           4/6
+30  bear  24440       34.1  34.8       -0.7           4/6
+    bull  26438       69.7  69.5        0.2           3/6
+    none    123       51.2  51.9       -0.6           3/6
+60  bear  12033       38.7  39.1       -0.4           4/6
+    bull  13252       66.3  66.4       -0.2           3/6
+    none      1        0.0   0.0        0.0           1/1 
+
+--- FIRST iFVG in the range
+
+              n  up_first%   rw%  excess_pp yrs_same_sign
+dur c                                                    
+15  bear  48650       46.2  46.9       -0.7           6/6
+    bull  47473       57.7  57.0        0.7           5/6
+    none   7848       54.5  53.9        0.6           5/6
+30  bear  25691       49.6  50.6       -1.0           5/6
+    bull  24891       55.6  55.0        0.6           4/6
+    none    419       60.4  58.5        1.8           4/6
+60  bear  12934       51.5  52.5       -1.0           5/6
+    bull  12349       54.9  54.4        0.5           4/6
+    none      3        0.0  34.3      -34.3           2/2 
+
+--- NET FVG count (bull - bear)
+
+               n  up_first%   rw%  excess_pp yrs_same_sign
+dur net_b                                                 
+15  <=-2   20769       18.3  22.3       -4.0           6/6
+    -1     18052       36.1  36.7       -0.7           6/6
+    0      22168       51.6  51.0        0.6           5/6
+    +1     18923       66.2  65.4        0.7           5/6
+    >=+2   24059       82.6  79.7        2.9           6/6
+30  <=-2   14004       21.6  25.3       -3.7           6/6
+    -1      6387       40.0  41.0       -1.0           4/6
+    0       7014       51.5  51.7       -0.2           4/6
+    +1      6832       62.5  61.3        1.1           4/6
+    >=+2   16764       79.8  77.4        2.4           6/6
+60  <=-2    8097       23.9  27.8       -3.8           6/6
+    -1      2246       43.2  43.5       -0.3           4/6
+    0       2405       52.3  51.2        1.1           5/6
+    +1      2377       58.2  58.2       -0.0           3/6
+    >=+2   10161       77.6  75.5        2.1           6/6 
+
+--- Does the LAST FVG add anything beyond the candle direction? (60m)
+
+                    n  up_first%   rw%  excess_pp yrs_same_sign
+bull_bar   c                                                   
+close<open bear  7080       20.2  22.2       -2.1           6/6
+           bull  4784       38.1  41.3       -3.2           6/6
+close>open bear  4898       65.5  63.5        2.1           6/6
+           bull  8400       82.4  80.8        1.6           5/6
+flat       bear    55       38.2  43.5       -5.3           3/5
+           bull    68       55.9  63.4       -7.5           4/6
+           none     1        0.0   0.0        0.0           1/1
