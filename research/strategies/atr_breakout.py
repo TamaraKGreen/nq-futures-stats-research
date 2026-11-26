@@ -49,15 +49,60 @@ def prep():
 
 
 def run(d, D, **kw):
-    P = {**BASE, **kw}
+    """Base rules plus optional variants (all default OFF = the original rules):
+      TRAIL_K     chandelier trail: stop = best price since entry -/+ TRAIL_K x ATR (uses the previous
+                  bar's extreme, only tightens, never looser than the initial stop)
+      PARTIAL     bank half at +1R (limit), move the rest to breakeven from the next bar
+      LAST_ENTRY  last check time allowed (minutes of day, ET), e.g. 720 = 12:00
+      VWAP        None | "side" (entry beyond RTH VWAP in the trade direction)
+                       | "slope" (VWAP rising for longs / falling for shorts over the last 30 min)
+      MAX_TRADES  max trades per day (None = unlimited)
+      DAY_LOSS    stop trading for the day once realised P&L <= -DAY_LOSS dollars
+    """
+    P = {**dict(TRAIL_K=None, PARTIAL=False, LAST_ENTRY=None, VWAP=None, MAX_TRADES=None, DAY_LOSS=None),
+         **BASE, **kw}
     D = D.copy()
     D["atr"] = D.tr.rolling(P["ATR_N"]).mean().shift(1)
     D["atr5"] = D.tr.rolling(P["ATR_F"]).mean().shift(1)
     D["prev_rng"] = D.rng.shift(1)
     D["ok"] = (D.prev_rng < P["FILTER"] * D.atr5) if P["FILTER"] is not None else True
     H, L, C, O, M = (d[c].to_numpy() for c in ("high", "low", "close", "open", "mod"))
+    V = d["volume"].to_numpy(np.float64)
+    TP = (H + L + C) / 3
     idx = d.groupby("sess").indices
     trades = []
+
+    def exit_sim(j, i_exit, entry, dirn, stop_pts, atr):
+        hh, ll, cc = H[j + 1:i_exit + 1], L[j + 1:i_exit + 1], C[j + 1:i_exit + 1]
+        init = entry - dirn * stop_pts
+        stop_arr = np.full(len(hh), init)
+        if P["TRAIL_K"]:
+            fav = np.maximum.accumulate(hh) if dirn > 0 else np.minimum.accumulate(ll)
+            trail = np.r_[init, fav[:-1] - dirn * P["TRAIL_K"] * atr]      # previous bar's extreme
+            stop_arr = np.maximum(stop_arr, trail) if dirn > 0 else np.minimum(stop_arr, trail)
+
+        def leg(stops, start=0):
+            hit = (ll[start:] <= stops[start:]) if dirn > 0 else (hh[start:] >= stops[start:])
+            if hit.any():
+                k = start + int(np.argmax(hit))
+                return dirn * (stops[k] - dirn * TICK - entry), ("stop" if stops[k] == init else "trail"), j + 1 + k
+            return dirn * (cc[-1] - entry), "time", i_exit
+        if not P["PARTIAL"]:
+            pts, how, jx = leg(stop_arr)
+            return pts, pts, how, jx
+        t1 = entry + dirn * stop_pts
+        ht = (hh >= t1) if dirn > 0 else (ll <= t1)
+        hs = (ll <= stop_arr) if dirn > 0 else (hh >= stop_arr)
+        a = int(np.argmax(ht)) if ht.any() else 10**9
+        b = int(np.argmax(hs)) if hs.any() else 10**9
+        if b <= a:                                   # stopped before (or on the bar of) the first target
+            pts, how, jx = leg(stop_arr)
+            return pts, pts, how, jx
+        be = stop_arr.copy()
+        be[a + 1:] = np.maximum(be[a + 1:], entry) if dirn > 0 else np.minimum(be[a + 1:], entry)
+        pb, how, jx = leg(be, a + 1) if a + 1 < len(hh) else (dirn * (cc[-1] - entry), "time", i_exit)
+        return stop_pts, pb, how, jx
+
     for s, r in D.iterrows():
         if not np.isfinite(r.atr) or not np.isfinite(r.atr5) or s not in idx:
             continue
@@ -67,10 +112,19 @@ def run(d, D, **kw):
         pos_of = {m: ii[k] for k, m in enumerate(mm)}
         if 570 not in pos_of or P["EXIT"] not in pos_of:
             continue
-        ref = O[pos_of[570]]
+        i0 = pos_of[570]
+        ref = O[i0]
         i_exit = pos_of[P["EXIT"]]
-        busy_until = -1
+        seg = slice(i0, i_exit + 1)
+        vw = np.cumsum(TP[seg] * V[seg]) / np.maximum(np.cumsum(V[seg]), 1)
+        busy_until, n_tr, day_pnl = -1, 0, 0.0
         for t in P["CHECKS"]:
+            if P["LAST_ENTRY"] is not None and t > P["LAST_ENTRY"]:
+                break
+            if P["MAX_TRADES"] is not None and n_tr >= P["MAX_TRADES"]:
+                break
+            if P["DAY_LOSS"] is not None and day_pnl <= -P["DAY_LOSS"]:
+                break
             j = pos_of.get(t - 1)                       # bar closing at time t
             if j is None or j <= busy_until or j >= i_exit:
                 continue
@@ -81,22 +135,26 @@ def run(d, D, **kw):
                 dirn = -1
             else:
                 continue
+            if P["VWAP"] == "side" and dirn * (px - vw[j - i0]) <= 0:
+                continue
+            if P["VWAP"] == "slope" and (j - i0 < 30 or dirn * (vw[j - i0] - vw[j - i0 - 30]) <= 0):
+                continue
             entry = px + dirn * TICK
             stop_pts = P["K_STOP"] * r.atr
-            stop = entry - dirn * stop_pts
             qty = max(1, int(P["RISK_USD"] // (stop_pts * PT)))
             qty = min(qty, max(1, int(P["MAX_RISK_USD"] // (stop_pts * PT))))
-            hh, ll = H[j + 1:i_exit + 1], L[j + 1:i_exit + 1]
-            hit = (ll <= stop) if dirn > 0 else (hh >= stop)
-            if hit.any():
-                k = int(np.argmax(hit)); x = stop - dirn * TICK; how = "stop"; jx = j + 1 + k
+            pa, pb, how, jx = exit_sim(j, i_exit, entry, dirn, stop_pts, r.atr)
+            if P["PARTIAL"] and qty >= 2:
+                qa = qty // 2; qb = qty - qa
+                pnl = qa * pa * PT + qb * pb * PT - qty * COMM
+                pts = (qa * pa + qb * pb) / qty
             else:
-                x = C[i_exit]; how = "time"; jx = i_exit
-            pts = dirn * (x - entry)
-            pnl = qty * (pts * PT - COMM)
+                pts = pb                                 # qty 1: whole position managed with the BE move
+                pnl = qty * (pts * PT - COMM)
             trades.append({"sess": s, "check": f"{t // 60:02d}:{t % 60:02d}", "dir": "long" if dirn > 0 else "short",
-                           "entry": entry, "exit": x, "how": how, "qty": qty, "pts": pts, "R": pts / stop_pts,
+                           "entry": entry, "how": how, "qty": qty, "pts": pts, "R": pts / stop_pts,
                            "pnl": pnl, "risk_usd": qty * stop_pts * PT, "atr": r.atr})
+            n_tr += 1; day_pnl += pnl
             busy_until = jx
             if not P["REENTRY"] or how == "time":
                 break
