@@ -1,0 +1,96 @@
+1. AVG R BY YEAR AND DIRECTION (n)
+
+      mean       size      
+dir   long short long short
+year                       
+2020  0.18  0.15  139   127
+2021  0.33  0.22  137   133
+2022  0.08  0.33  170   158
+2023  0.26  0.02  168   138
+2024  0.14  0.34  141   141
+2025  0.10  0.15  150   138
+2026  0.07 -0.00  143   138
+
+2. AVG R BY ENTRY CHECK TIME AND YEAR
+
+year         2020  2021  2022  2023  2024  2025  2026
+chk                                                  
+10:00-10:30 -0.01  0.19  0.19  0.28  0.26  0.17 -0.02
+11:00-12:00  0.39  0.40  0.15  0.03  0.28  0.42  0.10
+12:30-14:00  0.12  0.15  0.19  0.10  0.30 -0.16  0.14
+14:30-16:00  0.25  0.52  0.31  0.01  0.07 -0.23  0.02
+
+   trades:
+ year         2020  2021  2022  2023  2024  2025  2026
+chk                                                  
+10:00-10:30   104   134   154   139   126   141   143
+11:00-12:00    74    61    70    80    67    64    72
+12:30-14:00    38    39    55    46    47    51    39
+14:30-16:00    50    36    49    41    42    32    27
+
+3. HOW TRADES END, BY YEAR
+
+      stop %  time-exit avg R  time-exit R p75  R>2 %  trades/day traded  1st trade avg R  re-entries avg R
+year                                                                                                       
+2020   44.36             1.11             1.62  11.28               1.45             0.10              0.32
+2021   41.48             1.19             1.84  11.48               1.42             0.23              0.40
+2022   45.12             1.19             1.76  10.67               1.54             0.22              0.17
+2023   46.73             1.17             1.75  11.44               1.54             0.17              0.12
+2024   45.74             1.29             1.92  12.41               1.47             0.30              0.12
+2025   42.36             0.95             1.31   9.03               1.44             0.13              0.09
+2026   44.48             0.87             1.45   7.83               1.51             0.00              0.10
+
+4. MARKET CONTEXT BY YEAR: does price keep going after it leaves the open?
+
+         atr  oc_atr  rng_atr  close_loc
+year                                    
+2020  219.61    0.38     0.82       0.64
+2021  195.18    0.45     0.84       0.66
+2022  323.26    0.46     0.83       0.68
+2023  227.50    0.40     0.84       0.63
+2024  257.50    0.36     0.85       0.59
+2025  353.33    0.36     0.77       0.53
+2026  446.74    0.35     0.79       0.51
+
+5. FILTER: with vs without (all years)
+
+Traceback (most recent call last):
+  File "<stdin>", line 31, in <module>
+  File "/home/user/nq-futures-trading/research/strategies/atr_breakout.py", line 57, in run
+    D["ok"] = D.prev_rng < P["FILTER"] * D.atr5
+                           ~~~~~~~~~~~~^~~~~~~~
+  File "/usr/local/lib/python3.13/site-packages/pandas/core/ops/common.py", line 85, in new_method
+    return method(self, other)
+  File "/usr/local/lib/python3.13/site-packages/pandas/core/arraylike.py", line 210, in __rmul__
+    return self._arith_method(other, roperator.rmul)
+           ~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/local/lib/python3.13/site-packages/pandas/core/series.py", line 6751, in _arith_method
+    return base.IndexOpsMixin._arith_method(self, other, op)
+           ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^
+  File "/usr/local/lib/python3.13/site-packages/pandas/core/base.py", line 1644, in _arith_method
+    result = ops.arithmetic_op(lvalues, rvalues, op)
+  File "/usr/local/lib/python3.13/site-packages/pandas/core/ops/array_ops.py", line 289, in arithmetic_op
+    res_values = _na_arithmetic_op(left, right, op)  # type: ignore[arg-type]
+  File "/usr/local/lib/python3.13/site-packages/pandas/core/ops/array_ops.py", line 220, in _na_arithmetic_op
+    result = func(left, right)
+  File "/usr/local/lib/python3.13/site-packages/pandas/core/computation/expressions.py", line 252, in evaluate
+    return _evaluate(op, op_str, left_op, right_op)  # type: ignore[misc]
+  File "/usr/local/lib/python3.13/site-packages/pandas/core/computation/expressions.py", line 83, in _evaluate_standard
+    return op(left_op, right_op)
+  File "/usr/local/lib/python3.13/site-packages/pandas/core/roperator.py", line 20, in rmul
+    return right * left
+           ~~~~~~^~~~~~
+TypeError: unsupported operand type(s) for *: 'NoneType' and 'float'
+
+5. FILTER: with vs without
+
+     with filter              no filter             
+          trades avg R sharpe    trades avg R sharpe
+2020       266.0  0.17   1.53     335.0  0.18   1.99
+2021       270.0  0.28   3.24     344.0  0.26   3.27
+2022       328.0  0.20   2.50     385.0  0.18   2.28
+2023       306.0  0.15   1.76     374.0  0.11   1.42
+2024       282.0  0.24   2.45     348.0  0.15   1.82
+2025       288.0  0.12   1.22     356.0  0.08   0.86
+2026       281.0  0.03   0.34     321.0  0.05   0.60
+ALL       2021.0  0.17   1.90    2463.0  0.15   1.75
