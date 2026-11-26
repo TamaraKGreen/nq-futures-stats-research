@@ -103,7 +103,11 @@ def work(args):
             continue
         sets = [("current", lv, r[lv]) for lv in LV]
         pr = c.iloc[k - 1]
-        if np.isfinite(pr["M+"]) and int(pr.p1) + 1 >= p0 - 61:       # adjacent previous candle
+        if tf in ("12H", "D"):                                         # previous session's candle
+            adjacent = (r.sess - pr.sess).days <= 4
+        else:                                                          # the bar right before this candle
+            adjacent = int(pr.p1) + 1 == p0
+        if np.isfinite(pr["M+"]) and adjacent:
             for lv in LV:
                 x = pr[lv]
                 touched = (pr.h >= x) if lv.endswith("+") else (pr.l <= x)
