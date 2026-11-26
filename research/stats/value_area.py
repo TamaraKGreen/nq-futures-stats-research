@@ -51,6 +51,7 @@ def value_area(lo, hi, vol, pct=0.70):
 
 
 PROFILE = sys.argv[1] if len(sys.argv) > 1 else "eth"      # "eth" = 18:00-17:00, "rth" = 09:30-16:00
+MODE = sys.argv[2] if len(sys.argv) > 2 else "va"           # "va" = value-area tables, "poc" = POC tables
 
 
 def build():
@@ -59,7 +60,11 @@ def build():
     naive = d.ts.dt.tz_localize(None)
     d["mod"] = naive.dt.hour * 60 + naive.dt.minute
     prof = {}
+    rth_rng = {}
     for s, g in d.groupby("sess", sort=True):
+        r_ = g[(g["mod"] >= 570) & (g["mod"] < 960)]
+        if len(r_) >= 380:
+            rth_rng[s] = r_.high.max() - r_.low.min()
         if PROFILE == "rth":
             g = g[(g["mod"] >= 570) & (g["mod"] < 960)]
             if len(g) < 380:                     # skip early closes: no full RTH profile
@@ -67,6 +72,8 @@ def build():
         val, vah, poc = value_area(g.low.to_numpy(), g.high.to_numpy(), g.volume.to_numpy(np.float64))
         prof[s] = (val, vah, poc, g.roll_adj.iloc[0])
     sessions = sorted(prof)
+    rr = pd.Series(rth_rng).sort_index()
+    atr14 = rr.rolling(14, min_periods=10).mean().shift(1)          # prior 14 full RTH ranges
     rows = []
     H, L, M = d.high.to_numpy(), d.low.to_numpy(), d["mod"].to_numpy()
     O = d.open.to_numpy()
@@ -112,7 +119,10 @@ def build():
                 hv = np.flatnonzero(H[w] >= vah); lv = np.flatnonzero(L[w] <= val)
                 iv, il = (hv[0] if len(hv) else 10**9), (lv[0] if len(lv) else 10**9)
                 first = np.nan if iv == il == 10**9 else ("VAH first" if iv < il else ("VAL first" if il < iv else "same bar"))
-            rows.append({"sess": s, "open_time": name, "loc": loc, "open": op, "vah": vah, "val": val, "poc": poc,
+            hp = np.flatnonzero((H[w] >= poc) & (L[w] <= poc))
+            rows.append({"sess": s, "open_time": name, "loc": loc, "atr": atr14.asof(s),
+                         "rw_poc": rw(poc), "poc_min": float(hp[0]) if len(hp) else np.nan,
+                         "hit_poc_11": float((h11 >= poc) and (l11 <= poc)) if len(w11) else np.nan, "open": op, "vah": vah, "val": val, "poc": poc,
                          "va_width": vah - val,
                          "hit_vah": float(hh >= vah) if op < vah else float(ll <= vah),
                          "hit_val": float(ll <= val) if op > val else float(hh >= val),
@@ -138,8 +148,46 @@ def table(t, by11):
     return r.round(1)
 
 
+def poc_report(t):
+    """Open vs prior-day POC: location and distance, then P(trade back to the POC)."""
+    print(f"PROFILE: prior day {'RTH 09:30-16:00' if PROFILE == 'rth' else 'ETH 18:00-17:00'} - POC")
+    print(f"sessions: {t.sess.min().date()} -> {t.sess.max().date()}\n")
+    t = t.copy()
+    t["side"] = np.where(t.open > t.poc, "above POC", np.where(t.open < t.poc, "below POC", "at POC"))
+    t["zone"] = np.select([t.open > t.vah, t.open > t.poc, t.open == t.poc, t.open >= t.val],
+                          ["above VAH", "inside, above POC", "at POC", "inside, below POC"], "below VAL")
+    dist = (t.open - t.poc).abs() / t.atr
+    t["dist"] = pd.cut(dist, [-.001, .1, .25, .5, 1, np.inf], labels=["<0.1 ATR", "0.1-0.25", "0.25-0.5", "0.5-1", ">1 ATR"])
+
+    def f(x, by11):
+        o = {"n": len(x), "POC %": 100 * x.hit_poc.mean(), "RW %": 100 * x.rw_poc.mean(),
+             "edge pp": 100 * (x.hit_poc.mean() - x.rw_poc.mean()), "med min to hit": x.poc_min.median()}
+        if by11:
+            o["by 11:00 %"] = 100 * x.hit_poc_11.mean()
+        return pd.Series(o)
+    zones = ["above VAH", "inside, above POC", "inside, below POC", "below VAL"]
+    for name in ("18:00 open", "08:00 open", "09:30 open"):
+        x = t[(t.open_time == name) & (t.side != "at POC")]
+        by11 = name != "18:00 open"
+        print("=" * 110, f"\n{name}  ({len(x)} sessions; hit = by {'16:00' if name.startswith('09') else '17:00'})\n")
+        r = x.groupby("side").apply(f, by11=by11, include_groups=False)
+        r.insert(1, "share %", 100 * r.n / r.n.sum()); print(r.round(1).to_string(), "\n")
+        r = x.groupby("zone").apply(f, by11=by11, include_groups=False).reindex(zones)
+        r.insert(1, "share %", 100 * r.n / r.n.sum()); print(r.round(1).to_string(), "\n")
+        r = x.dropna(subset=["dist"]).groupby(["side", "dist"], observed=True).apply(f, by11=by11, include_groups=False)
+        print("by distance from the POC (ATR = average of the prior 14 RTH ranges):")
+        print(r.round(1).to_string(), "\n")
+        y = x.assign(year=x.sess.dt.year).groupby(["side", "year"]).agg(hit=("hit_poc", "mean"), rw=("rw_poc", "mean"))
+        print("by year (POC % / RW %):")
+        print(((y.hit * 100).round(0).astype(int).astype(str) + " / " + (y.rw * 100).round(0).astype(int).astype(str))
+              .unstack("year").to_string(), "\n")
+
+
 if __name__ == "__main__":
     t = build()
+    if MODE == "poc":
+        poc_report(t)
+        sys.exit(0)
     t.to_parquet(OUT / f"value_area_opens_{PROFILE}.parquet", index=False)
     print(f"PROFILE: prior day {'RTH 09:30-16:00' if PROFILE == 'rth' else 'ETH 18:00-17:00'}")
     print(f"sessions: {t.sess.min().date()} -> {t.sess.max().date()}\n")
