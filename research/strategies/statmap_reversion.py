@@ -12,7 +12,8 @@ Trade    fade direction: level above the open -> short, below -> long. Target = 
              beyond the level (1:1); the entry bar counts against us if it also reaches the stop.
   E1 iFVG    after the touch, the first 1m iFVG in the fade direction within 15 bars (oos engine); entry at the
              inverting bar's close; stop 1 tick beyond the extreme since the touch; target = open.
-Control  for every trade: a random bar of the same candle, same direction, same stop and target distances.
+Control  for every trade: a random bar of the same candle AFTER the touch / signal bar (so it uses no more
+         information than the setup), same direction, same stop and target distances.
 Cost     1 pt per trade. R = net points / stop distance. edge = R - random R.
 Split    dev (to 2025-07-09) / later (2025-07-10 on).
 """
@@ -131,8 +132,9 @@ def work(args):
                 j = int(np.argmax(thr))
                 entry, tgt, stp = x, r.o, x - dr * dist
                 pts = _sim(hh, ll, cc, j, entry, dr, tgt, stp, amb=True)
-                rp = _rand(hh, ll, cc, rng, dr, dist, dist)
-                rows.append({**base, "entry": "E0 limit", "R": (pts - COST) / dist, "rR": None if rp is None else (rp - COST) / dist})
+                rp = _rand(hh, ll, cc, rng, dr, dist, dist, j)
+                rows.append({**base, "entry": "E0 limit", "R": (pts - COST) / dist, "Rg": pts / dist, "pts": pts - COST,
+                             "rR": np.nan if rp is None else (rp - COST) / dist})
             # E1 iFVG after the touch
             a = np.searchsorted(epos, p0 + it); bnd = np.searchsorted(epos, min(p0 + it + 15, p1 - 1), side="right")
             cand = np.flatnonzero(edir[a:bnd] == dr)
@@ -144,9 +146,9 @@ def work(args):
                 risk, reward = abs(entry - stp), dr * (r.o - entry)
                 if risk > 0 and reward > 0 and j + 1 <= len(cc) - 1:
                     pts = _sim(hh, ll, cc, j + 1, entry, dr, r.o, stp, amb=False)
-                    rp = _rand(hh, ll, cc, rng, dr, risk, reward)
-                    rows.append({**base, "entry": "E1 iFVG", "R": (pts - COST) / risk,
-                                 "rR": None if rp is None else (rp - COST) / risk, "rr": reward / risk})
+                    rp = _rand(hh, ll, cc, rng, dr, risk, reward, j)
+                    rows.append({**base, "entry": "E1 iFVG", "R": (pts - COST) / risk, "Rg": pts / risk, "pts": pts - COST,
+                                 "rR": np.nan if rp is None else (rp - COST) / risk, "rr": reward / risk})
     return pd.DataFrame(rows)
 
 
@@ -163,11 +165,12 @@ def _sim(hh, ll, cc, j, entry, dr, tgt, stp, amb):
     return dr * (stp - entry) if a <= b else dr * (tgt - entry)
 
 
-def _rand(hh, ll, cc, rng, dr, risk, reward):
+def _rand(hh, ll, cc, rng, dr, risk, reward, after):
+    """Random bar AFTER `after` (the touch / signal bar) - only information known by then."""
     n = len(cc)
-    if n < 12:
+    if after + 1 >= n - 2:
         return None
-    j = int(rng.integers(5, n - 5))
+    j = int(rng.integers(after + 1, n - 2))
     e = cc[j]
     return _sim(hh, ll, cc, j + 1, e, dr, e + dr * reward, e - dr * risk, amb=False)
 
@@ -179,7 +182,8 @@ def report(X):
     def f(x):
         e = x.edge.dropna()
         dv, lt = x[x.period == "dev"], x[x.period == "later"]
-        return pd.Series({"n": len(x), "win %": 100 * (x.R > 0).mean(), "R": x.R.mean(), "rand R": x.rR.mean(),
+        return pd.Series({"n": len(x), "win %": 100 * (x.R > 0).mean(), "gross R": x.Rg.mean(), "R": x.R.mean(),
+                          "net pts": x.pts.mean(), "rand R": x.rR.mean(),
                           "edge": e.mean(), "t": e.mean() / (e.std() / np.sqrt(len(e))) if len(e) > 2 else np.nan,
                           "dev edge": dv.edge.mean(), "later edge": lt.edge.mean(), "later n": len(lt),
                           "med dist ATR": x.dist_atr.median()})
