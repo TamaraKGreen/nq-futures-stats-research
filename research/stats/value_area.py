@@ -1,7 +1,7 @@
 """
 Where NQ opens relative to the PRIOR day's value area, and whether it then trades to VAH / VAL.
 
-Profile    prior session 18:00-17:00 ET (ETH), built from 1-min bars: each bar's volume is spread
+Profile    prior session 18:00-17:00 ET (ETH, default) or prior RTH 09:30-16:00 (arg "rth"), from 1-min bars: each bar's volume is spread
            evenly over every tick from its low to its high. POC = highest-volume tick.
 Value area 70% of volume, grown from the POC one tick at a time toward the side with more volume.
            Prior-day levels are shifted by the roll difference when a contract roll sits between
@@ -50,6 +50,9 @@ def value_area(lo, hi, vol, pct=0.70):
     return (base + a) * TICK, (base + b) * TICK, (base + poc) * TICK
 
 
+PROFILE = sys.argv[1] if len(sys.argv) > 1 else "eth"      # "eth" = 18:00-17:00, "rth" = 09:30-16:00
+
+
 def build():
     d = load("all")
     d = d[d.sess_bars >= 1200].reset_index(drop=True)
@@ -57,6 +60,10 @@ def build():
     d["mod"] = naive.dt.hour * 60 + naive.dt.minute
     prof = {}
     for s, g in d.groupby("sess", sort=True):
+        if PROFILE == "rth":
+            g = g[(g["mod"] >= 570) & (g["mod"] < 960)]
+            if len(g) < 380:                     # skip early closes: no full RTH profile
+                continue
         val, vah, poc = value_area(g.low.to_numpy(), g.high.to_numpy(), g.volume.to_numpy(np.float64))
         prof[s] = (val, vah, poc, g.roll_adj.iloc[0])
     sessions = sorted(prof)
@@ -133,7 +140,8 @@ def table(t, by11):
 
 if __name__ == "__main__":
     t = build()
-    t.to_parquet(OUT / "value_area_opens.parquet", index=False)
+    t.to_parquet(OUT / f"value_area_opens_{PROFILE}.parquet", index=False)
+    print(f"PROFILE: prior day {'RTH 09:30-16:00' if PROFILE == 'rth' else 'ETH 18:00-17:00'}")
     print(f"sessions: {t.sess.min().date()} -> {t.sess.max().date()}\n")
     for name in ("18:00 open", "08:00 open", "09:30 open"):
         x = t[t.open_time == name]
