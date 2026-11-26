@@ -61,10 +61,12 @@ def build():
     d["mod"] = naive.dt.hour * 60 + naive.dt.minute
     prof = {}
     rth_rng = {}
+    rth_close = {}
     for s, g in d.groupby("sess", sort=True):
         r_ = g[(g["mod"] >= 570) & (g["mod"] < 960)]
         if len(r_) >= 380:
             rth_rng[s] = r_.high.max() - r_.low.min()
+            rth_close[s] = (r_.close.iloc[-1], r_.roll_adj.iloc[-1])
         if PROFILE == "rth":
             g = g[(g["mod"] >= 570) & (g["mod"] < 960)]
             if len(g) < 380:                     # skip early closes: no full RTH profile
@@ -86,6 +88,7 @@ def build():
         val, vah, poc, adj_p = prof[p]
         shift = adj_p - d.roll_adj.iloc[idx[0]]   # convert prior contract prices to current contract
         val, vah, poc = val + shift, vah + shift, poc + shift
+        pdc = (rth_close[p][0] + rth_close[p][1] - d.roll_adj.iloc[idx[0]]) if p in rth_close else np.nan
         mods = M[idx]
         for name, t0, t_end in (("18:00 open", 18 * 60, 16 * 60 + 59), ("08:00 open", 8 * 60, 16 * 60 + 59),
                                 ("09:30 open", 9 * 60 + 30, 15 * 60 + 59)):
@@ -120,8 +123,12 @@ def build():
                 iv, il = (hv[0] if len(hv) else 10**9), (lv[0] if len(lv) else 10**9)
                 first = np.nan if iv == il == 10**9 else ("VAH first" if iv < il else ("VAL first" if il < iv else "same bar"))
             hp = np.flatnonzero((H[w] >= poc) & (L[w] <= poc))
+            hc = np.flatnonzero((H[w] >= pdc) & (L[w] <= pdc)) if np.isfinite(pdc) else np.array([])
             rows.append({"sess": s, "open_time": name, "loc": loc, "atr": atr14.asof(s),
                          "rw_poc": rw(poc), "poc_min": float(hp[0]) if len(hp) else np.nan,
+                         "pdc": pdc, "hit_pdc": float(len(hc) > 0) if np.isfinite(pdc) else np.nan,
+                         "rw_pdc": rw(pdc) if np.isfinite(pdc) else np.nan, "pdc_min": float(hc[0]) if len(hc) else np.nan,
+                         "hit_pdc_11": (float((h11 >= pdc) and (l11 <= pdc)) if len(w11) else np.nan) if np.isfinite(pdc) else np.nan,
                          "hit_poc_11": float((h11 >= poc) and (l11 <= poc)) if len(w11) else np.nan, "open": op, "vah": vah, "val": val, "poc": poc,
                          "va_width": vah - val,
                          "hit_vah": float(hh >= vah) if op < vah else float(ll <= vah),
@@ -183,8 +190,39 @@ def poc_report(t):
               .unstack("year").to_string(), "\n")
 
 
+def gap_report(t):
+    """RTH gap = 09:30 open vs prior RTH close (15:59 bar), in ATR. Fill = trades back to the prior close."""
+    x = t[(t.open_time == "09:30 open") & t.pdc.notna() & t.atr.notna()].copy()
+    x["gap_atr"] = (x.open - x.pdc) / x.atr
+    x["gap"] = pd.cut(x.gap_atr, [-np.inf, -.5, -.15, .15, .5, np.inf],
+                      labels=["down > 0.5 ATR", "down 0.15-0.5", "flat +-0.15", "up 0.15-0.5", "up > 0.5 ATR"])
+    x["va_loc"] = np.select([x.open > x.vah, x.open < x.val], ["above VAH", "below VAL"], "inside VA")
+    print(f"RTH GAPS (09:30 open vs prior RTH close). Value area / POC from the prior {'RTH' if PROFILE == 'rth' else 'ETH'} profile.")
+    print(f"sessions: {x.sess.min().date()} -> {x.sess.max().date()}  ({len(x)} days; ATR = avg prior 14 RTH ranges)\n")
+
+    def f(g):
+        return pd.Series({"n": len(g), "fill %": 100 * g.hit_pdc.mean(), "fill RW %": 100 * g.rw_pdc.mean(),
+                          "fill by 11 %": 100 * g.hit_pdc_11.mean(), "med min to fill": g.pdc_min.median(),
+                          "POC %": 100 * g.hit_poc.mean(), "VAH %": 100 * g.hit_vah.mean(), "VAL %": 100 * g.hit_val.mean(),
+                          "med gap pts": (g.open - g.pdc).abs().median()})
+    r = x.groupby("gap", observed=True).apply(f, include_groups=False)
+    r.insert(1, "share %", 100 * r.n / r.n.sum())
+    print("=" * 110, "\n1. GAP SIZE -> gap fill (prior RTH close) by 16:00 and 11:00\n")
+    print(r.round(1).to_string())
+    print("\n" + "=" * 110, "\n2. GAP x WHERE IT OPENED vs the prior value area\n")
+    print(x.groupby(["gap", "va_loc"], observed=True).apply(f, include_groups=False).round(1).to_string())
+    print("\n" + "=" * 110, "\n3. BY YEAR: fill % / RW % (n)\n")
+    y = x.assign(year=x.sess.dt.year).groupby(["gap", "year"], observed=True).agg(
+        f=("hit_pdc", "mean"), r=("rw_pdc", "mean"), n=("hit_pdc", "size"))
+    print(((y.f * 100).round(0).astype(int).astype(str) + " / " + (y.r * 100).round(0).astype(int).astype(str) +
+           " (" + y.n.astype(str) + ")").unstack("year").to_string())
+
+
 if __name__ == "__main__":
     t = build()
+    if MODE == "gap":
+        gap_report(t)
+        sys.exit(0)
     if MODE == "poc":
         poc_report(t)
         sys.exit(0)
