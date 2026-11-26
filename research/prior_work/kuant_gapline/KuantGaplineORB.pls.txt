@@ -1,0 +1,212 @@
+{ ============================================================================
+  KUANT GAPLINE ORB  --  MNQ Gap-Up Opening-Range Breakout, Long Only
+  MultiCharts PowerLanguage SIGNAL
+  ----------------------------------------------------------------------------
+  Instrument : MNQ (Micro E-mini Nasdaq-100), $2 per point
+  Timeframe  : 5-minute signal bars (data2), 1-minute execution bars (data1)
+  Sessions   : CME ETH 17:00-16:00 CT, exchange (Chicago) time
+  Backtest   : May 2019 - Oct 2026, $500 risk/trade, costs included
+    Sharpe   : 2019-22 1.32 | 2023-24 1.91 | 2025-26 0.58
+               before 2024 1.35 | 2024 onward 1.22 | whole 1.30
+    Net $52,024 | max drawdown -$4,856 | 27 configurations tried
+  ----------------------------------------------------------------------------
+  HOW TO USE
+    - Data1: MNQ continuous, 1-MINUTE bars. All orders and exits run on data1.
+      Session CME US Index Futures ETH (17:00-16:00 CT), time zone EXCHANGE.
+      MultiCharts stamps bar CLOSE times (the 08:30-08:31 bar shows 0831).
+    - Data2: MNQ 5-MINUTE bars, same session and time zone (can be hidden).
+    - Format Signals -> Properties: Max bars back 10; Intrabar Order
+      Generation OFF.
+    - Commission $0.50 per contract per side; slippage 1 tick per side.
+    - Load at least 15 trading days of history before the first live trade
+      (the 200-EMA on 5-minute bars needs ~1,000 bars to settle).
+    - ReEntryQty: 1 = re-enter the 17:00 leg with 1 MNQ (as backtested);
+      0 = re-enter with the same size as the position flattened at 15:40.
+    - Lower MaxContracts if you stack this with other strategies on one account.
+    - Do not run it alongside S27 on the same account (highly correlated).
+    - NOT COMPILED YET: compile, run, and compare trade dates/prices with the
+      backtest before trading.
+============================================================================ }
+
+Inputs:
+    RngStart(830),       { ORB = data2 bars whose CLOSE time is > RngStart ...           }
+    RngEnd(845),         { ... and <= RngEnd (bars opening 08:30-08:40 CT)               }
+    LastSigTime(1535),   { last data2 close time allowed to signal                       }
+    EmaLen(200),         { EMA length on data2 (5-minute) closes                         }
+    TargetR(1.5),        { target = TargetR x stop distance; 0 = no target               }
+    LongOnly(true),      { false = also trade shorts (mirror rule, gap-down days only)   }
+    UseGapFilter(true),  { trade only in the direction of today's RTH opening gap        }
+    GapMin(0.5),         { longs need RTH open - prior RTH close >= GapMin points        }
+    RthStart(830),       { RTH = data1 bars closing > 0830 and <= 1500 CT                }
+    RthEnd(1500),
+    RiskUSD(500),
+    MaxRiskUSD(1000),
+    MaxContracts(40),
+    FlatTime(1540),      { Lucid flat: market exit on the data1 bar closing 15:40        }
+    ReenterAfterFlat(true),
+    ReEntryQty(1);       { 1 = as backtested (1 MNQ); 0 = same size as flattened position }
+
+Vars:
+    D2(0), T2(0), D2prev(0), T2prev(0), NewBar2(false),
+    H2(0), L2(0), C2(0),
+    EmaV(0), EmaOn(false),
+    RngHi(0), RngLo(0), RngDate(0), RngReady(false),
+    SigL(false), SigS(false),
+    Sd(0), SdEntry(0), Qty(0),
+    StopPx(0), TgtPx(0),
+    EntWait(false), ReWait(false),
+    ReDir(0), ReStop(0), ReTgt(0), ReQty(0),
+    LucidBlock(false),
+    RthOpenPx(0), RthDate(0), LastRthC(0), PrevRthC(0), GapPts(0), GapOK(false);
+
+{ ---------- data2 (5-minute) bar detection ---------- }
+D2 = Date of Data2;
+T2 = Time of Data2;
+NewBar2 = (T2 <> T2prev or D2 <> D2prev) and T2prev > 0;
+D2prev = D2;
+T2prev = T2;
+
+{ ---------- RTH open and prior RTH close, tracked on data1 ---------- }
+If Time > RthStart and Time <= RthEnd then begin
+    If Date <> RthDate then begin
+        PrevRthC = LastRthC;
+        RthOpenPx = Open;
+        RthDate = Date;
+    end;
+    LastRthC = Close;
+end;
+GapOK = (RthDate = Date) and (PrevRthC > 0);
+If GapOK then GapPts = RthOpenPx - PrevRthC;
+
+SigL = false;
+SigS = false;
+If NewBar2 then begin
+    H2 = High of Data2;
+    L2 = Low of Data2;
+    C2 = Close of Data2;
+    { EMA (pandas ewm span=EmaLen, adjust=False) }
+    If EmaOn = false then begin
+        EmaV = C2;
+        EmaOn = true;
+    end
+    else
+        EmaV = EmaV + (2 / (EmaLen + 1)) * (C2 - EmaV);
+    { opening range }
+    If T2 > RngStart and T2 <= RngEnd then begin
+        If D2 <> RngDate then begin
+            RngHi = H2;
+            RngLo = L2;
+            RngDate = D2;
+        end
+        else begin
+            RngHi = MaxList(RngHi, H2);
+            RngLo = MinList(RngLo, L2);
+        end;
+    end;
+    RngReady = (D2 = RngDate) and (T2 > RngEnd);
+    { signal }
+    If RngReady and T2 <= LastSigTime then begin
+        If C2 > RngHi and C2 > EmaV then SigL = true;
+        If LongOnly = false and C2 < RngLo and C2 < EmaV then SigS = true;
+        If UseGapFilter then begin
+            If GapOK = false then begin
+                SigL = false;
+                SigS = false;
+            end
+            else begin
+                If GapPts < GapMin then SigL = false;
+                If GapPts > -GapMin then SigS = false;
+            end;
+        end;
+    end;
+end;
+
+LucidBlock = (Time >= FlatTime) and (Time < 1700);
+
+{ ---------- first bar of a new position: stop/target from the fill ---------- }
+If EntWait then begin
+    If MarketPosition <> 0 then begin
+        StopPx = EntryPrice - MarketPosition * SdEntry;
+        If TargetR > 0 then TgtPx = EntryPrice + MarketPosition * TargetR * SdEntry
+        else TgtPx = 0;
+    end;
+    EntWait = false;
+end;
+If ReWait then begin
+    If MarketPosition <> 0 then begin
+        StopPx = ReStop;
+        TgtPx = ReTgt;
+    end;
+    ReWait = false;
+end;
+
+{ ---------- manage the open position ---------- }
+If MarketPosition <> 0 then begin
+    If LucidBlock then begin
+        If ReenterAfterFlat then begin
+            ReDir = MarketPosition;
+            ReStop = StopPx;
+            ReTgt = TgtPx;
+            If ReEntryQty > 0 then ReQty = ReEntryQty
+            else ReQty = CurrentContracts;
+        end;
+        Sell ("GL_L_Flat") next bar at market;
+        BuyToCover ("GL_S_Flat") next bar at market;
+    end
+    else begin
+        If MarketPosition = 1 then begin
+            Sell ("GL_L_SL") next bar at StopPx stop;
+            If TgtPx > 0 then Sell ("GL_L_TP") next bar at TgtPx limit;
+        end
+        else begin
+            BuyToCover ("GL_S_SL") next bar at StopPx stop;
+            If TgtPx > 0 then BuyToCover ("GL_S_TP") next bar at TgtPx limit;
+        end;
+    end;
+end;
+
+{ ---------- Lucid re-entry at the 17:00 reopen (order on the 16:00 bar) ---------- }
+If ReDir <> 0 and MarketPosition = 0 and (Time = 1600 or (Time >= 1701 and Time < 1800)) then begin
+    If ReDir = 1 then begin
+        Buy ("GL_LR") ReQty contracts next bar at market;
+        Sell ("GL_LR_SL") from entry ("GL_LR") next bar at ReStop stop;
+        If ReTgt > 0 then Sell ("GL_LR_TP") from entry ("GL_LR") next bar at ReTgt limit;
+    end
+    else begin
+        SellShort ("GL_SR") ReQty contracts next bar at market;
+        BuyToCover ("GL_SR_SL") from entry ("GL_SR") next bar at ReStop stop;
+        If ReTgt > 0 then BuyToCover ("GL_SR_TP") from entry ("GL_SR") next bar at ReTgt limit;
+    end;
+    ReDir = 0;
+    ReWait = true;
+end;
+
+{ ---------- new entries (flat, no pending re-entry, outside 15:40-17:00) ---------- }
+If MarketPosition = 0 and ReDir = 0 and ReWait = false and LucidBlock = false and (SigL or SigS) then begin
+    If SigL then Sd = C2 - RngLo
+    else Sd = RngHi - C2;
+    If Sd > 0 then begin
+        Qty = IntPortion(RiskUSD / (Sd * BigPointValue));
+        Qty = MinList(Qty, IntPortion(MaxRiskUSD / (Sd * BigPointValue)));
+        If Qty > MaxContracts then Qty = MaxContracts;
+        If Qty < 1 then Qty = 1;
+        SdEntry = Sd;
+        If SigL then begin
+            StopPx = C2 - Sd;
+            If TargetR > 0 then TgtPx = C2 + TargetR * Sd
+            else TgtPx = 0;
+            Buy ("GL_L") Qty contracts next bar at market;
+            Sell ("GL_L_SL0") from entry ("GL_L") next bar at StopPx stop;
+            If TgtPx > 0 then Sell ("GL_L_TP0") from entry ("GL_L") next bar at TgtPx limit;
+        end
+        else begin
+            StopPx = C2 + Sd;
+            If TargetR > 0 then TgtPx = C2 - TargetR * Sd
+            else TgtPx = 0;
+            SellShort ("GL_S") Qty contracts next bar at market;
+            BuyToCover ("GL_S_SL0") from entry ("GL_S") next bar at StopPx stop;
+            If TgtPx > 0 then BuyToCover ("GL_S_TP0") from entry ("GL_S") next bar at TgtPx limit;
+        end;
+        EntWait = true;
+    end;
+end;
