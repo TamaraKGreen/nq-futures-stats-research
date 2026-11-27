@@ -1,7 +1,7 @@
 # NQ 1-minute dataset (2020-01-02 -> 2026-11-24)
 
-Build (from repo root; needs the original NQ_ticks_YYYY_1min.csv files, which are not in the repo):
-`python3 research/scripts/build_base.py <csv_dir> research/data/nq_base_2020_2026.parquet && tar -xzf research/data/raw_nt_2026.tar.gz -C research/data && python3 research/scripts/build_dataset.py`
+Build (from repo root; the original NQ_ticks_YYYY_1min.csv files are in raw_csv/, gzipped):
+`python3 research/scripts/build_base.py research/data/raw_csv research/data/nq_base_2020_2026.parquet && tar -xzf research/data/raw_nt_2026.tar.gz -C research/data && python3 research/scripts/build_dataset.py`
 
 Load: `from research.scripts.load import load; df = load("dev")`  (or run with research/scripts on sys.path)
 
@@ -11,6 +11,7 @@ Load: `from research.scripts.load import load; df = load("dev")`  (or run with r
 | nq_1min_2020_2026_dev.parquet | sessions 2020-01-02 -> 2025-07-09 (1,427, 80%) |
 | nq_1min_2020_2026_oot.parquet | sessions 2025-07-10 -> 2026-11-24 (357, 20%) - do not touch during research |
 | roll_table.csv | 27 rolls: session the new contract starts, gap (new - old, pts), how detected |
+| raw_csv/NQ_ticks_YYYY_1min.csv.gz | original 1-minute CSVs, 2020-01-01 -> 2026-04-29 (gzip; pandas reads them directly) |
 | raw_nt_2026.tar.gz | raw NinjaTrader JSON pulls (NQM6/NQU6/NQZ6) |
 
 Columns: `ts` (ET, tz-aware, bar open time) `open high low close volume buy_vol sell_vol delta trades`

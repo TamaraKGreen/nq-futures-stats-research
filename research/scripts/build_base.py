@@ -1,6 +1,6 @@
 import glob, sys, pandas as pd, numpy as np
 src = sys.argv[1]; out = sys.argv[2]
-files = sorted(glob.glob(f"{src}/*NQ_ticks_*_1min.csv"))
+files = sorted(glob.glob(f"{src}/*NQ_ticks_*_1min.csv") + glob.glob(f"{src}/*NQ_ticks_*_1min.csv.gz"))
 dfs = []
 for f in files:
     d = pd.read_csv(f)
