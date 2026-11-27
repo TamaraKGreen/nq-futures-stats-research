@@ -125,14 +125,25 @@ def build(symbols=("nq", "es", "gc"), extend_nq=True, out=OUT):
     return df
 
 
+def available_symbols():
+    return sorted({Path(f).name.split("_")[0] for f in glob.glob(str(RAW / "*_1min_*.parquet"))})
+
+
 def load_15y(symbols=None):
-    if not OUT.exists():
-        build()
-    df = pd.read_parquet(OUT)
-    if symbols is not None:
-        symbols = [symbols] if isinstance(symbols, str) else list(symbols)
-        df = df[df.symbol.isin(symbols)].reset_index(drop=True)
-    return df
+    """Combined 15-year 1-minute data, New York time. symbols: None (all), 'nq', or a list like ['nq', 'es'].
+    Builds research/data/futures_1min_15y.parquet if it's missing or lacks a requested symbol."""
+    want = available_symbols() if symbols is None else (
+        [symbols.lower()] if isinstance(symbols, str) else [s.lower() for s in symbols])
+    unknown = set(want) - set(available_symbols())
+    if unknown:
+        raise ValueError(f"no raw data for {sorted(unknown)}; available: {available_symbols()}")
+    have = set(pd.read_parquet(OUT, columns=["symbol"]).symbol.unique()) if OUT.exists() else set()
+    if not set(want) <= have:
+        print(f"building {OUT.name} (missing: {sorted(set(want) - have)}) ...")
+        build(tuple(available_symbols()))
+    df = pd.read_parquet(OUT, filters=[("symbol", "in", want)])
+    df["symbol"] = df.symbol.astype(str).astype("category")
+    return df.reset_index(drop=True)
 
 
 def resample(df, rule="5min"):
