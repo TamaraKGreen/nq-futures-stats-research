@@ -9,7 +9,7 @@ Out-of-time testing of intraday NQ statistics and strategy ideas on 1-minute dat
 - `research/fvg/` — FVG / iFVG as a directional bias.
 - `research/strategies/` — ATR breakout and variants, Kuant Gapline ORB (overnight and day versions), Statmap reversion.
 - `research/output/` — results text for every study.
-- `research/prior_work/` — earlier notes and source files.
+- `research/prior_work/` — earlier notes and source files; `notebooks/` holds the original Jupyter notebooks.
 - `oos/` — the out-of-sample scorecard package, run on this dataset, plus fresh-period checks in `oos/results/`.
 
 Intermediate parquet files (`research/output/*.parquet`, `oos/cache/`) are not committed; the scripts regenerate them.
