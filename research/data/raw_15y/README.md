@@ -20,6 +20,9 @@ How the timezones were established:
 So the original notebooks that read `nq_15y_1min.csv` with ET clock times were right for NQ; the same code on the
 ES or GC files would need a UTC -> ET conversion first.
 
+**Known error (corrected by `build_15y.py`, not in these files):** NQ 2012-02-05 18:00 -> 2012-02-10 16:14,
+6,231 bars with every price x100. Use the loader, or divide those bars by 100 yourself.
+
 Checks on arrival: years join with no duplicate timestamps and in order. One gap > 4 days per symbol:
 NQ 2014-06-11 -> 06-15, ES 2011-12-04 -> 12-11 (first week of the file), GC 2018-09-07 -> 09-11.
 

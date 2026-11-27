@@ -1,5 +1,7 @@
 # NQ 1-minute dataset (2020-01-02 -> 2026-11-24)
 
+> Start with the repo-level [`DATA.md`](../../DATA.md) for timezones, loaders and how the datasets fit together. This file covers how the NQ 2020-2026 research dataset was built.
+
 Build (from repo root; the original NQ_ticks_YYYY_1min.csv files are in raw_csv/, gzipped):
 `python3 research/scripts/build_base.py research/data/raw_csv research/data/nq_base_2020_2026.parquet && tar -xzf research/data/raw_nt_2026.tar.gz -C research/data && python3 research/scripts/build_dataset.py`
 
