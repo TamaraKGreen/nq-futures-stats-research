@@ -5,3 +5,4 @@ __pycache__/
 research/output/*.parquet
 oos/cache/
 oos/results/*.parquet
+research/data/futures_1min_15y.parquet
