@@ -195,6 +195,38 @@ Filters, applied to every variant above and reported separately
 Promotion to phase 3: edge vs control t >= 2.0 on full Dev **and** net pts/trade > 0 in both Dev halves
 (2020-01 -> 2022-09 and 2022-10 -> 2025-07).
 
+## 13. Phase 2b specification — setup x trigger grid (fixed 2026-11-28, before running)
+
+Setup = where and which way (from the stats, thresholds recomputed on Dev). Trigger = when, only in the setup's
+direction while the setup is active. First trigger per setup instance per session. Entry at the next 1m open
+(09:31-15:44). Narrow = below the Dev 33rd percentile of width / ATR.
+
+| Setup | Activates | Direction | Ends (no more entries) | Setup target |
+|---|---|---|---|---|
+| S1 ORB continuation | first 1m close beyond the 09:30-09:44 range, 09:45-10:59 | with the break | close back inside ORB, or 11:00 | ORB edge + 1 x ORB width |
+| S2 ORB failure (narrow ORB) | after a break, close back inside within 15 min | fade | close beyond the broken edge again, or 11:00 | opposite ORB edge |
+| S3 IB continuation (narrow IB) | first close beyond IB, 10:30-15:44 | with the break | close back inside IB, or 15:45 | IB edge + 0.5 x IB width |
+| S4 IB fade (narrow IB) | after a break, close back inside within 15 min | fade | close beyond the broken edge again, or 15:45 | IB mid |
+| S5 prior-day magnet | 09:30, RTH open inside prior range | toward PDH if open in upper half, PDL if lower | target touched, or 15:45 | PDH / PDL |
+| S6 8am third | 09:30, 08:00 open in top / bottom third of 18:00-07:59 range | toward ONH / ONL | target touched, or 11:00 | ONH / ONL |
+| S7 hour magnet | 09:30 (9:00 hour) and 10:00 | toward the prior hour's near extreme (hour open's half) | target touched, or end of hour | prior hour high / low |
+
+Triggers (1m unless stated; long versions shown, short mirrored)
+T0 none (enter on activation) · T1 stochastic(14,3,3) %K crosses up through 20 (1m) · T2 same on 5m (known at the 5m
+close) · T3 close crosses above EMA9 · T4 EMA9 crosses above EMA21 · T5 Supertrend(10,3) flips up (1m) · T6 same on 3m ·
+T7 RSI(2) crosses back above 10 · T8 1m bullish iFVG · T9 1m bullish iFVG inside a live aligned 5m FVG ·
+T10 bullish engulfing or pin bar (lower wick >= 2 x body and >= 60% of range, close in top third).
+
+Exits: stop = extreme of the last 10 1m bars up to the trigger bar +/- 1 tick (floor 0.02 ATR, skip if > 50 pts);
+target {setup target, 1.5R}; 30-min / 50-pt caps.
+Comparison only (never used for selection): S1 and S3 with no target, held to 11:00 and to 15:59 (stop only).
+
+Grid: 7 setups x 11 triggers x 2 targets = 154 cells. Control: direction-neutral (same bar, same bracket, long/short
+mean). Each trigger is also compared with T0 within its setup.
+
+Pass: full-Dev edge t >= 3.0, net > 0 in both Dev halves, and the setup's walk-forward choice (best trigger x target
+picked on prior years, scored on the next year, 2022-2025) net > 0.
+
 ## Change log
 
 | Date | Change | Reason |
@@ -204,3 +236,4 @@ Promotion to phase 3: edge vs control t >= 2.0 on full Dev **and** net pts/trade
 | 2026-11-28 | Phase 1 done (results/phase1_summary.md). Added B2-ATR robustness label (extension in ATR units) after finding the IB-width label is mostly mechanical | Honest reading of B2; added after seeing results, reported as such |
 | 2026-11-28 | §12 phase 2 spec: bias agreement redefined (A1/A2) and E4 ungated, per phase 1 findings; 0.02 ATR stop floor; one position at a time | Before phase 2 was run |
 | 2026-11-28 | Phase 2 control replaced (see §12): the +/-60 min random-entry control looked ahead (pre-signal entries capture the move that forms the signal). First run aborted; its edge numbers discarded. Net-after-cost results were unaffected | Bug in control design found mid-run |
+| 2026-11-28 | §13 phase 2b setup x trigger grid added (user request: indicators as entry triggers inside ORB / IB / level setups); 30-min rule kept, longer holds as comparison only | Before phase 2b was run |
