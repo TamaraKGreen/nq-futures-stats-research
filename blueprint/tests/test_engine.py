@@ -227,3 +227,11 @@ def test_run_one_position_at_a_time():
     c = pd.DataFrame(dict(e=[0, 5, 31], side=[1, 1, 1], stop=[90.0] * 3, r_mult=[2.0] * 3))
     out = sim.run(B, c, max_hold=30)
     assert list(out.e) == [0, 31]
+
+
+def test_uncapped_comparison_mode_holds_past_30min():
+    rows = [(100, 100.5, 99.5, 100)] * 50 + [(100, 200, 99.5, 190)]
+    _, B = bars(rows)
+    r = sim.trade(B, 0, 1, stop=90, target=None, max_hold=51, capped=False)
+    assert r["mins"] == 51 and r["why"] == "time" and r["exit"] == 190 - SLIP
+    assert sim.trade(B, 0, 1, stop=90, target=None, max_hold=60)["mins"] == 30     # capped: no target -> time at 30

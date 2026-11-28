@@ -37,10 +37,15 @@ class Bars:
         return np.searchsorted(self.ts, np.asarray(t, dtype=self.ts.dtype))
 
 
-def trade(B, e, side, stop, target=None, max_hold=MAX_HOLD, limit=None, window=0, r_mult=None):
+def trade(B, e, side, stop, target=None, max_hold=MAX_HOLD, limit=None, window=0, r_mult=None, capped=True):
     """Simulate one trade. e = signal/entry bar index. Returns dict or None (skipped / not filled).
-    Give either a target price or r_mult (target = fill + r_mult x risk, set once the entry fills)."""
-    max_hold = min(max_hold, MAX_HOLD)
+    Give either a target price or r_mult (target = fill + r_mult x risk, set once the entry fills).
+    capped=False (comparison runs only): no 30-min / 50-pt target caps. target=None and r_mult=None means stop /
+    time exit only (with capped=True the target is then the 50-pt cap)."""
+    if capped:
+        max_hold = min(max_hold, MAX_HOLD)
+    if target is None and r_mult is None:
+        target = np.inf * side
     if r_mult is not None and limit is not None:
         target = limit + r_mult * (limit - stop)          # provisional, for the cancel-if-target-first rule
     last = B.last_rth[e]
@@ -82,7 +87,7 @@ def trade(B, e, side, stop, target=None, max_hold=MAX_HOLD, limit=None, window=0
     reward = side * (target - fill)
     if reward <= 0:
         return None
-    if reward > MAX_TARGET:
+    if capped and reward > MAX_TARGET:
         target = fill + side * MAX_TARGET
     end = min(fill_i + max_hold - 1, last)
     mae = mfe = 0.0
