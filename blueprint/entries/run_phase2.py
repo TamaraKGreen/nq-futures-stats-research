@@ -105,8 +105,11 @@ def add_filters(tr):
     sess = pd.to_datetime(ctx.sess[e])
     pn = b3.reindex(pd.MultiIndex.from_arrays([sess, hour])).to_numpy()
     near_hi = (ctx.o[hs] - phl[hs]) / (phh[hs] - phl[hs]) >= 0.5
-    untaken = np.array([(ctx.h[s0:x].max() < phh[s0]) if nh else (ctx.l[s0:x].min() > phl[s0]) if x > s0 else True
-                        for s0, x, nh in zip(hs, e, near_hi)])
+    def _untaken(s0, x, nh):
+        if x <= s0:
+            return True
+        return bool(ctx.h[s0:x].max() < phh[s0]) if nh else bool(ctx.l[s0:x].min() > phl[s0])
+    untaken = np.array([_untaken(s0, x, nh) for s0, x, nh in zip(hs, e, near_hi)])
     tr["A2"] = (pn >= 0.75) & untaken & (side == np.where(near_hi, 1, -1))
     tr["A2_avail"] = np.isfinite(pn)
     # E5 order-flow
