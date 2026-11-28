@@ -174,8 +174,10 @@ Common to all families
   variant** (signals while a trade is open are skipped).
 - Neutral exit: structural stop (below/above the family's structure + 1 tick, **floored at 0.02 x ATR**), target
   **1.5R**, time stop 30 min, all §1 caps. E3 also gets its natural target (IB mid) as a variant.
-- Control (E0): for every trade, 20 random entry bars in the same session within +/-60 min of the real entry (RTH,
-  09:31-15:44), same side, same stop distance, same R target. Edge = real net - mean control net, paired t per trade.
+- Control (E0), **revised during phase 2**: (a) primary, direction-neutral: same bar as the real fill, same bracket,
+  mean of a long and a short market entry; edge = net - control, paired t. (b) timing: 10 random same-side entries in
+  the 60 min AFTER the fill. The original +/-60 min window was dropped: entries before the signal ride the move that
+  creates the signal (lookahead).
 
 | Family | Variants (count) |
 |---|---|
@@ -201,3 +203,4 @@ Promotion to phase 3: edge vs control t >= 2.0 on full Dev **and** net pts/trade
 | 2026-11-28 | Defaults in §11 confirmed; added daily VWAP anchored 18:00 alongside RTH VWAP | User request, before any test |
 | 2026-11-28 | Phase 1 done (results/phase1_summary.md). Added B2-ATR robustness label (extension in ATR units) after finding the IB-width label is mostly mechanical | Honest reading of B2; added after seeing results, reported as such |
 | 2026-11-28 | §12 phase 2 spec: bias agreement redefined (A1/A2) and E4 ungated, per phase 1 findings; 0.02 ATR stop floor; one position at a time | Before phase 2 was run |
+| 2026-11-28 | Phase 2 control replaced (see §12): the +/-60 min random-entry control looked ahead (pre-signal entries capture the move that forms the signal). First run aborted; its edge numbers discarded. Net-after-cost results were unaffected | Bug in control design found mid-run |

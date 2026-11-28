@@ -19,7 +19,7 @@ pd.set_option("display.max_columns", 40)
 pd.set_option("display.max_rows", 500)
 CACHE, RES = HERE / "cache", HERE / "results"
 HALF = pd.Timestamp("2022-10-01")
-N_CTRL = 20
+N_CTRL = 10
 rng = np.random.default_rng(7)
 
 t0 = time.time()
@@ -48,32 +48,34 @@ for anchor in ("vwap_rth", "vwap_day"):
         VARIANTS.append(("E4", f"{anchor} {trig}", lambda anchor=anchor, trig=trig: S.e4(ctx, anchor, trig)))
 
 
-# ------------------------------------------------------------------------------------------ control
+# ------------------------------------------------------------------------------------------ controls (no lookahead)
+def _bracket(p, side, r):
+    f = ctx.o[p] + side * SLIP
+    stop = f - side * r.risk
+    if np.isfinite(getattr(r, "r_mult", np.nan)):
+        return sim.trade(ctx.B, p, side, stop, r_mult=r.r_mult)
+    return sim.trade(ctx.B, p, side, stop, target=f + side * abs(r.target - r.fill))
+
+
 def controls(tr):
-    """Mean net of N_CTRL random same-session entries within +/-60 min, same side / stop distance / target rule."""
-    out = np.full(len(tr), np.nan)
-    B = ctx.B
+    """ctrl : direction-neutral - same bar as the real fill, same bracket, mean of long and short (market entries).
+    ctrl_t: timing - N_CTRL random same-side market entries in the 60 min AFTER the fill (same session, entry window).
+    Neither uses information from before the signal that the signal itself depends on."""
+    c1 = np.full(len(tr), np.nan)
+    c2 = np.full(len(tr), np.nan)
     for k, r in enumerate(tr.itertuples(index=False)):
         e = r.i_fill
-        lo, hi = max(e - 60, 0), min(e + 60, ctx.n - 1)
-        cand = np.arange(lo, hi + 1)
+        nets = [x["net"] for x in (_bracket(e, 1, r), _bracket(e, -1, r)) if x is not None]
+        if len(nets) == 2:
+            c1[k] = np.mean(nets)
+        cand = np.arange(e + 1, min(e + 61, ctx.n))
         cand = cand[(ctx.sess[cand] == ctx.sess[e]) & (ctx.hm[cand] >= S.WIN0) & (ctx.hm[cand] <= S.WIN1)]
-        if len(cand) == 0:
-            continue
-        picks = rng.choice(cand, N_CTRL)
-        nets = []
-        for p in picks:
-            f = ctx.o[p] + r.side * SLIP
-            stop = f - r.side * r.risk
-            if np.isfinite(getattr(r, "r_mult", np.nan)):
-                res = sim.trade(B, p, r.side, stop, r_mult=r.r_mult)
-            else:
-                res = sim.trade(B, p, r.side, stop, target=f + r.side * abs(r.target - r.fill))
-            if res is not None:
-                nets.append(res["net"])
-        if nets:
-            out[k] = np.mean(nets)
-    return out
+        if len(cand):
+            res = [_bracket(p, r.side, r) for p in rng.choice(cand, N_CTRL)]
+            res = [x["net"] for x in res if x is not None]
+            if res:
+                c2[k] = np.mean(res)
+    return c1, c2
 
 
 # ------------------------------------------------------------------------------------------ filters
@@ -134,7 +136,8 @@ def stats(tr):
                 avg_R=tr.R.mean(), ctrl=tr.ctrl.mean(), edge=edge.mean(),
                 t_edge=edge.mean() / (edge.std(ddof=1) / np.sqrt(len(edge))),
                 yrs_pos=f"{int((yr > 0).sum())}/{len(yr)}", net_h1=h1.mean(), net_h2=h2.mean(),
-                usd_mo=net.sum() * PT_VALUE / months, risk=tr.risk.median())
+                usd_mo=net.sum() * PT_VALUE / months, risk=tr.risk.median(),
+                edge_t=np.nanmean(net - tr.ctrl_t.to_numpy()))
 
 
 rows, all_tr = [], []
@@ -146,7 +149,7 @@ for fam, name, fn in VARIANTS:
         rows.append(dict(family=fam, variant=name, n=0))
         continue
     tr["sess"] = pd.to_datetime(ctx.sess[tr.i_fill.to_numpy()])
-    tr["ctrl"] = controls(tr)
+    tr["ctrl"], tr["ctrl_t"] = controls(tr)
     tr = add_filters(tr)
     tr["family"], tr["variant"] = fam, name
     all_tr.append(tr)
@@ -166,10 +169,11 @@ res.to_csv(RES / "phase2_variants.csv", index=False)
 pd.concat(all_tr, ignore_index=True).to_parquet(CACHE / "phase2_trades.parquet", index=False)
 
 cols = ["family", "variant", "filt", "n", "per_mo", "win", "net", "t_net", "pf", "avg_R", "ctrl", "edge", "t_edge",
-        "yrs_pos", "net_h1", "net_h2", "usd_mo", "risk"]
+        "yrs_pos", "net_h1", "net_h2", "usd_mo", "risk", "edge_t"]
 txt = ["PHASE 2 - ENTRY FAMILIES ON DEV (2020-01 -> 2025-07), neutral exit: structural stop (>= 0.02 ATR), 1.5R, 30 min",
        "net = avg net points per trade after $6.50 RT (0.65 pt) and 1-tick slippage; 5 MNQ = $10/pt.",
-       "ctrl = same trade rules from random entries +/-60 min same session; edge = net - ctrl; t_edge paired.",
+       "ctrl = direction-neutral control: same bar, same bracket, mean of long and short; edge = net - ctrl (paired t_edge).",
+       "edge_t = net minus random same-side entries in the 60 min AFTER the fill (timing check, secondary).",
        "promote = t_edge >= 2 and net > 0 in both halves (h1 < 2022-10, h2 >= 2022-10).", "",
        "UNFILTERED", res[res.filt == "-"][cols + ["promote"]].round(2).to_string(index=False), "",
        "FILTERS (A1 nearer-level agreement, E5 order-flow skip, A2 hourly near-extreme agreement - 2022+ only)",
