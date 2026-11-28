@@ -37,9 +37,12 @@ class Bars:
         return np.searchsorted(self.ts, np.asarray(t, dtype=self.ts.dtype))
 
 
-def trade(B, e, side, stop, target, max_hold=MAX_HOLD, limit=None, window=0):
-    """Simulate one trade. e = signal/entry bar index. Returns dict or None (skipped / not filled)."""
+def trade(B, e, side, stop, target=None, max_hold=MAX_HOLD, limit=None, window=0, r_mult=None):
+    """Simulate one trade. e = signal/entry bar index. Returns dict or None (skipped / not filled).
+    Give either a target price or r_mult (target = fill + r_mult x risk, set once the entry fills)."""
     max_hold = min(max_hold, MAX_HOLD)
+    if r_mult is not None and limit is not None:
+        target = limit + r_mult * (limit - stop)          # provisional, for the cancel-if-target-first rule
     last = B.last_rth[e]
     if last < e:
         return None
@@ -74,6 +77,8 @@ def trade(B, e, side, stop, target, max_hold=MAX_HOLD, limit=None, window=0):
     risk = side * (fill - stop)
     if risk <= 0 or risk > MAX_STOP:
         return None
+    if r_mult is not None:
+        target = fill + side * r_mult * risk
     reward = side * (target - fill)
     if reward <= 0:
         return None
@@ -111,16 +116,28 @@ def trade(B, e, side, stop, target, max_hold=MAX_HOLD, limit=None, window=0):
                 why=why, risk=risk, gross=gross, net=net, R=net / risk, mins=k - fill_i + 1, mae=mae, mfe=mfe)
 
 
-def run(B, cands, **kw):
-    """cands: DataFrame with columns e, side, stop, target (+ optional limit, window, max_hold). Extra columns kept."""
+def _num(d, k, default=None):
+    v = d.get(k, default)
+    return default if v is None or (isinstance(v, float) and np.isnan(v)) else v
+
+
+def run(B, cands, one_at_a_time=True, **kw):
+    """cands: DataFrame with e, side, stop and target or r_mult (+ optional limit, window, max_hold).
+    Extra columns are kept. one_at_a_time: skip candidates whose entry bar is not after the previous exit."""
     rows = []
-    for r in cands.itertuples(index=False):
+    busy = -1
+    for r in cands.sort_values("e", kind="stable").itertuples(index=False):
         d = r._asdict()
-        res = trade(B, int(d["e"]), int(d["side"]), float(d["stop"]), float(d["target"]),
-                    max_hold=int(d.get("max_hold", kw.get("max_hold", MAX_HOLD))),
-                    limit=(None if pd.isna(d.get("limit", np.nan)) else float(d["limit"])),
-                    window=int(d.get("window", kw.get("window", 0)) or 0))
+        if one_at_a_time and d["e"] <= busy:
+            continue
+        lim = _num(d, "limit")
+        res = trade(B, int(d["e"]), int(d["side"]), float(d["stop"]),
+                    target=_num(d, "target"), r_mult=_num(d, "r_mult", kw.get("r_mult")),
+                    max_hold=int(_num(d, "max_hold", kw.get("max_hold", MAX_HOLD))),
+                    limit=None if lim is None else float(lim),
+                    window=int(_num(d, "window", kw.get("window", 0))))
         if res is not None:
             d.update(res)
             rows.append(d)
+            busy = res["i_exit"]
     return pd.DataFrame(rows)

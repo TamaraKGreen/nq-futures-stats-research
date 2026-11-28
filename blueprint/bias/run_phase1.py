@@ -178,7 +178,7 @@ for task, df in TASKS.items():
         if m.sum():
             acc = np.mean((pb[m] >= 0.5) == (y[m] == 1))
             emit(f"   confident |p-0.5| >= {th - 0.5:.2f}: coverage {100 * m.mean():.1f}%  accuracy {100 * acc:.1f}%  n {m.sum()}")
-    out = rows[["sess"]].copy()
+    out = rows[[c for c in ("sess", "hour", "t") if c in rows.columns]].copy()
     for c in P.columns:
         out[f"p_{c}"] = P[c].to_numpy()
     out["y"] = y

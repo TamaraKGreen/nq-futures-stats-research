@@ -211,3 +211,19 @@ def test_level_values():
     assert L.at[i, "vwap_day"] == pytest.approx((tp * day_before.volume).sum() / day_before.volume.sum())
     on = cur[(hm >= 1080) | (hm < 570)]
     assert L.at[i, "on_h"] == on.high.max()
+
+
+def test_r_multiple_target_set_from_fill():
+    rows = [(100, 100.5, 99.5, 100), (100, 116.0, 99.75, 115)]
+    _, B = bars(rows)
+    r = sim.trade(B, 0, 1, stop=90, r_mult=1.5, max_hold=5)
+    assert r["target"] == pytest.approx(100.25 + 1.5 * 10.25)
+    assert r["why"] == "target"
+
+
+def test_run_one_position_at_a_time():
+    rows = [(100, 100.5, 99.5, 100)] * 40
+    _, B = bars(rows)
+    c = pd.DataFrame(dict(e=[0, 5, 31], side=[1, 1, 1], stop=[90.0] * 3, r_mult=[2.0] * 3))
+    out = sim.run(B, c, max_hold=30)
+    assert list(out.e) == [0, 31]
