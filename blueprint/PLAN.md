@@ -48,7 +48,8 @@ Rules
 | PDH / PDL | prior **RTH** session high/low |
 | PWH / PWL | prior week's high/low (Sun 18:00 → Fri 17:00) |
 | Session highs/lows | Asia 18:00–02:00, London 02:00–08:00, overnight 18:00–09:30 (all ET) |
-| VWAP | session VWAP anchored 09:30 (RTH) |
+| RTH VWAP | session VWAP anchored 09:30 |
+| Daily (Globex) VWAP | session VWAP anchored 18:00 (prior evening) |
 | Weekly VWAP | anchored Sunday 18:00 |
 | IB high / low | 09:30–10:29 high/low, **active only from 10:30** |
 | Prev hour high/low | prior completed clock hour (ET) |
@@ -78,7 +79,7 @@ Labels (one model each):
 
 Features (all known at decision time): open vs prior-day range and prior value area (quartiles), gap / ATR,
 08:00 position in overnight range (thirds), overnight range / ATR, IB and 15-min ORB width / ATR, day and week range
-fill percentiles, price vs VWAP and weekly VWAP (in ATR), prior day type, day of week; Dev/OOT only: opening
+fill percentiles, price vs RTH VWAP, daily (18:00) VWAP and weekly VWAP (in ATR), prior day type, day of week; Dev/OOT only: opening
 30-min cumulative delta / volume.
 
 Models, in order; each must beat the one above it on **walk-forward log-loss / Brier** to be kept:
@@ -162,7 +163,7 @@ by level type.
 1. **Costs:** $6.50 round trip assumed for the whole 5-lot (0.65 pt). If it is $6.50 *per contract*, costs are
    3.25 pts per trade — that changes which setups are viable.
 2. **Session windows:** Asia 18:00–02:00 / London 02:00–08:00 as above.
-3. **VWAP anchor:** 09:30 RTH (alternative: 18:00 Globex).
+3. **VWAP anchors:** both 09:30 RTH and 18:00 Globex daily VWAP are levels (confirmed).
 4. **iFVG inversion:** candle close through (main) with wick-through as a variant.
 
 ## Change log
@@ -170,3 +171,4 @@ by level type.
 | Date | Change | Reason |
 |---|---|---|
 | 2026-11-28 | Plan created | — |
+| 2026-11-28 | Defaults in §11 confirmed; added daily VWAP anchored 18:00 alongside RTH VWAP | User request, before any test |
