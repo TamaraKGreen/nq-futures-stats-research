@@ -166,6 +166,33 @@ by level type.
 3. **VWAP anchors:** both 09:30 RTH and 18:00 Globex daily VWAP are levels (confirmed).
 4. **iFVG inversion:** candle close through (main) with wick-through as a variant.
 
+
+## 12. Phase 2 specification (fixed 2026-11-28, before running phase 2)
+
+Common to all families
+- Signal known at a 1m bar close; entry bar = next 1m bar, which must open 09:31-15:44. **One position at a time per
+  variant** (signals while a trade is open are skipped).
+- Neutral exit: structural stop (below/above the family's structure + 1 tick, **floored at 0.02 x ATR**), target
+  **1.5R**, time stop 30 min, all §1 caps. E3 also gets its natural target (IB mid) as a variant.
+- Control (E0): for every trade, 20 random entry bars in the same session within +/-60 min of the real entry (RTH,
+  09:31-15:44), same side, same stop distance, same R target. Edge = real net - mean control net, paired t per trade.
+
+| Family | Variants (count) |
+|---|---|
+| E1 iFVG at a level | inversion TF {1m, 5m, 15m}; 1m only: confluence {none, inside live aligned 5m FVG, inside live aligned 15m FVG} (stop beyond the higher-TF zone when confluence is used); entry {market, limit at the inverted zone edge within 10 bars}; near d {0.03, 0.06} ATR (20) |
+| E2 sweep & reclaim | TF {1m, 5m}; entry {market, limit at the level within 10 bars}; each level once per side per session; stop beyond the sweep extreme (4) |
+| E3 failed IB break | N {5, 15} min; gate {narrow IB (< Dev 33rd pct of IB/ATR), all days}; target {1.5R, IB mid}; first failure per side per session; stop beyond the break extreme (8) |
+| E4 VWAP pullback (ungated) | anchor {RTH VWAP, daily 18:00 VWAP}; trend = last 30 closes on one side of the VWAP; pullback = low/high within 0.02 ATR of VWAP; trigger within 10 bars {1m iFVG in trend direction, engulfing bar}; stop beyond pullback extreme (4) |
+
+Filters, applied to every variant above and reported separately
+- **A1 nearer-level agreement:** trade toward the nearer level - geometric P(trade-direction level first) >= 0.6.
+- **A2 hourly agreement:** at the hour's start the B3 logistic model gives P(near extreme taken) >= 0.75 and the trade
+  points to that untaken near extreme (2022-2025 only: walk-forward predictions exist from 2022).
+- **E5 order flow:** skip if delta / volume over the 5 bars before entry is in the Dev quintile most against the trade.
+
+Promotion to phase 3: edge vs control t >= 2.0 on full Dev **and** net pts/trade > 0 in both Dev halves
+(2020-01 -> 2022-09 and 2022-10 -> 2025-07).
+
 ## Change log
 
 | Date | Change | Reason |
@@ -173,3 +200,4 @@ by level type.
 | 2026-11-28 | Plan created | — |
 | 2026-11-28 | Defaults in §11 confirmed; added daily VWAP anchored 18:00 alongside RTH VWAP | User request, before any test |
 | 2026-11-28 | Phase 1 done (results/phase1_summary.md). Added B2-ATR robustness label (extension in ATR units) after finding the IB-width label is mostly mechanical | Honest reading of B2; added after seeing results, reported as such |
+| 2026-11-28 | §12 phase 2 spec: bias agreement redefined (A1/A2) and E4 ungated, per phase 1 findings; 0.02 ATR stop floor; one position at a time | Before phase 2 was run |
