@@ -172,3 +172,4 @@ by level type.
 |---|---|---|
 | 2026-11-28 | Plan created | — |
 | 2026-11-28 | Defaults in §11 confirmed; added daily VWAP anchored 18:00 alongside RTH VWAP | User request, before any test |
+| 2026-11-28 | Phase 1 done (results/phase1_summary.md). Added B2-ATR robustness label (extension in ATR units) after finding the IB-width label is mostly mechanical | Honest reading of B2; added after seeing results, reported as such |
